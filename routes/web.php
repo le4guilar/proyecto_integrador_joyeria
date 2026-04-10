@@ -6,19 +6,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/home function () {
+Route::get('/home', function () {
 return view('home');
-})
+});
 
 Route::get('/nosotros', function () {
 return view('nosotros');
-})
+});
 
 Route::get('/productos', function () {
 return view('productos');
-})
+});
 
 Route::get('/contacto', function () {
 return view('contacto');
-})
+});
