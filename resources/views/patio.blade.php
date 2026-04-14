@@ -31,7 +31,10 @@
             </div>
     </nav>
 
-
+    <div class= "fixed-bottom p-5 text-end" style="pointer-events: none;">
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 8rem; letter-spacing: 15px; opacity: 1; color: white; margin: 0;">
+            ALBA
+        </h1>
 
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
