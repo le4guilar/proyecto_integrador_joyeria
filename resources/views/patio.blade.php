@@ -43,6 +43,25 @@
     <div class="carousel-item active">
         <img src="{asset('img/Coleccion-de-noche.png')}}" class="d-blocK w-100" alt="Coleccion de Noche">
 </div>
+
+<div class="carousel-item"> </div>/**falta una segunda imagen */
+
+<button class="carousel-control-prev" type="button" data-bs-target="#carruselJoyeria" data-bs-slide="pev">
+<span class="carousel-contro-prev-icon" aria-hidden="true">
+</span>
+<span class="visually-hidden"> Anterior
+</span>
+</button>
+
+
+
+
+
+
+
+
+
+
     <div class= "fixed-bottom p-5 text-end" style="pointer-events: none;">
         <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 8rem; letter-spacing: 15px; opacity: 1; color: white; margin: 0;">
             ALBA
