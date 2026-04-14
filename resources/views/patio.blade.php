@@ -31,6 +31,7 @@
             </div>
     </nav>
 
+    /**primera parte del carrusel: fondo */
     <div id="carruselJoyeria" class="carousel slide" dta-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="·carruselJoyeria" data-bs-slide-to="0" class="active" aria-current="true">
@@ -39,6 +40,7 @@
             </button>
 </div>
 
+    /**insersion de imagenes para el carrusel */
 <div class="carousel-inner">
     <div class="carousel-item active">
         <img src="{{asset('img/Coleccion-de-noche.png')}}" class="d-blocK w-50" alt="Coleccion de Noche">
@@ -48,6 +50,7 @@
     <div class="carousel-item active">
         <img src="{{asset('img/Principal.png')}}" class="d-blocK w-50" alt="Coleccion de Noche">
 </div>
+    /**fin del insersion: por ahora */
 
 <button class="carousel-control-prev" type="button" data-bs-target="#carruselJoyeria" data-bs-slide="pev">
 <span class="carousel-contro-prev-icon" aria-hidden="true">
@@ -55,6 +58,7 @@
 <span class="visually-hidden"> Anterior
 </span>
 </button>
+    /**fin del carrusel */
 
 
 
