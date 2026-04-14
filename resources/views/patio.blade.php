@@ -3,6 +3,17 @@
 <head>
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <title>Joyería</title>
+
+    <style>
+        body{
+            background-color: #300404 !important;
+            color: white !important;
+        }
+        .navbar{
+            background-color transparent;
+        }
+    </style>
+
 </head>
 <body>
     <h1>Esto es el patio de pruebas</h1>
