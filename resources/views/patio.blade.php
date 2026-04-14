@@ -41,10 +41,13 @@
 
 <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="{asset('img/Coleccion-de-noche.png')}}" class="d-blocK w-100" alt="Coleccion de Noche">
+        <img src="{{asset('img/Coleccion-de-noche.png')}}" class="d-blocK w-50" alt="Coleccion de Noche">
 </div>
 
-<div class="carousel-item"> </div>/**falta una segunda imagen */
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="{{asset('img/Principal.png')}}" class="d-blocK w-50" alt="Coleccion de Noche">
+</div>
 
 <button class="carousel-control-prev" type="button" data-bs-target="#carruselJoyeria" data-bs-slide="pev">
 <span class="carousel-contro-prev-icon" aria-hidden="true">
