@@ -16,8 +16,41 @@
                 </div>
             </div>
     </nav>
+    <main>
 
-
+    </main>
+    <footer>
+        <div class="row">
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alba</h5>
+                        <p>Aca se agregan los iconos de las redes sociales </p>
+                        <p>Aca agregamos el mapa con la ubicacion del local fisico</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nosotros</h5>
+                        <a href="/nosotros">Quienes somos</p>
+                        <a href="/contacto">Contacto</p>
+                        <a href="/terminosyusos">Terminos y Usos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Comercialización</h5>
+                        <p class="card-text">Acá los íconos de efectivo, mercado pago, tarjeta visa, tarjeta mastercard</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
