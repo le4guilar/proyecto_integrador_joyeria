@@ -12,6 +12,22 @@
         .navbar{
             background-color transparent;
         }
+
+        /*estilo de la coleccion*/
+        .cat-img {
+        height: 250px; /* ajusta la altura*/
+        object-fit: cover; /* esto es para que la imagen no se deforme */
+        transition: transform 0.3s ease; /* Prepara la animación?? */
+        }
+    
+        .cat-card:hover .cat-img {
+        transform: scale(1.05); /* Agranda un poquito la imagen al pasar el mouse */
+         }
+    
+        .cat-card .card {
+        border-radius: 10px; /* muestras bordes redondeados  */
+        }
+
     </style>
 
 
@@ -144,9 +160,81 @@
     </div>
         <!--Fin del carrusel-->
 
-        <!--Barra de Navegacion-->
+        <!-- Despues del carrusel-->
+    <section class="container my-5 cat-seccion">
 
-    
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-dark"> 
+                Nuestra Colección
+            </h2>
+            <p class="text-muted">
+                Elegancia en cada detalle
+            </p>
+        </div>
+
+        <!--columna de imagenes-->
+        <div class="row g-4">
+            <div class="col-6 col-md-3">
+                <a href="/productos/anillos" class="text-decoration-none cat-card">
+                    <div class="card border-0 shadow-sm overflow-hidden">
+                        <img src="{{asset('img/anillos.jpeg')}}" class="card-img-top cat-img" alt="Anillos">
+                        <div class="card-body text center bg-white">
+                            <h5 class="card-title text-darfw-semibold m-0">
+                                Anillos
+                            </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <a href="/productos/aretes" class="text-decoration-none cat-card">
+                    <div class="card border-0 shadow-sm overflow-hidden">
+                        <img src="{{asset('img/aretes.jpeg')}}" class="card-img-top cat-img" alt="Aretes">
+                        <div class="card-body text center bg-white">
+                            <h5 class="card-title text-darfw-semibold m-0">
+                                Aretes
+                            </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+     
+            <div class="col-6 col-md-3">
+                <a href="/productos/pulseras" class="text-decoration-none cat-card">
+                    <div class="card border-0 shadow-sm overflow-hidden">
+                        <img src="{{asset('img/pulseras.jpeg')}}" class="card-img-top cat-img" alt="Pulseras">
+                        <div class="card-body text center bg-white">
+                            <h5 class="card-title text-darfw-semibold m-0">
+                                Pulseras
+                            </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <a href="/productos/collares" class="text-decoration-none cat-card">
+                    <div class="card border-0 shadow-sm overflow-hidden">
+                        <img src="{{asset('img/collares.jpeg')}}" class="card-img-top cat-img" alt="Collares">
+                        <div class="card-body text center bg-white">
+                            <h5 class="card-title text-darfw-semibold m-0">
+                                Collares
+                            </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        <!--TENDENCIA-->
+        <section class="container-fluid p-0 my-5">
+            <div id-="carruselTendencia" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ asset('img/tendenciaNoche.jpeg')}}" class="d-block w-100" style="height: 500px; object-fit:cover; filter: brightness(70%):" alt="TENDENCIA">
+
+
+
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     </body>
     </html>
