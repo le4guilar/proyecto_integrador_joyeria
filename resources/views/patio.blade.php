@@ -28,6 +28,7 @@
         border-radius: 10px; /* muestras bordes redondeados  */
         }
 
+
     </style>
 
 
