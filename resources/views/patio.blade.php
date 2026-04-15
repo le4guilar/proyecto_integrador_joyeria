@@ -18,7 +18,62 @@
 <body>
     <h1>Esto es el patio de pruebas</h1>
 
-    <!--COMENTARIOS-->
+    <!--Barra de Navegacion: se cambio el color y se agrego el tutulo al costado-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="letter-spacing: 2px;">
+                ALBA
+            </a>
+
+         <!--botones-->   
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+
+        <div class="collapse nvbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="/home"> 
+                        INICIO
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        Productos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li> <a class="dropdown-item" href="#"> 
+                            Coleccion de Noche 
+                            </a>
+                        </li>
+
+                        <li> <a class="dropdown-item" href="#">
+                            Coleccion de dia
+                            </a>
+                        </li>
+                        <li> <hr class="dropdown-divider"> 
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="/nosotros"> 
+                        Nosotros
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="/contacto">
+                        Contacto
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!--Lean
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -31,16 +86,19 @@
                 </div>
             </div>
     </nav>
-
+    -->
  
     <!--Primera parte del carrusel-->
-<div id="carruselJoyeria" class="carousel slide" dta-bs-ride="carousel">
+<div id="carruselJoyeria" class="carousel slide" data-bs-ride="carousel">
+        
+        <!--
         <div class="carousel-indicators">
             <button type="button" data-bs-target="·carruselJoyeria" data-bs-slide-to="0" class="active" aria-current="true">
             </button>
             <button type="button" data-bs-target="·carruselJoyeria" data-bs-slide-to="1">
             </button>
         </div>
+        -->
 
         <!--Insersion de imagenes-->
     <div class="carousel-inner">
@@ -70,6 +128,8 @@
         </h1>
     </div>
         <!--Fin del carrusel-->
+
+        <!--Barra de Navegacion-->
 
     
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
