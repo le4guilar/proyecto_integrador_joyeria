@@ -6,7 +6,7 @@
 
     <style>
         body{
-            background-color: #300404 !important;
+            background-color: #ddb88f !important;
             color: white !important;
         }
         .navbar{
@@ -18,6 +18,7 @@
 <body>
     <h1>Esto es el patio de pruebas</h1>
 
+    <!--COMENTARIOS-->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -32,6 +33,7 @@
     </nav>
 
  
+    <!--Primera parte del carrusel-->
 <div id="carruselJoyeria" class="carousel slide" dta-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="·carruselJoyeria" data-bs-slide-to="0" class="active" aria-current="true">
@@ -40,7 +42,7 @@
             </button>
         </div>
 
-
+        <!--Insersion de imagenes-->
     <div class="carousel-inner">
             
             <div class="carousel-item active">
@@ -60,12 +62,14 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
         </button>
-
+        <!--Fin de insersion-->
+    
     </div> <div class="fixed-bottom p-5 text-end" style="pointer-events: none;">
         <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 8rem; letter-spacing: 15px; opacity: 1; color: white; margin: 0;">
             ALBA
         </h1>
     </div>
+        <!--Fin del carrusel-->
 
     
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
