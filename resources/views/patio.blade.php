@@ -14,24 +14,23 @@
         }
     </style>
 
+
+
+
 </head>
 <body>
-    <h1>Esto es el patio de pruebas</h1>
-
     <!--Barra de Navegacion: se cambio el color y se agrego el tutulo al costado-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="letter-spacing: 2px;">
-                ALBA
-            </a>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top">
 
+            
          <!--botones-->   
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon">
             </span>
         </button>
 
-        <div class="collapse nvbar-collapse justify-content-center" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/home"> 
@@ -41,7 +40,7 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                        Productos
+                        Catalogo
                     </a>
                     <ul class="dropdown-menu">
                         <li> <a class="dropdown-item" href="#"> 
@@ -62,6 +61,22 @@
                     <a class="nav-link px-3" href="/nosotros"> 
                         Nosotros
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="/comercializacion"> 
+                        Comercializacion
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="/terminos de uso"> 
+                        Termino de uso
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="/consultas"> 
+                        Consulta
+                    </a>
+                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/contacto">
