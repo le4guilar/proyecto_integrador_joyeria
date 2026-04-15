@@ -31,52 +31,45 @@
             </div>
     </nav>
 
-    /**primera parte del carrusel: fondo */
-    <div id="carruselJoyeria" class="carousel slide" dta-bs-ride="carousel">
+ 
+<div id="carruselJoyeria" class="carousel slide" dta-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="·carruselJoyeria" data-bs-slide-to="0" class="active" aria-current="true">
             </button>
             <button type="button" data-bs-target="·carruselJoyeria" data-bs-slide-to="1">
             </button>
-</div>
-
-    /**insersion de imagenes para el carrusel */
-<div class="carousel-inner">
-    <div class="carousel-item active">
-        <img src="{{asset('img/Coleccion-de-noche.png')}}" class="d-blocK w-50" alt="Coleccion de Noche">
-</div>
-
-<div class="carousel-inner">
-    <div class="carousel-item active">
-        <img src="{{asset('img/Principal.png')}}" class="d-blocK w-50" alt="Coleccion de Noche">
-</div>
-    /**fin del insersion: por ahora */
-
-<button class="carousel-control-prev" type="button" data-bs-target="#carruselJoyeria" data-bs-slide="pev">
-<span class="carousel-contro-prev-icon" aria-hidden="true">
-</span>
-<span class="visually-hidden"> Anterior
-</span>
-</button>
-    /**fin del carrusel */
+        </div>
 
 
+    <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+                <img src="{{ asset('img/Coleccion-de-noche.png') }}" class="d-block w-50" alt="Coleccion de Noche">
+            </div>
 
+            <div class="carousel-item">
+                <img src="{{ asset('img/Principal.png') }}" class="d-block w-50" alt="Principal">
+            </div>
 
+        </div> <button class="carousel-control-prev" type="button" data-bs-target="#carruselJoyeria" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
 
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselJoyeria" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
 
-
-
-
-
-    <div class= "fixed-bottom p-5 text-end" style="pointer-events: none;">
+    </div> <div class="fixed-bottom p-5 text-end" style="pointer-events: none;">
         <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 8rem; letter-spacing: 15px; opacity: 1; color: white; margin: 0;">
             ALBA
         </h1>
+    </div>
 
     
-
-
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-</body>
-</html>
+    </body>
+    </html>
+
+
