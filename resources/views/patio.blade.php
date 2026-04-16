@@ -22,7 +22,7 @@
     
         .cat-card:hover .cat-img {
         transform: scale(1.05); /* Agranda un poquito la imagen al pasar el mouse */
-         }
+        }
     
         .cat-card .card {
         border-radius: 10px; /* muestras bordes redondeados  */
@@ -41,7 +41,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top">
 
             
-         <!--botones-->   
+        <!--botones-->   
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon">
             </span>
@@ -119,7 +119,7 @@
             </div>
     </nav>
     -->
- 
+
     <!--Primera parte del carrusel-->
 <div id="carruselJoyeria" class="carousel slide" data-bs-ride="carousel">
         
@@ -200,7 +200,7 @@
                     </div>
                 </a>
             </div>
-     
+            
             <div class="col-6 col-md-3">
                 <a href="/productos/pulseras" class="text-decoration-none cat-card">
                     <div class="card border-0 shadow-sm overflow-hidden">
