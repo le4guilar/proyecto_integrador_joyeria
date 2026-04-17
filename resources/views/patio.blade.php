@@ -6,7 +6,7 @@
 
     <style>
         body{
-            background-color: #ddb88f !important;
+            background-color: #dfdada !important;
             color: white !important;
         }
         .navbar{
@@ -233,6 +233,23 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="{{ asset('img/tendenciaNoche.jpeg')}}" class="d-block w-100" style="height: 500px; object-fit:cover; filter: brightness(70%):" alt="TENDENCIA">
+                        <div class="carousel-caption d-none d-md-block text-start" style="bottom: 20%; left:10%;">
+                            <h2 clas="display-4 fw-bold text-uppercase"> 
+                                Colección de Noche 
+                            </h2>
+                            <p class="lead w-50">
+                                Texto para la tendencia.
+                            </p>
+                            <a href="#" class="btn btn-light btn-lg rounded-pill px4 mt-3">
+                                Describir -> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
 
 
