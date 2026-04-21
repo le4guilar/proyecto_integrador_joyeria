@@ -1,26 +1,36 @@
-BASE DEL NOSOTROS
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-    <title>Nostros - Joyería ALBA</title>
 
-    <!-- para ver en tiempo real los cambios-->
-     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/estiloHome.css') }}">
+
+    <title>Joyería ALBA</title>
 </head>
+
 <body>
+    <!--Barra de Navegacion: se cambio el color y se agrego el tutulo al costado-->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top">
+
+    <!--botones-->   
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon">
             </span>
-        </button>
+         </button>
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/home"> 
-                        ALBA
+                         INICIO
                     </a>
                 </li>
 
@@ -29,20 +39,17 @@ BASE DEL NOSOTROS
                         Catalogo
                     </a>
                     <ul class="dropdown-menu">
-                        <li> 
-                            <a class="dropdown-item" href="#"> 
-                                Coleccion de Noche 
+                        <li> <a class="dropdown-item" href="#"> 
+                            Coleccion de Noche 
                             </a>
                         </li>
 
-                        <li> 
-                            <a class="dropdown-item" href="#">
-                                Coleccion de dia
+                        <li> <a class="dropdown-item" href="#">
+                            Coleccion de dia
                             </a>
                         </li>
                     
-                        <li>
-                            <hr class="dropdown-divider"> 
+                        <li> <hr class="dropdown-divider"> 
                         </li>
                     </ul>
                 </li>
@@ -61,13 +68,13 @@ BASE DEL NOSOTROS
             
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/terminos de uso"> 
-                        Términos de uso
+                        Termino de uso
                     </a>
                 </li>
                         
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/consulta"> 
-                        Consultas
+                    <a class="nav-link px-3" href="/consultas"> 
+                        Consulta
                     </a>
                 </li>
             
@@ -80,7 +87,7 @@ BASE DEL NOSOTROS
         </div>
     </nav>
 
-    <main class="bg-joyeria text-center py-5 container-fluid">
+  <main class="bg-joyeria text-center py-5 container-fluid">
         <div class="container">
             <h2 class="display-4 mb-4 mt-3">SOBRE NOSOTROS</h2   >
 
