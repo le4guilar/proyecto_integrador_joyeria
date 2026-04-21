@@ -216,19 +216,19 @@
         <div class="row text-center g-4">
             <div class="col-md-4">
                 <i class="bi bi-gem fs-1 "> </i>
-                <h5 class="fw-bold mt-5"> Calidad Certificada </h5>
+                <h5 class="fw-bold mt-3"> Calidad Certificada </h5>
                 <p class="text-muted small"> Diamantes y metales de la más alta pureza.</p>
             </div>
 
             <div class="col-md-4">
                 <i class="bi bi-truck fs-1"> </i>
-                <h5 class="fw-bold mt-5"> Envío Asegurado </h5>
+                <h5 class="fw-bold mt-3"> Envío Asegurado </h5>
                 <p class="text-muted small"> Llegamos a todo el país con la máxima seguridad.</p>
             </div>
 
             <div class="col-md-4">
                 <i class="bi bi-pencil-square fs-1"> </i>
-                <h5 class="fw-bold mt-5">Diseño Personalizado </h5>
+                <h5 class="fw-bold mt-3">Diseño Personalizado </h5>
                 <p class="text-muted small">Creamos la joya de tus sueños a medida.</p> 
             </div>
         </div>
