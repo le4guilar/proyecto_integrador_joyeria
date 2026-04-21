@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <title>Joyería</title>
@@ -78,38 +79,41 @@
         </div>
 
         <div class="container mt-5">
-            <div class="card p-4 border rounded-2 shadow-sm">
+            <div class="card p-4 border rounded-2  bg-joyeria-form">
                 <form>
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control bg-joyeria-input" id="nombre">
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email:</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control bg-joyeria-input" id="email">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="apellido" class="form-label">Apellido:</label>
-                            <input type="text" class="form-control" id="apellido">
+                            <input type="text" class="form-control bg-joyeria-input" id="apellido">
                         </div>
                         <div class="col-md-6">
                             <label for="telefono" class="form-label">Teléfono:</label>
-                            <input type="tel" class="form-control" id="telefono">
+                            <input type="tel" class="form-control bg-joyeria-input" id="telefono">
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="consulta" class="form-label">Consulta:</label>
-                        <textarea class="form-control" id="consulta" rows="4"></textarea>
+                        <textarea class="form-control bg-joyeria-input" id="consulta" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-dark">Enviar</button>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-dark">Enviar</button>
+                    </div>
                 </form>
             </div>
-        </div>        
+        </div>    
+        <hr class="mx-auto mt-4" style="width: 60px; opacity: 0.2; color: #300403;">    
     </main> 
 
     <footer class="bg-joyeria-footer pt-5 pb-4 container-fluid">
