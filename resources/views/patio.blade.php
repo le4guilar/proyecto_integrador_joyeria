@@ -226,49 +226,38 @@
         <div class="row g-0">
             <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
                 <a href="/productos/anillos">
+                    <img src="{{asset('img/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
+                        <h4 class="text-white fw-bold m-0 text-uppercase"> Anillos </h4>
+                    </div>
+                </a>
+            </div>
+         
+
+            <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
+                <a href="/productos/aretes">
+                    <img src="{{asset('img/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Aretes">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
+                        <h4 class="text-white fw-bold m-0 text-uppercase"> Aretes</h4>
+                    </div>
+                </a>
+            </div>
                     
-                        <img src="{{asset('img/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                            <h4 class="text-white fw-bold m-0 text-uppercase">
-                                Anillos
-                            </h4>
-                        </div>
+            <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
+                <a href="/productos/pulseras">
+                    <img src="{{asset('img/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
+                        <h4 class="text-white fw-bold m-0 text-uppercase">Pulseras</h4>
+                    </div>
                 </a>
             </div>
 
             <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-                <a href="/productos/aretes">
-
-                        <img src="{{asset('img/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Aretes">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                            <h5 class="text-white fw-bold m-0 text-upeercase">
-                                Aretes
-                            </h5>
-                        </div>
-                    </a>
-                </div>
-                    
-            <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-                <a href="/productos/pulseras">
-                 
-                        <img src="{{asset('img/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                            <h5 class="text-white fw-bold m-0 text-upeercase">
-                                Pulseras
-                            </h5>
-                        </div>
-                </a>
-             </div>
-
-            <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
                 <a href="/productos/collares">
-             
-                        <img src="{{asset('img/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                            <h5 class="text-white fw-bold m-0 text-upeercase">
-                                Collares
-                            </h5>
-                        </div>
+                    <img src="{{asset('img/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
+                        <h4 class="text-white fw-bold m-0 text-uppercase"> Collares </h4>
+                   </div>
                 </a>
             </div>
         </div>
