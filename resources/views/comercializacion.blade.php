@@ -120,34 +120,16 @@
         <!--Fin de insersion-->
     <!--Fin del carrusel-->
 
-    <!-- Presentacion de la empresa-->
-    <section class="container my-5 py-5">
-        <div class="row justify-content-center text-center">
-            <div class="col-md-8">
-                <h6 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">
-                    ALBA
-                </h6>
-                <h2 style="font-family: 'Cormorant Garamond', serif;" class="display-5 mb-4 text-dark">
-                    Elegancia Atemporal
-                </h2>
-                <p class="lead text-muted px-lg-5" style="font-size: 1.1rem;">
-                    Nos dedicamos a la curaduría de piezas únicas que celebran los momentos más importantes de tu vida. Calidad, diseño y compromiso en cada detalle. 
-                </p>
-                <hr class="mx-auto mt-5" style="width: 60px; opacity: 0.2; color: #300403;">
-            </div>
-        </div>
-    </section>
-
-    <section class="container mb-5 cat-seccion">
+    <!-- Despues del carrusel-->
+    <section class="container my-5 cat-seccion">
         <div class="text-center mb-5">
-            <h2 class="text-uppercase" style="letter-spacing: 8px; color: #300403; font-family: 'Cormorant Garamond', serif;">
-                Nuestra Colección
+           <h2 class="fw-bold text-dark"> 
+               Nuestra Colección
             </h2>
-            <p class="text-muted small text-uppercase" style="letter-spacing: 2px;">
+            <p class="text-muted">
                 Elegancia en cada detalle
-            </p>
+            </p>            
         </div>
-    </section>
 
             <!--columna de imagenes-->
         <div class="row g-0">
@@ -155,7 +137,7 @@
                 <a href="/productos/anillos">
                     <img src="{{asset('img/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
                     <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                        <h4 class="card-title m-0"> Anillos </h4>
+                        <h4 class="font-family: 'Montserrat', sans-serif;" class="card-title text-dark fw-semibold m-0 fs-6"> Anillos </h4>
                     </div>
                 </a>
             </div>
@@ -165,7 +147,7 @@
                 <a href="/productos/aretes">
                     <img src="{{asset('img/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Aretes">
                     <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                        <h4 class="card-title m-0"> Aretes</h4>
+                        <h4 class="font-family: 'Montserrat', sans-serif;" class="card-title text-dark fw-semibold m-0 fs-6"> Aretes</h4>
                     </div>
                 </a>
             </div>
@@ -174,7 +156,7 @@
                 <a href="/productos/pulseras">
                     <img src="{{asset('img/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
                     <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                        <h4 class="card-title m-0">Pulseras</h4>
+                        <h4 class="font-family: 'Montserrat', sans-serif;" class="card-title text-dark fw-semibold m-0 fs-6">Pulseras</h4>
                     </div>
                 </a>
             </div>
@@ -183,7 +165,7 @@
                 <a href="/productos/collares">
                     <img src="{{asset('img/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
                     <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                        <h4 class="card-title m-0"> Collares </h4>
+                        <h4 class="font-family: 'Montserrat', sans-serif;" class="card-title text-dark fw-semibold m-0 fs-6"> Collares </h4>
                    </div>
                 </a>
             </div>
@@ -195,7 +177,7 @@
         <div id="carruselTendencia" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                  <div class="carousel-item active">
-                    <img src="{{ asset('img/tendenciaNoche.jpeg')}}" class="d-block w-100" alt="TENDENCIA">
+                    <img src="{{ asset('img/tendenciaNoche.jpeg')}}" class="d-block w-100" style="height: 500px; object-fit:cover; filter: brightness(70%);" alt="TENDENCIA">
                     <div class="carousel-caption text-center text-md-start" style="bottom: 10%; left: 5%; right: 5%;">
                         <h2 class="display-4 fw-bold text-capitalize"> 
                             Colección de Noche 
@@ -215,20 +197,20 @@
     <section class="container my-5 py-5 text-dark">
         <div class="row text-center g-4">
             <div class="col-md-4">
-                <i class="bi bi-gem fs-1 "> </i>
-                <h5 class="fw-bold mt-5"> Calidad Certificada </h5>
+                <i class="bi bi-gem fs-1"> </i> 
+                <h5 class="fw-bold mt-3"> Calidad Certificada </5>
                 <p class="text-muted small"> Diamantes y metales de la más alta pureza.</p>
             </div>
 
             <div class="col-md-4">
                 <i class="bi bi-truck fs-1"> </i>
-                <h5 class="fw-bold mt-5"> Envío Asegurado </h5>
+                <h5 class="fw-bold mt-3"> Envío Asegurado </5>
                 <p class="text-muted small"> Llegamos a todo el país con la máxima seguridad.</p>
             </div>
 
             <div class="col-md-4">
                 <i class="bi bi-pencil-square fs-1"> </i>
-                <h5 class="fw-bold mt-5">Diseño Personalizado </h5>
+                <h5 class="fw-bold mt-3">Diseño Personalizado </5>
                 <p class="text-muted small">Creamos la joya de tus sueños a medida.</p> 
             </div>
         </div>

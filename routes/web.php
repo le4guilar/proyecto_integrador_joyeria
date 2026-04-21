@@ -25,3 +25,7 @@ return view('contacto');
 Route::get('/patio', function () {
 return view('patio');
 });
+
+Route::get('/comercializacion', function () {
+return view('comercializacion');
+});
