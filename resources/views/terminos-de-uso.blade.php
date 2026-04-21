@@ -25,7 +25,7 @@
                     <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                         Catalogo
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu bg-transparent">
                         <li> 
                             <a class="dropdown-item" href="#"> 
                                 Coleccion de Noche

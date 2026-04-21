@@ -29,3 +29,11 @@ return view('patio');
 Route::get('/comercializacion', function () {
 return view('comercializacion');
 });
+
+Route::get('/terminos-de-uso', function () {
+return view('terminos-de-uso');
+});
+
+Route::get('/consulta', function () {
+return view('consulta');
+});

@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #AB724B99;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+
+.footer {
+    width: 80%;
+    height: fit-content;
+    background-color: pink;
+    max-width: 80vw;
+}
+
+.ico-rrss {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+.img-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Clave: llena el espacio sin deformarse */
+    object-position: center;
+}
+
+/* Color amarillo exacto si border-warning no te gusta */
+.border-warning {
+    border-color: #efb68fff !important;
+}
+
+.footer-card {
+    width: 100%;
+}
+
+.footer-mapa {
+    margin-top: 1em;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+
+.bg-joyeria {
+    background-color: #760000;
+    color: #efb68fff;;
+    font-family: 'Cormorant Garamond'
+}
+
+.bg-joyeria-footer {
+    background-color: #760000aa;
+    color: #efb68fff;
+    font-family: 'Cormorant Garamond'
+}
+
+
+.titulo-footer {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-family: 'Cormorant Garamond'
+}
+
+.enlace {
+    background-color: transparent;
+    color: #efb68fff    ;
+    font-family: 'Cormorant Garamond'
+}
+
+.formas-pago {
+    background-color: transparent;
+    color: #efb68fff    ;
+    font-family: 'Cormorant Garamond'
+}
+
+
