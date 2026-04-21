@@ -78,7 +78,7 @@
         </div>
 
         <div class="container mt-5">
-            <div class="card p-4 border rounded-4 shadow-sm">
+            <div class="card p-4 border rounded-2 shadow-sm">
                 <form>
                     <div class="row mb-3">
                         <div class="col-md-6">
@@ -90,7 +90,7 @@
                             <input type="email" class="form-control" id="email">
                         </div>
                     </div>
-                    
+
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="apellido" class="form-label">Apellido:</label>
