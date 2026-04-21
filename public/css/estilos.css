@@ -68,9 +68,10 @@ body {
     font-family: 'Cormorant Garamond'
 }
 
+/*ESTILO del fomrulario de contacto*/
 .bg-joyeria-form {
     background-color: #CDC9C9;
-    color: #300403;
+    color: #231f20;
     font-family: 'Cormorant Garamond';
     box-shadow: 0px 0px 15px #555    ;
 }
@@ -98,6 +99,11 @@ body {
     font-family: 'Cormorant Garamond'
 }
 
+.btn-joyeria-form{
+    background-color: #300403;
+    color: #ffffff;
+
+}
 
 .titulo-footer {
     font-family: Verdana, Tahoma, sans-serif;
@@ -115,6 +121,14 @@ body {
     color: #300403;
     font-family: 'Cormorant Garamond'
 }
+
+/*ESTILO: consulta*/
+.acordeon-alba .acordeon-body{
+    background-color: #fcfaf8;
+
+}
+
+
 
 /*ESTILO DE NOSTROS*/
 

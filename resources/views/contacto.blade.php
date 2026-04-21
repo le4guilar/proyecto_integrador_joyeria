@@ -108,7 +108,7 @@
                         <textarea class="form-control bg-joyeria-input" id="consulta" rows="4"></textarea>
                     </div>
                     <div class="text-end">
-                        <button type="submit" class="btn btn-dark">Enviar</button>
+                        <button type="submit" class="btn btn-joyeria-form">Enviar</button>
                     </div>
                 </form>
             </div>

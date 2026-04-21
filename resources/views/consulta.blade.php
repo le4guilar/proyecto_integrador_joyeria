@@ -74,44 +74,44 @@
     <main class="bg-joyeria-main text-center py-5 w-100">
         <h1 class="text-center mb-4 mt-4">Preguntas Frecuentes:</h1>
         <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
-        <div class="container mt-5">
-    <div class="card p-4 border rounded-2 shadow-sm">        
-        
 
-        <div class="accordion accordion-flush" id="accordionFAQ">
-            <div class="accordion-item border rounded-2 mb-3">
-                <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        <span>Compras :</span>
-                    </button>
-                </h3>
-                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-                    <div class="accordion-body text-muted pt-0 ps-5">
-                        <ul class="list-unstyled mb-0 mt-3 text-start">
-                            <li class="mb-2">
-                                <span class="ms-3 h5 fw-bold">¿Cómo pido una joya personalizada?</span><br> 
-                                Nos contactás por WhatsApp, nos contás tu idea, diseñamos la pieza juntos y te pasamos el presupuesto.
-                            </li>
-                            <li class="mb-2">
-                                <span class="ms-3 h5 fw-bold">¿Qué métodos de pago aceptan? </span><br> 
-                                Aceptamos transferencias bancarias, tarjetas de crédito/débito y Mercado Pago.
-                            </li>
-                            <li>
-                                <span class="ms-3 h5 fw-bold">¿Puedo modificar un pedido después de pagarlo?</span> <br>
-                                Solo dentro de las primeras 24 horas en joyas de catálogo. Las piezas personalizadas no admiten cambios una vez iniciada la fabricación.
-                            </li>
-                            <li>
-                                <span class="ms-3 h5 fw-bold">¿Cuánto demoran en hacer una joya a medida?</span> <br>
-                                El proceso completo de diseño y fabricación artesanal toma entre 10 y 15 días hábiles.
-                            </li>
-                            <li>
-                                <span class="ms-3 h5 fw-bold">¿Tienen local físico?</span> <br>
-                                Tenemos un Showroom en la Ciudad de Corrientes aunque mayormente trabajamos online, pero te enviamos fotos y videos en alta calidad de cada etapa de tu joya.
-                            </li>
-                        </ul>
+        <div class="container mt-5">
+            <div class="card p-4 border rounded-2 shadow-sm acordeon-alba">      
+                <div class="accordion accordion-flush" id="accordionFAQ">
+                    <div class="accordion-item border rounded-2 mb-3">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <span>Compras :</span>
+                            </button>
+                        </h3>
+                        
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body text-muted pt-0 ps-5">
+                                <ul class="list-unstyled mb-0 mt-3 text-start">
+                                    <li class="mb-2">
+                                        <span class="ms-3 h5 fw-bold">¿Cómo pido una joya personalizada?</span><br> 
+                                            Nos contactás por WhatsApp, nos contás tu idea, diseñamos la pieza juntos y te pasamos el presupuesto.
+                                     </li>
+                                    <li class="mb-2">
+                                    <span class="ms-3 h5 fw-bold">¿Qué métodos de pago aceptan? </span><br> 
+                                        Aceptamos transferencias bancarias, tarjetas de crédito/débito y Mercado Pago.
+                                    </li>
+                                    <li>
+                                        <span class="ms-3 h5 fw-bold">¿Puedo modificar un pedido después de pagarlo?</span> <br>
+                                            Solo dentro de las primeras 24 horas en joyas de catálogo. Las piezas personalizadas no admiten cambios una vez iniciada la fabricación.
+                                    </li>
+                                    <li>
+                                        <span class="ms-3 h5 fw-bold">¿Cuánto demoran en hacer una joya a medida?</span> <br>
+                                            El proceso completo de diseño y fabricación artesanal toma entre 10 y 15 días hábiles.
+                                    </li>
+                                    <li>
+                                        <span class="ms-3 h5 fw-bold">¿Tienen local físico?</span> <br>
+                                        Tenemos un Showroom en la Ciudad de Corrientes aunque mayormente trabajamos online, pero te enviamos fotos y videos en alta calidad de cada etapa de tu joya.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
             <div class="accordion-item border rounded-2 mb-3">
                 <h3 class="accordion-header">
