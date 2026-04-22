@@ -24,13 +24,13 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon">
             </span>
-         </button>
+        </button>
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/home"> 
-                         INICIO
+                        INICIO
                     </a>
                 </li>
 
