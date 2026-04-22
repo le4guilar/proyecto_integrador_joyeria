@@ -73,7 +73,7 @@
                 </li>
                         
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/consultas"> 
+                    <a class="nav-link px-3" href="/consulta"> 
                         Consulta
                     </a>
                 </li>
