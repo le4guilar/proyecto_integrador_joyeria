@@ -71,9 +71,9 @@
         </div>
     </nav>
 
-    <main class="container my-5 py-5">
+    <main class="bg-joyeria-main container my-5 py-5">
         <div class="text-center mb-5 mt-5">
-            <h6 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">Servicios</h6>
+            <h3 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">ALBA</h3>
             <h2 style="font-family: 'Cormorant Garamond', serif;" class="display-5 text-dark">Contacto</h2>
             <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
         </div>
@@ -141,7 +141,7 @@
                         <a href="/contacto" class="enlace" style="text-decoration: none;">Contacto</a>
                     </p>
                     <p>
-                        <a href="/terminos" class="enlace" style="text-decoration: none;">Términos y uso</a>
+                        <a href="/terminos-de-uso" class="enlace" style="text-decoration: none;">Términos y uso</a>
                     </p>
                 </div>
 
