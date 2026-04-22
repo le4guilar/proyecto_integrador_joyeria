@@ -47,13 +47,13 @@
                 </li>
             
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/terminos de uso"> 
+                    <a class="nav-link px-3" href="/terminos-de-uso"> 
                         Termino de uso
                     </a>
                 </li>
                         
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/consultas"> 
+                    <a class="nav-link px-3" href="/consulta"> 
                         Consulta
                     </a>
                 </li>

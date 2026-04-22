@@ -8,7 +8,7 @@
     }
 
     .navbar {
-        background-color: transparent !important;
+        background-color: #300403 !important;
     }
 
     /*TITULO DE LA SECCION (Nuestra Colección) */
@@ -73,3 +73,38 @@
 
         
     }
+
+
+
+/*SECCION DEL FOOTER*/
+
+.footer {
+    width: 80%;
+    height: fit-content;
+    background-color: #DFDADA;
+    max-width: 80vw;
+}
+
+.ico-rrss {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-card {
+    width: 100%;
+}
+
+
+.footer-mapa {
+    margin-top: 1em;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.bg-joyeria-footer {
+    background-color: #CDC9C9;
+    color: #300403;
+    font-family: 'Cormorant Garamond'
+}

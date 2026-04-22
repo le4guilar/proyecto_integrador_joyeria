@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -20,17 +21,17 @@
     <!--Barra de Navegacion: se cambio el color y se agrego el tutulo al costado-->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top">
 
-    <!--botones-->   
+        <!--botones-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon">
             </span>
-         </button>
+        </button>
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/home"> 
-                         INICIO
+                    <a class="nav-link px-3" href="/home">
+                        INICIO
                     </a>
                 </li>
 
@@ -38,46 +39,49 @@
                     <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                         Catalogo
                     </a>
+
+                    <!--CORREGIR ESTO NO VA-->
                     <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#"> 
-                            Coleccion de Noche 
+                        <li> <a class="dropdown-item" href="#">
+                                Coleccion de Noche
                             </a>
                         </li>
 
                         <li> <a class="dropdown-item" href="#">
-                            Coleccion de dia
+                                Coleccion de dia
                             </a>
                         </li>
-                    
-                        <li> <hr class="dropdown-divider"> 
+
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/nosotros"> 
+                    <a class="nav-link px-3" href="/nosotros">
                         Nosotros
                     </a>
                 </li>
-                
+
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/comercializacion"> 
+                    <a class="nav-link px-3" href="/comercializacion">
                         Comercializacion
                     </a>
                 </li>
-            
+
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/terminos de uso"> 
+                    <a class="nav-link px-3" href="/terminos de uso">
                         Termino de uso
                     </a>
                 </li>
-                        
+
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/consultas"> 
+                    <a class="nav-link px-3" href="/consultas">
                         Consulta
                     </a>
                 </li>
-            
+
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/contacto">
                         Contacto
@@ -87,10 +91,10 @@
         </div>
     </nav>
 
-            <!--Primera parte del carrusel-->
+    <!--Primera parte del carrusel-->
     <div id="carruselJoyeria" class="carousel slide" data-bs-ride="carousel">
 
-            <!--Insersion de imagenes-->
+        <!--Insersion de imagenes-->
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ asset('img/Principal1.png') }}" class="d-block w-100" alt="Principal">
@@ -99,9 +103,9 @@
             <div class="carousel-item">
                 <img src="{{ asset('img/Principal2.png') }}" class="d-block w-100" alt="Principal">
             </div>
-         </div> 
-    
-         <button class="carousel-control-prev" type="button" data-bs-target="#carruselJoyeria" data-bs-slide="prev">
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselJoyeria" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true">
             </span>
             <span class="visually-hidden">
@@ -117,7 +121,7 @@
             </span>
         </button>
     </div>
-        <!--Fin de insersion-->
+    <!--Fin de insersion-->
     <!--Fin del carrusel-->
 
     <!-- Presentacion de la empresa-->
@@ -131,7 +135,7 @@
                     Elegancia Atemporal
                 </h2>
                 <p class="lead text-muted px-lg-5" style="font-size: 1.1rem;">
-                    Nos dedicamos a la curaduría de piezas únicas que celebran los momentos más importantes de tu vida. Calidad, diseño y compromiso en cada detalle. 
+                    Nos dedicamos a la curaduría de piezas únicas que celebran los momentos más importantes de tu vida. Calidad, diseño y compromiso en cada detalle.
                 </p>
                 <hr class="mx-auto mt-5" style="width: 60px; opacity: 0.2; color: #300403;">
             </div>
@@ -149,63 +153,63 @@
         </div>
     </section>
 
-            <!--columna de imagenes-->
-        <div class="row g-0">
-            <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-                <a href="/productos/anillos">
-                    <img src="{{asset('img/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                        <h4 class="card-title m-0"> Anillos </h4>
-                    </div>
-                </a>
-            </div>
-         
-
-            <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-                <a href="/productos/aretes">
-                    <img src="{{asset('img/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Aretes">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                        <h4 class="card-title m-0"> Aretes</h4>
-                    </div>
-                </a>
-            </div>
-                    
-            <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-                <a href="/productos/pulseras">
-                    <img src="{{asset('img/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                        <h4 class="card-title m-0">Pulseras</h4>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-                <a href="/productos/collares">
-                    <img src="{{asset('img/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
-                        <h4 class="card-title m-0"> Collares </h4>
-                   </div>
-                </a>
-            </div>
+    <!--columna de imagenes-->
+    <div class="row g-0">
+        <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
+            <a href="/productos/anillos">
+                <img src="{{asset('img/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
+                <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
+                    <h4 class="card-title m-0"> Anillos </h4>
+                </div>
+            </a>
         </div>
+
+
+        <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
+            <a href="/productos/aretes">
+                <img src="{{asset('img/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Aretes">
+                <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
+                    <h4 class="card-title m-0"> Aretes</h4>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
+            <a href="/productos/pulseras">
+                <img src="{{asset('img/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
+                <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
+                    <h4 class="card-title m-0">Pulseras</h4>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
+            <a href="/productos/collares">
+                <img src="{{asset('img/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
+                <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
+                    <h4 class="card-title m-0"> Collares </h4>
+                </div>
+            </a>
+        </div>
+    </div>
     </section>
 
-                <!--TENDENCIA-->
+    <!--TENDENCIA-->
     <section class="container-fluid p-0 my-5">
         <div id="carruselTendencia" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                 <div class="carousel-item active">
+                <div class="carousel-item active">
                     <img src="{{ asset('img/tendenciaNoche.jpeg')}}" class="d-block w-100" alt="TENDENCIA">
                     <div class="carousel-caption text-center text-md-start" style="bottom: 10%; left: 5%; right: 5%;">
-                        <h2 class="display-4 fw-bold text-capitalize"> 
-                            Colección de Noche 
+                        <h2 class="display-4 fw-bold text-capitalize">
+                            Colección de Noche
                         </h2>
                         <p class="lead w-50">
                             Texto para la tendencia.
                         </p>
                         <a href="#" class="btn btn-light btn-lg rounded-pill px-4 mt-3">
                             Descubrir→
-                            </a>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -229,7 +233,7 @@
             <div class="col-md-4">
                 <i class="bi bi-pencil-square fs-1"> </i>
                 <h5 class="fw-bold mt-3">Diseño Personalizado </h5>
-                <p class="text-muted small">Creamos la joya de tus sueños a medida.</p> 
+                <p class="text-muted small">Creamos la joya de tus sueños a medida.</p>
             </div>
         </div>
     </section>
@@ -284,8 +288,7 @@
 
 
 
-            <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-            </body>
-            </html>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+</body>
 
-
+</html>

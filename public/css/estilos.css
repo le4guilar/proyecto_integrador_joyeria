@@ -123,10 +123,25 @@ body {
 }
 
 /*ESTILO: consulta*/
-.acordeon-alba .acordeon-body{
+.accordion-alba{
     background-color: #fcfaf8;
-
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
 }
+
+.accordion-alba .accordion-button {
+    font-family: 'Cormorant Garamond', serif; /* Elegante */
+    font-size: 1rem;
+    color: #2a2828; /* Bordó ALBA */
+    background-color: white;
+    font-weight: 500;
+}
+
+
+ .accordion-alba .accordion-body{
+    font-family: 'Montserrat', serif;
+    background-color: #fcfaf8;
+ }
 
 
 

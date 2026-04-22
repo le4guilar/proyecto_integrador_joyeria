@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-<section></section>
+
 <div class="text-center mb-5 mt-5">
         <h6 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">Servicios</h6>
         <h2 style="font-family: 'Cormorant Garamond', serif;" class="display-5 text-dark">Contacto</h2>
@@ -48,5 +48,4 @@
 </div>    
 <hr class="mx-auto mt-4" style="width: 60px; opacity: 0.2; color: #300403;">
 
-</section>
 @endsection
