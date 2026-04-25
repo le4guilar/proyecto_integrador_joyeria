@@ -15,23 +15,9 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link px-3" href="/productos">
                         Catalogo
                     </a>
-                    <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="#"> 
-                            Coleccion de Noche 
-                            </a>
-                        </li>
-
-                        <li> <a class="dropdown-item" href="#">
-                            Coleccion de dia
-                            </a>
-                        </li>
-                    
-                        <li> <hr class="dropdown-divider"> 
-                        </li>
-                    </ul>
                 </li>
 
                 <li class="nav-item">

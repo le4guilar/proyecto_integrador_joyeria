@@ -18,7 +18,7 @@
         </div>
 
         <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
-   
+
 
 
 

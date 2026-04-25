@@ -1,4 +1,4 @@
-extends('plantilla-principal')
+@extends('plantilla-principal')
 
 @section('contenido')
 
@@ -35,4 +35,4 @@ extends('plantilla-principal')
 </div>
 </main>
 
-@ensection
+@endsection
