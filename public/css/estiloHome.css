@@ -307,7 +307,7 @@
 
 
 
-/*ESTILO del formulario de contacto*/
+/*Seccion Contacto*/
 .bg-joyeria-form {
     background-color: #CDC9C9;
     color: #231f20;
@@ -327,12 +327,33 @@
     outline: none;
 }
 
+.bg-joyeria-textarea {
+    border: 1px solid #300403;
+    background-color: transparent;
+    outline: none;
+    line-height: 6;
+    max-height: 9em;
+}
+
+.bg-joyeria-textarea:focus {
+    border: 1px solid #300403;
+    background-color: transparent;
+    outline: none;
+}
+
+
 .form-control { 
     background-color: transparent;
     box-shadow: 0 0 15px #CDC9C9ff;
 }
 
-/*FIN ESTILO del formulario de contacto*/
+.contacto-ico {
+    filter: #300403 !important; 
+}
+
+
+
+/*FIN Sección Contacto*/
 
 
 
