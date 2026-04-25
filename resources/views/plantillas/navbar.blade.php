@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-
-
 <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
-=======
-<nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top mb-4">
->>>>>>> 0fe198b68996ef5971aa94593744a6b3277d98dd
+
 
     <!--botones-->   
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
