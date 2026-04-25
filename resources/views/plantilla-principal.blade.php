@@ -8,12 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estiloHome.css') }}">
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
     <title> ALBA </title>
+    
 </head>
 <body>
     @include('plantillas.navbar')
 
+<<<<<<< HEAD
     <main class="plantilla-principal">
+=======
+    <main class="mt-4">
+>>>>>>> 0fe198b68996ef5971aa94593744a6b3277d98dd
 
 
 
