@@ -17,11 +17,9 @@
 <body>
     @include('plantillas.navbar')
 
-<<<<<<< HEAD
+
     <main class="plantilla-principal">
-=======
-    <main class="mt-4">
->>>>>>> 0fe198b68996ef5971aa94593744a6b3277d98dd
+
 
 
 
