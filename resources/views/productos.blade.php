@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="text-center mb-5">
         <h1 class="display-about-title"> ANILLOS </h1>
-        <p clas="text-alba-bordo"> Colecion Oro Blanco & Platino </p>
+        <p class="text-alba-bordo"> Colecion Oro Blanco & Platino </p>
     </div>
 
     <div class="row g-5">
