@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
 
     <!--botones-->   
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -16,7 +18,7 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link px-3" href="/productos">
-                        Catalogo
+                        Catálogo
                     </a>
                 </li>
 
@@ -28,19 +30,19 @@
                 
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/comercializacion"> 
-                        Comercializacion
+                        Comercialización
                     </a>
                 </li>
             
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/terminos-de-uso"> 
-                        Termino de uso
+                        Términos de uso
                     </a>
                 </li>
                         
                 <li class="nav-item">
                     <a class="nav-link px-3" href="/consulta"> 
-                        Consulta
+                        Consultas
                     </a>
                 </li>
             

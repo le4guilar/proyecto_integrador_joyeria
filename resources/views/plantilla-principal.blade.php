@@ -13,7 +13,7 @@
 <body>
     @include('plantillas.navbar')
 
-    <main class="">
+    <main class="plantilla-principal">
 
 
 

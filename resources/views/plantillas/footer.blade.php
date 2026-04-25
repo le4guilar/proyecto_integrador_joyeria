@@ -23,7 +23,7 @@
                         <a href="/contacto" class="enlace" style="text-decoration: none;">Contacto</a>
                     </p>
                     <p>
-                        <a href="/terminos-de-uso" class="enlace" style="text-decoration: none;">Términos y uso</a>
+                        <a href="/terminos-de-uso" class="enlace" style="text-decoration: none;">Términos de uso</a>
                     </p>
                 </div>
 
