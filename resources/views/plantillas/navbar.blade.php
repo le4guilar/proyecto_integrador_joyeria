@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top mb-4">
 
     <!--botones-->   
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
