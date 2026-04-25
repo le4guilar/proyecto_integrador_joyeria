@@ -3,7 +3,7 @@
             <div class="row text-center text-md-start">
                 <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
                     <h2 class="text-uppercase mb-4 font-weight-bold">ALBA</h2>
-                    <div class="mb-5">
+                    <div class="mb-5 ico-footer">
                         <img class=mx-3 src="{{ asset('img/iconos/instagram.svg') }}" alt="Instagram" width="30">
                         <img class=mx-3 src="{{ asset('img/iconos/facebook.svg') }}" alt="Facebook" width="30">
                         <img class=mx-3 src="{{ asset('img/iconos/whatsapp.svg') }}" alt="Whatsapp" width="30">
@@ -33,10 +33,12 @@
                         <p class="formas-pago">
                             Formas de pago:
                         </p>
-                        <img src="{{ asset('img/iconos/visa.svg') }}" alt="Visa" width="40" class="me-2">
-                        <img src="{{ asset('img/iconos/mastercard.svg') }}" alt="Mastercard" width="40" class="me-2 bg-transparent">
-                        <img src="{{ asset('img/iconos/mercado-pago.svg') }}" alt="Mercado Pago" width="40" class="me-2">
-                        <img src="{{ asset('img/iconos/cash.svg') }}" alt="Efectivo" width="40" class="me-2 ">
+                        <div class="ico-footer">
+                            <img src="{{ asset('img/iconos/visa.svg') }}" alt="Visa" width="40" class="mx-2">
+                            <img src="{{ asset('img/iconos/mastercard.svg') }}" alt="Mastercard" width="40" class="mx-2 bg-transparent">
+                            <img src="{{ asset('img/iconos/mercado-pago.svg') }}" alt="Mercado Pago" width="40" class="mx-2">
+                            <img src="{{ asset('img/iconos/cash.svg') }}" alt="Efectivo" width="40" class="mx-2">
+                        </div>
                     </div>
                 </div>
             </div>

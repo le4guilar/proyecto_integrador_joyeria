@@ -345,7 +345,7 @@
     max-width: 80vw;
 }
 
-.ico-rrss {
+.ico-footer {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -372,6 +372,10 @@
 .enlace {
     color: #300403;
     font-family: 'Cormorant Garamond';
+    font-size: 1.5em;
+}
+
+.formas-pago {
     font-size: 1.5em;
 }
 
