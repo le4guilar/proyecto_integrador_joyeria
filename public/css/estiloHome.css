@@ -420,7 +420,8 @@ body{
     background-color: #CDC9C9;
     color: #231f20;
     font-family: 'Cormorant Garamond';
-    box-shadow: 0px 0px 15px #555    ;
+    box-shadow: 0px 0px 15px #555;
+    border: none !important;
 }
 
 .bg-joyeria-input {
@@ -439,8 +440,7 @@ body{
     border: 1px solid #300403;
     background-color: transparent;
     outline: none;
-    line-height: 6;
-    max-height: 9em;
+    line-height: 8;
 }
 
 .bg-joyeria-textarea:focus {
@@ -455,11 +455,24 @@ body{
     box-shadow: 0 0 15px #CDC9C9ff;
 }
 
-.contacto-ico {
-    filter: #300403 !important; 
+.contacto-card {
+    background-color: #CDC9C9;
+    color: #231f20;
+    box-shadow: 0px 0px 15px #555;
+    border: none !important;
 }
 
+h5 {
+    font-size: 2em;
+    font-family: 'Cormorant Garamond' !important;
+    color: #231f20;
+}
 
+.btn-joyeria-enviar {
+    background: #DFDADA;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+}
 
 /*FIN Sección Contacto*/
 
