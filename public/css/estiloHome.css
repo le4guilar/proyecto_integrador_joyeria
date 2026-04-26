@@ -464,17 +464,29 @@ body{
 
 
 
+/*Seccion consultas*/
+
+.card-consultas {
+    background-color: #BCAFAF;
+    box-shadow: 0px 0px 15px #0002;
+    border: none;
+}
+
+.accordion-item {
+    background-color: #BCAFAF;
+    box-shadow: 0px 0px 8px #0002;
+}
+
+.bg-boton-consulta {
+    background-color: #BCAFAF;
+    box-shadow: 0px 0px 8px #0002;
+}
+
+
+/*Fin sección consultas*/
+
+
 /*Fin sección comercialización*/
-
-/*Seccion terminos de uso*/
-
-
-
-
-/*Fin sección terminos de uso*/
-
-
-
 
 
 
