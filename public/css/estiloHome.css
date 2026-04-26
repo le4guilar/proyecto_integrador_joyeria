@@ -450,7 +450,8 @@ body{
 
 /*Seccion Contacto*/
 .bg-joyeria-form {
-    background-color: #CDC9C9;
+    background-color: #30040333;
+    font-weight: 700;
     color: #231f20;
     font-family: 'Cormorant Garamond';
     box-shadow: 0px 0px 15px #555    ;
@@ -488,10 +489,20 @@ body{
     box-shadow: 0 0 15px #CDC9C9ff;
 }
 
-.contacto-ico {
-    filter: #300403 !important; 
+.contacto-card {
+    background-color: #30040333;
+    color: #231f20;
+    box-shadow: 0px 0px 15px #555;
+    border: none !important;
 }
 
+h5 {
+    font-size: 2em;
+    font-family: 'Cormorant Garamond' !important;
+    color: #231f20;
+    font-weight: 700;
+    color: #300403;
+}
 
 
 /*FIN Sección Contacto*/
@@ -503,7 +514,7 @@ body{
 .footer {
     width: 80%;
     height: fit-content;
-    background-color: #DFDADA;
+    background-color: #636060;
     max-width: 80vw;
 }
 
@@ -517,6 +528,11 @@ body{
     width: 100%;
 }
 
+.h2-footer {
+    font-weight: 700;
+    letter-spacing: 2em;
+}
+
 
 .footer-mapa {
     margin-top: 1em;
@@ -526,19 +542,22 @@ body{
 }
 
 .bg-joyeria-footer {
-    background-color: #636060;
+    background-color: #30040333;
     color: #300403;
-    font-family: 'Cormorant Garamond'
+    font-family: 'Cormorant Garamond';
+    font-weight: 700    ;
 }
 
 .enlace {
     color: #300403;
     font-family: 'Cormorant Garamond';
     font-size: 1.5em;
+    font-weight: 700;
 }
 
 .formas-pago {
     font-size: 1.5em;
+    font-weight: 700;
 }
 
 /*FIN SECION FOOTER*/

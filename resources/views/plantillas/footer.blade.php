@@ -2,7 +2,7 @@
         <div class="container text-center text-md-start">
             <div class="row text-center text-md-start">
                 <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
-                    <h2 class="text-uppercase mb-4 font-weight-bold">ALBA</h2>
+                    <h2 class="text-uppercase mb-4 font-weight-bold h2-footer">ALBA</h2>
                     <div class="mb-5 ico-footer">
                         <img class=mx-3 src="{{ asset('img/iconos/instagram.svg') }}" alt="Instagram" width="30">
                         <img class=mx-3 src="{{ asset('img/iconos/facebook.svg') }}" alt="Facebook" width="30">
