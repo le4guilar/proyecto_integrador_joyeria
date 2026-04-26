@@ -4,14 +4,14 @@
 
 
 <div class="text-center mb-5 mt-5">
-    <h6 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">Servicios</h6>   
+    <h6 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">ALBA </h6>
     <h2 style="font-family: 'Cormorant Garamond', serif;" class="display-5 text-dark">Comercialización</h2>
     <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
 </div>
 
-<div class="row g-5">
-    <div class="col-md-6">
-        <h4 style="font-family: 'Cormorant Garamond', serif;" class="mb-4">Envíos y Entregas</h4>
+<div class="row g-4 mx-5 mt-5">
+    <div class="col-md-6 px-2 container-fluid comercializacion-card">
+        <h4 class="mb-4 h4-comercializacion">Envíos y Entregas</h4>
         <div class="mb-4">
             <h6 class="fw-bold text-uppercase small">Envío Asegurado a domicilio</h6>
             <p class="text-muted small">
@@ -20,19 +20,19 @@
         </div>
         <div class="mb-4">
             <h6 class="fw-bold text-uppercase small">Retiro en Showroom</h6>
-                <p class="text-muted small">
-                    Podés retirar tu compra de forma gratuita en nuestra sucursal central.
-                </p>
+            <p class="text-muted small">
+                Podés retirar tu compra de forma gratuita en nuestra sucursal central.
+            </p>
         </div>
     </div>
 
-    <div class="col-md-6">
-        <h4 style="font-family: 'Cormorant Garamond', serif;" class="mb-4">Formas de Pago</h4>
+    <div class="col-md-6 px-2 container-fluid comercializacion-card">
+        <h4 class="mb-4 h4-comercializacion">Formas de Pago</h4>
         <div class="mb-4">
             <h6 class="fw-bold text-uppercase small">Tarjetas y Cuotas</h6>
-                <p class="text-muted small">
-                    Aceptamos todas las tarjetas de crédito. Consultá por promociones de hasta 6 cuotas sin interés.
-                </p>
+            <p class="text-muted small">
+                Aceptamos todas las tarjetas de crédito. Consultá por promociones de hasta 6 cuotas sin interés.
+            </p>
         </div>
         <div class="mb-4">
             <h6 class="fw-bold text-uppercase small">Transferencia Bancaria</h6>
@@ -46,7 +46,7 @@
 <div class="mt-5 p-5 text-center" style="background-color: #f8f5f2; border-radius: 5px;">
     <h4 style="font-family: 'Cormorant Garamond', serif;" class="mb-3">Información de interés</h4>
     <p class="text-muted mx-auto small" style="max-width: 700px;">
-        Todas nuestras piezas se entregan en estuche de lujo con su correspondiente certificado de autenticidad. 
+        Todas nuestras piezas se entregan en estuche de lujo con su correspondiente certificado de autenticidad.
     </p>
 </div>
 

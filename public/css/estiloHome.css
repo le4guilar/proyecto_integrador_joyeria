@@ -438,7 +438,17 @@ body{
 
 
 
+/*Sección Comercialización*/
+.h4-comercializacion {
+    font-family: 'Cormorant Garamond';
+}
 
+.comercializacion-card {
+    background: #BCAFAF;
+    border: 1px solid #000;
+}
+
+/*Fin sección comercialización*/
 
 
 
