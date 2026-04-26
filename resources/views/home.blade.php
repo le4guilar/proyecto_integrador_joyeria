@@ -1,19 +1,17 @@
 @extends('plantilla-principal')
 @section('contenido')
 
-
-
 <!--Primera parte del carrusel-->
 <div id="carruselJoyeria" class="carousel slide" data-bs-ride="carousel">
 
     <!--Insersion de imagenes-->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('img/Principal1.png') }}" class="d-block w-100" alt="Principal">
+            <img src="{{ asset('img/Home/Principal1.png') }}" class="d-block w-100" alt="Principal">
         </div>
 
         <div class="carousel-item">
-            <img src="{{ asset('img/Principal2.png') }}" class="d-block w-100" alt="Principal">
+            <img src="{{ asset('img/Home/Principal2.png') }}" class="d-block w-100" alt="Principal">
         </div>
     </div>
 
@@ -68,18 +66,17 @@
 <!--columna de imagenes-->
 <div class="row g-0">
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#"> 
-            <img src="{{asset('img/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
+        <a href="#">
+            <img src="{{asset('img/Home/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Anillos </h4>
             </div>
         </a>
     </div>
 
-
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#"> 
-            <img src="{{asset('img/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
+        <a href="#">
+            <img src="{{asset('img/Home/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Aretes">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Aretes</h4>
             </div>
@@ -87,7 +84,8 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#"> <img src="{{asset('img/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
+        <a href="#"> 
+            <img src="{{asset('img/Home/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0">Pulseras</h4>
             </div>
@@ -95,43 +93,46 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#"> <img src="{{asset('img/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
+        <a href="#"> 
+            <img src="{{asset('img/Home/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Collares </h4>
             </div>
         </a>
     </div>
-</div>
-</section>
 
-<!--TENDENCIA-->
-<section class="container-fluid p-0 my-5">
+    <!--TENDENCIA-->
+</div> <section class="container-fluid p-0 my-5">
     <div id="carruselTendencia" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carruselTendencia" data-bs-slide="0" class="active"></button>
-                <button type="button" data-bs-target="#carruselTendencia" data-bs-slide="1" class="active"></button>
-                <button type="button" data-bs-target="#carruselTendencia" data-bs-slide="2" class="active"></button>
-            </div>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselTendencia" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#carruselTendencia" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carruselTendencia" data-bs-slide-to="2"></button>
+        </div>
 
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('img/Coleccion-de-noche.png') }}" class="d-block w-100 img-carousel-tendencia" alt="Piezas de Noche">
-                    <div class="carousel-caption custom-caption">
-                        <h2 class="display-tendencia">Piezas de noche</h2>
-                        <p class="lead-tendencia">Brillo eterno para momentos inolvidables.</p>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('img/Home/TendenciaNoche.jpeg') }}" class="d-block w-100 img-carousel-tendencia" alt="Piezas de Noche">
+                <div class="carousel-caption custom-caption">
+                    <h2 class="display-tendencia">Piezas de noche</h2>
+                    <p class="lead-tendencia">Brillo eterno para momentos inolvidables.</p>
                 </div>
             </div>
 
             <div class="carousel-item">
                 <img src="{{ asset('img/Home/Taller1.jpg') }}" class="d-block w-100 img-carousel-tendencia" alt="Artesanía">
                 <div class="carousel-caption custom-caption">
-                    <h2 class="display-tendencia">Escencia Artesanal</h2>
-                    <p class="lead-tendencia">Cada detalle es esculpido con paciencia y tiempo</p>
+                    <h2 class="display-tendencia">Esencia Artesanal</h2> <p class="lead-tendencia">Cada detalle es esculpido con paciencia y tiempo</p>
                 </div>
             </div>
 
-            
+            <div class="carousel-item">
+                <img src="{{ asset('img/Home/minimalista.png') }}" class="d-block w-100 img-carousel-tendencia" alt="Colección">
+                <div class="carousel-caption custom-caption">
+                    <h2 class="display-tendencia">Minimalismo puro</h2>
+                    <p class="lead-tendencia">Lujo silencioso expresado en oro blanco</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -158,9 +159,5 @@
         </div>
     </div>
 </section>
-
-
-
-
 
 @endsection
