@@ -508,7 +508,7 @@ body{
     background-color: #DFDADA;
     box-shadow: 0px 0px 15px #0009;
     outline: none;
-    transition: 1s;
+    transition: 1.5s;
 }
 
 .p-comercializacion {
@@ -547,7 +547,7 @@ body{
     background-color: #DFDADA;
     box-shadow: 0px 0px 8px #0009;
     outline: none;
-    transition: 1s;
+    transition: 1.5s;
 }
 
 .accordion-header {
@@ -581,6 +581,7 @@ body{
     background-color: #DFDADA;
     box-shadow: 0px 0px 15px #0009;
     border: none !important;
+    transition: 1.5s;
 }
 
 .bg-joyeria-input {
@@ -593,20 +594,24 @@ body{
     border: 1px solid #300403;
     background: #DFDADA;
     outline: none;
+    font-weight: 700;
+    font-size: 1.25em;
 }
 
 .bg-joyeria-textarea {
     border: 1px solid #300403;
     background: #DFDADA;
     outline: none;
-    line-height: 6;
-    max-height: 9em;
+    height: 300px;
+
 }
 
 .bg-joyeria-textarea:focus {
     border: 1px solid #300403;
     background: #DFDADA;
     outline: none;
+    font-weight: 700;
+    font-size: 1.25em;
 }
 
 
@@ -626,7 +631,7 @@ body{
     background-color: #DFDADA;
     box-shadow: 0px 0px 15px #0009;
     outline: none;
-    transition: 1s;
+    transition: 1.5s;
 }
 
 
@@ -640,9 +645,55 @@ body{
 
 .btn-joyeria-enviar {
     background: #DFDADA;
+    box-shadow: 0px 0px 15px #0009;
+    font-weight: 700;
+}
+
+.btn-joyeria-enviar:hover {
+    background: #300403;
+    font-family: 'Cormorant Garamond' !important;
+    font-weight: 700;
+    box-shadow: 0px 0px 15px #0009;
+    color: #DFDADA;
 }
 
 /*FIN Sección Contacto*/
+
+/*SECCION ÉXITO*/
+
+.bg-exito-card {
+    background-color: #BCAFAF;
+}
+
+.h1-exito {
+    font-family: 'Cormorant Garamond' !important;
+    color: #300403;
+}
+
+.p-exito {
+    font-family: 'Cormorant Garamond' !important;
+    color: #300403;
+    font-size: 1.5em;
+}
+
+.btn-exito {
+    background: #DFDADA;
+    font-family: 'Cormorant Garamond' !important;
+    font-weight: 700;
+    box-shadow: 0px 0px 15px #0009;
+    color: #300403;
+}
+
+.btn-exito:hover {
+    background: #300403;
+    font-family: 'Cormorant Garamond' !important;
+    font-weight: 700;
+    box-shadow: 0px 0px 15px #0009;
+}
+
+/*FIN SECCION ÉXITO*/
+
+
 
 
 
