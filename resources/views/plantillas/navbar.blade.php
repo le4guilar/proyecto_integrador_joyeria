@@ -19,12 +19,6 @@
                     <a class="nav-link px-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Catálogo
                     </a>
-                    <ul class="dropdown-menu border-0 shadow-sm custom-dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li> <a class="dropdown-item" href="/productos/anillos"> Anillos</a></li>
-                        <li> <a class="dropdown-item" href="/productos/anillos"> Pulseras</a></li>
-                        <li><hr class="dropdown-divder"></li>
-                        <li><a class="dropdown-item" href="/productos"> Ver Todo</a></li>
-                    </ul>
                 </li>
 
                 <li class="nav-item">
