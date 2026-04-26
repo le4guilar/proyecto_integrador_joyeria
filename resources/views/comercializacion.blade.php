@@ -9,8 +9,8 @@
     <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
 </div>
 
-<div class="row g-4 mx-5 mt-5">
-    <div class="col-md-6 px-2 container-fluid comercializacion-card">
+<div class="row mx-5 mt-5">
+    <div class="col-md-6 px-2 border rounded py-3 container-fluid comercializacion-card">
         <h4 class="mb-4 h4-comercializacion">Envíos y Entregas</h4>
         <div class="mb-4">
             <h6 class="fw-bold text-uppercase small">Envío Asegurado a domicilio</h6>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="col-md-6 px-2 container-fluid comercializacion-card">
+    <div class="col-md-6 px-2 px-2 border rounded py-3 container-fluid comercializacion-card">
         <h4 class="mb-4 h4-comercializacion">Formas de Pago</h4>
         <div class="mb-4">
             <h6 class="fw-bold text-uppercase small">Tarjetas y Cuotas</h6>
@@ -42,6 +42,46 @@
         </div>
     </div>
 </div>
+
+<div class="container my-5 w-100">
+
+    <div class="row gx-5 justify-content-center w-100">
+
+        <div class="col-md-5 w-50 comercializacion-card">
+            <h4 class="mb-4 h4-comercializacion">Formas de Pago</h4>
+            <div class="mb-4">
+                <h6 class="fw-bold text-uppercase small">Tarjetas y Cuotas</h6>
+                <p class="text-muted small">
+                    Aceptamos todas las tarjetas de crédito. Consultá por promociones de hasta 6 cuotas sin interés.
+                </p>
+            </div>
+            <div class="mb-4">
+                <h6 class="fw-bold text-uppercase small">Transferencia Bancaria</h6>
+                <p class="text-muted small">
+                    Ofrecemos un 10% de descuento adicional para pagos mediante transferencia bancaria.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-5 w-50">
+            <div class="p-4 rounded shadow-sm h-100 comercializacion-card">
+                <h3 class="h4 mb-4">Formas de Pago</h3>
+                <p class="fw-bold text-uppercase small">Tarjetas y cuotas</p>
+                <p class="small mb-4">Aceptamos todas las tarjetas de crédito. Consultá por promociones de hasta 6 cuotas sin interés.</p>
+
+                <p class="fw-bold text-uppercase small">Transferencia Bancaria</p>
+                <p class="small">Ofrecemos un 10% de descuento adicional para pagos mediante transferencia bancaria.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
 
 <div class="mt-5 p-5 text-center" style="background-color: #f8f5f2; border-radius: 5px;">
     <h4 style="font-family: 'Cormorant Garamond', serif;" class="mb-3">Información de interés</h4>
