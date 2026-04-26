@@ -461,19 +461,19 @@ body{
 
 .bg-joyeria-input {
     border: 1px solid #300403;
-    background-color: transparent;
+    background: #DFDADA;
     outline: none;
 }
 
 .bg-joyeria-input:focus {
     border: 1px solid #300403;
-    background-color: transparent;
+    background: #DFDADA;
     outline: none;
 }
 
 .bg-joyeria-textarea {
     border: 1px solid #300403;
-    background-color: transparent;
+    background: #DFDADA;
     outline: none;
     line-height: 6;
     max-height: 9em;
@@ -481,13 +481,13 @@ body{
 
 .bg-joyeria-textarea:focus {
     border: 1px solid #300403;
-    background-color: transparent;
+    background: #DFDADA;
     outline: none;
 }
 
 
 .form-control { 
-    background-color: transparent;
+    background: #DFDADA;
     box-shadow: 0 0 15px #0002;
 }
 
@@ -506,6 +506,9 @@ body{
     color: #300403;
 }
 
+.btn-joyeria-enviar {
+    background: #DFDADA;
+}
 
 /*FIN Sección Contacto*/
 

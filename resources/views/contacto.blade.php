@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn btn-joyeria-enviar px-5 py-2 shadow-sm mt-0 mb-0">
+                        <button type="submit" class="btn btn-joyeria-enviar px-5 py-2 shadow-sm mt-0 mb-0 fix-b">
                             Enviar
                         </button>
                     </div>
