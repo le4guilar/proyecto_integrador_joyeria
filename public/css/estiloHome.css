@@ -159,6 +159,7 @@ body{
     letter-spacing: 4px;
     margin-bottom: 5px;
     
+    
 }
 
     /*subtitulo (Coleccion)*/
@@ -439,17 +440,7 @@ body{
 
 
 
-/*Sección Comercialización*/
-.h4-comercializacion {
-    font-family: 'Cormorant Garamond';
-}
 
-.comercializacion-card {
-    background: #BCAFAF;
-    border: 1px solid #000;
-}
-
-/*Fin sección comercialización*/
 
 
 
