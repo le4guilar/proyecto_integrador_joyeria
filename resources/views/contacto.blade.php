@@ -76,7 +76,7 @@
             <div class="bg-joyeria-form border rounded p-5 h-100">
                 <h2 class="text-center mb-4">Mandanos tu consulta</h2>
 
-                <form action="#" method="POST">
+                <form action="{{ url('/contacto') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nombre:</label>
