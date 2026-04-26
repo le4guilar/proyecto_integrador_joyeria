@@ -84,7 +84,7 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#"> 
+        <a href="#">
             <img src="{{asset('img/Home/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0">Pulseras</h4>
@@ -93,16 +93,27 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#"> 
+        <a href="#">
             <img src="{{asset('img/Home/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Collares </h4>
             </div>
         </a>
     </div>
+</div>
+
+<div class="container text-center my-5 py-3">
+    <p class="text-alba-bordo text-uppercase mt-1" style="letter-spacing: 5px; font-size: 1rem;">Desde 2025</p>
+</div>
+<div class="container text-center my-5">
+    <h3 style="font-family: 'Cormorant Garamond', serif; font-style: italic; color: #300403; font-weight: 400; font-size: 1.8rem;">
+        "Donde cada pieza cuenta una historia eterna."
+    </h3>
+</div>
+
 
     <!--TENDENCIA-->
-</div> <section class="container-fluid p-0 my-5">
+<section class="container-fluid p-0 my-5">
     <div id="carruselTendencia" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carruselTendencia" data-bs-slide-to="0" class="active" aria-current="true"></button>
@@ -122,7 +133,8 @@
             <div class="carousel-item">
                 <img src="{{ asset('img/Home/Taller1.jpg') }}" class="d-block w-100 img-carousel-tendencia" alt="Artesanía">
                 <div class="carousel-caption custom-caption">
-                    <h2 class="display-tendencia">Esencia Artesanal</h2> <p class="lead-tendencia">Cada detalle es esculpido con paciencia y tiempo</p>
+                    <h2 class="display-tendencia">Esencia Artesanal</h2>
+                    <p class="lead-tendencia">Cada detalle es esculpido con paciencia y tiempo</p>
                 </div>
             </div>
 
@@ -137,7 +149,7 @@
     </div>
 </section>
 
-
+<hr class="mx-auto mt-5" style="width: 80px; opacity: 0.2; color: #300403;">
 <section class="container my-5 py-5 text-dark">
     <div class="row text-center g-4">
         <div class="col-md-4">
