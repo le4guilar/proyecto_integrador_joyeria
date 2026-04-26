@@ -550,6 +550,11 @@ body{
     transition: 1s;
 }
 
+.accordion-header {
+    font-family: 'Cormorant Garamond';
+    font-weight: 700;
+}
+
 .li-font {
     font-family: 'Montserrat';
 }
