@@ -577,6 +577,12 @@ body{
     border: none !important;
 }
 
+.bg-joyeria-form:hover {
+    background-color: #DFDADA;
+    box-shadow: 0px 0px 15px #0009;
+    border: none !important;
+}
+
 .bg-joyeria-input {
     border: 1px solid #300403;
     background: #DFDADA;
@@ -615,6 +621,14 @@ body{
     box-shadow: 0px 0px 15px #0002;
     border: none !important;
 }
+
+.contacto-card:hover {
+    background-color: #DFDADA;
+    box-shadow: 0px 0px 15px #0009;
+    outline: none;
+    transition: 1s;
+}
+
 
 .h5-contacto {
     font-size: 2em;
