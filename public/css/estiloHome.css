@@ -518,6 +518,13 @@ body{
     box-shadow: 0px 0px 15px #0002;
 }
 
+.comercializacion-card:hover {
+    background-color: #DFDADA;
+    box-shadow: 0px 0px 15px #0009;
+    outline: none;
+    transition: 1s;
+}
+
 .p-comercializacion {
     font-family: 'Montserrat', sans-serif !important;
 }
@@ -533,14 +540,41 @@ body{
 }
 
 .accordion-item {
-    background-color: #BCAFAF;
+    background-color: #DFDADA;
     box-shadow: 0px 0px 8px #0002;
 }
+
+
 
 .bg-boton-consulta {
     background-color: #BCAFAF;
     box-shadow: 0px 0px 8px #0002;
+    outline: none;
 }
+
+
+.bg-boton-consulta:focus {
+    background-color: #DFDADA;
+    box-shadow: 0px 0px 8px #0002;
+    outline: none;
+}
+
+.bg-boton-consulta:hover {
+    background-color: #DFDADA;
+    box-shadow: 0px 0px 8px #0009;
+    outline: none;
+    transition: 1s;
+}
+
+.accordion-header {
+    font-family: 'Cormorant Garamond';
+    font-weight: 700;
+}
+
+.li-font {
+    font-family: 'Montserrat';
+}
+
 
 
 /*Fin sección consultas*/

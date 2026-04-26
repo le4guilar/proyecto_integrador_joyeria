@@ -75,16 +75,16 @@
 <div class="container mt-5">
     <div class="card p-4 rounded-2 card-consultas">
         <div class="accordion accordion-flush bg-transparent" id="accordionFAQ">
-            <div class="accordion-item rounded-2 mb-3">
+            <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        <span>Compras :</span>
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Compras :
                     </button>
                 </h3>
                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
                     <div class="accordion-body text-muted pt-0 ps-5">
                         <ul class="list-unstyled mb-0 mt-3 text-start">
-                            <li class="mb-2">
+                            <li class="mb-2 li-font">
                                 <span class="ms-3 fw-bold">¿Cómo pido una joya personalizada?</span><br>
                                 Nos contactás por WhatsApp, nos contás tu idea, diseñamos la pieza juntos y te pasamos el presupuesto.
                             </li>
@@ -109,9 +109,9 @@
                 </div>
             </div>
 
-            <div class="accordion-item rounded-2 mb-3">
+            <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         <span>Envío y Entrega :</span>
                     </button>
                 </h3>
@@ -143,9 +143,9 @@
                 </div>
             </div>
 
-            <div class="accordion-item rounded-2 mb-3">
+            <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         <span>Materiales :</span>
                     </button>
                 </h3>
@@ -169,9 +169,9 @@
                 </div>
             </div>
 
-            <div class="accordion-item rounded-2 mb-3">
+            <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         <span>Cuidado y Mantenimiento :</span>
                     </button>
                 </h3>
@@ -195,9 +195,9 @@
                 </div>
             </div>
 
-            <div class="accordion-item rounded-2 mb-0">
+            <div class="accordion-item rounded-2 mb-0 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         <span>Devoluciones :</span>
                     </button>
                 </h3>
@@ -223,6 +223,10 @@
         </div>
     </div>
 </div>
+
+
+
 <hr class="mx-auto mt-5" style="width: 60px; opacity: 0.2; color: #300403;">
 
 @endsection
+
