@@ -11,6 +11,41 @@
         background-color: #300403 !important;
     }
 
+    /*SECCION ESPECIFICA NAVBAR: CATALOGO*/
+    .navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 1px;
+    text-transform: none; 
+    }
+
+    .custom-dropdown-menu {
+        background-color: #452929 !important; /* El crema de ALBA para que contraste */
+        border-radius: 0; /* Estilo cuadrado elegante */
+        margin-top: 10px; /* Separacion del navbar */
+        padding: 0;
+    }
+
+    .custom-dropdown-menu .dropdown-item {
+        font-family: 'Montserrat', sans-serif;
+        color: #300403 !important;
+        font-size: 0.85rem;
+        padding: 12px 25px;
+        transition: all 0.3s ease;
+    }
+
+    /* Cuando se pasa el mouse sobre Anillos o Pulseras */
+    .custom-dropdown-menu .dropdown-item:hover {
+        background-color: #300403 !important; /* Fondo bordó */
+        color: #f2f0eb !important; /* Letra crema */
+    }
+
+    /* La linea divisoria del menu */
+    .dropdown-divider {
+        border-top: 1px solid rgba(48, 4, 3, 0.1);
+        margin: 0;
+    }
+
     /*TITULO DE LA SECCION (Nuestra Colección) */
     .cat-seccion h2 {
         font-family: 'Cormorant Garamond', serif !important;
@@ -491,7 +526,7 @@ body{
 }
 
 .bg-joyeria-footer {
-    background-color: #CDC9C9;
+    background-color: #636060;
     color: #300403;
     font-family: 'Cormorant Garamond'
 }
