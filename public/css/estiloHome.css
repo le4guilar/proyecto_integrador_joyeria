@@ -202,7 +202,7 @@ body{
     font-size: 3.5rem;
     color: #300403;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     margin-bottom: 5px;
     
     
@@ -213,46 +213,46 @@ body{
     font-family: 'Montserrat', sans-serif !important;
     color: #300403;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
     font-weight: 600;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
     /*Contenedor de cada producto*/
 .producto-card{
-    background-color: #362424;
-    padding: 25px;
-    border-radius: 4px;
+    background-color: transparent;
+    padding: 30px 20px;
+    border-radius: 0;
     border: 1px solid rgba(48, 4, 3, 0.1);
-    transition: all 0.4s ease-in-out;
+    transition: all 0.5s ease-in-out;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
     /*Efecto al pasar el mouse por el producto*/
 .producto-card:hover{
     transform: translateY(-8px);
     box-shadow: 0 12px 25px rgba(48, 4, 3, 0.08);
-    border-color: #300403;
+    border-color: rgba(48, 4, 3, 0.02);
 }
 
     /*Imagen de la joya*/
 .producto-card img{
-    max-height: 250px;
+    max-height: 220px;
     object-fit: contain;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
     /*Nombre de la joya*/
-.nombre-joya {
+.producto-card .nombre-joya {
     font-family: 'Montserrat', serif !important;
     font-size: 0.95rem;
-    color: #c9c1c1;
+    color: #300403 !important;
     font-weight: 500;
     margin: 15px 0; 
     line-height: 1.4;
@@ -262,7 +262,7 @@ body{
 .precio-joya{
     font-family: 'Montserrat', serif !important;
     font-size: 1rem;
-    color: #c9c1c1;
+    color: #010001;
     font-weight: 100;
     margin-bottom: 15px;
 }

@@ -3,7 +3,7 @@
 
 <div class="container mt-5">
     <div class="text-center mb-5">
-        <h1 class="display-about-title"> Colecciòn Oro Blanco & Platino</h1>
+        <h1 class="display-about-title"> Colección Oro Blanco & Platino</h1>
         <p class="text-alba-bordo"> ANILLOS </p>
     </div>
 
