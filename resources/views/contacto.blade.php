@@ -17,7 +17,7 @@
                 <div class="col-6">
                     <div class="border rounded p-4 text-center h-100 shadow-sm d-flex flex-column align-items-center justify-content-center contacto-card">
                         <img class="img-fluid mb-2" src="{{ asset('img/contacto/whatsapp.svg') }}" alt="Whatsapp" width="60">
-                        <h5 class="mt-4">WhatsApp</h5>
+                        <h5 class="mt-4 h5-contacto">WhatsApp</h5>
                         <p class="mb-0 text-muted">+54 379 5112-233</p>
                     </div>
                 </div>
@@ -31,14 +31,14 @@
                         <div class="d-flex justify-content-center">
                             <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/pinterest.svg') }}" alt="Pinterest" width="40"></div>
                         </div>
-                        <h5 class="mt-4">Redes Sociales</h5>
+                        <h5 class="mt-4 h5-contacto">Redes Sociales</h5>
                     </div>
                 </div>
 
                 <div class="col-6">
                     <div class="border rounded p-4 text-center h-100 shadow-sm d-flex flex-column align-items-center justify-content-center contacto-card">
                         <img class="img-fluid mb-2" src="{{ asset('img/contacto/envelope.svg') }}" alt="Correo" width="60">
-                        <h5 class="mt-4">Correo</h5>
+                        <h5 class="mt-4 h5-contacto">Correo</h5>
                         <p class="mb-0 text-muted">info@alba.com</p>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                 <div class="col-6">
                     <div class="border rounded p-4 text-center h-100 shadow-sm d-flex flex-column align-items-center justify-content-center contacto-card">
                         <img class="img-fluid mb-2" src="{{ asset('img/contacto/shop.svg') }}" alt="Showroom" width="60">
-                        <h5 class="mt-4">Showroom</h5>
+                        <h5 class="mt-4 h5-contacto">Showroom</h5>
                         <p class="mb-0 text-muted">9 de Julio 1449, Corrientes</p>
                     </div>
                 </div>
