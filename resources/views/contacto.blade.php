@@ -14,41 +14,54 @@
 
         <div class="col-md-6">
             <div class="row g-3">
+
                 <div class="col-6">
-                    <div class="border rounded p-4 text-center h-100 shadow-sm d-flex flex-column align-items-center justify-content-center contacto-card">
-                        <img class="img-fluid mb-2" src="{{ asset('img/contacto/whatsapp.svg') }}" alt="Whatsapp" width="60">
-                        <h5 class="mt-4 h5-contacto">WhatsApp</h5>
-                        <p class="mb-0 text-muted">+54 379 5112-233</p>
-                    </div>
+                    <a href="https://wa.me/543795112233" class="text-decoration-none text-reset" target="_blank">
+                        <div class="rounded p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center contacto-card">
+                            <img class="img-fluid mb-2" src="{{ asset('img/contacto/whatsapp.svg') }}" alt="Whatsapp" width="60">
+                            <h5 class="mt-4 h5-contacto">WhatsApp</h5>
+                            <p class="mb-0 text-muted">+54 379 5112-233</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="col-6">
-                    <div class="border rounded p-4 text-center h-100 shadow-sm d-flex flex-column align-items-center justify-content-center contacto-card">
+                    <div class="rounded p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center contacto-card">
                         <div class="d-flex justify-content-center gap-2 mb-2">
-                            <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/instagram.svg') }}" alt="Instagram" width="40"></div>
-                            <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/facebook.svg') }}" alt="Facebook" width="40"></div>
+                            <a href="https://instagram.com/ALBA" class="text-reset" target="_blank">
+                                <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/instagram.svg') }}" alt="Instagram" width="40"></div>
+                            </a>
+                            <a href="https://facebook.com/ALBA" class="text-reset" target="_blank">
+                                <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/facebook.svg') }}" alt="Facebook" width="40"></div>
+                            </a>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/pinterest.svg') }}" alt="Pinterest" width="40"></div>
+                            <a href="https://pinterest.com/ALBA" class="text-reset" target="_blank">
+                                <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/pinterest.svg') }}" alt="Pinterest" width="40"></div>
+                            </a>
                         </div>
                         <h5 class="mt-4 h5-contacto">Redes Sociales</h5>
                     </div>
                 </div>
 
                 <div class="col-6">
-                    <div class="border rounded p-4 text-center h-100 shadow-sm d-flex flex-column align-items-center justify-content-center contacto-card">
-                        <img class="img-fluid mb-2" src="{{ asset('img/contacto/envelope.svg') }}" alt="Correo" width="60">
-                        <h5 class="mt-4 h5-contacto">Correo</h5>
-                        <p class="mb-0 text-muted">info@alba.com</p>
-                    </div>
+                    <a href="mailto:info@alba.com" class="text-decoration-none text-reset">
+                        <div class="rounded p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center contacto-card">
+                            <img class="img-fluid mb-2" src="{{ asset('img/contacto/envelope.svg') }}" alt="Correo" width="60">
+                            <h5 class="mt-4 h5-contacto">Correo</h5>
+                            <p class="mb-0 text-muted">info@alba.com</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="col-6">
-                    <div class="border rounded p-4 text-center h-100 shadow-sm d-flex flex-column align-items-center justify-content-center contacto-card">
-                        <img class="img-fluid mb-2" src="{{ asset('img/contacto/shop.svg') }}" alt="Showroom" width="60">
-                        <h5 class="mt-4 h5-contacto">Showroom</h5>
-                        <p class="mb-0 text-muted">9 de Julio 1449, Corrientes</p>
-                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=9+de+Julio+1449+Corrientes+Argentina" class="text-decoration-none text-reset" target="_blank">
+                        <div class="rounded p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center contacto-card">
+                            <img class="img-fluid mb-2" src="{{ asset('img/contacto/shop.svg') }}" alt="Showroom" width="60">
+                            <h5 class="mt-4 h5-contacto">Showroom</h5>
+                            <p class="mb-0 text-muted">9 de Julio 1449, Corrientes</p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="col-12">
@@ -60,7 +73,7 @@
         </div>
 
         <div class="col-md-6">
-            <div class="bg-joyeria-form border rounded p-5 h-100 shadow-sm bg-joyeria-form">
+            <div class="bg-joyeria-form border rounded p-5 h-100">
                 <h2 class="text-center mb-4">Mandanos tu consulta</h2>
 
                 <form action="#" method="POST">
