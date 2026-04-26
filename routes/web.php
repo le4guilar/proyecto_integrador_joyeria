@@ -35,6 +35,14 @@ Route::get('/terminos-de-uso', function () {
 return view('terminos-de-uso');
 });
 
+Route::get('/catalogo/pagina1', function(){
+    return view('catalogo1');
+})->name('catalogo.p1');
+
+Route::get('/catalogo/pagina2', function(){
+    return view('catalogo2');
+})->name('catalogo.p2');
+
 
 Route::post('/contacto', [ContactoController::class, 'procesar']);
 
