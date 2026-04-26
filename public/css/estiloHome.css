@@ -440,15 +440,28 @@ body{
 
 
 /*Sección Comercialización*/
+
 .h4-comercializacion {
     font-family: 'Cormorant Garamond';
+    font-weight: 700;
+    color: #300403;
+}
+
+.h6-comercializacion {
+    font-family: 'Cormorant Garamond';
+    color: #300403;
 }
 
 .comercializacion-card {
-    background: #BCAFAF;
-    border: 1px solid #000;
-    
+    background-color: #BCAFAF;
+    box-shadow: 0px 0px 15px #0002;
 }
+
+.p-comercializacion {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
 
 /*Fin sección comercialización*/
 
@@ -464,7 +477,7 @@ body{
 .bg-joyeria-form {
     background-color: #30040333;
     font-weight: 700;
-    color: #231f20;
+    color: #300403;
     font-family: 'Cormorant Garamond';
     box-shadow: 0px 0px 15px #0002;
     border: none !important;
