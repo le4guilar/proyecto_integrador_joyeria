@@ -68,7 +68,7 @@
 <!--columna de imagenes-->
 <div class="row g-0">
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="/productos/anillos">
+        <a href="#"> 
             <img src="{{asset('img/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Anillos </h4>
@@ -78,8 +78,8 @@
 
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="/productos/aretes">
-            <img src="{{asset('img/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Aretes">
+        <a href="#"> 
+            <img src="{{asset('img/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Aretes</h4>
             </div>
@@ -87,8 +87,7 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="/productos/pulseras">
-            <img src="{{asset('img/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
+        <a href="#"> <img src="{{asset('img/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0">Pulseras</h4>
             </div>
@@ -96,8 +95,7 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="/productos/collares">
-            <img src="{{asset('img/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
+        <a href="#"> <img src="{{asset('img/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Collares </h4>
             </div>
