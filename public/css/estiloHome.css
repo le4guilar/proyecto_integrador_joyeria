@@ -1,5 +1,5 @@
 
-    /* Principal */
+    /* PRINCIPAL: HOME */
     body {
         background-color: #dfdada !important;
         /* Montserrat es la fuente prolija para todo el sitio */
@@ -36,7 +36,7 @@
 
     /* Cuando se pasa el mouse sobre Anillos o Pulseras */
     .custom-dropdown-menu .dropdown-item:hover {
-        background-color: #300403 !important; /* Fondo bordó */
+        background-color: #300403 !important; /* Fondo bordO */
         color: #f2f0eb !important; /* Letra crema */
     }
 
@@ -111,6 +111,7 @@
 
 
 
+
 /*SECCION DEL FOOTER*/
 
 /*.footer {
@@ -143,6 +144,65 @@
     color: #300403;
     font-family: 'Cormorant Garamond'
 }*/
+
+/*NOSOTROS*/
+    .bg-alba-crema{
+        background-color: #f2f0eb;
+    }
+
+    /*espaciado de letras para subtitulo*/
+    .letter-spacing-2{
+        letter-spacing: 2px;
+    }
+
+    .nombre-joya{
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    color: #300403 !important;
+    letter-spacing: 2px;
+    }
+
+    .container-fluid.bg-alba-crema.nombre-joya{
+        color:#300403 !important
+    }
+
+    /*estilo para los parrafos largos*/
+    .parrafo-nosotros{
+        font-family:'Montserrat', sans-serif !important;
+        color: #4a4a4a;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        text-align: justify;
+        margin-bottom: 0;
+    }
+
+    /*imagenes de la seccion*/
+    .img-sobre-nosotros{
+        max-width: 85%;
+        display: block;
+        margin: 0 auto;
+        border: 1px solid rgba(48, 4, 3, 0.1);
+
+        transition: 0.3s;
+    }
+    .img-sobre-nosotros:hover{
+        transform: scale(1.02);
+        box-shadow: 0 10px 30px rgba(48, 4, 3, 0.05), !important;
+    }
+
+    /*seccion de la cita destacada*/
+    .quote-alba{
+        font-family: 'Cormorant Garamond', serif !important;
+        font-size: 2rem !important;
+        font-style: italic;
+        color: #300403;
+        line-height: 1.5;
+        font-weight: 500 !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+
 
 /*CATALOGO*/
 
