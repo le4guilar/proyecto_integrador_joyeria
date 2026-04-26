@@ -40,12 +40,6 @@
                 </li>
                         
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="/consulta"> 
-                        Consultas
-                    </a>
-                </li>
-            
-                <li class="nav-item">
                     <a class="nav-link px-3" href="/contacto">
                         Contacto
                     </a>

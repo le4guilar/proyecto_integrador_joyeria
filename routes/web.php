@@ -34,6 +34,3 @@ Route::get('/terminos-de-uso', function () {
 return view('terminos-de-uso');
 });
 
-Route::get('/consulta', function () {
-return view('consulta');
-});
