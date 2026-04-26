@@ -502,6 +502,7 @@ body{
 .comercializacion-card {
     background-color: #BCAFAF;
     box-shadow: 0px 0px 15px #0002;
+    transition: 1.5s;
 }
 
 .comercializacion-card:hover {
@@ -534,6 +535,7 @@ body{
     background-color: #BCAFAF;
     box-shadow: 0px 0px 8px #0002;
     outline: none;
+    transition: 1.5s;
 }
 
 .bg-boton-consulta:focus {
@@ -575,6 +577,7 @@ body{
     font-family: 'Cormorant Garamond';
     box-shadow: 0px 0px 15px #0002;
     border: none !important;
+    transition: 1.5s;
 }
 
 .bg-joyeria-form:hover {
@@ -625,6 +628,7 @@ body{
     color: #231f20;
     box-shadow: 0px 0px 15px #0002;
     border: none !important;
+    transition: 1.5s;
 }
 
 .contacto-card:hover {
@@ -647,6 +651,7 @@ body{
     background: #DFDADA;
     box-shadow: 0px 0px 15px #0009;
     font-weight: 700;
+    transition: 1s;
 }
 
 .btn-joyeria-enviar:hover {
@@ -655,6 +660,7 @@ body{
     font-weight: 700;
     box-shadow: 0px 0px 15px #0009;
     color: #DFDADA;
+    transition: 1s;
 }
 
 /*FIN Sección Contacto*/
@@ -682,6 +688,7 @@ body{
     font-weight: 700;
     box-shadow: 0px 0px 15px #0009;
     color: #300403;
+    transition: 1s;
 }
 
 .btn-exito:hover {
@@ -689,6 +696,7 @@ body{
     font-family: 'Cormorant Garamond' !important;
     font-weight: 700;
     box-shadow: 0px 0px 15px #0009;
+    transition: 1s;
 }
 
 /*FIN SECCION ÉXITO*/
@@ -718,7 +726,8 @@ body{
 
 .h2-footer {
     font-weight: 700;
-    letter-spacing: 2em;
+    letter-spacing: 1em;
+    text-decoration: none !important;
 }
 
 
