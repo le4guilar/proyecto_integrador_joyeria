@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estiloHome.css') }}">
     <title> ALBA </title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
     
 </head>
 <body>
