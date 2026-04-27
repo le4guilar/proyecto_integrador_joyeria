@@ -66,7 +66,7 @@
 <!--columna de imagenes-->
 <div class="row g-0">
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#">
+        <a href="/productos#anillos">
             <img src="{{asset('img/Home/anillos.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Anillos">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Anillos </h4>
@@ -75,7 +75,7 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#">
+        <a href="/productos#aretes">
             <img src="{{asset('img/Home/aretes.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Aretes">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Aretes</h4>
@@ -84,7 +84,7 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#">
+        <a href="/productos#pulseras">
             <img src="{{asset('img/Home/pulseras.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Pulseras">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0">Pulseras</h4>
@@ -93,7 +93,7 @@
     </div>
 
     <div class="col-6 col-md-3 position-relative overflow-hidden cat-item">
-        <a href="#">
+        <a href="/productos#collares">
             <img src="{{asset('img/Home/collares.jpeg')}}" class="img-fluid w-100 cat-full-img" alt="Collares">
             <div class="position-absolute bottom-0 start-0 w-100 p-4 d-flex align-items-end cat-overlay">
                 <h4 class="card-title m-0"> Collares </h4>
