@@ -4,7 +4,8 @@
 <div class="container mt-5">
     <div class="text-center mb-5">
         <h1 class="display-about-title"> Colección Oro Blanco & Platino</h1>
-        <p class="text-alba-bordo"> ANILLOS </p>
+        <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
+        <p class="text-alba-bordo mt-3"> ANILLOS </p>
     </div>
 
     <div class="row g-5">
@@ -37,6 +38,7 @@
 
 <div class="container mt-5">
     <div class="text-center mb-5">
+        <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
         <p class="text-alba-bordo"> ARETES </p>
     </div>
 
@@ -69,6 +71,7 @@
 
 <div class="container mt-5">
     <div class="text-center mb-5">
+        <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
         <p class="text-alba-bordo"> PULSERAS </p>
     </div>
 
@@ -101,6 +104,7 @@
 
 <div class="container mt-5">
     <div class="text-center mb-5">
+        <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
         <p class="text-alba-bordo"> COLLARES </p>
     </div>
 
@@ -130,6 +134,8 @@
         </div>
     </div>
 
+    <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
+
     <nav aria-label="Navegacion catalogo" class="mt-5 mb-5">
         <ul class="pagination justify-content-center">
             <li class="page-item">
@@ -140,7 +146,7 @@
                 <a class="page-link" href="{{ route('catalogo.p1') }}"> 1 </a>
             </li>
 
-            <li class="page-item active">
+            <li class="page-item disabled">
                 <a class="page-link" href="{{ route('catalogo.p2') }}"> 2 </a>
             </li>
 
