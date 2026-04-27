@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="row my-5 py-5 justify-content-center bg-white border-top border-bottom">
+    <div class="row my-5 py-5 justify-content-center bg-frase-nosotros border-top border-bottom">
         <div class="col-md-7 text-center py-4">
             <h3 class="quote-alba">
                 Entendemos que una joya es más que un simple accesorio; es una inversión emocional y un símbolo de distinción.

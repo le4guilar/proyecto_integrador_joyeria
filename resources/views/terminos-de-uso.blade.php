@@ -1,16 +1,11 @@
 @extends('plantilla-principal')
 @section('contenido')
 
-
-
-
 <div class="text-center mb-5 mt-5">
     <h6 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">ALBA </h6>
     <h2 style="font-family: 'Cormorant Garamond', serif;" class="display-5 text-dark">Términos de Uso</h2>
     <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
 </div>
-
-
 
 <div class="container mt-5">
     <div class="card p-4 rounded-2 card-consultas">

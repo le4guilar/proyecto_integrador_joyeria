@@ -10,7 +10,7 @@
     <div class="row g-5">
         <div class="col-md-4 text-center">
             <div class="producto-card">
-                <img src="{{ asset('img/Catalogo/Anillo1.png') }}" class="img-fluid mb-3" alt="Anillo">
+                <img src="{{ asset('img/Catalogo/Pagina1/Anillo1.png') }}" class="img-fluid mb-3" alt="Anillo">
                 <h5 class="nombre-joya">Anillo Cruzado Brillante de Oro Blanco</h5>
                 <p class="precio-joya">$ 51.634,94</p>
             </div>
@@ -18,7 +18,7 @@
 
         <div class="col-md-4 text-center">
             <div class="producto-card">
-                <img src="{{ asset('img/Catalogo/Anillo2.png') }}" class="img-fluid mb-3" alt="Anillo">
+                <img src="{{ asset('img/Catalogo/Pagina1/Anillo2.png') }}" class="img-fluid mb-3" alt="Anillo">
                 <h5 class="nombre-joya">Anillo "Ondas Lumière"</h5>
                 <p class="precio-joya">$ 51.634,94</p>
             </div>
@@ -26,7 +26,7 @@
 
         <div class="col-md-4 text-center">
             <div class="producto-card">
-                <img src="{{ asset('img/Catalogo/Anillo3.png') }}" class="img-fluid mb-3" alt="Anillo">
+                <img src="{{ asset('img/Catalogo/Pagina1/Anillo3.png') }}" class="img-fluid mb-3" alt="Anillo">
                 <h5 class="nombre-joya">Anillo "Multibanda Élite"</h5>
                 <p class="precio-joya">$ 51.634,94</p>
             </div>

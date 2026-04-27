@@ -59,7 +59,7 @@
 
         <div class="col-md-4 text-center">
             <div class="producto-card">
-                <img src="{{ asset('img/Catalogo/Pagina2/arete6.png') }}" class="img-fluid mb-3" alt="Anillo">
+                <img src="{{ asset('img/Catalogo/Pagina2/arete6.png') }}" class="img-fluid mb-3" alt="Arete">
                 <h5 class="nombre-joya">Aretes "Lágrima de Venus"</h5>
                 <p class="precio-joya">$ 45.200,00</p>
             </div>
@@ -83,7 +83,7 @@
 
         <div class="col-md-4 text-center">
             <div class="producto-card">
-                <img src="{{ asset('img/Catalogo/pulsera5.png') }}" class="img-fluid mb-3" alt="Pulsera">
+                <img src="{{ asset('img/Catalogo/Pagina2/pulsera5.png') }}" class="img-fluid mb-3" alt="Pulsera">
                 <h5 class="nombre-joya">Pulsera "Vía Láctea"</h5>
                 <p class="precio-joya">$ 48.200,00</p>
             </div>

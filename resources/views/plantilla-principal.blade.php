@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/estiloHome.css') }}">
     <title> A L B A </title>
     <link rel="icon" type="image/svg+xml" href="{{ asset('img/favicon.svg') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
     
 </head>
 <body>
