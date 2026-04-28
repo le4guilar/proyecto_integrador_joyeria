@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-transparent">
+<nav class="navbar animacion-lenta navbar-expand-lg navbar-dark navbar-transparent">
 
 
     <!--botones-->

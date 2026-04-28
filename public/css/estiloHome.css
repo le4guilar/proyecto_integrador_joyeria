@@ -1,201 +1,198 @@
+/* PRINCIPAL: HOME */
+body {
+    background-color: #dfdada !important;
+    /* Montserrat es la fuente prolija para todo el sitio */
+    font-family: "Montserrat", sans-serif !important;
+    color: white !important;
+}
 
-    /* PRINCIPAL: HOME */
-    body {
-        background-color: #dfdada !important;
-        /* Montserrat es la fuente prolija para todo el sitio */
-        font-family: 'Montserrat', sans-serif !important;
-        color: white !important;
-    }
-
-    .navbar {
-        background-color: #300403 !important;
-        transition: 1.5s;
-    }
-
-    .navbar:hover {
-        background-color: #DFDADA !important;
-        transition: 1.5s;
-    }
+.navbar {
+    background-color: #300403 !important;
+    transition: 1.5s;
+}
 
 
-    .navbar:hover a {
-        color: #300403 !important;
-        transition: 1.5s;
-        font-weight: 700;
-    }
+.navbar:hover {
+    background-color: #dfdada !important;
+    transition: 1.5s;
+}
 
-    a {
-        transition: 1.5s;
-        font-weight: 700 !important;
-    }
+.navbar:hover a {
+    color: #300403 !important;
+    transition: 1.5s;
+    font-weight: 700;
+}
 
-    /*SECCION ESPECIFICA NAVBAR: CATALOGO*/
-    .navbar-nav .nav-link {
-    font-family: 'Montserrat', sans-serif !important;
+a {
+    transition: 1.5s;
+    font-weight: 700 !important;
+    color: #DFDADA !important;
+}
+
+/*SECCION ESPECIFICA NAVBAR: CATALOGO*/
+.navbar-nav .nav-link {
+    font-family: "Montserrat", sans-serif !important;
     font-size: 0.9rem !important;
     letter-spacing: 1px;
-    text-transform: none; 
-    }
+    text-transform: none;
+}
 
-    .navbar:hover {
-        background-color: #DFDADA !important;
-        transition: 1.5s;
-    }
+.navbar:hover {
+    background-color: #dfdada !important;
+    transition: 1.5s;
+}
 
+/*TITULO DE LA SECCION (Nuestra Colección) */
+.cat-seccion h2 {
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 3.5rem !important;
+    color: #300403 !important;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
 
+/*FOTO DE LAS CATEGORIAS*/
+.cat-item {
+    position: relative;
+    overflow: hidden;
+    height: 550px;
+    background-color: #000;
+}
 
+.cat-full-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.8s ease; /* Zoom suave */
+}
 
-    /*TITULO DE LA SECCION (Nuestra Colección) */
-    .cat-seccion h2 {
-        font-family: 'Cormorant Garamond', serif !important;
-        font-size: 3.5rem !important;
-        color: #300403 !important;
-        letter-spacing: 5px;
-        text-transform: uppercase; 
-    }
+.cat-item:hover .cat-full-img {
+    transform: scale(1.1);
+}
 
-    /*FOTO DE LAS CATEGORIAS*/
-    .cat-item {
-        position: relative;
-        overflow: hidden;
-        height: 550px; 
-        background-color: #000;
-    }
+/* LAS LETRAS SOBRE LAS FOTOS (anillos, aretes, etc.)  */
+.cat-overlay h4 {
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 2.2rem !important; /* tamaño de la letra */
+    color: #ffffff !important; /* color de la letra */
+    font-weight: 500 !important; /* grosor: 300 finito, 700 negrita */
+    letter-spacing: 3px; /* Espacio entre letras */
+    text-transform: capitalize !important;
 
-    .cat-full-img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        transition: transform 0.8s ease; /* Zoom suave */
-    }
+    margin-bottom: 40px !important; /*que tan despegado esta del borde inferior */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* sombra para que se lea bien */
+}
 
-    .cat-item:hover .cat-full-img {
-        transform: scale(1.1);
-    }
+.cat-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(96, 96, 96, 0.8) 0%,
+        rgba(0, 0, 0, 0) 50%
+    ) !important;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
 
-    /* LAS LETRAS SOBRE LAS FOTOS (anillos, aretes, etc.)  */
-    .cat-overlay h4 {
-        font-family: 'Cormorant Garamond', serif !important;
-        font-size: 2.2rem !important; /* tamaño de la letra */
-        color: #ffffff !important;   /* color de la letra */
-        font-weight: 500 !important;  /* grosor: 300 finito, 700 negrita */
-        letter-spacing: 3px;          /* Espacio entre letras */
-        text-transform: capitalize !important; 
-        
-        margin-bottom: 40px !important; /*que tan despegado esta del borde inferior */
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* sombra para que se lea bien */
-    }
+/*SECCION TENDENCIA*/
+.carousel-item img {
+    height: 600px;
+    object-fit: cover;
+    filter: brightness(60%);
+}
 
-    .cat-overlay {
-        background: linear-gradient(to top, rgba(96, 96, 96, 0.8) 0%, rgba(0,0,0,0) 50%) !important;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-    }
+.carousel-caption h2 {
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: 4.5rem !important;
+    letter-spacing: 10px;
+}
 
-    
+.custom-caption {
+    text-align: left !important;
+    bottom: 20% !important;
+    left: 10% !important;
+    text-shadow: 2px 2px 10px rgba(34, 31, 31, 0.5);
+}
 
-    /*SECCION TENDENCIA*/
-    .carousel-item img {
-        height: 600px;
-        object-fit: cover;
-        filter: brightness(60%);
-    }
-
-    .carousel-caption h2 {
-        font-family: 'Cormorant Garamond', serif !important;
-        font-size: 4.5rem !important;
-        letter-spacing: 10px;
-    }
-
-    .custom-caption{
-        text-align: left !important;
-        bottom: 20% !important;
-        left: 10% !important;
-        text-shadow: 2px 2px 10px rgba(34, 31, 31, 0.5);
-    }
-
-    .lead-tendencia{
-        font-family: 'Montserrat' sans-serif !important;
-        font-style: italic;
-        font-size: 1.2rem;
-        color: #ffffff;
-    }
-
+.lead-tendencia {
+    font-family: "Montserrat" sans-serif !important;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
 
 /*NOSOTROS*/
-    .bg-alba-crema{
-        background-color: #DFDADA;
-    }
+.bg-alba-crema {
+    background-color: #dfdada;
+}
 
-    /*espaciado de letras para subtitulo*/
-    .letter-spacing-2{
-        letter-spacing: 2px;
-    }
+/*espaciado de letras para subtitulo*/
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
 
-    .nombre-joya{
-    font-family: 'Montserrat', sans-serif !important;
+.nombre-joya {
+    font-family: "Montserrat", sans-serif !important;
     font-weight: 600 !important;
     color: #300403 !important;
     letter-spacing: 2px;
-    }
+}
 
-    .container-fluid.bg-alba-crema.nombre-joya{
-        color:#300403 !important
-    }
+.container-fluid.bg-alba-crema.nombre-joya {
+    color: #300403 !important;
+}
 
-    /*estilo para los parrafos largos*/
-    .parrafo-nosotros{
-        font-family:'Montserrat', sans-serif !important;
-        color: #4a4a4a;
-        font-size: 0.95rem;
-        line-height: 1.8;
-        text-align: justify;
-        margin-bottom: 0;
-    }
+/*estilo para los parrafos largos*/
+.parrafo-nosotros {
+    font-family: "Montserrat", sans-serif !important;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 0;
+}
 
-    /*imagenes de la seccion*/
-    .img-sobre-nosotros{
-        max-width: 85%;
-        display: block;
-        margin: 0 auto;
-        border: 1px solid rgba(48, 4, 3, 0.1);
-        transition: 1.5s;
-        border: none;
-    }
-    .img-sobre-nosotros:hover{
-        transform: scale(1.02);
-        box-shadow: 0 0 30px #0005 !important;
-        transition: 1.5s;
-        border: none;
-    }
+/*imagenes de la seccion*/
+.img-sobre-nosotros {
+    max-width: 85%;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid rgba(48, 4, 3, 0.1);
+    transition: 1.5s;
+    border: none;
+}
+.img-sobre-nosotros:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px #0005 !important;
+    transition: 1.5s;
+    border: none;
+}
 
-    /*seccion de la cita destacada*/
-    .quote-alba{
-        font-family: 'Monsterrat', serif !important;
-        font-size: 2rem !important;
-        font-style: italic;
-        color: #300403;
-        line-height: 1.5;
-        font-weight: 500 !important;
-        display: block !important;
-        visibility: visible !important;
-    }
+/*seccion de la cita destacada*/
+.quote-alba {
+    font-family: "Monsterrat", serif !important;
+    font-size: 2rem !important;
+    font-style: italic;
+    color: #300403;
+    line-height: 1.5;
+    font-weight: 500 !important;
+    display: block !important;
+    visibility: visible !important;
+}
 
-    .bg-frase-nosotros{
-        background-color: #a49292 !important;
-    }
-
+.bg-frase-nosotros {
+    background-color: #a49292 !important;
+}
 
 /*CATALOGO*/
 
-body{
+body {
     background-color: #f2f0eb;
 }
 
-    /*Titulo principal*/
-.display-about-title{
-    font-family: 'Cormorant Garamond', serif !important;
+/*Titulo principal*/
+.display-about-title {
+    font-family: "Cormorant Garamond", serif !important;
     font-size: 3.5rem;
     color: #300403;
     font-weight: 700;
@@ -203,9 +200,9 @@ body{
     margin-bottom: 5px;
 }
 
-    /*subtitulo (Coleccion)*/
-.text-alba-bordo{
-    font-family: 'Montserrat', sans-serif !important;
+/*subtitulo (Coleccion)*/
+.text-alba-bordo {
+    font-family: "Montserrat", sans-serif !important;
     color: #300403;
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -214,9 +211,9 @@ body{
     opacity: 0.9;
 }
 
-    /*Contenedor de cada producto*/
-.producto-card{
-    background-color: #300403;
+/*Contenedor de cada producto*/
+.producto-card {
+    background-color: #212529;
     padding: 30px 20px;
     border-radius: 0;
     border: 1px solid rgba(48, 4, 3, 0.1);
@@ -228,8 +225,7 @@ body{
     justify-content: flex-start;
 }
 
-
-    /*Efecto al pasar el mouse por el producto*/
+/*Efecto al pasar el mouse por el producto*/
 .producto-card:hover {
     background-color: transparent !important;
     transform: translateY(-8px);
@@ -241,81 +237,81 @@ body{
 }
 
 /*nombre joya hover*/
-.producto-card:hover .nombre-joya{
+.producto-card:hover .nombre-joya {
     color: #300403 !important;
     transition: 1.5s;
 }
 
-    /*Imagen de la joya*/
-.producto-card img{
+/*Imagen de la joya*/
+.producto-card img {
     max-height: 300px;
     object-fit: contain;
     width: 100%;
     margin-bottom: 25px;
 }
 
-    /*Nombre de la joya*/
+/*Nombre de la joya*/
 .producto-card .nombre-joya {
-    font-family: 'Montserrat', serif !important;
+    font-family: "Montserrat", serif !important;
     font-size: 0.95rem;
-    color: #DFDADA !important;
+    color: #dfdada !important;
     transition: 1.5s;
     font-weight: 500;
-    margin: 15px 0; 
+    margin: 15px 0;
     line-height: 1.4;
 }
 
-    /*Precio*/
-.precio-joya{
-    font-family: 'Montserrat', serif !important;
+/*Precio*/
+.precio-joya {
+    font-family: "Montserrat", serif !important;
     font-size: 1rem;
-    color: #DFDADA !important;
+    color: #dfdada !important;
     font-weight: 100;
     margin-bottom: 15px;
     transition: 1.5s;
 }
 
 /*Precio hover*/
-.producto-card:hover .precio-joya{
+.producto-card:hover .precio-joya {
     color: #300403 !important;
     transition: 1.5s;
 }
 
-    /*Boton "Ver Detalles: TODAVIA A DECIDIR*/
+/*Boton "Ver Detalles: TODAVIA A DECIDIR*/
 
-    /*El contenedor de la paginacion*/
+/*El contenedor de la paginacion*/
 .paginacion {
     margin-top: 50px;
 }
 
 /*Los lins de los numeros*/
-.pagination .page-link{
+.pagination .page-link {
     color: #300403;
     background-color: transparent;
     border: none;
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: "Montserrat", sans-serif !important;
     font-weight: 400;
     margin: 0 5px;
     padding: 8px 10px;
     transition: 0.3s;
 }
 
-    /*El numero que esta selccionado (pag.1)*/
-.paginacion .page-item.active .page-link{
+/*El numero que esta selccionado (pag.1)*/
+.paginacion .page-item.active .page-link {
     background-color: #300403 !important;
-    color:#ffffff;
+    color: #ffffff;
     border-radius: 50px;
 }
 
-    /*Cuando se pasa el mouse por los numeros que no estan seleccionado*/
-.pagination .page-link:hover{
+/*Cuando se pasa el mouse por los numeros que no estan seleccionado*/
+.pagination .page-link:hover {
     background-color: rgba(48, 4, 3, 0.1);
     border-radius: 50px;
     color: #300403;
 }
 
-    /*el boton "Anterior" cuando esta desactivado*/
-.page-tem.disabled .page-link{
+/*el boton "Anterior" cuando esta desactivado*/
+.page-tem.disabled .page-link {
     color: #ccc;
     background-color: transparent;
 }
@@ -323,99 +319,92 @@ body{
 /*Sección Comercialización*/
 
 .h4-comercializacion {
-    font-family: 'Cormorant Garamond';
+    font-family: "Cormorant Garamond";
     font-weight: 700;
     color: #300403;
 }
 
 .h6-comercializacion {
-    font-family: 'Cormorant Garamond';
+    font-family: "Cormorant Garamond";
     color: #300403;
 }
 
 .comercializacion-card {
-    background-color: #BCAFAF;
+    background-color: #bcafaf;
     box-shadow: 0px 0px 15px #0002;
     transition: 1.5s;
 }
 
 .comercializacion-card:hover {
-    background-color: #DFDADA;
+    background-color: #dfdada;
     box-shadow: 0px 0px 15px #0009;
     outline: none;
     transition: 1.5s;
 }
 
 .p-comercializacion {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: "Montserrat", sans-serif !important;
 }
-
-
 
 /*Seccion consultas*/
 
 .card-consultas {
-    background-color: #BCAFAF;
+    background-color: #bcafaf;
     box-shadow: 0px 0px 15px #0002;
     border: none;
 }
 
 .accordion-item {
-    background-color: #BCAFAF;
+    background-color: #bcafaf;
     box-shadow: 0px 0px 8px #0002;
 }
 
 .bg-boton-consulta {
-    background-color: #BCAFAF;
+    background-color: #bcafaf;
     box-shadow: 0px 0px 8px #0002;
     outline: none;
     transition: 1.5s;
 }
 
 .bg-boton-consulta:focus {
-    background-color: #DFDADA;
+    background-color: #dfdada;
     box-shadow: 0px 0px 8px #0002;
     outline: none;
 }
 
-
 .bg-boton-consulta:hover {
-    background-color: #DFDADA;
+    background-color: #dfdada;
     box-shadow: 0px 0px 8px #0009;
     outline: none;
     transition: 1.5s;
 }
 
 .accordion-header {
-    font-family: 'Cormorant Garamond';
+    font-family: "Cormorant Garamond";
     font-weight: 700;
 }
 
 .li-font {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
 }
 
 /*Fin sección consultas*/
 
-
 /*Fin sección comercialización*/
-
-
-
 
 /*Seccion Contacto*/
 .bg-joyeria-form {
     background-color: #30040333;
     font-weight: 700;
     color: #300403;
-    font-family: 'Cormorant Garamond';
+    font-family: "Cormorant Garamond";
     box-shadow: 0px 0px 15px #0002;
     border: none !important;
     transition: 1.5s;
 }
 
 .bg-joyeria-form:hover {
-    background-color: #DFDADA;
+    background-color: #dfdada;
     box-shadow: 0px 0px 15px #0009;
     border: none !important;
     transition: 1.5s;
@@ -423,13 +412,13 @@ body{
 
 .bg-joyeria-input {
     border: 1px solid #300403;
-    background: #DFDADA;
+    background: #dfdada;
     outline: none;
 }
 
 .bg-joyeria-input:focus {
     border: 1px solid #300403;
-    background: #DFDADA;
+    background: #dfdada;
     outline: none;
     font-weight: 700;
     font-size: 1.25em;
@@ -437,23 +426,21 @@ body{
 
 .bg-joyeria-textarea {
     border: 1px solid #300403;
-    background: #DFDADA;
+    background: #dfdada;
     outline: none;
     height: 300px;
-
 }
 
 .bg-joyeria-textarea:focus {
     border: 1px solid #300403;
-    background: #DFDADA;
+    background: #dfdada;
     outline: none;
     font-weight: 700;
     font-size: 1.25em;
 }
 
-
-.form-control { 
-    background: #DFDADA;
+.form-control {
+    background: #dfdada;
     box-shadow: 0 0 15px #0002;
 }
 
@@ -466,23 +453,22 @@ body{
 }
 
 .contacto-card:hover {
-    background-color: #DFDADA;
+    background-color: #dfdada;
     box-shadow: 0px 0px 15px #0009;
     outline: none;
     transition: 1.5s;
 }
 
-
 .h5-contacto {
     font-size: 2em;
-    font-family: 'Cormorant Garamond' !important;
+    font-family: "Cormorant Garamond" !important;
     color: #231f20;
     font-weight: 700;
     color: #300403;
 }
 
 .btn-joyeria-enviar {
-    background: #DFDADA;
+    background: #dfdada;
     box-shadow: 0px 0px 15px #0009;
     font-weight: 700;
     transition: 1s;
@@ -490,10 +476,10 @@ body{
 
 .btn-joyeria-enviar:hover {
     background: #300403;
-    font-family: 'Cormorant Garamond' !important;
+    font-family: "Cormorant Garamond" !important;
     font-weight: 700;
     box-shadow: 0px 0px 15px #0009;
-    color: #DFDADA;
+    color: #dfdada;
     transition: 1s;
 }
 
@@ -502,23 +488,23 @@ body{
 /*SECCION ÉXITO*/
 
 .bg-exito-card {
-    background-color: #BCAFAF;
+    background-color: #bcafaf;
 }
 
 .h1-exito {
-    font-family: 'Cormorant Garamond' !important;
+    font-family: "Cormorant Garamond" !important;
     color: #300403;
 }
 
 .p-exito {
-    font-family: 'Cormorant Garamond' !important;
+    font-family: "Cormorant Garamond" !important;
     color: #300403;
     font-size: 1.5em;
 }
 
 .btn-exito {
-    background: #DFDADA;
-    font-family: 'Cormorant Garamond' !important;
+    background: #dfdada;
+    font-family: "Cormorant Garamond" !important;
     font-weight: 700;
     box-shadow: 0px 0px 15px #0009;
     color: #300403;
@@ -527,7 +513,7 @@ body{
 
 .btn-exito:hover {
     background: #300403;
-    font-family: 'Cormorant Garamond' !important;
+    font-family: "Cormorant Garamond" !important;
     font-weight: 700;
     box-shadow: 0px 0px 15px #0009;
     transition: 1s;
@@ -560,7 +546,6 @@ body{
     text-decoration: none !important;
 }
 
-
 .footer-mapa {
     margin-top: 1em;
     width: 100%;
@@ -571,13 +556,13 @@ body{
 .bg-joyeria-footer {
     background-color: #30040333;
     color: #300403;
-    font-family: 'Cormorant Garamond';
-    font-weight: 700    ;
+    font-family: "Cormorant Garamond";
+    font-weight: 700;
 }
 
 .enlace {
     color: #300403;
-    font-family: 'Cormorant Garamond';
+    font-family: "Cormorant Garamond";
     font-size: 1.5em;
     font-weight: 700;
 }
