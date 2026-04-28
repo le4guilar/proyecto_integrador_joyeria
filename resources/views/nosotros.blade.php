@@ -5,7 +5,7 @@
 
     <div class="container text-center mb-5 mt-3 pt-5">
         <h1 class="display-about-title"> SOBRE NOSOTROS</h1>
-        <p class="text-alba-bordo text-uppercase small letter-spacing-2">Nuestra Historia, Tu Distincion.</p>
+        <p class="text-alba text-uppercase small letter-spacing-2">Nuestra Historia, Tu Distincion.</p>
         <hr class="mx-auto" style="width: 100px; opacity: 0.2; color: #300403;">
     </div>
 
