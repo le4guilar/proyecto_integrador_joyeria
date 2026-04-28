@@ -4,13 +4,15 @@
 <div class="text-center mb-5 mt-5">
     <h6 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">ALBA </h6>
     <h2 style="font-family: 'Cormorant Garamond', serif;" class="display-5 text-dark">Términos de Uso</h2>
+
     <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
+    
 </div>
 
-<div class="container mt-5">
-    <div class="card p-4 rounded-2 card-consultas">
-        <div class="accordion accordion-flush bg-transparent" id="accordionFAQ">
-            <div class="accordion-item rounded-2 mb-3 border-0">
+<div class="container mt-5" >
+    <div class="card p-4 rounded-2 card-consultas" >
+        <div class="accordion accordion-flush bg-transparent" id="accordionFAQ" >
+            <div class="accordion-item rounded-2 mb-3 border-0" >
                 <h3 class="accordion-header">
                     <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                         1. Información sobre Productos y Materiales :

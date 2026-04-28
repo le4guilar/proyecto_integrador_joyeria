@@ -284,7 +284,6 @@ body {
     transition: 1.5s;
 }
 
-/*Boton "Ver Detalles: TODAVIA A DECIDIR*/
 
 /*El contenedor de la paginacion*/
 .paginacion {
@@ -323,7 +322,7 @@ body {
     background-color: transparent;
 }
 
-/*Sección Comercialización*/
+/*SECCIÓN COMERCIALIZACIÓN*/
 
 .h4-comercializacion {
     font-family: "Cormorant Garamond";
@@ -357,7 +356,8 @@ body {
     font-size: 1.1rem;
 }
 
-/*Seccion consultas*/
+
+/*SECCIÓN DE CONSULTAS*/
 
 .card-consultas {
     background-color: #bcafaf;
