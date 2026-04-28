@@ -187,15 +187,15 @@
                 <div class="col-6">
                     <div class="rounded p-4 text-center h-100 d-flex flex-column align-items-center justify-content-center contacto-card">
                         <div class="d-flex justify-content-center gap-2 mb-2">
-                            <a href="https://instagram.com/ALBA" class="text-reset" target="_blank">
+                            <a href="https://instagram.com" class="text-reset" target="_blank">
                                 <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/instagram.svg') }}" alt="Instagram" width="40"></div>
                             </a>
-                            <a href="https://facebook.com/ALBA" class="text-reset" target="_blank">
+                            <a href="https://facebook.com" class="text-reset" target="_blank">
                                 <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/facebook.svg') }}" alt="Facebook" width="40"></div>
                             </a>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a href="https://pinterest.com/ALBA" class="text-reset" target="_blank">
+                            <a href="https://pinterest.com" class="text-reset" target="_blank">
                                 <div class="border rounded p-2 border-0 d-flex align-items-center"><img class="img-fluid" src="{{ asset('img/contacto/pinterest.svg') }}" alt="Pinterest" width="40"></div>
                             </a>
                         </div>
