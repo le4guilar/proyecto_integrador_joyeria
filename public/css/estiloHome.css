@@ -244,6 +244,7 @@ body{
     color: #DFDADA !important;
     font-weight: 100;
     margin-bottom: 15px;
+    transition: 1.5s;
 }
 
 /*Precio hover*/
