@@ -44,7 +44,7 @@
             <h2 style="font-family: 'Cormorant Garamond', serif;" class="display-5 mb-4 text-dark">
                 Elegancia Atemporal
             </h2>
-            <p class="lead text-muted px-lg-5" style="font-size: 1.1rem;">
+            <p class="lead text-muted px-lg-5" style="font-size: 1.4rem;">
                 Nos dedicamos a la curaduría de piezas únicas que celebran los momentos más importantes de tu vida. Calidad, diseño y compromiso en cada detalle.
             </p>
             <hr class="mx-auto mt-5" style="width: 60px; opacity: 0.2; color: #300403;">
@@ -57,7 +57,7 @@
         <h2 class="text-uppercase" style="letter-spacing: 8px; color: #300403; font-family: 'Cormorant Garamond', serif;">
             Nuestra Colección
         </h2>
-        <p class="text-muted small text-uppercase" style="letter-spacing: 2px;">
+        <p class="text-muted small text-uppercase" style="letter-spacing: 2px; font-size: 1.2rem">
             Elegancia en cada detalle
         </p>
     </div>
@@ -155,19 +155,19 @@
         <div class="col-md-4">
             <i class="bi bi-gem fs-1 "> </i>
             <h5 class="fw-bold mt-3"> Calidad Certificada </h5>
-            <p class="text-muted small"> Diamantes y metales de la más alta pureza.</p>
+            <p class="text-muted small" style="font-size: 1.2rem;"> Diamantes y metales de la más alta pureza.</p>
         </div>
 
         <div class="col-md-4">
             <i class="bi bi-truck fs-1"> </i>
             <h5 class="fw-bold mt-3"> Envío Asegurado </h5>
-            <p class="text-muted small"> Llegamos a todo el país con la máxima seguridad.</p>
+            <p class="text-muted small" style="font-size: 1.2rem;"> Llegamos a todo el país con la máxima seguridad.</p>
         </div>
 
         <div class="col-md-4">
             <i class="bi bi-pencil-square fs-1"> </i>
             <h5 class="fw-bold mt-3">Diseño Personalizado </h5>
-            <p class="text-muted small">Creamos la joya de tus sueños a medida.</p>
+            <p class="text-muted small" style="font-size: 1.2rem;">Creamos la joya de tus sueños a medida.</p>
         </div>
     </div>
 </section>
