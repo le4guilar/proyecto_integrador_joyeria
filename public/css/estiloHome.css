@@ -356,6 +356,12 @@ body {
     font-size: 1.1rem;
 }
 
+/*SECCIÒN TERMINOS DE USO*/
+.titulo-terminos{
+    font-size: 1.7rem !important;
+    font-weight: 500;
+}
+
 /*SECCIÓN DE CONSULTAS*/
 
 .card-consultas {
@@ -571,7 +577,7 @@ body {
 }
 
 .enlace {
-    color: #300403 !important;
+    color: #300403;
     font-family: "Cormorant Garamond";
     font-size: 1.5em;
     font-weight: 700;

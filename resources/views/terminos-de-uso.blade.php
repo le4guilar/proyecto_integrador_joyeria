@@ -9,12 +9,12 @@
     
 </div>
 
-<div class="container mt-5" >
-    <div class="card p-4 rounded-2 card-consultas" >
-        <div class="accordion accordion-flush bg-transparent" id="accordionFAQ" >
+<div class="container mt-5">
+    <div class="card p-4 rounded-2 card-consultas">
+        <div class="accordion accordion-flush bg-transparent" id="accordionFAQ">
             <div class="accordion-item rounded-2 mb-3 border-0" >
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed titulo-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" >
                         1. Información sobre Productos y Materiales :
                     </button>
                 </h3>
@@ -32,7 +32,7 @@
 
             <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button collapsed titulo-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         <span>2. Proceso de Pago y Seguridad Financiera :</span>
                     </button>
                 </h3>
@@ -50,7 +50,7 @@
 
             <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="accordion-button collapsed titulo-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         <span>3. Logística, Tiempos y Entrega de Pedidos :</span>
                     </button>
                 </h3>
@@ -68,7 +68,7 @@
 
             <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button class="accordion-button collapsed titulo-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         <span>4. Garantía de Calidad y Política de Cambios :</span>
                     </button>
                 </h3>
@@ -86,7 +86,7 @@
 
             <div class="accordion-item rounded-2 mb-0 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <button class="accordion-button collapsed titulo-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         <span>5. Protección de Datos y Privacidad :</span>
                     </button>
                 </h3>
