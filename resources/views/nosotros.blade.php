@@ -12,7 +12,7 @@
     <div class="container my-5 py-5">
         <div class="row align-items-center justify-content-center g-5">
             <div class="col-md-5">
-                <img src="{{ asset('img/Taller.png') }}" class="img-fluid img-sobre-nosotros shadow-sm" alt="Manifiesto ALBA">
+                <img src="{{ asset('img/Taller.png') }}" class="img-fluid img-sobre-nosotros rounded-2" alt="Manifiesto ALBA">
             </div>
             <div class="col-md-5">
                 <h2 class="nombre-joya text-start mb-4 text-uppercase">Nuestra Misión y Filosofía</h2>
@@ -34,7 +34,7 @@
     <div class="container my-5 py-5">
         <div class="row align-items-center justify-content-center g-5 flex-md-row-reverse">
             <div class="col-md-5">
-                <img src="{{ asset('img/Nosotros.png') }}" class="img-fluid img-sobre-nosotros">
+                <img src="{{ asset('img/Nosotros.png') }}" class="img-fluid img-sobre-nosotros rounded-2">
             </div>
             <div class="col-md-5">
                 <h2 class="nombre-joya text-start mb-4 text-uppercase">Detras de cada pieza</h2>

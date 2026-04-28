@@ -134,12 +134,14 @@
         display: block;
         margin: 0 auto;
         border: 1px solid rgba(48, 4, 3, 0.1);
-
-        transition: 0.3s;
+        transition: 1.5s;
+        border: none;
     }
     .img-sobre-nosotros:hover{
         transform: scale(1.02);
-        box-shadow: 0 10px 30px rgba(48, 4, 3, 0.05), !important;
+        box-shadow: 0 0 30px #0005 !important;
+        transition: 1.5s;
+        border: none;
     }
 
     /*seccion de la cita destacada*/
