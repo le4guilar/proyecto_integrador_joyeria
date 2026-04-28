@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-    
+
 <div class="text-center mb-5 mt-5">
     <h6 class="text-uppercase mb-3" style="letter-spacing: 4px; color: #300403; font-weight: 600;">ALBA </h6>
     <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
@@ -15,7 +15,7 @@
         <div class="accordion accordion-flush bg-transparent" id="accordionFAQ">
             <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed item-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                         Compras :
                     </button>
                 </h3>
@@ -49,7 +49,7 @@
 
             <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button collapsed item-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         <span>Envío y Entrega :</span>
                     </button>
                 </h3>
@@ -83,7 +83,7 @@
 
             <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="accordion-button collapsed item-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         <span>Materiales :</span>
                     </button>
                 </h3>
@@ -109,7 +109,7 @@
 
             <div class="accordion-item rounded-2 mb-3 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button class="accordion-button collapsed item-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         <span>Cuidado y Mantenimiento :</span>
                     </button>
                 </h3>
@@ -135,7 +135,7 @@
 
             <div class="accordion-item rounded-2 mb-0 border-0">
                 <h3 class="accordion-header">
-                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <button class="accordion-button collapsed item-terminos d-flex justify-content-between align-items-center w-100 p-3 rounded-2 bg-boton-consulta fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         <span>Devoluciones :</span>
                     </button>
                 </h3>
@@ -239,24 +239,35 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nombre:</label>
-                        <input type="text" name="nombre" class="form-control bg-joyeria-input" placeholder="Nombre Apellido" required>
+                        <input type="text" name="nombre" class="form-control bg-joyeria-input" placeholder="Nombre Apellido" value="{{ old('nombre') }}" required>
+                        @error('nombre')
+                        <small style="color: red;">{{ $message }}</small>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Teléfono:</label>
-                        <input type="tel" name="telefono" class="form-control bg-joyeria-input" placeholder="9734112233" required>
+                        <input type="tel" name="telefono" class="form-control bg-joyeria-input" placeholder="3794112233" value="{{ old('telefono') }}" required>
+                        @error('telefono')
+                        <small style="color: red;">{{ $message }}</small>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Mail:</label>
-                        <input type="email" name="email" class="form-control bg-joyeria-input" placeholder="correo@mail.com" required>
+                        <input type="email" name="email" class="form-control bg-joyeria-input" placeholder="correo@mail.com" value="{{ old('email') }}" required>
+                        @error('email')
+                        <small style="color: red;">{{ $message }}</small>
+                        @enderror
                     </div>
 
                     <div class="mb-4">
                         <label class="form-label">Mensaje:</label>
-                        <textarea name="mensaje" class="form-control bg-joyeria-textarea" required>
-
+                        <textarea name="mensaje" class="form-control bg-joyeria-textarea" value="{{ old('mensaje') }}" required>
                         </textarea>
+                        @error('mensaje')
+                        <small style="color: red;">{{ $message }}</small>
+                        @enderror
                     </div>
 
                     <div class="text-center">

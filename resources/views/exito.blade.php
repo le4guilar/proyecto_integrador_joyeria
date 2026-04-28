@@ -27,7 +27,7 @@
                 <p class="text-muted small">Atentamente, el equipo de ALBA Joyería.</p>
                 
                 <div class="mt-4">
-                    <a href="{{ url('/home') }}" class="btn btn-exito px-4 py-2">I N I C I O</a>
+                    <a href="{{ url('/home') }}" class="btn btn-exito px-4 py-2 text-dark">I N I C I O</a>
                 </div>
             </div>
         </div>

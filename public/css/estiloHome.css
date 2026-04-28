@@ -353,13 +353,13 @@ body {
 
 .p-comercializacion {
     font-family: "Montserrat", sans-serif !important;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 
 /*SECCIÒN TERMINOS DE USO*/
 .titulo-terminos{
-    font-size: 1.7rem !important;
-    font-weight: 500;
+    font-size: 1.4rem !important;
+    font-weight: 550;
 }
 
 /*SECCIÓN DE CONSULTAS*/
@@ -402,6 +402,11 @@ body {
 
 .li-font {
     font-family: "Montserrat";
+}
+
+.item-terminos{
+    font-size: 1.5rem !important;
+    font-weight: 550;
 }
 
 /*Fin sección consultas*/
