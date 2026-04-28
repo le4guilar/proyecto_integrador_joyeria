@@ -571,7 +571,7 @@ body {
 }
 
 .enlace {
-    color: #300403;
+    color: #300403 !important;
     font-family: "Cormorant Garamond";
     font-size: 1.5em;
     font-weight: 700;
