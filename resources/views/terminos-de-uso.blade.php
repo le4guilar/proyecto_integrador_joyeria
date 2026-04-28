@@ -113,7 +113,7 @@
 
 
 
-<hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
+<hr class="mx-auto my-5" style="width: 60px; opacity: 0.2; color: #300403;">
 
 
 
