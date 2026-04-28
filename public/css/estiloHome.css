@@ -320,13 +320,16 @@ body {
 
 .h4-comercializacion {
     font-family: "Cormorant Garamond";
+    text-transform: uppercase !important;
     font-weight: 700;
-    color: #300403;
+    color: #300403; 
+    font-size: 1.9rem;
 }
 
 .h6-comercializacion {
     font-family: "Cormorant Garamond";
     color: #300403;
+    font-size: 1.1rem;
 }
 
 .comercializacion-card {
@@ -344,6 +347,7 @@ body {
 
 .p-comercializacion {
     font-family: "Montserrat", sans-serif !important;
+    font-size: 1.1rem;
 }
 
 /*Seccion consultas*/
