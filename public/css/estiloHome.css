@@ -110,7 +110,7 @@
     .nombre-joya{
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 600 !important;
-    color: #DFDADA !important;
+    color: #300403 !important;
     letter-spacing: 2px;
     }
 
@@ -188,7 +188,7 @@ body{
 
     /*Contenedor de cada producto*/
 .producto-card{
-    background-color: #725151;
+    background-color: #300403;
     padding: 30px 20px;
     border-radius: 0;
     border: 1px solid rgba(48, 4, 3, 0.1);
@@ -202,14 +202,19 @@ body{
 
 
     /*Efecto al pasar el mouse por el producto*/
-.producto-card:hover{
+.producto-card:hover {
     background-color: transparent !important;
     transform: translateY(-8px);
     box-shadow: 0 12px 25px rgba(48, 4, 3, 0.08);
     border-color: rgba(48, 4, 3, 0.02);
-
     box-shadow: 0px 0px 15px #0009;
     outline: none;
+    transition: 1.5s;
+}
+
+/*nombre joya hover*/
+.producto-card:hover .nombre-joya{
+    color: #300403 !important;
     transition: 1.5s;
 }
 
@@ -225,7 +230,8 @@ body{
 .producto-card .nombre-joya {
     font-family: 'Montserrat', serif !important;
     font-size: 0.95rem;
-    color: #300403 !important;
+    color: #DFDADA !important;
+    transition: 1.5s;
     font-weight: 500;
     margin: 15px 0; 
     line-height: 1.4;
@@ -235,9 +241,15 @@ body{
 .precio-joya{
     font-family: 'Montserrat', serif !important;
     font-size: 1rem;
-    color: #010001;
+    color: #DFDADA !important;
     font-weight: 100;
     margin-bottom: 15px;
+}
+
+/*Precio hover*/
+.producto-card:hover .precio-joya{
+    color: #300403 !important;
+    transition: 1.5s;
 }
 
     /*Boton "Ver Detalles: TODAVIA A DECIDIR*/
