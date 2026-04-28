@@ -139,19 +139,19 @@
     <nav aria-label="Navegacion catalogo" class="mt-5 mb-5">
         <ul class="pagination justify-content-center">
             <li class="page-item">
-                <a class="page-link" href="{{ route('catalogo.p1') }}">Anterior</a>
+                <a class="page-link text-dark fw-light" href="{{ route('catalogo.p1') }}">Anterior</a>
             </li>
 
             <li class="page-item">
-                <a class="page-link" href="{{ route('catalogo.p1') }}"> 1 </a>
+                <a class="page-link text-dark fw-light" href="{{ route('catalogo.p1') }}"> 1 </a>
             </li>
 
             <li class="page-item disabled">
-                <a class="page-link" href="{{ route('catalogo.p2') }}"> 2 </a>
+                <a class="page-link text-dark fw-light" href="{{ route('catalogo.p2') }}"> 2 </a>
             </li>
 
             <li class="page-item disabled">
-                <a class="page-link" href="#"> Siguiente </a>
+                <a class="page-link text-dark fw-light" href="#"> Siguiente </a>
             </li>
         </ul>
     </nav>
