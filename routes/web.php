@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
 
 Route::get('/', function () {
-    return view('patio');
+    return view('home');
 });
 
 Route::get('/home', function () {
