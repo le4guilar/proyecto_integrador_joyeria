@@ -2,23 +2,21 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Domicilio extends Model
+class GeneroJoya extends Model
 {
     use HasFactory, SoftDeletes;
 
     //Apunta a la tabla real en DBeaver
-    protected $table = 'domicilio';
+    protected $table = 'genero_joya';
     protected $fillable = [
-        'detalle_domicilio',
-        'ciudad_id',
+        'nombre_genero',
     ];
 
-    public function ciudad() {
-        return $this->belongsTo(Ciudad::class, 'ciudad_id');
+    public function productos() {
+        return $this->hasMany(Producto::class, 'genero_joya_id');
     }
 }

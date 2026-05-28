@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('mensaje', 500);
             $table->boolean('estado');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

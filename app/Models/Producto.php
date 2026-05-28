@@ -33,11 +33,11 @@ class Producto extends Model
 
     //COMPORTAMIENTO DE LAS RELACIONES
     public function categoria(): BelongsTo{
-        return $this->belongsTo(categoria_joya::class, 'categoria_joya_id');
+        return $this->belongsTo(CategoriaJoya::class, 'categoria_joya_id');
     }
 
     public function genero(): BelongsTo{
-        return $this->belongsTo(genero_joya::class, 'genero_joya_id');
+        return $this->belongsTo(GeneroJoya::class, 'genero_joya_id');
     }
 }
 
