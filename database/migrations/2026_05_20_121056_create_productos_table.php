@@ -13,17 +13,18 @@ return new class extends Migration
     {
         Schema::create('producto', function (Blueprint $table) {
             $table->id();
-            $table->string('nombreJoya', 50);
+            $table->string('nombre_joya', 50);
             $table->string('descripcion', 200);
-            $table->float('precioUnitario', 2);
+            $table->float('precio_unitario', 2);
             $table->integer('stock');
-            $table->integer('stockBajo');
-            $table->string('urlImagen');
+            $table->integer('stock_bajo');
+            $table->string('url_imagen');
             $table->boolean('activo');
             $table->foreignId('categoria_joya_id')->constrained('categoria_joya');
             $table->foreignId('genero_joya_id')->constrained('genero_joya');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

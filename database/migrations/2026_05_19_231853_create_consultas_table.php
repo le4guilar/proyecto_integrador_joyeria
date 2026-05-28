@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('asunto' , 50);
             $table->string('mensaje' , 200);
-            $table->foreignId('usuario_id')->constrained();
+            $table->boolean('estado')->default(true);
+            $table->foreignId('usuario_id')->constrained('users');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoriaJoya extends Model
+class estado_orden extends Model
 {
     //
 }

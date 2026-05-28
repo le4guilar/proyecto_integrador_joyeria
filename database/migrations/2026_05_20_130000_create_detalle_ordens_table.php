@@ -17,9 +17,10 @@ return new class extends Migration
             $table->foreignId('orden_Id')->constrained('orden');
             $table->integer('cantidad');
             $table->float('subtotal', 2);
-            $table->float('precioUnitario', 2);
+            $table->float('precio_unitario', 2);
             $table->foreignId('producto_id')->constrained('producto');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

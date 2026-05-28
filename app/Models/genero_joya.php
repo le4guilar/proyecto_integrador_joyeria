@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GeneroJoya extends Model
+class genero_joya extends Model
 {
     //
 }
