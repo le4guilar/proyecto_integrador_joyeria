@@ -72,3 +72,13 @@ Route::post('/registro', [AuthController::class, 'registrar']); //es un post(?) 
 Route::get('/api/provincias/{id}/ciudades', function($id) {
     return response()->json(DB::table('ciudad')->where('provincia_id', $id)->get());
 }); // esta ruta devuelve las ciudades en función de la provincia seleccionadd
+
+
+Route::post('/login', [AuthController::class, 'autenticar']);
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Ruta para el panel o dashboard del cliente
+Route::get('/cliente', function () {
+    return view('backend.usuarios.cliente'); // Cambia esto por la ruta real de tu archivo Blade
+})->middleware('auth')->name('cliente');

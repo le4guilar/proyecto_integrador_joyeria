@@ -77,11 +77,11 @@ class AuthController extends Controller
         if (Auth::attempt($credenciales)) {
             $request->session()->regenerate();
 
-            if (Auth::user()->rol === 'admin') { //si es admin
+            if (Auth::user()->rol->nombre_rol === 'admin') { //si es admin
                 return redirect('/admin');
             }
 
-            return redirect('/cliente'); //si no es admin es cliente
+            return redirect('cliente'); //si no es admin es cliente
         }
 
         //si las credenciales son incorrectas (no es admin ni cliente) vuelve al login con el error
@@ -95,6 +95,6 @@ class AuthController extends Controller
         $request->session()->invalidate(); //invalida la sesion y borra los datos
         $request->session()->regenerateToken(); // Regenera el token @csrf (el del formulario de ingreso)para seguridad 
 
-        return redirect('/'); //redirige a una ruta pública (si no tiene nada a la raíz)
+        return redirect('home'); //redirige a una ruta pública (si no tiene nada a la raíz)
     }
 }

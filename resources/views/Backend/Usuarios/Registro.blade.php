@@ -30,7 +30,7 @@
                         {{-- Campo Email --}}
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required>
+                            <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="correo@mail.com" required>
                             @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 
@@ -57,7 +57,7 @@
                         {{-- Campo Detalle Domicilio --}}
                         <div class="mb-3">
                             <label for="detalle_domicilio" class="form-label">Dirección (Calle, Número, Piso)</label>
-                            <input type="text" name="detalle_domicilio" id="detalle_domicilio" class="form-control @error('detalle_domicilio') is-invalid @enderror" value="{{ old('detalle_domicilio') }}" placeholder="Ej: Av. Siempreviva 742" required>
+                            <input type="text" name="detalle_domicilio" id="detalle_domicilio" class="form-control @error('detalle_domicilio') is-invalid @enderror" value="{{ old('detalle_domicilio') }}" placeholder="Calle Genérica 123" required>
                             @error('detalle_domicilio') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 

@@ -66,7 +66,7 @@
             @auth
             {{-- Solo se muestra si hay un usuario logueado --}}
             <li class="nav-item nav-link px-3 text-white">
-                Hola, {{ auth()->user()->name }}
+                Hola, {{ auth()->user()->nombre }}
             </li>
             <li class="nav-item">
                 @if(auth()->user()->rol === 'admin')
@@ -87,6 +87,9 @@
             {{-- Solo se muestra si NO hay sesión --}}
             <li class="nav-item">
                 <a class="nav-link px-3" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link px-3" href="/registro">Registrarse</a>
             </li>
             @endauth
         </ul>
