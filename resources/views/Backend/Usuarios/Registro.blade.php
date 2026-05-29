@@ -18,14 +18,14 @@
 
                         {{-- Campo Nombre --}}
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nombre Completo</label>
+                            <label for="nombre" class="form-label">Nombre Completo</label>
                             <input type="text"
-                                name="name"
-                                id="name"
-                                class="form-control @error('name') is-invalid @enderror"
-                                value="{{ old('name') }}"
+                                name="nombre"
+                                id="nombre"
+                                class="form-control @error('nombre') is-invalid @enderror"
+                                value="{{ old('nombre') }}"
                                 required>
-                            @error('name')
+                            @error('nombre')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
