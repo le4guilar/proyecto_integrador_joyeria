@@ -22,17 +22,17 @@ class AuthController extends Controller
     public function registrar (Request $request) {
         //Valida que los datos ingresados estén correctos
         $data = $request->validate([
-            'name' => 'required|string|max:225', //obligatorio, cadena, max de 225 caracteres
+            'nombre' => 'required|string|max:225', //obligatorio, cadena, max de 225 caracteres
             'email' => 'required|email|unique:users', //obligatorio, tiene q ser un email y único en la tabla users
             'password' => 'required|min:6|confirmed' //obligatorio, minimo de 6 caracteres y tiene q estar igual en los dos campos
         ]);
 
         //crea un nuevo registro en la tabla users con los datos se recibieron en el objeto(?) request
         $usuario = User::create ([
-            'name' => 'required|string|max:225', //cadena obligatoria de como máximo 225 caracteres
-            'email' => 'required|email|unique:users', // correo oblitorio y único en la tabla usuarios
+            'nombre' => $data['nombre'], //cadena obligatoria de como máximo 225 caracteres
+            'email' => $data['email'], // correo obligatorio y único en la tabla usuarios
             'password' => Hash::make($data['password']), //clave encriptada
-            'rol' => 'cliente',
+            'rol_id' => '2', //rol cliente por defecto
         ]);
 
         // Auth::login($usuario); [OPCIONAL LOGUEARLO]
