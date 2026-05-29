@@ -4,6 +4,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
+use Illuminate\Support\Facades\DB;
+
+
 
 Route::get('/', function () {
     return view('home');
@@ -61,6 +64,11 @@ Route::get('/registro', function() {
     return view('Backend/Usuarios/registro');
 }); //te lleva  a la vista registro
 
+Route::get('/registro', [AuthController::class, 'formularioRegistro']);
 
 Route::post('/registro', [AuthController::class, 'registrar']); //es un post(?) que viene desde la vista registro y llama a la funcion registrar que está en la clase controlador authcontroller [creo que es eso e]
 
+
+Route::get('/api/provincias/{id}/ciudades', function($id) {
+    return response()->json(DB::table('ciudad')->where('provincia_id', $id)->get());
+}); // esta ruta devuelve las ciudades en función de la provincia seleccionadd
