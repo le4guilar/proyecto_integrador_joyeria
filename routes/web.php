@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
 
@@ -44,4 +46,18 @@ Route::get('/catalogo-parte-2', function () {
 })->name('catalogo.p2');
 
 Route::post('/contacto', [ContactoController::class, 'procesar']);
+
+Route::middleware(['auth', 'rol:admin'])-> group(function(){
+    Route::get('/admin', [AdminController::class, 'dashboard']);
+});
+
+Route::get('/login', function() {
+    return view('Backend/Usuarios/Login');
+});
+
+Route::get('/registro', function() {
+    return view('Backend/Usuarios/registro');
+});
+
+Route::post('/registro', [AuthController::class, 'registrar']);
 

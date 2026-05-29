@@ -12,7 +12,7 @@ class Rol extends Model
 
     protected $table = 'rol';
 
-    protected $fillable = ['nombreRol'];
+    protected $fillable = ['nombre_rol'];
 
 
     public function usuarios() {
