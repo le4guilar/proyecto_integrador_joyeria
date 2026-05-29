@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         $this->call([RolSeeder::class]); //llama al seeder de roles
         $this->call([ProvinciaSeeder::class]); //llama al seeder de provincias
+        $this->call([CiudadSeeder::class]); //llama al seeder de ciudades
     }
 }
