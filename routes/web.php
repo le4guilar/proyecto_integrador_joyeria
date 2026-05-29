@@ -49,15 +49,18 @@ Route::post('/contacto', [ContactoController::class, 'procesar']);
 
 Route::middleware(['auth', 'rol:admin'])-> group(function(){
     Route::get('/admin', [AdminController::class, 'dashboard']);
-});
+}); // la capa intermedia con dobre verif, si estas en sesion (iniciaste sesión) y si tu usuario es admin entonces te permite tener la vista admin y ejecutar la función dashboard
 
 Route::get('/login', function() {
     return view('Backend/Usuarios/Login');
-});
+}); 
+
+
 
 Route::get('/registro', function() {
     return view('Backend/Usuarios/registro');
-});
+}); //te lleva  a la vista registro
 
-Route::post('/registro', [AuthController::class, 'registrar']);
+
+Route::post('/registro', [AuthController::class, 'registrar']); //es un post(?) que viene desde la vista registro y llama a la funcion registrar que está en la clase controlador authcontroller [creo que es eso e]
 
