@@ -34,7 +34,7 @@ class AuthController extends Controller
             'nombre'   => 'required|string|max:225',
             'apellido'   => 'required|string|max:225',
             'email'    => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:4|confirmed',
             'ciudad_id'        => 'required|integer', // Requerido para armar el domicilio
             'detalle_domicilio' => 'required|string|max:255' // Calle, número, etc.
         ]);
