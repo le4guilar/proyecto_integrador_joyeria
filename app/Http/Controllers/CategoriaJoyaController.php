@@ -67,4 +67,16 @@ class CategoriaJoyaController extends Controller
         // vamos al index de categorías con un mensaje de exito 
         return redirect()->route('categoria-joya.index')->with('success', '¡Categoría actualizada con éxito!');
     }
+
+    public function destroy($id)
+    {
+        //se busca el registro de la categoria por su id
+        $categoria = CategoriaJoya::findOrFail($id);
+
+        // se hace delete pero como tiene soft delte solo que carga la columna deleted_at
+        $categoria->delete();
+
+        // redirigimos al indice con un msj de exito
+        return redirect()->route('categoria-joya.index')->with('success', '¡Registro eliminado con éxito!');
+    }
 }

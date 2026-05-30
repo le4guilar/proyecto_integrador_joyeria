@@ -36,9 +36,12 @@
                                 <a href="{{ route('categoria-joya.edit', $categoria_joya->id) }}" class="btn btn-warning btn-sm text-white me-1" title="Editar">
                                     <i class="bi bi-pencil-square"></i>Editar
                                 </a>
-                                <button class="btn btn-danger btn-sm" title="Eliminar">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <form action="{{ route('categoria-joya.destroy', $categoria_joya->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta categoría?');">
+                                    @csrf
+                                    @method('DELETE') <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                        <i class="bi bi-trash"></i>Eliminar 
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @empty
