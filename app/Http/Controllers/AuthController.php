@@ -98,3 +98,4 @@ class AuthController extends Controller
         return redirect('home'); //redirige a una ruta pública (si no tiene nada a la raíz)
     }
 }
+    

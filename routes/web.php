@@ -54,19 +54,22 @@ Route::middleware(['auth', 'rol:admin'])-> group(function(){
     Route::get('/admin', [AdminController::class, 'dashboard']);
 }); // la capa intermedia con dobre verif, si estas en sesion (iniciaste sesión) y si tu usuario es admin entonces te permite tener la vista admin y ejecutar la función dashboard
 
-Route::get('/login', function() {
-    return view('Backend/Usuarios/Login');
-}); 
+
+// este bloque de código establece las los get y post de login y registro que son exclusivas para los que no están logueados, una vez logueados 
+// como admin o cliente entonces ya no se puede acceder a ellas
+// para eso habrá que salir de la sesión
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'formularioLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'autenticar']);
+    
+    Route::get('/registro', [AuthController::class, 'formularioRegistro'])->name('registro');
+    Route::post('/registro', [AuthController::class, 'registrar']);
+});
 
 
-
-Route::get('/registro', function() {
-    return view('Backend/Usuarios/registro');
-}); //te lleva  a la vista registro
-
-Route::get('/registro', [AuthController::class, 'formularioRegistro']);
-
-Route::post('/registro', [AuthController::class, 'registrar']); //es un post(?) que viene desde la vista registro y llama a la funcion registrar que está en la clase controlador authcontroller [creo que es eso e]
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});
 
 
 Route::get('/api/provincias/{id}/ciudades', function($id) {
@@ -74,9 +77,6 @@ Route::get('/api/provincias/{id}/ciudades', function($id) {
 }); // esta ruta devuelve las ciudades en función de la provincia seleccionadd
 
 
-Route::post('/login', [AuthController::class, 'autenticar']);
-
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Ruta para el panel o dashboard del cliente
 Route::get('/cliente', function () {
