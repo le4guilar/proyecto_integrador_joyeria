@@ -14,7 +14,7 @@ class CategoriaJoyaController extends Controller
         $categoria_joya = CategoriaJoya::all();
 
         //devolvemos la vista y le pasamos las categorias usando compact
-        return view('backend.CategoriaJoya.index', compact('categoria_joya'));
+        return view('Backend.CategoriaJoya.index', compact('categoria_joya'));
     }
 
     public function create()
