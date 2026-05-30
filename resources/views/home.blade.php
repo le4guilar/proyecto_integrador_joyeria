@@ -1,6 +1,13 @@
 @extends('plantilla-principal')
 @section('contenido')
 
+@if(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show shadow-sm border-0 mt-3" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i> {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
 <!--Primera parte del carrusel-->
 <div id="carruselJoyeria" class="carousel slide" data-bs-ride="carousel">
 

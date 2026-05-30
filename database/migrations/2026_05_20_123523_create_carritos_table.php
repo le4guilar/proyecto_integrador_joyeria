@@ -16,6 +16,7 @@ return new class extends Migration
             $table->float('total', 2);
             $table->foreignId('users_id')->constrained('users');
             $table->timestamps();
+            $table->softDeletes(); 
         });
     }
 

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->float('subtotal', 2);
             $table->foreignId('producto_id')->constrained('producto');
             $table->timestamps();   
+            $table->softDeletes(); 
         });
     }
 

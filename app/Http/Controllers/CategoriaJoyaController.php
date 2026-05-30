@@ -9,23 +9,23 @@ use App\Models\CategoriaJoya;
 class CategoriaJoyaController extends Controller
 {
     public function index()
-    {   
+    {
         //se llaman a todos los registros de la tabla categoría joya con el nombre del modelo
-        $categoria_joya = CategoriaJoya::all(); 
+        $categoria_joya = CategoriaJoya::all();
 
         //devolvemos la vista y le pasamos las categorias usando compact
         return view('backend.CategoriaJoya.index', compact('categoria_joya'));
     }
 
-    public function create() 
+    public function create()
     {
         return view('backend.CategoriaJoya.crear');
     }
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         // se valida que se cumplan los requisitos de la tabla categoria joya
-        $data = $request -> validate([
+        $data = $request->validate([
             'nombre_categoria' => 'required|string|max:15'
         ]);
 
@@ -36,9 +36,35 @@ class CategoriaJoyaController extends Controller
         ]);
 
         //te devuelve al índice con el mensaje q te salió bien. felicidades sos un@ cap@
-        return redirect()->route('CategoriaJoya.index')->with('success', '¡Categoría creada con éxito!');
-
-
+        return redirect()->route('categoria-joya.index')->with('success', '¡Categoría creada con éxito!');
     }
 
+    public function edit($id)
+    {
+        // se busca el id de la categoria que queremos borrar, si no encuentra tira un 404
+        $categoria = CategoriaJoya::findOrFail($id);
+
+        //  cuando encuentra se le pasa ese registro a la vista de edicion
+        return view('backend.CategoriaJoya.editar', compact('categoria'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // se verifica q los datos de entrada sean correctos
+        $data = $request->validate([
+            'nombre_categoria' => 'required|string|max:15',
+
+        ]);
+
+        // buscamos ese registro en la base de datos
+        $categoria = CategoriaJoya::findOrFail($id);
+
+        // se actualiza el registro con el nuevo dato
+        $categoria->update([
+            'nombre_categoria' => $data['nombre_categoria'],
+        ]);
+
+        // vamos al index de categorías con un mensaje de exito 
+        return redirect()->route('categoria-joya.index')->with('success', '¡Categoría actualizada con éxito!');
+    }
 }

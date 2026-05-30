@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre_genero', 15);
             $table->timestamps();
+            $table->softDeletes(); 
         });
     }
 
