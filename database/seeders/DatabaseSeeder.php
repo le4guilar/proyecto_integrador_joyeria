@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call([RolSeeder::class]); //llama al seeder de roles
         $this->call([ProvinciaSeeder::class]); //llama al seeder de provincias
         $this->call([CiudadSeeder::class]); //llama al seeder de ciudades
+        $this->call([DomicilioSeeder::class]); // llama al seeder de domicilios
+        $this->call([UserSeeder::class]); // llama al seeder de usuarios
     }
 }
