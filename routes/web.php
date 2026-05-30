@@ -52,7 +52,7 @@ Route::post('/contacto', [ContactoController::class, 'procesar']);
 
 Route::middleware(['auth', 'rol:admin'])-> group(function(){
     Route::get('/admin', [AdminController::class, 'dashboard']);
-    //Esta linea invoca al controlador CRUD(?) de CategoríaJoya con un middleware de usuario autenticado
+    //Esta linea invoca al recurso CRUD(?) de CategoríaJoya con el middleware doble
     Route::resource('categoria-joya', CategoriaJoyaController::class);
 
 }); // la capa intermedia con dobre verif, si estas en sesion (iniciaste sesión) y si tu usuario es admin entonces te permite tener la vista admin y ejecutar la función dashboard
@@ -86,5 +86,4 @@ Route::get('/cliente', function () {
     return view('backend.usuarios.cliente');
 })->middleware('auth')->name('cliente');
 
-//Esta linea invoca al controlador CRUD(?) de CategoríaJoya con un middleware de usuario autenticado
-//hay que agregarle en un futuro que el rol tiene que ser admin para acceder a este recurso
+
