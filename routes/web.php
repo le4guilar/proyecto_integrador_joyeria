@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Controllers\CategoriaJoyaController;
 
 
 Route::get('/', function () {
@@ -82,3 +82,7 @@ Route::get('/api/provincias/{id}/ciudades', function($id) {
 Route::get('/cliente', function () {
     return view('backend.usuarios.cliente'); // Cambia esto por la ruta real de tu archivo Blade
 })->middleware('auth')->name('cliente');
+
+//Esta linea invoca al controlador CRUD(?) de CategoríaJoya con un middleware de usuario autenticado
+//hay que agregarle en un futuro que el rol tiene que ser admin para acceder a este recurso
+Route::resource('/CategoriaJoya', CategoriaJoyaController::class)->middleware('auth');
