@@ -19,7 +19,7 @@ class CategoriaJoyaController extends Controller
 
     public function create()
     {
-        return view('backend.CategoriaJoya.crear');
+        return view('Backend.CategoriaJoya.crear');
     }
 
     public function store(Request $request)
@@ -45,7 +45,7 @@ class CategoriaJoyaController extends Controller
         $categoria = CategoriaJoya::findOrFail($id);
 
         //  cuando encuentra se le pasa ese registro a la vista de edicion
-        return view('backend.CategoriaJoya.editar', compact('categoria'));
+        return view('Backend.CategoriaJoya.editar', compact('categoria'));
     }
 
     public function update(Request $request, $id)
