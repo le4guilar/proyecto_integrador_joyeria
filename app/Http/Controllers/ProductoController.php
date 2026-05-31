@@ -95,6 +95,46 @@ class ProductoController extends Controller
         return redirect()->route('productos.index')->with('status', '¡Joya cargada con éxito!');
     }
 
+    public function update(Request $request, $id)
+    {
+        // Buscamos la joya que queremos editar
+        $producto = Producto::findOrFail($id);
+
+        // Validamos con el mismo formato que armó Leandro
+        $data = $request->validate([
+            'nombre_joya'       => 'required|string|max:50',
+            'descripcion'       => 'required|string|max:200',
+            'precio_unitario'   => 'required|numeric|min:0',
+            'stock'             => 'required|integer|min:0',
+            'stock_bajo'        => 'required|integer|min:0',
+            'categoria_joya_id' => 'required|integer',
+            'genero_joya_id'    => 'required|integer',
+            'url_imagen'        => 'nullable|image|mimes:jpeg,png,jpg,webp|max:20000',
+        ]);
+
+        // Por defecto dejamos la imagen vieja que ya estaba en DBeaver
+        $nombreImagen = $producto->url_imagen;
+
+        // Pero si el usuario subió una foto nueva, la reemplazamos paa
+        if ($request->hasFile('url_imagen')) {
+            $nombreImagen = $request->file('url_imagen')->store('productos', 'public');
+        }
+
+        // Actualizamos los datos en DBeaver
+        $producto->update([
+            'nombre_joya'       => $data['nombre_joya'],
+            'descripcion'       => $data['descripcion'],
+            'precio_unitario'   => $data['precio_unitario'],
+            'stock'             => $data['stock'],
+            'stock_bajo'        => $data['stock_bajo'],
+            'url_imagen'        => $nombreImagen,
+            'categoria_joya_id' => $data['categoria_joya_id'],
+            'genero_joya_id'    => $data['genero_joya_id'],
+        ]);
+
+        return redirect()->route('productos.index')->with('status', '¡Joya actualizada con éxito!');
+    }
+
     public function destroy($id)
     {
         // como siempre primero buscamos el id del producto que vamos a soft deletear (pobrecito)
@@ -105,5 +145,18 @@ class ProductoController extends Controller
 
         // volvemos al index con el mensaje de exito
         return redirect()->route('productos.index')->with('status', 'Joya dada de baja correctamente.');
+    }
+
+    public function edit($id)
+    {
+        // Buscamos el producto por su ID en DBeaver
+        $producto = Producto::findOrFail($id);
+        
+        // Buscamos las categorías y géneros para los selectores
+        $categorias = CategoriaJoya::all();
+        $genero = GeneroJoya::all();
+
+        // Devolvemos la vista de edición pasándole los datos
+        return view('Backend.Producto.editar', compact('producto', 'categorias', 'genero'));
     }
 }
