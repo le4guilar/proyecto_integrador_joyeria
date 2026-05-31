@@ -81,7 +81,7 @@ class AuthController extends Controller
 
             //CAMBIO: se compara el id del rol directamente. 
             if (Auth::user()->rol->nombre_rol == 1) { //si es admin
-                return redirect('/admin');
+                return redirect('/');
             }
 
             return redirect('cliente'); //si no es admin es cliente
@@ -98,6 +98,6 @@ class AuthController extends Controller
         $request->session()->invalidate(); //invalida la sesion y borra los datos
         $request->session()->regenerateToken(); // Regenera el token @csrf (el del formulario de ingreso)para seguridad 
 
-        return redirect('catalogo.p1'); //CAMBIO (estategis de negocio): una vez que el usuario cierra sesion va a catalogo, asi por ahi le pinta comprar algun articulo
+        return redirect('home'); //CAMBIO (estategis de negocio): una vez que el usuario cierra sesion va a catalogo, asi por ahi le pinta comprar algun articulo
     }
 }
