@@ -29,23 +29,37 @@ class ProductoController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'nombre_producto' => 'required|string|max:225',
+            'nombre_joya' => 'required|string|max:225',
             'precio' => 'required|numeric|min:0',
             'stock' => 'required|interger|min:0',
-            'categoria_joya_id' => 'required|interger',
-            'genero_joya_id' => 'required|interger',
+            'categoria_joya_id' => 'required|integer',
+            'genero_joya_id' => 'required|integer',
             'descripcion' => 'nillable|string',
+            'url_imagen'        => 'nullable|string', // se añadio el campo de la foto
         ]);
 
         Producto::create([
-            'nombre_producto' => $request->input('nombre_producto'),
-            'precio' => $request->input('precio'),
-            'stock' => $request->input('stock'),
+            'nombre_joya'       => $request->input('nombre_joya'),
+            'descripcion'       => $request->input('descripcion'),
+            'precio_unitario'   => $request->input('precio_unitario'),
+            'stock'             => $request->input('stock'),
+            'stock_bajo'        => $request->input('stock_bajo'),
+            'url_imagen'        => $request->input('url_imagen'),
+            'activo'            => true, // Nace activo por defecto
             'categoria_joya_id' => $request->input('categoria_joya_id'),
-            'genero_joya_id'  => $request->input('genero_joya_id'),
-            'descipcion'  => $request->input('descipcion'),
+            'genero_joya_id'    => $request->input('genero_joya_id'),
         ]);
         
         return redirect()->route('producto.index')->with('status', '¡Joya cargada con éxito');
+    }
+
+    public function destroy($id)
+    {
+        $producto = Producto::findOrFail($id);
+        
+        // Como el modelo usa SoftDeletes, esto hace un borrado logico (no borra el registro, lo oculta)
+        $producto->delete();
+
+        return redirect()->route('producto.index')->with('status', 'Joya dada de baja correctamente.');
     }
 }

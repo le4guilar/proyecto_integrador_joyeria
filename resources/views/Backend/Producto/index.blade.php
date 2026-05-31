@@ -26,8 +26,8 @@
                         @forelse ($productos as $producto)
                             <tr>
                                 <td class="ps-4 fw-bold text-secondary">{{ $producto->id }}</td>
-                                <td>{{ $producto->nombre }}</td>
-                                <td>${{ number_format($producto->precio) }}</td>
+                                <td>{{ $producto->nombre_joya }}</td>
+                                <td>${{ number_format($producto->precio_unitario) }}</td>
                                 <td class="text-center">
                                     <a href="#" class="btn btn-warning btn-sm text-white me-1" title="Editar">
                                         <i class="bi bi-pencil-square"></i>

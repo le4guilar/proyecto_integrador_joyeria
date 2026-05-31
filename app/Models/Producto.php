@@ -26,8 +26,8 @@ class Producto extends Model
     //COMPORTAMIENTO DE LOS DATOS
     protected $casts = [
         'precio_unitario' => 'decimal:2',
-        'stock' => 'interger',
-        'stock_bajo' => 'interger',
+        'stock' => 'integer',
+        'stock_bajo' => 'integer',
         'activo' => 'boolean',
     ];
 
