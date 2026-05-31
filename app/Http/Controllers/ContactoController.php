@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Contacto;
 use Illuminate\Http\Request;
 
 class ContactoController extends Controller
 {
-    
-    
-    public function procesar(Request $request)
+     public function procesar(Request $request)
 
     {
 
@@ -19,14 +17,18 @@ class ContactoController extends Controller
         'mensaje' => 'required|min:5',
     ]);
 
-    
-        $nombre = $request->input('nombre');
-        $telefono = $request->input('telefono');
-        $email = $request->input('email');
-        $mensaje = $request->input('mensaje');
+    Contacto::create([
+            'nombre'   => $request->input('nombre'),
+            'telefono' => $request->input('telefono'),
+            'email'    => $request->input('email'),
+            'mensaje'  => $request->input('mensaje'),
+            'asunto'   => $request->input('asunto'), 
+            'estado'   => 1 
+        ]);
+
         return view('exito', [
-                    'nombre' => $nombre,
-                    'email' => $email
+                    'nombre' => $request->input('nombre'),
+                    'email' => $request->input('email'),
         ]);
     }
 }

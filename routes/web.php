@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactoController;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\CategoriaJoyaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ClienteController;
 
 Route::get('/', function () {
     return view('home');
@@ -84,8 +85,7 @@ Route::get('/api/provincias/{id}/ciudades', function($id) {
 
 
 // Ruta para el panel o dashboard del cliente
-Route::get('/cliente', function () {
-    return view('backend.usuarios.cliente');
-})->middleware('auth')->name('cliente');
+//se cambio la funcion vacia para que llame al metodo 'dashboard' del ClienteController
+Route::get('/cliente', [ClienteController::class, 'dashboard'])->middleware('auth')->name('cliente');
 
 
