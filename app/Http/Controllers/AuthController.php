@@ -84,7 +84,7 @@ class AuthController extends Controller
                 return redirect('/');
             }
 
-            return redirect('cliente'); //si no es admin es cliente
+            return redirect('/'); //si no es admin es cliente
         }
 
         //si las credenciales son incorrectas (no es admin ni cliente) vuelve al login con el error
