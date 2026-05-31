@@ -9,7 +9,7 @@
         </div>
         <div class="card-body p-4">
 
-            <form action="{{ route('categoria-joya.update', $categoria->id) }}" method="POST">
+            <form action="{{ route('categoria-joyas.update', $categoria->id) }}" method="POST">
                 @csrf
                 @method('PUT') <div class="mb-4">
                     <label for="nombre_categoria" class="form-label fw-semibold">Nombre de la Categoría</label>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end gap-2">
-                    <a href="{{ route('categoria-joya.index') }}" class="btn btn-light border">Cancelar</a>
+                    <a href="{{ route('categoria-joyas.index') }}" class="btn btn-light border">Cancelar</a>
                     <button type="submit" class="btn btn-warning text-white fw-semibold">Guardar Cambios</button>
                 </div>
             </form>

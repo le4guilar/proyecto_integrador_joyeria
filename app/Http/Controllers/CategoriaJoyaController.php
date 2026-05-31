@@ -36,7 +36,7 @@ class CategoriaJoyaController extends Controller
         ]);
 
         //te devuelve al índice con el mensaje q te salió bien. felicidades sos un@ cap@
-        return redirect()->route('categoria-joya.index')->with('success', '¡Categoría creada con éxito!');
+        return redirect()->route('categoria-joyas.index')->with('success', '¡Categoría creada con éxito!');
     }
 
     public function edit($id)
@@ -65,7 +65,7 @@ class CategoriaJoyaController extends Controller
         ]);
 
         // vamos al index de categorías con un mensaje de exito 
-        return redirect()->route('categoria-joya.index')->with('success', '¡Categoría actualizada con éxito!');
+        return redirect()->route('categoria-joyas.index')->with('success', '¡Categoría actualizada con éxito!');
     }
 
     public function destroy($id)
@@ -77,6 +77,6 @@ class CategoriaJoyaController extends Controller
         $categoria->delete();
 
         // redirigimos al indice con un msj de exito
-        return redirect()->route('categoria-joya.index')->with('success', '¡Registro eliminado con éxito!');
+        return redirect()->route('categoria-joyas.index')->with('success', '¡Registro eliminado con éxito!');
     }
 }

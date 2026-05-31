@@ -8,7 +8,7 @@
         </div>
         <div class="card-body p-4">
 
-            <form action="{{ route('categoria-joya.store') }}" method="POST">
+            <form action="{{ route('categoria-joyas.store') }}" method="POST">
                 @csrf
 
                 <div class="mb-3">
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end gap-2">
-                    <a href="{{ route('categoria-joya.index') }}" class="btn btn-light border">Cancelar</a>
+                    <a href="{{ route('categoria-joyas.index') }}" class="btn btn-light border">Cancelar</a>
                     <button type="submit" class="btn btn-primary fw-semibold">Guardar Categoria</button>
                 </div>
             </form>
