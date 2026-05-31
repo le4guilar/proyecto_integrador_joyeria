@@ -4,7 +4,7 @@
 
 <div class="container mt-5 mb-5">
     @if(session('success'))
-    <div class="alert alert-success alert-dismissible fade show shadow-sm border-0" role="alert">
+    <div class="alert alert-success alert-dismissible fade show shadow-sm border-0 mt-4 mb-4 mx-4" role="alert">
         <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -34,12 +34,12 @@
                             <td>{{ $categoria_joya->nombre_categoria }}</td>
                             <td class="text-center">
                                 <a href="{{ route('categoria-joyas.edit', $categoria_joya->id) }}" class="btn btn-warning btn-sm text-white me-1" title="Editar">
-                                    <i class="bi bi-pencil-square"></i>Editar
+                                    <i class="bi bi-pencil-square"></i> Editar
                                 </a>
                                 <form action="{{ route('categoria-joyas.destroy', $categoria_joya->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta categoría?');">
                                     @csrf
                                     @method('DELETE') <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
-                                        <i class="bi bi-trash"></i>Eliminar 
+                                        <i class="bi bi-trash"></i> Eliminar 
                                     </button>
                                 </form>
                             </td>

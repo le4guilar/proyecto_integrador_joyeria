@@ -22,7 +22,7 @@
                         required
                     >
                     @error('nombre_categoria')
-                        <div class="invalid-feedback">{{ $message }}</div>
+                        <div class="invalid-feedback">{{ 'La categoría tiene que tener como máximo 15 caracteres' }}</div>
                     @enderror
                 </div>
 
