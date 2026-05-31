@@ -22,7 +22,7 @@ class ContactoController extends Controller
             'telefono' => $request->input('telefono'),
             'email'    => $request->input('email'),
             'mensaje'  => $request->input('mensaje'),
-            'asunto'   => $request->input('asunto'), 
+            'asunto'   => 'Consulta General desde la Web',
             'estado'   => 1 
         ]);
 
