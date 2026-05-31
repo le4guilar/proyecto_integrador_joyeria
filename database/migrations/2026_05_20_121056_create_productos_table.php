@@ -18,7 +18,7 @@ return new class extends Migration
             $table->float('precio_unitario', 2);
             $table->integer('stock');
             $table->integer('stock_bajo');
-            $table->string('url_imagen');
+            $table->string('url_imagen')->nullable();
             $table->boolean('activo');
             $table->foreignId('categoria_joya_id')->constrained('categoria_joya');
             $table->foreignId('genero_joya_id')->constrained('genero_joya');
