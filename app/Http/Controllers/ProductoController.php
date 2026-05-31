@@ -17,15 +17,17 @@ class ProductoController extends Controller
         //devolvemos la vista y le pasamos las categorias usando compact
         return view('Backend.Producto.index', compact('productos'));
     }
-    
+
     public function create()
     {
         //busca todas las categorias y generos que hay en Dbeaver
         $categorias = CategoriaJoya::all();
         $genero = GeneroJoya::all();
-        return view('backend.Producto.crear', compact('categorias' , 'genero'));
+        return view('Backend.Producto.crear', compact('categorias', 'genero'));
     }
 
+
+    /*
     public function store(Request $request){
 
         $request->validate([
@@ -51,15 +53,57 @@ class ProductoController extends Controller
         ]);
         
         return redirect()->route('producto.index')->with('status', '¡Joya cargada con éxito');
+    }*/
+
+    public function store(Request $request)
+    {
+
+        // primero que nada validamos todoO0
+        $data = $request->validate([
+            'nombre_joya'       => 'required|string|max:50',
+            'descripcion'       => 'required|string|max:200',
+            'precio_unitario'   => 'required|numeric|min:0',
+            'stock'             => 'required|integer|min:0',
+            'stock_bajo'        => 'required|integer|min:0',
+            'categoria_joya_id' => 'required|integer',
+            'genero_joya_id'    => 'required|integer',
+            'url_imagen'        => 'nullable|image|mimes:jpeg,png,jpg,webp|max:20000',
+        ]);
+
+        // primero definimos el nombre de la imagen como null
+        // si hay una imagen cargada bueno, se guarda la url en nombreimagen paaaa
+        $nombreImagen = null;
+        if ($request->hasFile('url_imagen')) {
+            // Guarda el archivo en storage/app/public/productos
+            $nombreImagen = $request->file('url_imagen')->store('productos', 'public');
+        }
+
+        // ahora creamos el registro en la base de datos
+        Producto::create([
+            'nombre_joya'       => $data['nombre_joya'],
+            'descripcion'       => $data['descripcion'],
+            'precio_unitario'   => $data['precio_unitario'],
+            'stock'             => $data['stock'],
+            'stock_bajo'        => $data['stock_bajo'],
+            'url_imagen'        => $nombreImagen, // Guardamos la ruta de la imagen que se genero mirraaayy
+            'activo'            => true,
+            'categoria_joya_id' => $data['categoria_joya_id'],
+            'genero_joya_id'    => $data['genero_joya_id'],
+        ]);
+
+        // anduvo todo bien? volvemos al indice con un mensaje paaa
+        return redirect()->route('productos.index')->with('status', '¡Joya cargada con éxito!');
     }
 
     public function destroy($id)
     {
+        // como siempre primero buscamos el id del producto que vamos a soft deletear (pobrecito)
         $producto = Producto::findOrFail($id);
-        
-        // Como el modelo usa SoftDeletes, esto hace un borrado logico (no borra el registro, lo oculta)
+
+        // aca de lo matamos (de mentirita)
         $producto->delete();
 
-        return redirect()->route('producto.index')->with('status', 'Joya dada de baja correctamente.');
+        // volvemos al index con el mensaje de exito
+        return redirect()->route('productos.index')->with('status', 'Joya dada de baja correctamente.');
     }
 }
