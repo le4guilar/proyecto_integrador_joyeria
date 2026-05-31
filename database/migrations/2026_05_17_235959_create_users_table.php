@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
 
             $table->foreignId('rol_id')->constrained('rol');
+            $table->foreignId('domicilio_id')->constrained('domicilio');
             
             $table->rememberToken();
             $table->timestamps();
