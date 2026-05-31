@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\CategoriaJoyaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home');
@@ -54,10 +55,11 @@ Route::post('/contacto', [ContactoController::class, 'procesar']);
 Route::middleware(['auth', 'rol:admin'])-> group(function(){
     Route::get('/admin', [AdminController::class, 'dashboard']);
     //Esta linea invoca al recurso CRUD(?) de CategoríaJoya con el middleware doble
-    Route::resource('categoria-joya', CategoriaJoyaController::class);
+    Route::resource('categoria-joyas', CategoriaJoyaController::class);
     //Esta linea invoca al recurso CRUD(?) de Producto con el middleware doble
-    Route::resource('producto', ProductoController::class);
-
+    Route::resource('productos', ProductoController::class);
+    //ahora el recurso CRUD de usuario para el usuario logueado y rol admin
+    Route::resource('usuarios', UserController::class);
 }); // la capa intermedia con dobre verif, si estas en sesion (iniciaste sesión) y si tu usuario es admin entonces te permite tener la vista admin y ejecutar la función dashboard
 
 
