@@ -22,8 +22,8 @@ Route::get('/nosotros', function () {
 return view('nosotros');
 });
 
-Route::get('/productos', function () {
-return view('productos');
+Route::get('/catalogo1', function () {
+return view('catalogo1');
 });
 
 Route::get('/contacto', function () {
@@ -42,13 +42,13 @@ Route::get('/terminos-de-uso', function () {
 return view('terminos-de-uso');
 });
 
-Route::get('/productos', function () {
-    return view('productos'); 
-})->name('catalogo.p1'); 
+Route::get('/catalogo1', function () {
+    return view('catalogo1'); 
+})->name('catalogo1'); 
 
-Route::get('/catalogo-parte-2', function () {
+Route::get('/catalogo2', function () {
     return view('catalogo2'); 
-})->name('catalogo.p2');
+})->name('catalogo2');
 
 Route::post('/contacto', [ContactoController::class, 'procesar']);
 

@@ -16,7 +16,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link px-3" href="/productos">
+                <a class="nav-link px-3" href="/catalogo1">
                     Catálogo
                 </a>
             </li>

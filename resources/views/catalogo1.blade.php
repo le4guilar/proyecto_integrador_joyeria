@@ -2,7 +2,7 @@
 @section('contenido')
 
 <div class="container mt-5">
-    <div class="text-center mb-5">
+    <div class="text-center mb-5" id="anillos">
         <h1 class="display-about-title"> Colección Oro Blanco & Platino</h1>
         <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
         <p class="text-alba-bordo mt-3"> ANILLOS </p>
@@ -11,25 +11,25 @@
     <div class="row g-5">
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/anillo4.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Anillo">
-                <h5 class="nombre-joya">Alianza "Estela Polar"</h5>
-                <p class="precio-joya">$49.600,00</p>
+                <img src="{{ asset('img/Catalogo/Pagina1/Anillo1.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Anillo">
+                <h5 class="nombre-joya">Anillo Cruzado Brillante de Oro Blanco</h5>
+                <p class="precio-joya">$ 51.634,94</p>
             </div>
         </div>
 
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/anillo5.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Anillo">
-                <h5 class="nombre-joya">Anillo "Dualidad Nova"</h5>
-                <p class="precio-joya">$ 52.100,00</p>
+                <img src="{{ asset('img/Catalogo/Pagina1/Anillo2.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Anillo">
+                <h5 class="nombre-joya">Anillo "Ondas Lumiére"</h5>
+                <p class="precio-joya">$ 51.634,94</p>
             </div>
         </div>
 
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/anillo6.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Anillo">
-                <h5 class="nombre-joya">Anillo "Marea de Plata"</h5>
-                <p class="precio-joya">$ 55.300,00</p>
+                <img src="{{ asset('img/Catalogo/Pagina1/Anillo3.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Anillo">
+                <h5 class="nombre-joya">Anillo "Multibanda Élite"</h5>
+                <p class="precio-joya">$ 51.634,94</p>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
 
 
 <div class="container mt-5">
-    <div class="text-center mb-5">
+    <div class="text-center mb-5" id="aretes">
         <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
         <p class="text-alba-bordo"> ARETES </p>
     </div>
@@ -45,24 +45,24 @@
     <div class="row g-5">
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/arete4.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Arete">
-                <h5 class="nombre-joya">Aros "Cubo de Hielo "</h5>
+                <img src="{{ asset('img/Catalogo/Pagina1/arete1.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Arete">
+                <h5 class="nombre-joya">Argolla "Huggies Eternity"</h5>
                 <p class="precio-joya">$ 42.500,00</p>
             </div>
         </div>
 
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/arete5.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Arete">
-                <h5 class="nombre-joya">Argolla "Eclipse Minimas"</h5>
-                <p class="precio-joya">$ 40.000.00</p>
+                <img src="{{ asset('img/Catalogo/Pagina1/arete2.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Arete">
+                <h5 class="nombre-joya">Aros "Ondas Platino"</h5>
+                <p class="precio-joya">$ 38.900.00</p>
             </div>
         </div>
 
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/arete6.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Arete">
-                <h5 class="nombre-joya">Aretes "Lágrima de Venus"</h5>
+                <img src="{{ asset('img/Catalogo/Pagina1/arete3.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Arete">
+                <h5 class="nombre-joya">Pendientes "Gotas de luz"</h5>
                 <p class="precio-joya">$ 45.200,00</p>
             </div>
         </div>
@@ -70,7 +70,7 @@
 </div>
 
 <div class="container mt-5">
-    <div class="text-center mb-5">
+    <div class="text-center mb-5" id="pulseras">
         <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
         <p class="text-alba-bordo"> PULSERAS </p>
     </div>
@@ -78,24 +78,24 @@
     <div class="row g-5">
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/pulsera4.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Pulsera">
-                <h5 class="nombre-joya">Brazalete "Pulso Galáctico"</h5>
-                <p class="precio-joya">$ 65,900,00</p>
+                <img src="{{ asset('img/Catalogo/Pagina1/Pulsera1.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Pulsera">
+                <h5 class="nombre-joya">Brazalete "Destello Infinito"</h5>
+                <p class="precio-joya">$ 65,800,00</p>
             </div>
         </div>
 
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/pulsera5.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Pulsera">
-                <h5 class="nombre-joya">Pulsera "Vía Láctea"</h5>
+                <img src="{{ asset('img/Catalogo/Pagina1/Pulsera2.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Pulsera">
+                <h5 class="nombre-joya">Esclava "Ondas de Plata"</h5>
                 <p class="precio-joya">$ 48.200,00</p>
             </div>
         </div>
 
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/pulsera6.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Pulsera">
-                <h5 class="nombre-joya">Pulsera Tennis "Hebra de Diamante"</h5>
+                <img src="{{ asset('img/Catalogo/Pagina1/Pulsera3.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Pulsera">
+                <h5 class="nombre-joya">Pulsera Tennis "Élite Diamond"</h5>
                 <p class="precio-joya">$ 72,500,00</p>
             </div>
         </div>
@@ -103,7 +103,7 @@
 </div>
 
 <div class="container mt-5">
-    <div class="text-center mb-5">
+    <div class="text-center mb-5" id="collares">
         <hr class="mx-auto" style="width: 60px; opacity: 0.2; color: #300403;">
         <p class="text-alba-bordo"> COLLARES </p>
     </div>
@@ -111,25 +111,25 @@
     <div class="row g-5">
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/collar4.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Collar">
-                <h5 class="nombre-joya">Collar "Halo de Luna</h5>
-                <p class="precio-joya">$ 54,900,00</p>
+                <img src="{{ asset('img/Catalogo/Pagina1/collar1.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Collar">
+                <h5 class="nombre-joya">Gargantilla "Solitario Astral"</h5>
+                <p class="precio-joya">$ 53,900,00</p>
             </div>
         </div>
 
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/collar5.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Collar">
-                <h5 class="nombre-joya">Gargantilla "Dúo Florar Blanco</h5>
-                <p class="precio-joya">$ 60.000,00</p>
+                <img src="{{ asset('img/Catalogo/Pagina1/collar2.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Collar">
+                <h5 class="nombre-joya">Collar Multiplaca "Rocío de Luna"</h5>
+                <p class="precio-joya">$ 58.900,00</p>
             </div>
         </div>
 
         <div class="col-md-4 text-center">
             <div class="producto-card rounded-2">
-                <img src="{{ asset('img/Catalogo/Pagina2/collar6.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Collar">
-                <h5 class="nombre-joya">Collar "Cascada de Luz"</h5>
-                <p class="precio-joya">$ 90.600,00</p>
+                <img src="{{ asset('img/Catalogo/Pagina1/collar3.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Collar">
+                <h5 class="nombre-joya">Collar Tennis "Brillo Supremo"</h5>
+                <p class="precio-joya">$ 85.600,00</p>
             </div>
         </div>
     </div>
@@ -138,20 +138,20 @@
 
     <nav aria-label="Navegacion catalogo" class="mt-5 mb-5">
         <ul class="pagination justify-content-center">
-            <li class="page-item">
+            <li class="page-item disabled">
                 <a class="page-link text-dark fw-light" href="{{ route('catalogo1') }}">Anterior</a>
             </li>
 
-            <li class="page-item">
+            <li class="page-item disabled">
                 <a class="page-link text-dark fw-light" href="{{ route('catalogo1') }}"> 1 </a>
             </li>
 
-            <li class="page-item disabled">
+            <li class="page-item active">
                 <a class="page-link text-dark fw-light" href="{{ route('catalogo2') }}"> 2 </a>
             </li>
 
-            <li class="page-item disabled">
-                <a class="page-link text-dark fw-light" href="#"> Siguiente </a>
+            <li class="page-item active">
+                <a class="page-link text-dark fw-light" href="{{ route('catalogo2') }}"> Siguiente </a>
             </li>
         </ul>
     </nav>
