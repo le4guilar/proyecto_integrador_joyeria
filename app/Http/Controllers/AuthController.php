@@ -80,7 +80,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             //CAMBIO: se compara el id del rol directamente. 
-            if (Auth::user()->rol->nombre_rol == 1) { //si es admin
+            if (Auth::user()->rol->nombre_rol == 'admin') { //si es admin
                 return redirect('/');
             }
 
