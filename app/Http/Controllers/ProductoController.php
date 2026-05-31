@@ -23,7 +23,7 @@ class ProductoController extends Controller
         //busca todas las categorias y generos que hay en Dbeaver
         $categorias = CategoriaJoya::all();
         $genero = GeneroJoya::all();
-        return view('backend.Producto.crear', compact('categorias' , 'generos'));
+        return view('backend.Producto.crear', compact('categorias' , 'genero'));
     }
 
     public function store(Request $request){

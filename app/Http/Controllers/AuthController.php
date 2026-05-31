@@ -58,10 +58,12 @@ class AuthController extends Controller
         ]);
 
         // Auth::login($usuario); [OPCIONAL LOGUEARLO]
+        //SOLUCION: logueamos al usuario automaticamente tras registrarse
+        Auth::login($usuario);
 
         // return redirect('/cliente'); [REDIRIGIMOS A LA VISTA CLIENTE??]
-
-        return redirect('/'); //redirige a la raíz [VER A DONDE QUEREMOS REDIRIGIR] si a una vista de usuario creado exito o raiz o lo logueamos
+        //SOLUCION: lo mandamos directamente a su panel de cliente 
+        return redirect()->route('cliente')->with('success', 'Te registrste con ¡éxito!');
     }
 
     public function autenticar(Request $request)
@@ -77,8 +79,9 @@ class AuthController extends Controller
         if (Auth::attempt($credenciales)) {
             $request->session()->regenerate();
 
-            if (Auth::user()->rol->nombre_rol === 'admin') { //si es admin
-                return redirect('/');
+            //CAMBIO: se compara el id del rol directamente. 
+            if (Auth::user()->rol->nombre_rol == 1) { //si es admin
+                return redirect('/admin');
             }
 
             return redirect('cliente'); //si no es admin es cliente
@@ -95,7 +98,6 @@ class AuthController extends Controller
         $request->session()->invalidate(); //invalida la sesion y borra los datos
         $request->session()->regenerateToken(); // Regenera el token @csrf (el del formulario de ingreso)para seguridad 
 
-        return redirect('home'); //redirige a una ruta pública (si no tiene nada a la raíz)
+        return redirect('catalogo.p1'); //CAMBIO (estategis de negocio): una vez que el usuario cierra sesion va a catalogo, asi por ahi le pinta comprar algun articulo
     }
 }
-    
