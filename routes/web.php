@@ -60,6 +60,8 @@ Route::middleware(['auth', 'rol:admin'])-> group(function(){
     Route::resource('productos', ProductoController::class);
     //ahora el recurso CRUD de usuario para el usuario logueado y rol admin
     Route::resource('usuarios', UserController::class);
+    // mostramos la lista de ciudades
+    Route::get('/obtener-ciudades/{provinciaId}', [UserController::class, 'obtenerCiudades']);
 }); // la capa intermedia con dobre verif, si estas en sesion (iniciaste sesión) y si tu usuario es admin entonces te permite tener la vista admin y ejecutar la función dashboard
 
 
