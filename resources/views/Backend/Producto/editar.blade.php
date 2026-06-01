@@ -96,7 +96,7 @@
 </div>
 
 <script>
-// Mantenemos el script genial de Leandro para que pueda arrastrar fotos nuevas al editar
+
 const dropZone = document.getElementById('drop-zone');
 const fileInput = document.getElementById('url_imagen');
 const dropText = document.getElementById('drop-text');
