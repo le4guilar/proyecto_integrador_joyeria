@@ -13,8 +13,6 @@ class DetalleCarrito extends Model
     protected $table = 'detalle_carrito';
     protected $fillable = [
         'cantidad',
-        'precio_unitario',
-        'subtotal',
         'producto_id',
         'carrito_id',
     ];

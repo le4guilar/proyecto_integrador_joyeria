@@ -16,8 +16,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('carrito_id')->constrained('carrito');
             $table->integer('cantidad');
-            $table->float('precio_unitario', 2);
-            $table->float('subtotal', 2);
             $table->foreignId('producto_id')->constrained('producto');
             $table->timestamps();   
             $table->softDeletes(); 
