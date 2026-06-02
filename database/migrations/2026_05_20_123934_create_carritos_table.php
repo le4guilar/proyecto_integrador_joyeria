@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carrito', function (Blueprint $table) {
+            $table->primary(['id', 'usuario_id']);
             $table->id();
-            $table->float('total', 2);
             $table->foreignId('usuario_id')->constrained('users');
-            $table->timestamps();
+            $table->integer('cantidad');
+            $table->foreignId('producto_id')->constrained('producto');
+            $table->timestamps();   
             $table->softDeletes(); 
         });
     }
