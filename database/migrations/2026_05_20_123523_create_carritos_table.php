@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('carrito', function (Blueprint $table) {
             $table->id();
             $table->float('total', 2);
-            $table->foreignId('users_id')->constrained('users');
+            $table->foreignId('usuario_id')->constrained('users');
             $table->timestamps();
             $table->softDeletes(); 
         });

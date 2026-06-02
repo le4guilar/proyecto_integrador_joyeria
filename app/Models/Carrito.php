@@ -13,7 +13,7 @@ class Carrito extends Model
     protected $table = 'carrito';
     protected $fillable = [
         'total',
-        'users_id',
+        'usuario_id',
     ];
 
     public function usuario(){
