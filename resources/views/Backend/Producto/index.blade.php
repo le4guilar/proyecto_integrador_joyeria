@@ -93,7 +93,7 @@
                                 <div class="d-flex justify-content-center gap-2">
                                     {{-- Botón Editar --}}
                                     <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-warning btn-sm text-white" title="Editar Joya">
-                                        <i class="bi bi-pencil-square"></i>
+                                        <i class="bi bi-pencil-square"></i> Editar
                                     </a>
 
                                     {{-- Botón Eliminar protegido con formulario --}}
