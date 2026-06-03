@@ -1,4 +1,4 @@
-@extends('plantilla-principal')
+@extends('Plantillas/plantilla-principal')
 
 @section('contenido')
 
@@ -14,7 +14,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="p-5 border rounded bg-exito-card">
-                <i class="bi bi-check-circle text-success display-1 mb-4"></i>
                 <img class="img-fluid mx-auto d-block" src="{{ asset('img/contacto/envelope-check.svg') }}" alt="confirmación" width="60">
                 <h1 class="mb-3 h1-exito">¡Gracias por contactarnos, <b>{{ $nombre }}</b>!</h1>
                 

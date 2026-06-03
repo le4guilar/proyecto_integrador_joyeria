@@ -1,4 +1,4 @@
-@extends('plantilla-principal')
+@extends('Plantillas/plantilla-principal')
 @section('contenido')
 
 <div class="container-fluid bg-alba-crema py-5">

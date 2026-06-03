@@ -53,7 +53,7 @@ Route::get('/catalogo2', function () {
 Route::post('/contacto', [ContactoController::class, 'procesar']);
 
 Route::middleware(['auth', 'rol:admin'])-> group(function(){
-    Route::get('/admin', [AdminController::class, 'dashboard']);
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
     //Esta linea invoca al recurso CRUD(?) de CategoríaJoya con el middleware doble
     Route::resource('categoria-joyas', CategoriaJoyaController::class);
     //Esta linea invoca al recurso CRUD(?) de Producto con el middleware doble
