@@ -1,4 +1,4 @@
-@extends('plantilla-principal')
+@extends('Admin/Plantillas/plantilla-principal')
 
 @section('contenido')
 <div class="container mt-5 mb-5" style="max-width: 600px;">

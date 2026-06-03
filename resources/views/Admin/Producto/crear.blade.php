@@ -1,4 +1,4 @@
-@extends('plantilla-principal')
+@extends('Admin/Plantillas/plantilla-principal')
 
 @section('contenido')
 
