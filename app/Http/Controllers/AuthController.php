@@ -17,13 +17,13 @@ class AuthController extends Controller
         $provincias = DB::table('provincia')->get();
 
         // Se las pasamos a la vista usando compact
-        return view('backend.usuarios.registro', compact('provincias'));
+        return view('Cliente.Registro', compact('provincias'));
     }
 
     //muestra la vista con el formulario de login
     public function formularioLogin()
     {
-        return view('backend.usuarios.login');
+        return view('Cliente.Login');
     }
 
     public function registrar(Request $request)

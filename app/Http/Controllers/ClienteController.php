@@ -18,7 +18,7 @@ class ClienteController extends Controller
         $misOrdenes = Orden::where('usuario_id', $usuarioLogueadoId)->get();
 
         //se abre la pantalla del cliente y le pasamos sus ordenes usando compact
-        return view('backend.usuarios.clientes', compact('misOrdenes'));
+        return view('Cliente.Cliente', compact('misOrdenes'));
 
 
 
