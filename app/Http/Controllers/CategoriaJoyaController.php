@@ -14,12 +14,12 @@ class CategoriaJoyaController extends Controller
         $categoria_joya = CategoriaJoya::all();
 
         //devolvemos la vista y le pasamos las categorias usando compact
-        return view('Backend.CategoriaJoya.index', compact('categoria_joya'));
+        return view('Admin.CategoriaJoya.index', compact('categoria_joya'));
     }
 
     public function create()
     {
-        return view('Backend.CategoriaJoya.crear');
+        return view('Admin.CategoriaJoya.crear');
     }
 
     public function store(Request $request)
@@ -45,7 +45,7 @@ class CategoriaJoyaController extends Controller
         $categoria = CategoriaJoya::findOrFail($id);
 
         //  cuando encuentra se le pasa ese registro a la vista de edicion
-        return view('Backend.CategoriaJoya.editar', compact('categoria'));
+        return view('Admin.CategoriaJoya.editar', compact('categoria'));
     }
 
     public function update(Request $request, $id)

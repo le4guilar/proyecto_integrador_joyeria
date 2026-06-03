@@ -18,7 +18,7 @@ class UserController extends Controller
         $usuarios = User::with('rol')->get();
 
         // devolvemos la vista index de usuario pasandole el ¿array? de usuarios
-        return view('Backend.Usuario.index', compact('usuarios'));
+        return view('Admin.Usuario.index', compact('usuarios'));
     }
 
     public function create()
@@ -30,7 +30,7 @@ class UserController extends Controller
         $roles = DB::table('rol')->get();
 
         // vamos a la vista crear mandandole las provincias y los roles
-        return view('Backend.Usuario.crear', compact('provincias', 'roles'));
+        return view('Admin.Usuario.crear', compact('provincias', 'roles'));
     }
 
     public function store(Request $request)
@@ -103,7 +103,7 @@ class UserController extends Controller
             ->where('provincia_id', $usuario->domicilio->ciudad_id ? DB::table('ciudad')->where('id', $usuario->domicilio->ciudad_id)->value('provincia_id') : 0)
             ->get();
 
-        return view('Backend.Usuario.editar', compact('usuario', 'roles', 'provincias', 'ciudades'));
+        return view('Admin.Usuario.editar', compact('usuario', 'roles', 'provincias', 'ciudades'));
     }
 
 

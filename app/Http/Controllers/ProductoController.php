@@ -15,7 +15,7 @@ class ProductoController extends Controller
         $productos = Producto::all();
 
         //devolvemos la vista y le pasamos las categorias usando compact
-        return view('Backend.Producto.index', compact('productos'));
+        return view('Admin.Producto.index', compact('productos'));
     }
 
     public function create()
@@ -23,7 +23,7 @@ class ProductoController extends Controller
         //busca todas las categorias y generos que hay en Dbeaver
         $categorias = CategoriaJoya::all();
         $genero = GeneroJoya::all();
-        return view('Backend.Producto.crear', compact('categorias', 'genero'));
+        return view('Admin.Producto.crear', compact('categorias', 'genero'));
     }
 
 
@@ -157,6 +157,6 @@ class ProductoController extends Controller
         $genero = GeneroJoya::all();
 
         // Devolvemos la vista de edición pasándole los datos
-        return view('Backend.Producto.editar', compact('producto', 'categorias', 'genero'));
+        return view('Admin.Producto.editar', compact('producto', 'categorias', 'genero'));
     }
 }
