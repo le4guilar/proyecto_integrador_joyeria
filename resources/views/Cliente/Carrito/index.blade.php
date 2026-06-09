@@ -10,7 +10,7 @@
                 ({{ $items->count() }} {{ $items->count() == 1 ? 'artículo' : 'artículos' }})
             </span>
         </h2>
-        <a href="{{ route('productos.index') }}" class="text-dark text-decoration-none small">
+        <a href="{{ route('catalogo1') }}" class="text-dark text-decoration-none small">
             Continuar comprando ➡️
         </a>
     </div>
@@ -131,7 +131,7 @@
             <span style="font-size: 5rem;">💎</span>
             <h3 class="mt-4 text-dark fw-bold">Tu carrito ALBA está vacío</h3>
             <p class="text-muted fs-5">Nuestra colección te espera para llenarlo de brillo.</p>
-            <a href="{{ route('productos.index') }}" class="btn btn-primary btn-lg mt-3 px-5 py-3 fw-bold text-uppercase">
+            <a href="{{ route('catalogo1') }}" class="btn btn-primary btn-lg mt-3 px-5 py-3 fw-bold text-uppercase">
                 Ver Joyas
             </a>
         </div>
