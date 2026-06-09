@@ -9,6 +9,8 @@ use App\Http\Controllers\CategoriaJoyaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CarritoController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -93,3 +95,12 @@ Route::get('/api/provincias/{id}/ciudades', function($id) {
 Route::get('/cliente', [ClienteController::class, 'dashboard'])->middleware('auth')->name('cliente');
 
 
+//CARRITO
+// 1. Caminito para ver el carrito en la pantalla que creamos recién
+Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index');
+
+// 2. Caminito que se activa cuando tocás "Agregar al carrito" en el catálogo
+Route::post('/carrito/agregar', [CarritoController::class, 'store'])->name('carrito.store');
+
+// 3. Caminito para el botón de "Quitar" (el tachito de basura)
+Route::delete('/carrito/quitar/{id}', [CarritoController::class, 'destroy'])->name('carrito.destroy');

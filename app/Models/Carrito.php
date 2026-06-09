@@ -15,6 +15,7 @@ class Carrito extends Model
         'cantidad',
         'producto_id',
         'usuario_id',
+        'precio_unitario', //nuevo 
     ];
 
     public function carrito(){
