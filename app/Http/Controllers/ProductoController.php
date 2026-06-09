@@ -9,21 +9,42 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        //se llaman a todos los registros de la tabla categoría joya con el nombre del modelo
-        $productos = Producto::withTrashed()->get();
+        // Iniciamos la consulta permitiendo traer los eliminados
+        $query = Producto::withTrashed();
 
-        //devolvemos la vista y le pasamos las categorias usando compact
-        return view('Admin.Producto.index', compact('productos'));
-    }
+        // Filtro por Categoría
+        if ($request->filled('categoria_id')) {
+            $query->where('categoria_joya_id', $request->categoria_id);
+        }
 
-    public function create()
-    {
-        //busca todas las categorias y generos que hay en Dbeaver
+        // Filtro por Género
+        if ($request->filled('genero_id')) {
+            $query->where('genero_joya_id', $request->genero_id);
+        }
+
+        // Orden por precio (Mayor/Menor o Viceversa)
+        if ($request->filled('orden_precio')) {
+            if ($request->orden_precio === 'asc') {
+                $query->orderBy('precio_unitario', 'asc');
+            } elseif ($request->orden_precio === 'desc') {
+                $query->orderBy('precio_unitario', 'desc');
+            }
+        } else {
+            // Orden por defecto por si no eligen nada (ej: los más nuevos primero)
+            $query->orderBy('id', 'desc');
+        }
+
+        // Ejecutamos la consulta con los filtros aplicados
+        $productos = $query->get();
+
+        // Necesitamos las categorías y géneros para cargarlos en los selectores del formulario de filtro
         $categorias = CategoriaJoya::all();
-        $genero = GeneroJoya::all();
-        return view('Admin.Producto.crear', compact('categorias', 'genero'));
+        $generos = GeneroJoya::all();
+
+        // Devolvemos la vista pasando todo con compact
+        return view('Admin.Producto.index', compact('productos', 'categorias', 'generos'));
     }
 
 
