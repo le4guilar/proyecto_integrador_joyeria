@@ -12,7 +12,7 @@ class ProductoController extends Controller
     public function index()
     {
         //se llaman a todos los registros de la tabla categoría joya con el nombre del modelo
-        $productos = Producto::all();
+        $productos = Producto::withTrashed()->get();
 
         //devolvemos la vista y le pasamos las categorias usando compact
         return view('Admin.Producto.index', compact('productos'));
@@ -151,12 +151,23 @@ class ProductoController extends Controller
     {
         // Buscamos el producto por su ID en DBeaver
         $producto = Producto::findOrFail($id);
-        
+
         // Buscamos las categorías y géneros para los selectores
         $categorias = CategoriaJoya::all();
         $genero = GeneroJoya::all();
 
         // Devolvemos la vista de edición pasándole los datos
         return view('Admin.Producto.editar', compact('producto', 'categorias', 'genero'));
+    }
+
+    public function restore($id)
+    {
+        // Buscamos únicamente entre los registros eliminados
+        $producto = Producto::onlyTrashed()->findOrFail($id);
+
+        // Lo restauramos en la base de datos (vuelve a estar activo)
+        $producto->restore();
+
+        return redirect()->route('productos.index')->with('status', '¡Producto puesto en venta nuevamente!');
     }
 }
