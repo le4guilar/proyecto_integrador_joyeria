@@ -64,6 +64,8 @@ Route::middleware(['auth', 'rol:admin'])-> group(function(){
     Route::resource('usuarios', UserController::class);
     // mostramos la lista de ciudades
     Route::get('/obtener-ciudades/{provinciaId}', [UserController::class, 'obtenerCiudades']);
+
+    Route::patch('productos/{id}/restore', [ProductoController::class, 'restore'])->name('productos.restore');
 }); // la capa intermedia con dobre verif, si estas en sesion (iniciaste sesión) y si tu usuario es admin entonces te permite tener la vista admin y ejecutar la función dashboard
 
 

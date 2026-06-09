@@ -19,7 +19,7 @@ class ProductoSeeder extends Seeder
             'precio_unitario'   => 95000.00,
             'stock'             => 12,
             'stock_bajo'        => 5,
-            'url_imagen'        => 'productos/anillo_infinity.webp', // Simula la ruta de storage
+            'url_imagen'        => 'productos/DWIrpvJosh7s7HdE02grbF496fGqsXzclpEzKdpG.png', // Simula la ruta de storage
             'activo'            => true,
             'categoria_joya_id' => 1, // ID de Anillos en el seeder
             'genero_joya_id'    => 1, // ID de Femenino en el seeder
@@ -45,7 +45,7 @@ class ProductoSeeder extends Seeder
             'precio_unitario'   => 65000.00,
             'stock'             => 20,
             'stock_bajo'        => 4,
-            'url_imagen'        => 'productos/aros_gota.webp',
+            'url_imagen'        => 'productos/IAjhmZybevyhQz6W9dXhENFnILHO0wynoxcspZI7.png',
             'activo'            => true,
             'categoria_joya_id' => 2, // ID de Aretes
             'genero_joya_id'    => 1, 

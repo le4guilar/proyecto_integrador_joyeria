@@ -55,10 +55,11 @@
                             </td>
 
                             <td>
-                                <h6 class="mb-0 fw-bold text-dark">{{ $producto->nombre_joya }}</h6>
-                                <small class="text-muted text-truncate d-inline-block" style="max-width: 250px;">
-                                    {{ $producto->descripcion }}
-                                </small>
+                                <span class="fw-bold text-dark">{{ $producto->nombre_joya }}</span>
+                                {{-- Si el producto fue eliminado (soft delete) --}}
+                                @if($producto->trashed())
+                                <span class="badge bg-secondary-subtle text-secondary ms-2">De Baja</span>
+                                @endif
                             </td>
 
                             <td>
@@ -78,19 +79,34 @@
                             </td>
 
                             <td class="text-center">
-                                @if($producto->stock <= $producto->stock_bajo)
-                                    <span class="badge bg-danger-subtle text-danger px-2 py-1" title="Stock por debajo del límite mínimo!">
-                                        {{ $producto->stock }} ¡Poco Stock!
+                                @if($producto->stock <= 0)
+                                    <span class="badge bg-dark text-white px-2 py-1" title="No hay unidades disponibles">
+                                    ¡Sin Stock!
                                     </span>
-                                    @else
-                                    <span class="badge bg-success-subtle text-success px-2 py-1">
-                                        {{ $producto->stock }} u.
-                                    </span>
-                                    @endif
+                                    @elseif($producto->stock <= $producto->stock_bajo)
+                                        <span class="badge bg-danger-subtle text-danger px-2 py-1" title="Stock por debajo del límite mínimo!">
+                                            {{ $producto->stock }} ¡Poco Stock!
+                                        </span>
+                                        @else
+                                        <span class="badge bg-success-subtle text-success px-2 py-1">
+                                            {{ $producto->stock }} u.
+                                        </span>
+                                        @endif
                             </td>
 
                             <td class="text-center pe-4">
-                                <div class="d-flex justify-content-center gap-2">
+                                <div class="btn-group" role="group">
+                                    @if($producto->trashed())
+                                    {{-- Botón para volver a activar/vender --}}
+                                    <form action="{{ route('productos.restore', $producto->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="btn btn-success btn-sm" title="Poner en venta de nuevo">
+                                            <i class="bi bi-arrow-counterclockwise"></i> Activar
+                                        </button>
+                                    </form>
+                                    @else
+                                    <div class="d-flex justify-content-center gap-2">
                                     {{-- Botón Editar --}}
                                     <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-warning btn-sm text-white" title="Editar Joya">
                                         <i class="bi bi-pencil-square"></i> Editar
@@ -103,6 +119,8 @@
                                             <i class="bi bi-trash"></i> Eliminar
                                         </button>
                                     </form>
+                                </div>
+                                    @endif
                                 </div>
                             </td>
                         </tr>
