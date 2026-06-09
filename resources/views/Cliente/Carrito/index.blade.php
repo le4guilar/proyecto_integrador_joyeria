@@ -2,7 +2,7 @@
 @section('contenido')
 
 
-<div class="container my-5" style="font-family: 'Montserrat', sans-serif;"> {{-- Sugerencia de tipografía como tu web --}}
+<div class="container my-5" style="font-family: 'Montserrat', sans-serif;">
     
     <div class="d-flex justify-content-between align-items-center mb-5 border-bottom pb-3">
         <h2 class="mb-0 text-dark fw-bold" style="letter-spacing: -1px;">Mi carrito 
@@ -11,7 +11,7 @@
             </span>
         </h2>
         <a href="{{ route('catalogo1') }}" class="text-dark text-decoration-none small">
-            Continuar comprando ➡️
+            Continuar comprando ->
         </a>
     </div>
 
@@ -27,7 +27,7 @@
     @if($items->count() > 0)
         <div class="row g-5">
             
-            {{-- COLUMNA IZQUIERDA: LISTA DE PRODUCTOS (Estilo Adaptado) --}}
+            {{-- COLUMNA IZQUIERDA: LISTA DE PRODUCTOS --}}
             <div class="col-lg-8">
                 
                 @foreach($items as $item)
@@ -36,7 +36,7 @@
                         {{-- Imagen del Producto --}}
                         <div class="col-md-2 col-3">
                             @if($item->producto && $item->producto->url_imagen)
-                                <img src="{{ asset('storage/' . $item->producto->url_imagen) }}" 
+                                <img src="{{ asset($item->producto->url_imagen) }}" 
                                      alt="{{ $item->producto->nombre_joya }}" 
                                      class="img-fluid rounded shadow-sm"
                                      style="object-fit: cover; aspect-ratio: 1/1;">
@@ -73,19 +73,19 @@
                                 {{-- Control de Cantidad --}}
                                 <div class="d-flex align-items-center border rounded">
                                     <span class="px-3 py-1 text-muted small">Cant.</span>
-                                    <span class="px-3 py-1 fw-bold border-start bg-light">{{ $item->cantidad }}</span>
+                                    <span class="px-3 py-1 fw-bold border-start bg-light text-dark">{{ $item->cantidad }}</span>
                                 </div>
                             </div>
                         </div>
 
-                        {{-- Botón de Eliminar --}}
+                        {{-- Botón de Eliminar (Se corrigio: Le agregamos el texto para que aparezca en pantalla) --}}
                         <div class="position-absolute top-0 end-0 mt-2 me-2" style="width: auto;">
                             <form action="{{ route('carrito.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-link text-danger p-0" 
+                                <button type="submit" class="btn btn-link text-danger p-0 text-decoration-none small fw-semibold" 
                                         onclick="return confirm('¿Querés quitar esta joya de tu carrito ALBA?')">
-                                    
+                                     Quitar
                                 </button>
                             </form>
                         </div>

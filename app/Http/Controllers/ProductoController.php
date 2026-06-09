@@ -178,4 +178,54 @@ class ProductoController extends Controller
 
         return redirect()->route('productos.index')->with('status', '¡Producto puesto en venta nuevamente!');
     }
+
+    //VERIFICAR: ESTO FUE LO ULTIMO QUE SE AGREGO (1), muestra una pagina solo del producto seleccionado para ver su descripcion y opciones
+    //de aca se creo el Producto.show
+    public function show($id){
+    // Busca la joya por su ID en DBeaver. Si no existe, tira error 404
+    $producto = Producto::findOrFail($id);
+    
+    // Nos lleva a la nueva vista pasándole los datos de esa joya sola
+    return view('Cliente.Producto.show', compact('producto'));
+    }
+
+    // SE AGREGA UN SOLO MÉTODO PARA TODO EL CATÁLOGO AUTOMÁTICO (2)
+    public function mostrarCatalogo(Request $request){
+        // Iniciamos la consulta de productos activos
+        $query = Producto::query();
+
+        //  Filtro por Categoría
+        if ($request->filled('categoria_id')) {
+        $query->where('categoria_joya_id', $request->categoria_id);
+        }
+
+        //  Filtro por Nombre (Buscador)
+        if ($request->filled('buscar')) {
+            $query->where('nombre_joya', 'like', '%' . $request->buscar . '%');
+        }
+
+        //  Orden por precio
+        if ($request->filled('orden_precio')) {
+            if ($request->orden_precio === 'asc') {
+                $query->orderBy('precio_unitario', 'asc');
+            } elseif ($request->orden_precio === 'desc') {
+                $query->orderBy('precio_unitario', 'desc');
+            }
+        } else {
+            $query->orderBy('id', 'desc'); // Por defecto más nuevos primero
+        }
+
+        // Le pedimos a DBeaver que los separe en grupos de 9.
+        $productos = $query->paginate(9);
+
+        //SE CAMBIO DE PRODUCTOS A CATEGORIAS DE JOYAS 
+        // Vamos a DBeaver a buscar todas las categorías para el selector de filtros
+        $categorias = CategoriaJoya::all();
+   
+
+        // se manda todo a una sola vista general
+        //  ACA LE AGREGAMOS EL 'categorias' ADENTRO DEL COMPACT:
+        // Se lo mandamos a la vista junto con los productos
+        return view('catalogo1', compact('productos', 'categorias'));
+    }
 }

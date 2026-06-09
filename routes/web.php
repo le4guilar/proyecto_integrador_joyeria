@@ -106,3 +106,12 @@ Route::post('/carrito/agregar', [CarritoController::class, 'store'])->name('carr
 
 // 3. Caminito para el botón de "Quitar" (el tachito de basura)
 Route::delete('/carrito/quitar/{id}', [CarritoController::class, 'destroy'])->name('carrito.destroy');
+
+// RUTA DE DETALLE: No borrar. Se activa cuando el cliente hace clic en la foto de una joya 
+// en el catálogo y lo lleva a ver sus características específicas usando el {id}.
+Route::get('/catalogo/producto/{id}', [ProductoController::class, 'show'])->name('catalogo.producto.show');
+
+// ÚNICA RUTA DEL CATÁLOGO PÚBLICO
+//Route::get('/catalogo', [ProductoController::class, 'mostrarCatalogo'])->name('catalogo.index');
+// La ruta ahora es dinámica y pasa por el controlador
+Route::get('/catalogo1', [ProductoController::class, 'mostrarCatalogo'])->name('catalogo1');
