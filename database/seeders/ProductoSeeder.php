@@ -12,43 +12,56 @@ class ProductoSeeder extends Seeder
      */
     public function run(): void
     {
-        // Joya de prueba 1: in anillo para categoria 'Anillos' (ID 1) y genero 'Femenino' (ID 1)
-        Producto::create([
-            'nombre_joya'       => 'Anillo Infinity Shine',
-            'descripcion'       => 'Diseño entrelazado que simboliza la unión perfecta entre elegancia y brillo.',
-            'precio_unitario'   => 95000.00,
-            'stock'             => 12,
-            'stock_bajo'        => 5,
-            'url_imagen'        => 'productos/DWIrpvJosh7s7HdE02grbF496fGqsXzclpEzKdpG.png', // Simula la ruta de storage
-            'activo'            => true,
-            'categoria_joya_id' => 1, // ID de Anillos en el seeder
-            'genero_joya_id'    => 1, // ID de Femenino en el seeder
-        ]);
+        $productos = [
+            // --- CATÁLOGO 1 ---
+            // Anillos (Categoría 1)
+            ['nombre' => 'Anillo Cruzado Brillante de Oro Blanco', 'precio' => 51634.94, 'img' => 'img/Catalogo/Pagina1/Anillo1.png', 'cat' => 1],
+            ['nombre' => 'Anillo "Ondas Lumiére"', 'precio' => 51634.94, 'img' => 'img/Catalogo/Pagina1/Anillo2.png', 'cat' => 1],
+            ['nombre' => 'Anillo "Multibanda Élite"', 'precio' => 51634.94, 'img' => 'img/Catalogo/Pagina1/Anillo3.png', 'cat' => 1],
+            // Aretes (Categoría 2)
+            ['nombre' => 'Argolla "Huggies Eternity"', 'precio' => 42500.00, 'img' => 'img/Catalogo/Pagina1/arete1.png', 'cat' => 2],
+            ['nombre' => 'Aros "Ondas Platino"', 'precio' => 38900.00, 'img' => 'img/Catalogo/Pagina1/arete2.png', 'cat' => 2],
+            ['nombre' => 'Pendientes "Gotas de luz"', 'precio' => 45200.00, 'img' => 'img/Catalogo/Pagina1/arete3.png', 'cat' => 2],
+            // Pulseras (Categoría 3)
+            ['nombre' => 'Brazalete "Destello Infinito"', 'precio' => 65800.00, 'img' => 'img/Catalogo/Pagina1/Pulsera1.png', 'cat' => 3],
+            ['nombre' => 'Esclava "Ondas de Plata"', 'precio' => 48200.00, 'img' => 'img/Catalogo/Pagina1/Pulsera2.png', 'cat' => 3],
+            ['nombre' => 'Pulsera Tennis "Élite Diamond"', 'precio' => 72500.00, 'img' => 'img/Catalogo/Pagina1/Pulsera3.png', 'cat' => 3],
+            // Collares (Categoría 4)
+            ['nombre' => 'Gargantilla "Solitario Astral"', 'precio' => 53900.00, 'img' => 'img/Catalogo/Pagina1/collar1.png', 'cat' => 4],
+            ['nombre' => 'Collar Multiplaca "Rocío de Luna"', 'precio' => 58900.00, 'img' => 'img/Catalogo/Pagina1/collar2.png', 'cat' => 4],
+            ['nombre' => 'Collar Tennis "Brillo Supremo"', 'precio' => 85600.00, 'img' => 'img/Catalogo/Pagina1/collar3.png', 'cat' => 4],
 
-        // Joya de prueba 2: cadena para categoria 'Collares' (ID 4) y genero 'Masculino' (ID 2 o el que corresponda)
-        Producto::create([
-            'nombre_joya'       => 'Cadena Eslabón Cubano',
-            'descripcion'       => 'Cadena robusta de plata de ley, ideal para uso diario con cierre de seguridad.',
-            'precio_unitario'   => 150000.00,
-            'stock'             => 4, // este va a salir en ROJO en la tabla porque es menor al stock bajo
-            'stock_bajo'        => 6,
-            'url_imagen'        => 'productos/cadena_cubana.webp',
-            'activo'            => true,
-            'categoria_joya_id' => 4, // ID de Collares
-            'genero_joya_id'    => 2, // ID de Masculino/Unisex
-        ]);
+            // --- CATÁLOGO 2 ---
+            // Anillos (Categoría 1)
+            ['nombre' => 'Alianza "Estela Polar"', 'precio' => 49600.00, 'img' => 'img/Catalogo/Pagina2/anillo4.png', 'cat' => 1],
+            ['nombre' => 'Anillo "Dualidad Nova"', 'precio' => 52100.00, 'img' => 'img/Catalogo/Pagina2/anillo5.png', 'cat' => 1],
+            ['nombre' => 'Anillo "Marea de Plata"', 'precio' => 55300.00, 'img' => 'img/Catalogo/Pagina2/anillo6.png', 'cat' => 1],
+            // Aretes (Categoría 2)
+            ['nombre' => 'Aros "Cubo de Hielo"', 'precio' => 42500.00, 'img' => 'img/Catalogo/Pagina2/arete4.png', 'cat' => 2],
+            ['nombre' => 'Argolla "Eclipse Minimas"', 'precio' => 40000.00, 'img' => 'img/Catalogo/Pagina2/arete5.png', 'cat' => 2],
+            ['nombre' => 'Aretes "Lágrima de Venus"', 'precio' => 45200.00, 'img' => 'img/Catalogo/Pagina2/arete6.png', 'cat' => 2],
+            // Pulseras (Categoría 3)
+            ['nombre' => 'Brazalete "Pulso Galáctico"', 'precio' => 65900.00, 'img' => 'img/Catalogo/Pagina2/pulsera4.png', 'cat' => 3],
+            ['nombre' => 'Pulsera "Vía Láctea"', 'precio' => 48200.00, 'img' => 'img/Catalogo/Pagina2/pulsera5.png', 'cat' => 3],
+            ['nombre' => 'Pulsera Tennis "Hebra de Diamante"', 'precio' => 72500.00, 'img' => 'img/Catalogo/Pagina2/pulsera6.png', 'cat' => 3],
+            // Collares (Categoría 4)
+            ['nombre' => 'Collar "Halo de Luna"', 'precio' => 54900.00, 'img' => 'img/Catalogo/Pagina2/collar4.png', 'cat' => 4],
+            ['nombre' => 'Gargantilla "Dúo Florar Blanco"', 'precio' => 60000.00, 'img' => 'img/Catalogo/Pagina2/collar5.png', 'cat' => 4],
+            ['nombre' => 'Collar "Cascada de Luz"', 'precio' => 90600.00, 'img' => 'img/Catalogo/Pagina2/collar6.png', 'cat' => 4],
+        ];
 
-        // Joya de prueba 3: aritos para categoria 'Aretes' (ID 2)
-        Producto::create([
-            'nombre_joya'       => 'Aros Colgantes Gota',
-            'descripcion'       => 'Aritos delicados con piedras brillantes engarzadas, ideales para fiesta.',
-            'precio_unitario'   => 65000.00,
-            'stock'             => 20,
-            'stock_bajo'        => 4,
-            'url_imagen'        => 'productos/IAjhmZybevyhQz6W9dXhENFnILHO0wynoxcspZI7.png',
-            'activo'            => true,
-            'categoria_joya_id' => 2, // ID de Aretes
-            'genero_joya_id'    => 1, 
-        ]);
+        foreach ($productos as $producto) {
+            Producto::create([
+                'nombre_joya'       => $producto['nombre'],
+                'descripcion'       => 'Hermosa pieza de la Colección Oro Blanco & Platino.', // Genérico, se puede ajustar
+                'precio_unitario'   => $producto['precio'],
+                'stock'             => 20, // Stock por defecto
+                'stock_bajo'        => 5,  // Umbral de stock bajo
+                'url_imagen'        => $producto['img'],
+                'activo'            => true,
+                'categoria_joya_id' => $producto['cat'],
+                'genero_joya_id'    => 1, // ID 1 (Femenino) por defecto
+            ]);
+        }
     }
 }
