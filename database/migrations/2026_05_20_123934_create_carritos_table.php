@@ -12,11 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carrito', function (Blueprint $table) {
-            $table->primary(['id', 'usuario_id']);
+            // 1. Clave primaria normal y auto-incremental
             $table->id();
-            $table->foreignId('usuario_id')->constrained('users');
+
+            // 2. Relaciones con las otras tablas (Claves Foráneas)
+            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('producto_id')->constrained('producto')->onDelete('cascade');
+
+            // 3. Datos propios del carrito 
             $table->integer('cantidad');
-            $table->foreignId('producto_id')->constrained('producto');
+            $table->decimal('precio_unitario', 10, 2); 
+
+            // 4. Tiempos del sistema
             $table->timestamps();   
             $table->softDeletes(); 
         });

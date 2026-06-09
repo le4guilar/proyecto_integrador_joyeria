@@ -31,18 +31,18 @@ class CarritoController extends Controller
         //se valida que se mande un id de porducto valido y una cantidad logica
         $request->validate([
             'producto_id' => 'required|integer',
-            'cantidad' => 'requires|integer|min:1'
+            'cantidad' => 'required|integer|min:1'
         ]);
 
         //se busca la joya en la tabla para ver los datos reales del inventario
-        $producto = Producto::findOrFail($request->producto_is);
+        $producto = Producto::findOrFail($request->producto_id);
         $cantidad_solicitada = $request->cantidad;
 
         //CONTROL DE STOCK: se verifica si hahy suficientes joyas fisicas en el negocio
         if ($producto->stock < $cantidad_solicitada){
 
             //si el cliente pide mas de lo que hay, lo rebotamos al toque con un mensaje
-            return redirect()->back()->with('error', 'No hay suficiente stock. Solo quedan {$producto->stock} unidades de este producto');
+            return redirect()->back()->with('error', "No hay suficiente stock. Solo quedan {$producto->stock} unidades de este producto");
         }
 
         //se busca si ese mismo producto ya estaba metido en la tabla carrito
@@ -52,11 +52,11 @@ class CarritoController extends Controller
 
             //si existia en el carrito, controlamos que al sumarle mas no superemos el stock total
             if(($itemExistente->cantidad + $cantidad_solicitada) > $producto->stock){
-                return redirect()->back()->with('error', 'No podes agregar más unidades. El stock máximo disponible es de {$producto->stock} u.');
+                return redirect()->back()->with('error', "No podes agregar más unidades. El stock máximo disponible es de {$producto->stock} u.");
             }
 
             //si pasa la prueba, le sumamos las unidades al registro viejo
-            $itemExistente->sodium_increment('cantidad', $cantidad_solicitada);
+            $itemExistente->increment('cantidad', $cantidad_solicitada);
         } else {
 
         //si es una joya nueva en el carrito, creamos la fila en la tabla desde cero
