@@ -43,7 +43,7 @@
                         <label for="genero_joya_id" class="form-label fw-semibold">Género asignado</label>
                         <select class="form-select @error('genero_joya_id') is-invalid @enderror" id="genero_joya_id" name="genero_joya_id" required>
                             <option value="" selected disabled>Seleccione uno...</option>
-                            @foreach($genero as $g)
+                            @foreach($generos as $g)
                                 <option value="{{ $g->id }}" {{ old('genero_joya_id') == $g->id ? 'selected' : '' }}>
                                     {{ $g->nombre_genero }}
                                 </option>

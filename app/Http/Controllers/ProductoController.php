@@ -48,33 +48,15 @@ class ProductoController extends Controller
     }
 
 
-    /*
-    public function store(Request $request){
+    public function create()
+    {
+        // Traemos las categorías y géneros para los selectores del formulario
+        $categorias = CategoriaJoya::all();
+        $generos = GeneroJoya::all();
 
-        $request->validate([
-            'nombre_joya' => 'required|string|max:225',
-            'precio' => 'required|numeric|min:0',
-            'stock' => 'required|interger|min:0',
-            'categoria_joya_id' => 'required|integer',
-            'genero_joya_id' => 'required|integer',
-            'descripcion' => 'nillable|string',
-            'url_imagen'        => 'nullable|string', // se añadio el campo de la foto
-        ]);
-
-        Producto::create([
-            'nombre_joya'       => $request->input('nombre_joya'),
-            'descripcion'       => $request->input('descripcion'),
-            'precio_unitario'   => $request->input('precio_unitario'),
-            'stock'             => $request->input('stock'),
-            'stock_bajo'        => $request->input('stock_bajo'),
-            'url_imagen'        => $request->input('url_imagen'),
-            'activo'            => true, // Nace activo por defecto
-            'categoria_joya_id' => $request->input('categoria_joya_id'),
-            'genero_joya_id'    => $request->input('genero_joya_id'),
-        ]);
-        
-        return redirect()->route('producto.index')->with('status', '¡Joya cargada con éxito');
-    }*/
+        // Reemplaza 'Admin.Producto.crear' por el nombre exacto de la vista de tu formulario
+        return view('Admin.Producto.crear', compact('categorias', 'generos'));
+    }
 
     public function store(Request $request)
     {
