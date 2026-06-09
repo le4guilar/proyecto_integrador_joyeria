@@ -24,6 +24,15 @@
 
         <div class="card-body p-0">
             <form action="{{ route('productos.index') }}" method="GET" class="bg-light p-3 border-bottom row g-2 m-0">
+
+                {{-- NUEVO: Barra de búsqueda por nombre --}}
+                <div class="col-12 mb-1">
+                    <div class="input-group input-group-sm shadow-sm">
+                        <span class="input-group-text bg-white text-muted"><i class="bi bi-search"></i></span>
+                        <input type="text" name="buscar" class="form-control" placeholder="Buscar producto por nombre..." value="{{ request('buscar') }}">
+                    </div>
+                </div>
+
                 <div class="col-md-3">
                     <select name="categoria_id" class="form-select form-select-sm">
                         <option value="">Todas las Categorías</option>

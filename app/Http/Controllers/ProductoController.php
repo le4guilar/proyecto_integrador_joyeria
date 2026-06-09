@@ -36,6 +36,11 @@ class ProductoController extends Controller
             $query->orderBy('id', 'desc');
         }
 
+        // Filtro por Nombre (Buscador)
+        if ($request->filled('buscar')) {
+            $query->where('nombre_joya', 'like', '%' . $request->buscar . '%');
+        }
+
         // Ejecutamos la consulta con los filtros aplicados
         $productos = $query->get();
 
