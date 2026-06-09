@@ -15,28 +15,28 @@
                 <h5 class="nombre-joya">Anillo Cruzado Brillante de Oro Blanco</h5>
                 <p class="precio-joya">$ 51.634,94</p>
                 
-                        {{-- Formulario Corregido a Mano para el Anillo 1 --}}
-                <form action="{{ route('carrito.store') }}" method="POST" class="mt-3">
-                    @csrf 
-                    
-                    {{-- Ponemos el ID 1 a mano (Cambiás el 1 por el ID real que tenga en DBeaver) --}}
-                    <input type="hidden" name="producto_id" value="3php artisan migrate:fresh --seed">
+                {{-- Formulario Corregido a Mano para el Anillo 1 --}}
+        <form action="{{ route('carrito.store') }}" method="POST" class="mt-3">
+            @csrf 
+            
+            {{-- Ponemos el ID 1 a mano (Cambiás el 1 por el ID real que tenga en DBeaver) --}}
+            <input type="hidden" name="producto_id" value=3>
 
-                    <div class="d-flex gap-2 mb-2 justify-content-center">
-                        {{-- Ponemos un selector simple fijo del 1 al 5 para poder probar rápido --}}
-                        <select name="cantidad" class="form-select form-select-sm" style="width: 80px;">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
+            <div class="d-flex gap-2 mb-2 justify-content-center">
+                {{-- Ponemos un selector simple fijo del 1 al 5 para poder probar rápido --}}
+                <select name="cantidad" class="form-select form-select-sm" style="width: 80px;">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
 
-                    <button type="submit" class="btn btn-dark btn-sm w-100 text-uppercase fw-semibold">
-                        Agregar al carrito
-                    </button>
-                </form>
+            <button type="submit" class="btn btn-dark btn-sm w-100 text-uppercase fw-semibold">
+                 Agregar al carrito
+            </button>
+        </form>
 
             </div>
         </div>
@@ -46,6 +46,30 @@
                 <img src="{{ asset('img/Catalogo/Pagina1/Anillo2.png') }}" class="object-fit-cover mb-3 rounded-2" alt="Anillo">
                 <h5 class="nombre-joya">Anillo "Ondas Lumiére"</h5>
                 <p class="precio-joya">$ 51.634,94</p>
+
+                                {{-- Formulario Corregido a Mano para el Anillo 1 --}}
+        <form action="{{ route('carrito.store') }}" method="POST" class="mt-3">
+            @csrf 
+            
+            {{-- Ponemos el ID 1 a mano (Cambiás el 1 por el ID real que tenga en DBeaver) --}}
+            <input type="hidden" name="producto_id" value=3>
+
+            <div class="d-flex gap-2 mb-2 justify-content-center">
+                {{-- Ponemos un selector simple fijo del 1 al 5 para poder probar rápido --}}
+                <select name="cantidad" class="form-select form-select-sm" style="width: 80px;">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-dark btn-sm w-100 text-uppercase fw-semibold">
+                 Agregar al carrito
+            </button>
+        </form>
+
             </div>
         </div>
 

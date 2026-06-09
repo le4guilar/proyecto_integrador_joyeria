@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="d-flex align-items-center gap-3 mt-3">
-                                {{-- Control de Cantidad (Sencillo por ahora, como pediste) --}}
+                                {{-- Control de Cantidad --}}
                                 <div class="d-flex align-items-center border rounded">
                                     <span class="px-3 py-1 text-muted small">Cant.</span>
                                     <span class="px-3 py-1 fw-bold border-start bg-light">{{ $item->cantidad }}</span>
@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        {{-- Botón de Eliminar (Arriba a la derecha del ítem, estilo reference) --}}
+                        {{-- Botón de Eliminar --}}
                         <div class="position-absolute top-0 end-0 mt-2 me-2" style="width: auto;">
                             <form action="{{ route('carrito.destroy', $item->id) }}" method="POST">
                                 @csrf
@@ -94,7 +94,7 @@
                 @endforeach
             </div>
 
-            {{-- COLUMNA DERECHA: RESUMEN DEL PEDIDO (Estilo Reference) --}}
+            {{-- COLUMNA DERECHA: RESUMEN DEL PEDIDO  --}}
             <div class="col-lg-4">
                 <div class="card shadow-sm border-0 bg-light position-sticky" style="top: 2rem;">
                     <div class="card-body p-4">
