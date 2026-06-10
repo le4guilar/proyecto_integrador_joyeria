@@ -99,10 +99,11 @@ Route::get('/cliente', [ClienteController::class, 'dashboard'])->middleware('aut
 
 //CARRITO
 // 1. Caminito para ver el carrito en la pantalla que creamos recién
-Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index');
+Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index')->middleware('auth');
 
 // 2. Caminito que se activa cuando tocás "Agregar al carrito" en el catálogo
-Route::post('/carrito/agregar', [CarritoController::class, 'store'])->name('carrito.store');
+// Se agrego la restriccion del logueo al querer cargar productos al carrito
+Route::post('/carrito/agregar', [CarritoController::class, 'store'])->name('carrito.store')->middleware('auth');
 
 // 3. Caminito para el botón de "Quitar" (el tachito de basura)
 Route::delete('/carrito/quitar/{id}', [CarritoController::class, 'destroy'])->name('carrito.destroy');

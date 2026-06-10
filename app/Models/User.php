@@ -20,12 +20,14 @@ class User extends Authenticatable
     protected $hidden = ['password', 'remember_token'];
 
     // Este (usuario) pertenece a un rol
-    public function rol():BelongsTo {
+    public function rol(): BelongsTo
+    {
         return $this->belongsTo(Rol::class, 'rol_id');
     }
 
     //Este (usuario) pertenece a un domiclio
-    public function domicilio():BelongsTo {
+    public function domicilio(): BelongsTo
+    {
         return $this->belongsTo(Domicilio::class, 'domicilio_id');
     }
 

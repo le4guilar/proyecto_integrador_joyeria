@@ -14,11 +14,11 @@ class CarritoController extends Controller
 
         //BUSCAR EL WITHTRASHED
         //se trae todos los datos que esten cargados en la tabla del carrito junto con los datos de su Producto.
-        $items = Carrito::with('producto')->get();
+        $items = Carrito::where('usuario_id', Auth::id())->with('producto')->get();
 
         //se calcula el total de la pantalla multiplicando precio por cantidad de cada fila
         $total = $items->sum(function($item){
-            return $item->precio_unitario * $item->cantidad;
+            return $item->producto->precio_unitario * $item->cantidad;
         });
 
         //retorna la vista del catalogo donde se ve el carrito
@@ -46,7 +46,10 @@ class CarritoController extends Controller
         }
 
         //se busca si ese mismo producto ya estaba metido en la tabla carrito
-        $itemExistente = Carrito::where('producto_id', $producto->id)->first();
+        //VERIFICAAR
+        $itemExistente = Carrito::where('usuario_id', Auth::id())
+                                        ->where ('producto_id', $request->producto_id)
+                                        ->first();
 
         if ($itemExistente){
 
@@ -73,7 +76,8 @@ class CarritoController extends Controller
     //3. QUITAR UN PRODUCTO DEL CARRITO 
     public function destroy($id){
         //para el item del carrito en si, como es algo temporal, usamos delete().
-        $item = Carrito::findOrFail($id);
+        //CAMBIOS: se asegura que el cliente solo borre los productos de su propio carrito
+        $item = Carrito::where('usuario_id', Auth::id())->where('id', $id)->findOrFail($id);
         $item->delete();
 
         return redirect()->route('carrito.index')->with('status', 'Producto quitado del carrito');

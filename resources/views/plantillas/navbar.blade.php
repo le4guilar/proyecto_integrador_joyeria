@@ -59,7 +59,7 @@
                 @endif
                 @else
                 {{-- Solo se muestra si NO hay sesión --}}
-                <a href="/Backend/Usuarios/login">Login</a>
+                <a href="/Backend/Usuarios/logsin">Login</a>
                 @endauth
             </li>
             -->
@@ -69,7 +69,7 @@
                 Hola, {{ auth()->user()->nombre }}
             </li>
             <li class="nav-item">
-                @if(auth()->user()->rol === 'admin')
+                @if(auth()->user()->rol_id === 1)
                 <a class="nav-link px-3" href="/admin">Panel Admin</a>
                 @else
                 <a class="nav-link px-3" href="/carrito">Mi carrito</a>
