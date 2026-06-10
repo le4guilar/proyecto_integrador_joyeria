@@ -33,7 +33,7 @@ class ProductoSeeder extends Seeder
 
             // --- CATÁLOGO 2 ---
             // Anillos (Categoría 1)
-            ['nombre' => 'Alianza "Estela Polar"', 'precio' => 49600.00, 'img' => 'img/Catalogo/Pagina2/anillo4.png', 'cat' => 1],
+            ['nombre' => 'Anillo "Estela Polar"', 'precio' => 49600.00, 'img' => 'img/Catalogo/Pagina2/anillo4.png', 'cat' => 1],
             ['nombre' => 'Anillo "Dualidad Nova"', 'precio' => 52100.00, 'img' => 'img/Catalogo/Pagina2/anillo5.png', 'cat' => 1],
             ['nombre' => 'Anillo "Marea de Plata"', 'precio' => 55300.00, 'img' => 'img/Catalogo/Pagina2/anillo6.png', 'cat' => 1],
             // Aretes (Categoría 2)
