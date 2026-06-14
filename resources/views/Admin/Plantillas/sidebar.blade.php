@@ -11,7 +11,9 @@
             <a href="productos" class="nav-link text-white"><i class="bi bi-box-seam me-2"></i>Productos</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-white"><i class="bi bi-cart me-2"></i>Pedidos</a>
+            <a href="{{ route('admin.ordenes.index') }}" class="nav-link text-white">
+                <i class="bi bi-cart me-2"></i>Pedidos
+            </a>
         </li>
         <li class="nav-item">
             <a href="usuarios" class="nav-link text-white"><i class="bi bi-people me-2"></i>Usuarios</a>
