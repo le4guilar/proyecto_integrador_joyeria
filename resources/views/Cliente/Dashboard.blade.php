@@ -83,31 +83,58 @@
                             <div class="card border-0 bg-light p-4 rounded-3 shadow-sm h-100">
                                 <h6 class="fw-bold text-muted small text-uppercase tracking-wider mb-3" style="font-size: 0.75rem;">Seguridad de la cuenta</h6>
 
-                                <form action="{{ route('cliente.update-password') }}" method="POST">
-                                    @csrf
-                                    @method('PATCH')
+                                <!-- texto inicial: para ver primero la opcion de modificar contraseña-->
+                                 <div id="texto-seguridad">
+                                    <p class="text-muted small mb-4">Mantené tu cuenta protegida actualizando tu contraseña de acceso de forma periódica.</p>
 
-                                    <div class="mb-2">
-                                        <input type="password" name="current_password" class="form-control form-control-sm bg-white" placeholder="Contraseña actual" required>
-                                    </div>
+                                    <!-- boton para abrir el formulario para cambiar la contraseña-->
+                                    <button type="button" class="btn btn-dark text-uppercase small fw-semibold w-100"
+                                        data-bs-toggle="collapse" data-bs-target="#formulario-contraseña"
+                                        aria-expanded="false" aria-controls="formulario-contraseña"
+                                        onclick="document.getElementById('texto-seguridad').style.display='none'">
+                                        Modificar contraseña
+                                    </button>
+                                 </div>
 
+                                 <!-- luego el formulario de despliega-->
+                                <div class="collapse" id="formulario-contraseña">
+                                    <form action="{{ route('cliente.update-password') }}" method="POST">
+                                        @csrf
+                                        @method('PATCH')
 
+                                        <div class="mb-2">
+                                            <label class="small text-muted fw-semibold mb-1">Contraseña actual</label>                                        
+                                                <input type="password" name="current_password" class="form-control form-control-sm bg-white" placeholder="Ingresá tu clave actual" required>                                         
+                                        </div>
 
+                                        <div class="mb-2">
+                                            <label class="small text-muted fw-semibold mb-1">Nueva contraseña</label>
+                                            <input type="password" name="password" class="form-control form-control-sm bg-white" placeholder="Mínimo 8 caracteres" required>
+                                        </div>
 
+                                        <div class="mb-3">
+                                            <label class="small text-muted fw-semibold mb-1">Confirmar nueva contraseña</label>                                        
+                                            <input type="password" name="password" class="form-control form-control-sm bg-white" placeholder="Mínimo 8 caracteres" required>                                            
+                                        </div>
 
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="card borde-0 bg-loght p-4 rounded-3 shadow-sm h-100">
-                                <h6 class="fw-bold text-muted small text-uppercase tracking-wider mb-3" style="font-size: 0.75rem;">Seguridad de la cuenta</h6>
-                                <p class="text-muted small mb-3">Mantené tu cuenta protegida actualizando tu contraseña de acceso.</p>
+                                        <div class="d-flex gap-2">
+                                            <!--Boton de cancelar por si el usuario se arrepiente-->
+                                            <button type="button" class="btn btn-outline-secondary text-uppercase small fw-semibold w-50"
+                                                data-bs-toggle="collapse" data-bs-target="#formulario-contraseña"
+                                                onclick="document.getElementById('texto-seguridad').style.display='block'">
+                                                Cancelar
+                                            </button>
 
-                                <button type="button" class="btn btn-dark text-uppercase small fw-semibold" style="font-size: 0.8rem;">
-                                    Modificar Contraseña
+                                            <!-- Boton que envia los datos al ClienteController-->
+                                            <button type="submit" class="btn btn-dark text-uppercase small fw-semibold w-50">
+                                                Actualizar
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
+
                 <!-- CONTENIDO 1: Información Personal -->
                 <div class="tab-pane fade" id="info-personal" role="tabpanel">
                     <h4 class="fw-bold text-dark mb-4">Información personal</h4>
