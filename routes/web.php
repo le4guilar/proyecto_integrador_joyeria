@@ -125,6 +125,9 @@ Route::get('/mi-panel' , [ClienteController::class, 'dashboard'])->name('cliente
 //RUTA para procesar el cambio de contraseña
 Route::patch('/mi-panel/cambiar-contraseña', [ClienteController::class, 'updatePassword'])->name('cliente.update-password');
 
+// RUTA para que el cliente cambio/actualice su info personal
+Route::put('/mi-panel/actualizar-perfil', [App\Http\Controllers\ClienteController::class, 'updatePerfil'])->name('cliente.update-perfil');
+
 // Tu ruta actual (asegurate de que esté completa al final del archivo)
 Route::post('/carrito/finalizar', [OrdenController::class, 'checkout'])
     ->middleware('auth')

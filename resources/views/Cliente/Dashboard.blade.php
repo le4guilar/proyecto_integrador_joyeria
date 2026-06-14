@@ -9,7 +9,7 @@
         <div class="col-lg-3 border-end">
             <div class="mb-4 px-3">
                 <span class="text-muted small text-uppercase tracking-wider" style="font-size: 0.75rem;">Mi cuenta</span>
-                <h5 class="fw-bold text-dark mt-1">{{ $usuario->name }}</h5>
+                <h5 class="fw-bold text-dark mt-1">{{ $usuario->nombre }}</h5>
             </div>
             
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -49,7 +49,7 @@
 
                 <!-- CONTENIDO 1: panel del control -->
                 <div class="tab-pane fade show active" id="panel-control" role="tabpanel" aria-labelledby="panel-tab">
-                    <h4 class="fw-bold text-dark mb-1">Hola, {{ $usuario->name }}!</h4>
+                    <h4 class="fw-bold text-dark mb-1">Hola, {{ $usuario->nombre }}!</h4>
                     <p class="text-muted small mb-4">Desde tu panel podés ver tu actividad reciente y gestionar tu seguridad.</p>
 
                     <!-- MENSAGE DE EXITO: Se muestra si la contraseña se cambio bien -->
@@ -74,7 +74,7 @@
                         <div class="col-md-6">
                             <div class="card border-0 bg-light p-4 rounded-3 shadow-sm h-100">
                                 <h6 class="fw-bold text-muted small text-uppercase tracking-wider mb-3" style="font-size: 0.75rem;">Información de contacto</h6>
-                                <p class="fw-bold text-dark mb-1">{{ $usuario->name }}</p>
+                                <p class="fw-bold text-dark mb-1">{{ $usuario->nombre }}</p>
                                 <p class="text-muted small mb-0">{{ $usuario->email }}</p>
                             </div>
                         </div>
@@ -138,27 +138,65 @@
                 </div>
 
                 <!-- CONTENIDO 1: Información Personal -->
-                <div class="tab-pane fade" id="info-personal" role="tabpanel">
+               <div class="tab-pane fade" id="info-personal" role="tabpanel" aria-labelledby="info-tab">
                     <h4 class="fw-bold text-dark mb-4">Información personal</h4>
                     
+                    {{-- Mensajes de éxito --}}
+                    @if (session('status'))
+                        <div class="alert alert-success small p-2 rounded-3 mb-4">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
                     <div class="card border-0 bg-light p-4 rounded-3 shadow-sm" style="max-width: 500px;">
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold text-uppercase text-muted" style="font-size: 0.75rem;">Nombre Completo</label>
-                            <input type="text" class="form-control bg-white" value="{{ $usuario->name }}" readonly>
-                        </div>
                         
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold text-uppercase text-muted" style="font-size: 0.75rem;">Correo Electrónico</label>
-                            <input type="email" class="form-control bg-white" value="{{ $usuario->email }}" readonly>
+                        {{-- VISTA DE LECTURA --}}
+                        <div id="vista-perfil">
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-uppercase text-muted">Nombre Completo</label>
+                                <div class="form-control bg-white text-dark border-0 py-2 shadow-sm">{{ $usuario->nombre }}</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-uppercase text-muted">Correo Electrónico</label>
+                                <div class="form-control bg-white text-dark border-0 py-2 shadow-sm">{{ $usuario->email }}</div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-dark text-uppercase small fw-semibold w-100" 
+                                    data-bs-toggle="collapse" data-bs-target="#formulario-perfil" 
+                                    aria-expanded="false" aria-controls="formulario-perfil"
+                                    onclick="document.getElementById('vista-perfil').style.display='none'">
+                                Editar Perfil
+                            </button>
                         </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold text-uppercase text-muted" style="font-size: 0.75rem;">Cliente desde</label>
-                            <input type="text" class="form-control bg-white" value="{{ $usuario->created_at->format('d/m/Y') }}" readonly>
-                        </div>
-                        
-                        <div class="mt-3">
-                            <button class="btn btn-outline-dark text-uppercase small fw-semibold">Editar Perfil</button>
+
+                        {{-- VISTA DE EDICIÓN (Oculta al principio) --}}
+                        <div class="collapse" id="formulario-perfil">
+                            <form action="{{ route('cliente.update-perfil') }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold text-uppercase text-muted">Nombre Completo</label>
+                                    <input type="text" name="nombre" class="form-control bg-white" value="{{ $usuario->nombre }}" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label small fw-bold text-uppercase text-muted">Correo Electrónico</label>
+                                    <input type="email" name="email" class="form-control bg-white" value="{{ $usuario->email }}" required>
+                                </div>
+                                
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-outline-secondary text-uppercase small fw-semibold w-50" 
+                                            data-bs-toggle="collapse" data-bs-target="#formulario-perfil"
+                                            onclick="document.getElementById('vista-perfil').style.display='block'">
+                                        Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-dark text-uppercase small fw-semibold w-50">
+                                        Guardar
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
