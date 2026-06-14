@@ -1,5 +1,7 @@
 @extends('Plantillas/plantilla-principal')
 @section('contenido')
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+
 
 <div class="container my-5" style="font-family: 'Montserrat', sans-serif;">
     <div class="row g-4">
@@ -49,6 +51,18 @@
                 <div class="tab-pane fade show active" id="panel-control" role="tabpanel" aria-labelledby="panel-tab">
                     <h4 class="fw-bold text-dark mb-1">Hola, {{ $usuario->name }}!</h4>
                     <p class="text-muted small mb-4">Desde tu panel podés ver tu actividad reciente y gestionar tu seguridad.</p>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card borde-0 bg-loght p-4 rounded-3 shadow-sm h-100">
+                                <h6 class="fw-bold text-muted small text-uppercase tracking-wider mb-3" style="font-size: 0.75rem;">Seguridad de la cuenta</h6>
+                                <p class="text-muted small mb-3">Mantené tu cuenta protegida actualizando tu contraseña de acceso.</p>
+
+                                <button type="button" class="btn btn-dark text-uppercase small fw-semibold" style="font-size: 0.8rem;">
+                                    Modificar Contraseña
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- CONTENIDO 1: Información Personal -->
@@ -86,12 +100,38 @@
                 <!-- CONTENIDO 3: Mis pedidos -->
                 <div class="tab-pane fade" id="mis-pedidos" role="tabpanel">
                     <h4 class="fw-bold text-dark mb-3">Mis pedidos</h4>
-                    <p class="text-muted small">Acá verás el historial de tus compras.</p>
-                </div>
 
+                    <!-- Recorremos de forma dinamica las ordenes de DBeaver-->
+                     @forelse($misOrdenes as $orden)
+                     <div class="card mb-3 border-0 shadow-sm p-3 bg-white border-start border-dark border-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <span class="small text-muted d-block text-uppercase" style="font-size: 0.65rem;">Código</span>
+                                <span class="fw-bold text-dark">#{{ str_pad($orden->id, 5, '0', STR_PAD_LEFT) }}</span>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="small text-muted d-block text-uppercase" style="font-size: 0.65rem;">Total</span>
+                                {{ $orden->estado ?? 'Procesado' }}</span>
+                            </div>
+                        </div>
+                     </div>
+                    @empty
+                    <!-- Si el usuario no tiene filas en la tabla ordenes de DBeaver, se muestra este cartel -->
+                     <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
+                        <span style="font-size: 2.5rem;">Pedidos</span>
+                        <h5 class="mt-3 fw-bold text-dark">¿No tenés compras guardadas?</h5>
+                        <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
+                            Tus pedidos aparecerán acá una vez que finalices tus compras en el carrito de joyas.
+                        </p>
+                        <div>
+                            <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
+                                Explorar Joyas </a>
+                        </div>
+                    </div>
+                    @endforelse
+                </div>
             </div>
         </div>
-
     </div>
 </div>
 
