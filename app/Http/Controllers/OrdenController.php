@@ -13,6 +13,19 @@ use App\Models\Producto;
 
 class OrdenController extends Controller
 {
+
+public function index()
+{
+    $ordenes = Orden::with(['usuario', 'estado'])->orderBy('created_at', 'desc')->get();
+    
+    // Retorna la vista asegurando que el navegador no la almacene en caché
+    return response()
+        ->view('Admin.ordenes.index', compact('ordenes'))
+        ->header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+        ->header('Pragma', 'no-cache');
+}
+
+
     public function checkout(Request $request)
     {
         $userId = $request->user()->id;
@@ -71,4 +84,20 @@ class OrdenController extends Controller
             return back()->withErrors(['error' => 'Hubo un error al procesar tu compra: ' . $e->getMessage()]);
         }
     }
+
+    public function updateEstado(Request $request, $id)
+{
+    $request->validate([
+        'estado_orden_id' => 'required|exists:estado_orden,id'
+    ]);
+
+    $orden = Orden::findOrFail($id);
+    $orden->update([
+        'estado_orden_id' => $request->estado_orden_id
+    ]);
+
+    return redirect()->back()->with('status', 'Estado del pedido actualizado correctamente.');
+}
+
+
 }
