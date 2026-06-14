@@ -12,13 +12,18 @@ class ClienteController extends Controller
     //Muestra el panel principal del cliente
     public function dashboard(){
 
-        //1. se consigue el ID del usuario que esta navegando en la web en ese momento
+        //se consigue el ID del usuario que esta navegando en la web en ese momento
         $usuarioLogueadoId = Auth::id(); 
 
-        //2. va a Dbeaver y busca solo las ordenes que el pertenezcan a ese cliente
+        //va a Dbeaver y busca solo las ordenes que el pertenezcan a ese cliente
         $misOrdenes = Orden::where('usuario_id', $usuarioLogueadoId)->get();
 
-        //3. Retornamos la vista 'Cliente.Cliente'
+        //Buscamos los favoritos del cliente en DBeaver
+        // Usamos 'with' para que de paso cargue toda la informacion de la joya (nombre, precio, imagen)
+        $misFavoritos = \App\Models\Favoritos::where('usuario_id', $usuarioLogueadoId)->with('producto')->get();
+
+
+        //Retornamos la vista 'Cliente.Cliente'
         //para mostrar los datos del cliente en el perfil, capturamos el objeto usuario completo con el Auth y se le agrega el compact.
         $usuario = Auth::user();
 
