@@ -2,92 +2,94 @@
 @section('contenido')
 
 <div class="container my-5" style="font-family: 'Montserrat', sans-serif;">
-    
-    {{-- Saludo de bienvenida usando la variable $usuario que mandó el controlador --}}
-    <div class="mb-5 border-bottom pb-3">
-        <h2 class="fw-bold text-dark text-uppercase tracking-wider">Mi Cuenta</h2>
-        <p class="text-muted">¡Hola de nuevo, <span class="fw-semibold text-dark">{{ $usuario->name }}</span>! Este es tu espacio de control en ALBA.</p>
-    </div>
-
-    <div class="row g-5">
+    <div class="row g-4">
         
-        {{-- COLUMNA 1: PERFIL (DATOS DEL CLIENTE) --}}
-        <div class="col-lg-4">
-            <div class="card border-0 shadow-sm p-4" style="background-color: #fdfbf7; border-radius: 8px;">
-                <div class="text-center mb-4">
-                    <div class="bg-dark text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px; font-size: 1.5rem; font-weight: bold;">
-                        {{ strtoupper(substr($usuario->name, 0, 1)) }}
-                    </div>
-                    <h5 class="fw-bold mb-0 text-dark">{{ $usuario->name }}</h5>
-                    <span class="badge bg-secondary small mt-1 text-uppercase" style="font-size: 0.65rem;">Cliente Registrado</span>
-                </div>
+        <div class="col-lg-3 border-end">
+            <div class="mb-4 px-3">
+                <span class="text-muted small text-uppercase tracking-wider" style="font-size: 0.75rem;">Mi cuenta</span>
+                <h5 class="fw-bold text-dark mt-1">{{ $usuario->name }}</h5>
+            </div>
+            
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-                <hr class="opacity-10">
+            <!-- OPCION 1: Mi Panel de Control -->
+                <button class="nav-link active text-start rounded-0 border-bottom py-3 px-3 custom-tab-btn" id="panel-tab" data-bs-toggle="pill" data-bs-target="#panel-control" type="button" role="tab" aria-controls="panel-control" aria-selected="true">
+                    Mi panel de control
+                </button>
+                
+                <!-- OPCION 2: Información Personal -->
+                <button class="nav-link text-start rounded-0 border-bottom py-3 px-3 custom-tab-btn" id="info-tab" data-bs-toggle="pill" data-bs-target="#info-personal" type="button" role="tab" aria-controls="info-personal" aria-selected="false">
+                    Información personal
+                </button>
+                
+                <!-- OPCION 2: Mi lista de deseos -->
+                <button class="nav-link text-start rounded-0 border-bottom py-3 px-3 custom-tab-btn" id="deseos-tab" data-bs-toggle="pill" data-bs-target="#lista-deseos" type="button" role="tab" aria-controls="lista-deseos" aria-selected="false">
+                    Mi lista de deseos
+                </button>
+                
+                <!-- OPCION 3: Mis pedidos -->
+                <button class="nav-link text-start rounded-0 border-bottom py-3 px-3 custom-tab-btn" id="pedidos-tab" data-bs-toggle="pill" data-bs-target="#mis-pedidos" type="button" role="tab" aria-controls="mis-pedidos" aria-selected="false">
+                    Mis pedidos <span class="badge bg-dark rounded-circle ms-2">{{ $misOrdenes->count() }}</span>
+                </button>
 
-                <div class="mb-3">
-                    <label class="small text-uppercase text-muted fw-bold d-block mb-1" style="font-size: 0.75rem;">Email</label>
-                    <span class="text-dark">{{ $usuario->email }}</span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="small text-uppercase text-muted fw-bold d-block mb-1" style="font-size: 0.75rem;">Cliente desde</label>
-                    <span class="text-dark">{{ $usuario->created_at->format('d/m/Y') }}</span>
-                </div>
-
-                <div class="mt-4">
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-outline-danger btn-sm w-100 text-uppercase fw-semibold py-2">
-                            Cerrar Sesión
-                        </button>
-                    </form>
-                </div>
+                <!-- OPCION 4: Cerrar Sesión (Usa la ruta de logout que ya tienen) -->
+                <form action="{{ route('logout') }}" method="POST" class="mt-4 px-3">
+                    @csrf
+                    <button type="submit" class="btn btn-link text-danger text-decoration-none p-0 small text-uppercase fw-semibold" style="font-size: 0.8rem;">
+                        Cerrar sesión
+                    </button>
+                </form>
             </div>
         </div>
 
-        {{-- COLUMNA 2: HISTORIAL DE ÓRDENES (RECORRE $misOrdenes) --}}
-        <div class="col-lg-8">
-            <h4 class="fw-bold text-dark text-uppercase tracking-wide mb-4" style="font-size: 1rem;">Mis Órdenes de Compra</h4>
-            
-            {{-- Recorremos de forma dinámica las órdenes de DBeaver --}}
-            @forelse($misOrdenes as $orden)
-                <div class="card mb-3 border-0 shadow-sm p-3 bg-white" style="border-left: 4px solid #300403 !important;">
-                    <div class="row align-items-center">
-                        <div class="col-md-3">
-                            <span class="small text-muted d-block text-uppercase" style="font-size: 0.7rem;">Código</span>
-                            <span class="fw-bold text-dark">#{{ str_pad($orden->id, 5, '0', STR_PAD_LEFT) }}</span>
+        <div class="col-lg-9 ps-lg-5">
+            <div class="tab-content" id="v-pills-tabContent">
+
+                <!-- CONTENIDO 1: panel del control -->
+                <div class="tab-pane fade show active" id="panel-control" role="tabpanel" aria-labelledby="panel-tab">
+                    <h4 class="fw-bold text-dark mb-1">Hola, {{ $usuario->name }}!</h4>
+                    <p class="text-muted small mb-4">Desde tu panel podés ver tu actividad reciente y gestionar tu seguridad.</p>
+                </div>
+                
+                <!-- CONTENIDO 1: Información Personal -->
+                <div class="tab-pane fade" id="info-personal" role="tabpanel">
+                    <h4 class="fw-bold text-dark mb-4">Información personal</h4>
+                    
+                    <div class="card border-0 bg-light p-4 rounded-3 shadow-sm" style="max-width: 500px;">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-uppercase text-muted" style="font-size: 0.75rem;">Nombre Completo</label>
+                            <input type="text" class="form-control bg-white" value="{{ $usuario->name }}" readonly>
                         </div>
-                        <div class="col-md-3">
-                            <span class="small text-muted d-block text-uppercase" style="font-size: 0.7rem;">Fecha</span>
-                            <span class="text-dark small">{{ $orden->created_at->format('d/m/Y H:i') }}</span>
+                        
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-uppercase text-muted" style="font-size: 0.75rem;">Correo Electrónico</label>
+                            <input type="email" class="form-control bg-white" value="{{ $usuario->email }}" readonly>
                         </div>
-                        <div class="col-md-3">
-                            <span class="small text-muted d-block text-uppercase" style="font-size: 0.7rem;">Total</span>
-                            <span class="fw-bold text-dark">$ {{ number_format($orden->total, 2, ',', '.') }}</span>
+                        
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-uppercase text-muted" style="font-size: 0.75rem;">Cliente desde</label>
+                            <input type="text" class="form-control bg-white" value="{{ $usuario->created_at->format('d/m/Y') }}" readonly>
                         </div>
-                        <div class="col-md-3 text-md-end">
-                            {{-- Ponemos un color al badge según el estado de la orden --}}
-                            <span class="badge text-uppercase p-2" style="font-size: 0.65rem; background-color: #300403;">
-                                {{ $orden->estado ?? 'Procesada' }}
-                            </span>
+                        
+                        <div class="mt-3">
+                            <button class="btn btn-outline-dark text-uppercase small fw-semibold">Editar Perfil</button>
                         </div>
                     </div>
                 </div>
-            @empty
-                {{-- Si el usuario no tiene filas en la tabla ordenes, se muestra este cartel --}}
-                <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
-                    <span style="font-size: 2.5rem;">🛍️</span>
-                    <h5 class="mt-3 fw-bold text-dark">¿No tenés compras guardadas?</h5>
-                    <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
-                        Tus pedidos aparecerán acá una vez que finalices tus compras en el carrito de joyas.
-                    </p>
-                    <div>
-                        <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
-                            Explorar Joyas
-                        </a>
-                    </div>
+
+                <!-- CONTENIDO 2: Mi lista de deseos -->
+                <div class="tab-pane fade" id="lista-deseos" role="tabpanel">
+                    <h4 class="fw-bold text-dark mb-3">Mi lista de deseos</h4>
+                    <p class="text-muted small">Acá se guardarán tus joyas favoritas.</p>
                 </div>
-            @endforelse 
+
+                <!-- CONTENIDO 3: Mis pedidos -->
+                <div class="tab-pane fade" id="mis-pedidos" role="tabpanel">
+                    <h4 class="fw-bold text-dark mb-3">Mis pedidos</h4>
+                    <p class="text-muted small">Acá verás el historial de tus compras.</p>
+                </div>
+
+            </div>
         </div>
 
     </div>

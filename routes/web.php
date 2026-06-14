@@ -117,5 +117,7 @@ Route::get('/catalogo/producto/{id}', [ProductoController::class, 'show'])->name
 // La ruta ahora es dinámica y pasa por el controlador
 Route::get('/catalogo1', [ProductoController::class, 'mostrarCatalogo'])->name('catalogo1');
 
-//Dashboard del cliente 
-Route::get('/mi-panel' , [ClienteController::class, 'dashboard'])->name('cliente.dashboard')->middleware('auth');
+//Dashboard del cliente, Se agrego  la restriccion de que solo el CLIENTE LOGUEADO acceda al panel
+//una cosa nomas habia que arregarle, QUE CAPA QUE SOY
+Route::get('/mi-panel' , [ClienteController::class, 'dashboard'])->name('cliente.dashboard')->middleware(['auth', 'rol:cliente']);
+

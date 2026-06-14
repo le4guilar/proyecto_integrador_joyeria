@@ -594,3 +594,22 @@ body {
 }
 
 /*FIN SECION FOOTER*/
+
+/*SEGUNDA PARTE*/
+/* dashboard del cliente*/
+    .custom-tab-btn {
+        color: #333 !important;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+    }
+    .custom-tab-btn:hover {
+        background-color: #fdfbf7;
+        color: #300403 !important;
+    }
+    .custom-tab-btn.active {
+        background-color: transparent !important;
+        color: #300403 !important;
+        font-weight: 700 !important;
+        border-left: 3px solid #300403 !important;
+    }
