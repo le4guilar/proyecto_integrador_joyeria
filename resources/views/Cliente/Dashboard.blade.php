@@ -104,7 +104,7 @@
 
                                         <div class="mb-2">
                                             <label class="small text-muted fw-semibold mb-1">Contraseña actual</label>                                        
-                                                <input type="password" name="current_password" class="form-control form-control-sm bg-white" placeholder="Ingresá tu clave actual" required>                                         
+                                            <input type="password" name="current_password" class="form-control form-control-sm bg-white" placeholder="Ingresá tu clave actual" required>                                         
                                         </div>
 
                                         <div class="mb-2">
@@ -114,7 +114,7 @@
 
                                         <div class="mb-3">
                                             <label class="small text-muted fw-semibold mb-1">Confirmar nueva contraseña</label>                                        
-                                            <input type="password" name="password" class="form-control form-control-sm bg-white" placeholder="Mínimo 8 caracteres" required>                                            
+                                            <input type="password" name="password_confirmation" class="form-control form-control-sm bg-white" placeholder="Mínimo 8 caracteres" required>                                            
                                         </div>
 
                                         <div class="d-flex gap-2">
@@ -134,6 +134,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
                 <!-- CONTENIDO 1: Información Personal -->
                 <div class="tab-pane fade" id="info-personal" role="tabpanel">
