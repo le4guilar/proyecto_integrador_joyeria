@@ -116,9 +116,12 @@
                         <span class="fs-3 fw-bold text-success">${{ number_format($total, 2, ',', '.') }}</span>
                     </div>
 
-                    <button class="btn btn-dark btn-lg w-100 py-3 fw-bold text-uppercase shadow" style="letter-spacing: 1px;">
-                        Ir a la caja
-                    </button>
+                    <form action="{{ route('carrito.finalizar') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-dark btn-lg w-100 py-3 fw-bold text-uppercase shadow" style="letter-spacing: 1px;">
+                            Ir a la caja
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
