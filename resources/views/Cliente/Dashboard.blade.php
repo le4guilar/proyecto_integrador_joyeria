@@ -202,10 +202,59 @@
                 </div>
 
                 <!-- CONTENIDO 2: Mi lista de deseos -->
-                <div class="tab-pane fade" id="lista-deseos" role="tabpanel">
-                    <h4 class="fw-bold text-dark mb-3">Mi lista de deseos</h4>
-                    <p class="text-muted small">Acá se guardarán tus joyas favoritas.</p>
+                <div class="tab-pane fade" id="lista-deseos" role="tabpanel" aria-labelledby="deseos-tab">
+    <h4 class="fw-bold text-dark mb-4">Mi lista de deseos</h4>
+
+    {{-- 🛒 Bucle inteligente para cuando tengamos la variable de favoritos --}}
+    @if(isset($misFavoritos) && $misFavoritos->count() > 0)
+        <div class="row g-4">
+            @foreach($misFavoritos as $favorito)
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm position-relative rounded-3 bg-white">
+                        
+                        {{-- Botón rápido para eliminar de favoritos --}}
+                        <form action="#" method="POST" class="position-absolute top-0 end-0 p-2">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-light rounded-circle shadow-sm text-danger" title="Eliminar">
+                                &times;
+                            </button>
+                        </form>
+
+                        {{-- Imagen del producto --}}
+                        <img src="{{ asset('storage/' . $favorito->producto->imagen) }}" class="card-img-top rounded-top-3" alt="{{ $favorito->producto->nombre }}" style="height: 200px; object-fit: cover;">
+                        
+                        <div class="card-body d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h6 class="fw-bold text-dark mb-1">{{ $favorito->producto->nombre }}</h6>
+                                <p class="text-muted small mb-2">$ {{ number_format($favorito->producto->precio, 2, ',', '.') }}</p>
+                            </div>
+                            
+                            {{-- Botón para ir a comprarlo --}}
+                            <a href="#" class="btn btn-dark btn-sm text-uppercase small fw-semibold w-100 mt-2">
+                                Ver Joya
+                            </a>
+                        </div>
+                    </div>
                 </div>
+            @endforeach
+        </div>
+    @else
+        {{--  ESTO SE VA A VER AHORA: El cartel cuando no hay favoritos guardados --}}
+        <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
+            <span style="font-size: 2.5rem;"></span>
+            <h5 class="mt-3 fw-bold text-dark">Tu lista de deseos está vacía</h5>
+            <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
+                Guardá las joyas que más te enamoren mientras explorás nuestro catálogo para tenerlas siempre a mano.
+            </p>
+            <div>
+                <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
+                    Buscar Joyas
+                </a>
+            </div>
+        </div>
+    @endif
+</div>
 
                 <!-- CONTENIDO 3: Mis pedidos -->
                 <div class="tab-pane fade" id="mis-pedidos" role="tabpanel">
