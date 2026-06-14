@@ -9,43 +9,47 @@ use App\Models\DetalleOrden;
 use App\Models\Orden;
 use App\Models\Producto;
 
+
+
 class OrdenController extends Controller
 {
     public function checkout(Request $request)
     {
-        $userId = auth()->id(); // O el ID que obtengas del request si es una API
+        $userId = $request->user()->id;
+        //$userId = auth()->id(); // O el ID que obtengas del request si es una API
+        //$userId = auth()->user()->id(); 
 
         // 1. Obtener los productos del carrito de este usuario
-        $cartItems = Carrito::where('usuario_id', $userId)->get();
+        $carritoItems = Carrito::where('usuario_id', $userId)->get();
 
-        if ($cartItems->isEmpty()) {
+        if ($carritoItems->isEmpty()) {
             return response()->json(['message' => 'El carrito está vacío'], 400);
         }
 
         try {
             // Iniciamos la transacción atómica
-            DB::transaction(function () use ($userId, $cartItems) {
-                
+            DB::transaction(function () use ($userId, $carritoItems) {
+
                 // 2. Calcular el total del carrito
-                $total = $cartItems->sum(function ($item) {
+                $total = $carritoItems->sum(function ($item) {
                     return $item->cantidad * $item->precio_unitario;
                 });
 
                 // ID del estado inicial (ej: 1 = Pendiente). Ajustalo según tu tabla 'estado_orden'
-                $estadoInicialId = 1; 
+                $estadoInicialId = 1;
 
                 // 3. Crear la Orden
-                $order = Orden::create([
+                $orden = Orden::create([
                     'total' => $total,
                     'usuario_id' => $userId,
                     'estado_orden_id' => $estadoInicialId,
                 ]);
 
                 // 4. Migrar ítems a detalle_orden y actualizar stock
-                foreach ($cartItems as $item) {
+                foreach ($carritoItems as $item) {
                     // Crear detalle
                     DetalleOrden::create([
-                        'orden_id' => $order->id,
+                        'orden_id' => $orden->id,
                         'producto_id' => $item->producto_id,
                         'cantidad' => $item->cantidad,
                         'precio_unitario' => $item->precio_unitario,
@@ -53,9 +57,9 @@ class OrdenController extends Controller
                     ]);
 
                     // Descontar stock del producto
-                    $product = Producto::find($item->producto_id);
-                    if ($product) {
-                        $product->decrement('stock', $item->cantidad);
+                    $producto = Producto::find($item->producto_id);
+                    if ($producto) {
+                        $producto->decrement('stock', $item->cantidad);
                     }
                 }
 
@@ -63,14 +67,10 @@ class OrdenController extends Controller
                 Carrito::where('usuario_id', $userId)->delete();
             });
 
-            return response()->json(['message' => 'Compra finalizada con éxito y orden creada.'], 200);
+            return redirect()->route('carrito.gracias');
 
         } catch (\Exception $e) {
-            // Laravel hace rollback automático si ocurre cualquier excepción dentro del DB::transaction
-            return response()->json([
-                'message' => 'Hubo un error al procesar la compra',
-                'error' => $e->getMessage()
-            ], 500);
+            return back()->withErrors(['error' => 'Hubo un error al procesar tu compra: ' . $e->getMessage()]);
         }
     }
 }

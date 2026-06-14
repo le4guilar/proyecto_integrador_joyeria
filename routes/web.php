@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\OrdenController;
 
 
 Route::get('/', function () {
@@ -123,3 +124,13 @@ Route::get('/mi-panel' , [ClienteController::class, 'dashboard'])->name('cliente
 
 //RUTA para procesar el cambio de contraseña
 Route::patch('/mi-panel/cambiar-contraseña', [ClienteController::class, 'updatePassword'])->name('cliente.update-password');
+
+// Tu ruta actual (asegurate de que esté completa al final del archivo)
+Route::post('/carrito/finalizar', [OrdenController::class, 'checkout'])
+    ->middleware('auth')
+    ->name('carrito.finalizar');
+
+// NUEVA RUTA: Para mostrar la pantalla de "Gracias por tu compra"
+Route::get('/carrito/gracias', function () {
+    return view('Cliente.carrito.gracias'); // Esto buscará la vista en resources/views/Cliente/carrito/gracias.blade.php
+})->middleware('auth')->name('carrito.gracias');
