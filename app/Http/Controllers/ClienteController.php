@@ -32,7 +32,7 @@ class ClienteController extends Controller
         //validamos que lo que escribe este bien
         $request->validate([
             'current_password' => ['required', 'current_password'], //verifica que la contraseña actual sea la correcta
-            'password' => ['required', 'confirmed', 'min:8'], //nueva contraseña de minimo 8 caracteres.
+            'password' => ['required', 'confirmed', 'min:4'], //nueva contraseña de minimo 8 caracteres.
         ]);
 
         //actualizamos la contraseña en la base de datos
