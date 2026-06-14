@@ -45,6 +45,7 @@
                 </a>
 
             </li>
+            
             <!--
             <li>
                 @auth
@@ -64,15 +65,16 @@
             </li>
             -->
             @auth
-            {{-- Solo se muestra si hay un usuario logueado --}}
-            <li class="nav-item nav-link px-3 text-white">
-                Hola, {{ auth()->user()->nombre }}
-            </li>
+            {{-- Solo se muestra si hay un usuario logueado (cambios: se hizo un panel de control) --}}
+            <!--<li class="nav-item">
+                <a class="nav-link text-uppercase fw-semibold" href="{{ route('cliente.dashboard') }}"> Mi Cuenta</a>
+            </li>-->
             <li class="nav-item">
                 @if(auth()->user()->rol_id === 1)
                 <a class="nav-link px-3" href="/admin">Panel Admin</a>
                 @else
-                <a class="nav-link px-3" href="/carrito">Mi carrito</a>
+                    <a class="nav-link text-uppercase fw-semibold" href="{{ route('cliente.dashboard') }}"> Mi Cuenta</a>
+
                 @endif
             </li>
 

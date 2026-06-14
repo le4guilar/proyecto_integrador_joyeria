@@ -8,17 +8,23 @@ use Illuminate\Support\Facades\Auth;
 
 class ClienteController extends Controller
 {
+    //Construccion del dahsboard del cliente
+
     //Muestra el panel principal del cliente
     public function dashboard(){
 
-        //se consigue el ID del usuario que esta navegando en la web en ese momento
+        //1. se consigue el ID del usuario que esta navegando en la web en ese momento
         $usuarioLogueadoId = Auth::id(); 
 
-        //va a Dbeaver y busca solo las ordenes que el pertenezcan a ese cliente
+        //2. va a Dbeaver y busca solo las ordenes que el pertenezcan a ese cliente
         $misOrdenes = Orden::where('usuario_id', $usuarioLogueadoId)->get();
 
+        //3. Retornamos la vista 'Cliente.Cliente'
+        //para mostrar los datos del cliente en el perfil, capturamos el objeto usuario completo con el Auth y se le agrega el compact.
+        $usuario = Auth::user();
+
         //se abre la pantalla del cliente y le pasamos sus ordenes usando compact
-        return view('Cliente.Cliente', compact('misOrdenes'));
+        return view('Cliente.Dashboard', compact('misOrdenes' , 'usuario'));
 
 
 

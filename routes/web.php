@@ -116,3 +116,6 @@ Route::get('/catalogo/producto/{id}', [ProductoController::class, 'show'])->name
 //Route::get('/catalogo', [ProductoController::class, 'mostrarCatalogo'])->name('catalogo.index');
 // La ruta ahora es dinámica y pasa por el controlador
 Route::get('/catalogo1', [ProductoController::class, 'mostrarCatalogo'])->name('catalogo1');
+
+//Dashboard del cliente 
+Route::get('/mi-panel' , [ClienteController::class, 'dashboard'])->name('cliente.dashboard')->middleware('auth');
