@@ -15,15 +15,14 @@ class OrdenController extends Controller
 {
     public function checkout(Request $request)
     {
-        $userId = $request->user()->usuario_id;
-        //$userId = auth()->id(); // O el ID que obtengas del request si es una API
-        //$userId = auth()->user()->id(); 
+        $userId = $request->user()->id;
 
         // 1. Obtener los productos del carrito de este usuario
         $carritoItems = Carrito::where('usuario_id', $userId)->get();
 
         if ($carritoItems->isEmpty()) {
-            return response()->json(['message' => 'El carrito está vacío'], 400);
+            // En vez del JSON, lo devolvemos a la página anterior con un mensaje:
+            return back()->withErrors(['error' => 'Tu carrito está vacío. Agregá joyas antes de finalizar la compra.']);
         }
 
         try {
@@ -35,7 +34,7 @@ class OrdenController extends Controller
                     return $item->cantidad * $item->precio_unitario;
                 });
 
-                // ID del estado inicial (ej: 1 = Pendiente). Ajustalo según tu tabla 'estado_orden'
+                // ID del estado inicial (ej: 1 = Pagado). Ajustalo según tu tabla 'estado_orden'
                 $estadoInicialId = 1;
 
                 // 3. Crear la Orden
@@ -68,7 +67,6 @@ class OrdenController extends Controller
             });
 
             return redirect()->route('carrito.gracias');
-
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Hubo un error al procesar tu compra: ' . $e->getMessage()]);
         }
