@@ -14,12 +14,12 @@ class DetalleOrden extends Model
         'cantidad',
         'subtotal',
         'precio_unitario',
-        'orden_Id',
+        'orden_id',
         'producto_id',
     ];
 
     public function orden(){
-        return $this->belongsTo(Orden::class, 'orden_Id');
+        return $this->belongsTo(Orden::class, 'orden_id');
     }
 
     public function producto(){
