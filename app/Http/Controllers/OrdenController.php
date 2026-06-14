@@ -15,7 +15,7 @@ class OrdenController extends Controller
 {
     public function checkout(Request $request)
     {
-        $userId = $request->user()->id;
+        $userId = $request->user()->usuario_id;
         //$userId = auth()->id(); // O el ID que obtengas del request si es una API
         //$userId = auth()->user()->id(); 
 
