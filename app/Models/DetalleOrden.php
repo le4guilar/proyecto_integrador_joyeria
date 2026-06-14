@@ -10,6 +10,7 @@ class DetalleOrden extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'detalle_orden';
     protected $fillable = [
         'cantidad',
         'subtotal',

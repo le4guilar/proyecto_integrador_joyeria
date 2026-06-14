@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call([GeneroJoyaSeeder::class]); // llama al seeder de generos de joya
         $this->call([CategoriaJoyaSeeder::class]); // llama al seeder de categorias de joyas
         $this->call([ProductoSeeder::class]); 
+        $this->call([EstadoOrdenSeeder::class]); 
     }
 }
