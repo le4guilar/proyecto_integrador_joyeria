@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Orden;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ClienteController extends Controller
 {
-    //Construccion del dahsboard del cliente
-
     //Muestra el panel principal del cliente
     public function dashboard(){
 
@@ -25,11 +24,9 @@ class ClienteController extends Controller
 
         //se abre la pantalla del cliente y le pasamos sus ordenes usando compact
         return view('Cliente.Dashboard', compact('misOrdenes' , 'usuario'));
-
-
-
     }
 
+    //NUEVA FUNCION: para que el cliente modifique la contraseña
    
 
 }
