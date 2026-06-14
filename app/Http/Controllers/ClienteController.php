@@ -27,6 +27,19 @@ class ClienteController extends Controller
     }
 
     //NUEVA FUNCION: para que el cliente modifique la contraseña
-   
+    public function updatePassword(Request $request){
 
+        //validamos que lo que escribe este bien
+        $request->validate([
+            'current_password' => ['required', 'current_password'], //verifica que la contraseña actual sea la correcta
+            'password' => ['required', 'confirmed', 'min:8'], //nueva contraseña de minimo 8 caracteres.
+        ]);
+
+        //actualizamos la contraseña en la base de datos
+        $request->user()->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return back()->with('status', '¡Contraseña actualizada correctamente!');
+    }
 }

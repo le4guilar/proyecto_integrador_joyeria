@@ -121,3 +121,5 @@ Route::get('/catalogo1', [ProductoController::class, 'mostrarCatalogo'])->name('
 //una cosa nomas habia que arregarle, QUE CAPA QUE SOY
 Route::get('/mi-panel' , [ClienteController::class, 'dashboard'])->name('cliente.dashboard')->middleware(['auth', 'rol:cliente']);
 
+//RUTA para procesar el cambio de contraseña
+Route::patch('/mi-panel/cambiar-contraseña', [ClienteController::class, 'updatePassword'])->name('cliente.update-password');

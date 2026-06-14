@@ -52,6 +52,49 @@
                     <h4 class="fw-bold text-dark mb-1">Hola, {{ $usuario->name }}!</h4>
                     <p class="text-muted small mb-4">Desde tu panel podés ver tu actividad reciente y gestionar tu seguridad.</p>
 
+                    <!-- MENSAGE DE EXITO: Se muestra si la contraseña se cambio bien -->
+                    @if (session('status'))
+                    <div class="alert alert-success small p-2 rounded-3 mb-4" role="alert">
+                        {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <!-- ERRORES DE VALIDACION: Se muestra si pusieron mal la clave actual o no coinciden -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger small p-2 rounded-3 mb-4" role="alert">
+                            <ul class="mb-0 ps-3">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-0 bg-light p-4 rounded-3 shadow-sm h-100">
+                                <h6 class="fw-bold text-muted small text-uppercase tracking-wider mb-3" style="font-size: 0.75rem;">Información de contacto</h6>
+                                <p class="fw-bold text-dark mb-1">{{ $usuario->name }}</p>
+                                <p class="text-muted small mb-0">{{ $usuario->email }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card border-0 bg-light p-4 rounded-3 shadow-sm h-100">
+                                <h6 class="fw-bold text-muted small text-uppercase tracking-wider mb-3" style="font-size: 0.75rem;">Seguridad de la cuenta</h6>
+
+                                <form action="{{ route('cliente.update-password') }}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
+
+                                    <div class="mb-2">
+                                        <input type="password" name="current_password" class="form-control form-control-sm bg-white" placeholder="Contraseña actual" required>
+                                    </div>
+
+
+
+
+
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="card borde-0 bg-loght p-4 rounded-3 shadow-sm h-100">
