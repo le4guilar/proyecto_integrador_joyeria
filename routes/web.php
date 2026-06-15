@@ -152,3 +152,8 @@ Route::post('/favoritos/agregar', [App\Http\Controllers\ClienteController::class
 
 //Routa para eliminar un producto en la lista de favoritos
 Route::delete('/favoritos/eliminar/{id}', [App\Http\Controllers\ClienteController::class, 'eliminarFavorito'])->name('cliente.favoritos.eliminar');
+
+// camino para actualizar las cantidades desde el carrito
+Route::patch('/carrito/actualizar/{id}', [CarritoController::class, 'actualizar'])
+    ->name('carrito.actualizar')
+    ->middleware('auth');

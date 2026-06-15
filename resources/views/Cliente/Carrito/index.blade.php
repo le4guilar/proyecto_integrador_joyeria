@@ -83,11 +83,28 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-3 mt-3">
-                        <!-- Control de Cantidad -->
-                        <div class="d-flex align-items-center border rounded">
-                            <span class="px-3 py-1 text-muted small">Cant.</span>
-                            <span class="px-3 py-1 fw-bold border-start bg-light text-dark">{{ $item->cantidad }}</span>
-                        </div>
+                        <form action="{{ route('carrito.actualizar', $item->id) }}" method="POST" class="d-flex align-items-center gap-2">
+                            @csrf
+                            @method('PATCH') {{-- Avisa a Laravel que es una actualización parcial --}}
+                            
+                            <div class="d-flex align-items-center border rounded bg-white">
+                                <span class="px-3 py-1 text-muted small bg-light border-end">Cant.</span>
+                                
+                                <input type="number" 
+                                    name="cantidad" 
+                                    class="form-control form-control-sm text-center fw-bold border-0 py-1" 
+                                    value="{{ $item->cantidad }}" 
+                                    min="1" 
+                                    max="{{ $item->producto ? $item->producto->stock : 10 }}" {{-- Evita que pongan más del stock en DBeaver --}}
+                                    style="width: 65px; box-shadow: none;"
+                                    required>
+                            </div>
+                                
+                            {{-- Botón con el ícono de check para confirmar y enviar el cambio --}}
+                            <button type="submit" class="btn btn-sm btn-outline-dark d-flex align-items-center justify-content-center p-2" style="height: 33px;" title="Actualizar cantidad">
+                                <i class="bi bi-check-lg" style="-webkit-text-stroke: 0.5px currentColor;"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
 

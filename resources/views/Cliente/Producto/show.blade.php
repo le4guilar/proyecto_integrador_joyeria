@@ -39,13 +39,21 @@
                 <input type="hidden" name="producto_id" value="{{ $producto->id }}">
                 
                 <div class="mb-3">
-                    <label class="form-label small text-uppercase text-muted fw-semibold">Cantidad a llevar</label>
-                    <select name="cantidad" class="form-select" {{ $producto->stock <= 0 ? 'disabled' : '' }}>
-                        <!-- Genera opciones reales basadas en el stock de DBeaver (Máximo 5) -->
-                        @for ($i = 1; $i <= min(5, $producto->stock); $i++)
-                            <option value="{{ $i }}">{{ $i }} {{ $i == 1 ? 'unidad' : 'unidades' }}</option>
-                        @endfor
-                    </select>
+                    <label for="cantidad" class="form-label small fw-bold text-uppercase text-muted">Cantidad a llevar</label>
+
+                    <!--SE CAMBIO: se modico la seleccion de cantidad de productos-->
+                    <div class="d-flex align-items-center" style="max-width: 150px;">
+                        <input type="number" 
+                            name="cantidad" 
+                            id="cantidad" 
+                            class="form-control text-center fw-bold bg-white" 
+                            value="1" 
+                            min="1" 
+                            max="{{ $producto->stock }}" {{-- Bloquea que el usuario escriba más del stock real --}}
+                            required>
+                    </div>
+                    
+                    <span class="text-muted small mt-1 d-block">Disponibles: {{ $producto->stock }} u.</span>
                 </div>
 
                 <button type="submit" class="btn btn-dark btn-lg w-100 text-uppercase fs-6 fw-semibold shadow-sm" {{ $producto->stock <= 0 ? 'disabled' : '' }}>

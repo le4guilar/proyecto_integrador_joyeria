@@ -82,4 +82,28 @@ class CarritoController extends Controller
 
         return redirect()->route('carrito.index')->with('status', 'Producto quitado del carrito');
     }
+
+    public function actualizar(Request $request, $id)
+    {
+        //  Validamos que la cantidad sea como minimo 1
+        $request->validate([
+            'cantidad' => 'required|integer|min:1'
+        ]);
+
+        // Buscamos el item del carrito en DBeaver
+        $itemCarrito = Carrito::findOrFail($id);
+
+        // Validamos que no intente actualizar a mas de lo que hay en stock
+        if ($request->cantidad > $itemCarrito->producto->stock) {
+            return back()->withErrors(['error' => "No puedes agregar más unidades. El stock disponible es de {$itemCarrito->producto->stock} unidades."]);
+        }
+
+        //  Actualizamos la cantidad en la tabla
+        $itemCarrito->update([
+            'cantidad' => $request->cantidad
+        ]);
+
+        //  Volvemos atras con un mensaje de exito
+        return back()->with('status', 'Cantidad actualizada correctamente.');
+    }
 }
