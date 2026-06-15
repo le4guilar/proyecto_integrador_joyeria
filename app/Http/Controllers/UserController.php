@@ -14,13 +14,18 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function index()
-    {
-        // traemos todos los usuarios con su rol
-        $usuarios = User::with('rol')->get();
+{
+    // Opción A: Filtrar por el ID del rol (Recomendado si sabes que el admin siempre es rol_id = 1)
+    $usuarios = User::with('rol')->where('rol_id', 1)->get();
 
-        // devolvemos la vista index de usuario pasandole el ¿array? de usuarios
-        return view('Admin.Usuario.index', compact('usuarios'));
-    }
+    /* // Opción B: Filtrar por el nombre del rol (útil si no recordás el ID exacto)
+    $usuarios = User::whereHas('rol', function ($query) {
+        $query->where('nombre', 'admin'); // Cambiá 'nombre' por la columna real de tu tabla 'rol'
+    })->with('rol')->get();
+    */
+
+    return view('Admin.Usuario.index', compact('usuarios'));
+}
 
     public function create()
     {
