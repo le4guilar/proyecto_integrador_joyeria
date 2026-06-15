@@ -13,10 +13,19 @@ return new class extends Migration
     {
         Schema::create('consulta', function (Blueprint $table) {
             $table->id();
-            $table->string('asunto' , 50);
-            $table->string('mensaje' , 200);
+
+            // Campos obligatorios para saber quién escribe
+            $table->string('nombre', 100);
+            $table->string('email', 100);
+            $table->integer('telefono');
+
+            // Los campos de tu consulta original
+            $table->string('mensaje', 200);
             $table->boolean('estado')->default(true);
-            $table->foreignId('usuario_id')->constrained('users');
+
+            // Clave foránea opcional (permite nulos)
+            $table->foreignId('usuario_id')->nullable()->constrained('users');
+
             $table->timestamps();
             $table->softDeletes();
         });

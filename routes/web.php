@@ -53,7 +53,7 @@ Route::get('/catalogo2', function () {
     return view('catalogo2'); 
 })->name('catalogo2');
 
-Route::post('/contacto', [ContactoController::class, 'procesar']);
+Route::post('/contacto', [App\Http\Controllers\ContactoController::class, 'procesar']);
 
 Route::middleware(['auth', 'rol:admin'])-> group(function(){
     Route::get('admin', [AdminController::class, 'index'])->name('dashboard');
