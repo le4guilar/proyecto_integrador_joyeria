@@ -22,7 +22,7 @@
                 <input type="text" name="buscar" class="form-control text-dark" placeholder="Ej: Anillo de oro..." value="{{ request('buscar') }}">
             </div>
 
-            {{-- 2. Selector Desplegable de Categorías --}}
+            <!-- Selector Desplegable de Categorias-->
             <div class="col-md-3">
                 <label class="form-label small text-uppercase text-muted fw-semibold">Categoría</label>
                 <select name="categoria_id" class="form-select text-dark">
@@ -60,36 +60,49 @@
                 <!-- Mantenemos tu clase original y aseguramos el position-relative -->
                 <div class="producto-card rounded-2 p-3 position-relative">
                     
-                    <!--  BOTÓN DEL CORAZÓN FLOTANTE Y DINÁMICO -->
-                    <div class="position-absolute top-0 end-0 p-3" style="z-index: 10;">
-                        <form action="{{ route('cliente.favoritos.agregar') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="producto_id" value="{{ $joya->id }}">
-                            
-                            <!-- Burbuja blanca con sombra para que el corazón resalte sobre cualquier foto -->
-                            <button type="submit" class="btn p-0 border-0 rounded-circle d-flex align-items-center justify-content-center shadow-sm" 
-                                    title="Agregar a mi lista de deseos"
-                                    style="width: 36px; height: 36px; background-color: rgba(255, 255, 255, 0.9); transition: transform 0.2s;">
-                                
-                                <!--Consulta directa en DBeaver desde Blade -->
-                                @php
-                                    $esFavorito = \Illuminate\Support\Facades\DB::table('favoritos')
-                                        ->where('usuario_id', auth()->id())
-                                        ->where('producto_id', $joya->id)
-                                        ->exists();
-                                @endphp
+                    <!--  BOTON DEL CORAZON FLOTANTE Y DINAMICO -->
+                    @auth
+                        @if(auth()->user()->rol_id !== 1)
+                            <!-- SI ESTA LOGUEADO Y NO ES ADMIN: Puede usar favoritos -->
+                            <div class="position-absolute top-0 end-0 p-3" style="z-index: 10;">
+                                <form action="{{ route('cliente.favoritos.agregar') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="producto_id" value="{{ $joya->id }}">
+                                    
+                                    <button type="submit" class="btn p-0 rounded-circle d-flex align-items-center justify-content-center shadow-sm" 
+                                            title="Agregar a mi lista de deseos"
+                                            style="width: 36px; height: 36px; background-color: rgba(255, 255, 255, 0.9); transition: transform 0.2s;">
+                                        
+                                        @php
+                                            $esFavorito = \Illuminate\Support\Facades\DB::table('favoritos')
+                                                ->where('usuario_id', auth()->id())
+                                                ->where('producto_id', $joya->id)
+                                                ->exists();
+                                        @endphp
 
-                                @if($esFavorito)
-                                    <!-- Si ya es favorito: Corazón lleno color bordo ALBA -->
-                                    <span style="color: #300403; font-size: 1.3rem; line-height: 1;">♥</span>
-                                @else
-                                    <!-- Si no es favorito: Corazón vacio original -->
+                                        @if($esFavorito)
+                                            <span style="color: #300403; font-size: 1.3rem; line-height: 1;">♥</span>
+                                        @else
+                                            <span class="text-dark" style="font-size: 1.3rem; line-height: 1;">♡</span>
+                                        @endif
+                                    </button>
+                                </form>
+                            </div>
+                        @endif
+                    @else
+                        <!-- SI ES INVITADO (No inico sesion): Le mostramos el corazon vacio -->
+                        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10;">
+                            <form action="{{ route('cliente.favoritos.agregar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="producto_id" value="{{ $joya->id }}">
+                                <button type="submit" class="btn p-0 rounded-circle d-flex align-items-center justify-content-center shadow-sm" 
+                                        title="Iniciá sesión para guardar favoritos"
+                                        style="width: 36px; height: 36px; background-color: rgba(255, 255, 255, 0.9);">
                                     <span class="text-dark" style="font-size: 1.3rem; line-height: 1;">♡</span>
-                                @endif
-
-                            </button>
-                        </form>
-                    </div>
+                                </button>
+                            </form>
+                        </div>
+                    @endauth
 
                     <!-- Foto con enlace dinámico al detalle -->
                     <a href="{{ route('catalogo.producto.show', $joya->id) }}">
