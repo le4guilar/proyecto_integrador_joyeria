@@ -79,6 +79,11 @@ class ClienteController extends Controller
 
     public function agregarFavorito(Request $request)
     {
+        //CONTROL DE SEGURIDAD: Si no esta logueado, va al login
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('info', 'Debes iniciar sesión para agregar favoritos.');
+        }
+
         $usuarioId = Auth::id();
         $productoId = $request->input('producto_id');
 

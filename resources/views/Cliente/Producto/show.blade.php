@@ -17,7 +17,7 @@
             <span class="text-muted text-uppercase small tracking-wider">Detalle de la Joya</span>
             <h1 class="display-5 fw-bold mt-2 text-dark">{{ $producto->nombre_joya }}</h1>
             
-            {{-- Formateo de precio argentino --}}
+            <!-- Formateo de precio argentino -->
             <h3 class="text-success my-3 fw-semibold">$ {{ number_format($producto->precio_unitario, 2, ',', '.') }}</h3>
             
             <hr class="my-4" style="opacity: 0.15;">
@@ -35,13 +35,13 @@
 
             <form action="{{ route('carrito.store') }}" method="POST" class="mt-4" style="max-width: 300px;">
                 @csrf
-                {{-- Se envía el ID dinámico de la joya actual --}}
+                <!-- Se envia el ID dinamico de la joya actual -->
                 <input type="hidden" name="producto_id" value="{{ $producto->id }}">
                 
                 <div class="mb-3">
                     <label class="form-label small text-uppercase text-muted fw-semibold">Cantidad a llevar</label>
                     <select name="cantidad" class="form-select" {{ $producto->stock <= 0 ? 'disabled' : '' }}>
-                        {{-- Genera opciones reales basadas en el stock de DBeaver (Máximo 5) --}}
+                        <!-- Genera opciones reales basadas en el stock de DBeaver (Máximo 5) -->
                         @for ($i = 1; $i <= min(5, $producto->stock); $i++)
                             <option value="{{ $i }}">{{ $i }} {{ $i == 1 ? 'unidad' : 'unidades' }}</option>
                         @endfor
