@@ -17,7 +17,7 @@ return new class extends Migration
             // Campos obligatorios para saber quién escribe
             $table->string('nombre', 100);
             $table->string('email', 100);
-            $table->integer('telefono');
+            $table->bigInteger('telefono');
 
             // Los campos de tu consulta original
             $table->string('mensaje', 200);
