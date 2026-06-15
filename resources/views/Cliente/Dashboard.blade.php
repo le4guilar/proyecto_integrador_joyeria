@@ -4,30 +4,30 @@
 
 <div class="container my-5" style="font-family: 'Montserrat', sans-serif;">
     <div class="row g-4">
-        
+
         <div class="col-lg-3 border-end">
             <div class="mb-4 px-3">
                 <span class="text-muted small text-uppercase tracking-wider" style="font-size: 0.75rem;">Mi cuenta</span>
                 <h5 class="fw-bold text-dark mt-1">{{ $usuario->nombre }}</h5>
             </div>
-            
+
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-            <!-- OPCION 1: Mi Panel de Control -->
+                <!-- OPCION 1: Mi Panel de Control -->
                 <button class="nav-link active text-start rounded-0 border-bottom py-3 px-3 custom-tab-btn" id="panel-tab" data-bs-toggle="pill" data-bs-target="#panel-control" type="button" role="tab" aria-controls="panel-control" aria-selected="true">
                     Mi panel de control
                 </button>
-                
+
                 <!-- OPCION 2: Información Personal -->
                 <button class="nav-link text-start rounded-0 border-bottom py-3 px-3 custom-tab-btn" id="info-tab" data-bs-toggle="pill" data-bs-target="#info-personal" type="button" role="tab" aria-controls="info-personal" aria-selected="false">
                     Información personal
                 </button>
-                
+
                 <!-- OPCION 2: Mi lista de deseos -->
                 <button class="nav-link text-start rounded-0 border-bottom py-3 px-3 custom-tab-btn" id="deseos-tab" data-bs-toggle="pill" data-bs-target="#lista-deseos" type="button" role="tab" aria-controls="lista-deseos" aria-selected="false">
                     Mi lista de deseos
                 </button>
-                
+
                 <!-- OPCION 3: Mis pedidos -->
                 <button class="nav-link text-start rounded-0 border-bottom py-3 px-3 custom-tab-btn" id="pedidos-tab" data-bs-toggle="pill" data-bs-target="#mis-pedidos" type="button" role="tab" aria-controls="mis-pedidos" aria-selected="false">
                     Mis pedidos <span class="badge bg-dark rounded-circle ms-2">{{ $misOrdenes->count() }}</span>
@@ -55,18 +55,18 @@
                     @if (session('status'))
                     <div class="alert alert-success small p-2 rounded-3 mb-4" role="alert">
                         {{ session('status') }}
-                        </div>
+                    </div>
                     @endif
 
                     <!-- ERRORES DE VALIDACION: Se muestra si pusieron mal la clave actual o no coinciden -->
                     @if ($errors->any())
-                        <div class="alert alert-danger small p-2 rounded-3 mb-4" role="alert">
-                            <ul class="mb-0 ps-3">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    <div class="alert alert-danger small p-2 rounded-3 mb-4" role="alert">
+                        <ul class="mb-0 ps-3">
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
 
                     <div class="row g-4">
@@ -83,7 +83,7 @@
                                 <h6 class="fw-bold text-muted small text-uppercase tracking-wider mb-3" style="font-size: 0.75rem;">Seguridad de la cuenta</h6>
 
                                 <!-- texto inicial: para ver primero la opcion de modificar contraseña-->
-                                 <div id="texto-seguridad">
+                                <div id="texto-seguridad">
                                     <p class="text-muted small mb-4">Mantené tu cuenta protegida actualizando tu contraseña de acceso de forma periódica.</p>
 
                                     <!-- boton para abrir el formulario para cambiar la contraseña-->
@@ -93,17 +93,17 @@
                                         onclick="document.getElementById('texto-seguridad').style.display='none'">
                                         Modificar contraseña
                                     </button>
-                                 </div>
+                                </div>
 
-                                 <!-- luego el formulario de despliega-->
+                                <!-- luego el formulario de despliega-->
                                 <div class="collapse" id="formulario-contraseña">
                                     <form action="{{ route('cliente.update-password') }}" method="POST">
                                         @csrf
                                         @method('PATCH')
 
                                         <div class="mb-2">
-                                            <label class="small text-muted fw-semibold mb-1">Contraseña actual</label>                                        
-                                            <input type="password" name="current_password" class="form-control form-control-sm bg-white" placeholder="Ingresá tu clave actual" required>                                         
+                                            <label class="small text-muted fw-semibold mb-1">Contraseña actual</label>
+                                            <input type="password" name="current_password" class="form-control form-control-sm bg-white" placeholder="Ingresá tu clave actual" required>
                                         </div>
 
                                         <div class="mb-2">
@@ -112,8 +112,8 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="small text-muted fw-semibold mb-1">Confirmar nueva contraseña</label>                                        
-                                            <input type="password" name="password_confirmation" class="form-control form-control-sm bg-white" placeholder="Mínimo 8 caracteres" required>                                            
+                                            <label class="small text-muted fw-semibold mb-1">Confirmar nueva contraseña</label>
+                                            <input type="password" name="password_confirmation" class="form-control form-control-sm bg-white" placeholder="Mínimo 8 caracteres" required>
                                         </div>
 
                                         <div class="d-flex gap-2">
@@ -137,34 +137,34 @@
                 </div>
 
                 <!-- CONTENIDO 1: Información Personal -->
-               <div class="tab-pane fade" id="info-personal" role="tabpanel" aria-labelledby="info-tab">
+                <div class="tab-pane fade" id="info-personal" role="tabpanel" aria-labelledby="info-tab">
                     <h4 class="fw-bold text-dark mb-4">Información personal</h4>
-                    
+
                     <!-- Mensajes de exito -->
                     @if (session('status'))
-                        <div class="alert alert-success small p-2 rounded-3 mb-4">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success small p-2 rounded-3 mb-4">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     <div class="card border-0 bg-light p-4 rounded-3 shadow-sm" style="max-width: 500px;">
-                        
+
                         <!-- VISTA DE LECTURA -->
                         <div id="vista-perfil">
                             <div class="mb-3">
                                 <label class="form-label small fw-bold text-uppercase text-muted">Nombre Completo</label>
                                 <div class="form-control bg-white text-dark border-0 py-2 shadow-sm">{{ $usuario->nombre }}</div>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label class="form-label small fw-bold text-uppercase text-muted">Correo Electrónico</label>
                                 <div class="form-control bg-white text-dark border-0 py-2 shadow-sm">{{ $usuario->email }}</div>
                             </div>
-                            
-                            <button type="button" class="btn btn-dark text-uppercase small fw-semibold w-100" 
-                                    data-bs-toggle="collapse" data-bs-target="#formulario-perfil" 
-                                    aria-expanded="false" aria-controls="formulario-perfil"
-                                    onclick="document.getElementById('vista-perfil').style.display='none'">
+
+                            <button type="button" class="btn btn-dark text-uppercase small fw-semibold w-100"
+                                data-bs-toggle="collapse" data-bs-target="#formulario-perfil"
+                                aria-expanded="false" aria-controls="formulario-perfil"
+                                onclick="document.getElementById('vista-perfil').style.display='none'">
                                 Editar Perfil
                             </button>
                         </div>
@@ -174,21 +174,21 @@
                             <form action="{{ route('cliente.update-perfil') }}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                
+
                                 <div class="mb-3">
                                     <label class="form-label small fw-bold text-uppercase text-muted">Nombre Completo</label>
                                     <input type="text" name="nombre" class="form-control bg-white" value="{{ $usuario->nombre }}" required>
                                 </div>
-                                
+
                                 <div class="mb-4">
                                     <label class="form-label small fw-bold text-uppercase text-muted">Correo Electrónico</label>
                                     <input type="email" name="email" class="form-control bg-white" value="{{ $usuario->email }}" required>
                                 </div>
-                                
+
                                 <div class="d-flex gap-2">
-                                    <button type="button" class="btn btn-outline-secondary text-uppercase small fw-semibold w-50" 
-                                            data-bs-toggle="collapse" data-bs-target="#formulario-perfil"
-                                            onclick="document.getElementById('vista-perfil').style.display='block'">
+                                    <button type="button" class="btn btn-outline-secondary text-uppercase small fw-semibold w-50"
+                                        data-bs-toggle="collapse" data-bs-target="#formulario-perfil"
+                                        onclick="document.getElementById('vista-perfil').style.display='block'">
                                         Cancelar
                                     </button>
                                     <button type="submit" class="btn btn-dark text-uppercase small fw-semibold w-50">
@@ -205,60 +205,60 @@
                     <h4 class="fw-bold text-dark mb-4">Mi lista de deseos</h4>
 
                     @if(isset($misFavoritos) && $misFavoritos->count() > 0)
-                        <div class="row g-4">
-                            @foreach($misFavoritos as $favorito)
-                                <div class="col-md-4">
-                                    <div class="card h-100 border-0 shadow-sm position-relative rounded-3 bg-white">
-                                        
-                                        <div class="position-absolute top-0 end-0 p-2" style="z-index: 10;">
-                                            <form action="{{ route('cliente.favoritos.eliminar', $favorito->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-sm bg-transparent border-0" title="Eliminar de favoritos">
-                                                    <span class="text-danger fw-bold" 
-                                                        style="font-size: 1.5rem; line-height: 1; -webkit-text-stroke: 1px #32070c;">
-                                                            <i class="bi bi-x text-alba-bordo fs-4"></i>
-                                                    </span>
-                                                </button>
-                                            </form>
-                                        </div>
+                    <div class="row g-4">
+                        @foreach($misFavoritos as $favorito)
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm position-relative rounded-3 bg-white">
 
-                                        @if($favorito->producto && $favorito->producto->url_imagen)
-                                            <img src="{{ asset($favorito->producto->url_imagen) }}" class="card-img-top rounded-top-3" alt="{{ $favorito->producto->nombre_joya }}" style="height: 200px; object-fit: cover;">
-                                        @else
-                                            <img src="{{ asset('img/Catalogo/Pagina1/Anillo1.png') }}" class="card-img-top rounded-top-3" alt="Joyas ALBA" style="height: 200px; object-fit: cover;">
-                                        @endif
-                                        
-                                        <div class="card-body d-flex flex-column justify-content-between p-3">
-                                            <div>
-                                                <!-- Se corrigieron algunos nombres que estaban mal -->
-                                                <h6 class="fw-bold text-dark mb-1">{{ $favorito->producto->nombre_joya ?? 'Joya ALBA' }}</h6>
-                                                <p class="text-muted small mb-2">$ {{ number_format($favorito->producto->precio_unitario ?? 0, 2, ',', '.') }}</p>
-                                            </div>
-                                            
-                                            <a href="{{ route('catalogo.producto.show', $favorito->producto_id) }}" class="btn btn-dark btn-sm text-uppercase small fw-semibold w-100 mt-2">
-                                                Ver Joya
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="position-absolute top-0 end-0 p-2" style="z-index: 10;">
+                                    <form action="{{ route('cliente.favoritos.eliminar', $favorito->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm bg-transparent border-0" title="Eliminar de favoritos">
+                                            <span class="text-danger fw-bold"
+                                                style="font-size: 1.5rem; line-height: 1; -webkit-text-stroke: 1px #32070c;">
+                                                <i class="bi bi-x text-alba-bordo fs-4"></i>
+                                            </span>
+                                        </button>
+                                    </form>
                                 </div>
-                            @endforeach
-                        </div>
-                    @else
-                        <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
-                            <span style="font-size: 2.5rem;">
-                                <i class="bi bi-heart-fill"></i>
-                            </span>
-                            <h5 class="mt-3 fw-bold text-dark">Tu lista de deseos está vacía</h5>
-                            <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
-                                Guardá las joyas que más te enamoren mientras explorás nuestro catálogo para tenerlas siempre a mano.
-                            </p>
-                            <div>
-                                <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
-                                    Buscar Joyas
-                                </a>
+
+                                @if($favorito->producto && $favorito->producto->url_imagen)
+                                <img src="{{ asset($favorito->producto->url_imagen) }}" class="card-img-top rounded-top-3" alt="{{ $favorito->producto->nombre_joya }}" style="height: 200px; object-fit: cover;">
+                                @else
+                                <img src="{{ asset('img/Catalogo/Pagina1/Anillo1.png') }}" class="card-img-top rounded-top-3" alt="Joyas ALBA" style="height: 200px; object-fit: cover;">
+                                @endif
+
+                                <div class="card-body d-flex flex-column justify-content-between p-3">
+                                    <div>
+                                        <!-- Se corrigieron algunos nombres que estaban mal -->
+                                        <h6 class="fw-bold text-dark mb-1">{{ $favorito->producto->nombre_joya ?? 'Joya ALBA' }}</h6>
+                                        <p class="text-muted small mb-2">$ {{ number_format($favorito->producto->precio_unitario ?? 0, 2, ',', '.') }}</p>
+                                    </div>
+
+                                    <a href="{{ route('catalogo.producto.show', $favorito->producto_id) }}" class="btn btn-dark btn-sm text-uppercase small fw-semibold w-100 mt-2">
+                                        Ver Joya
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        @endforeach
+                    </div>
+                    @else
+                    <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
+                        <span style="font-size: 2.5rem;">
+                            <i class="bi bi-heart-fill"></i>
+                        </span>
+                        <h5 class="mt-3 fw-bold text-dark">Tu lista de deseos está vacía</h5>
+                        <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
+                            Guardá las joyas que más te enamoren mientras explorás nuestro catálogo para tenerlas siempre a mano.
+                        </p>
+                        <div>
+                            <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
+                                Buscar Joyas
+                            </a>
+                        </div>
+                    </div>
                     @endif
                 </div>
 
@@ -266,93 +266,109 @@
                 <div class="tab-pane fade" id="mis-pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
                     <h4 class="fw-bold text-dark mb-4">Mis pedidos</h4>
 
-                    <!-- Recorremos de forma dinamica las ordenes de DBeaver -->
                     @forelse($misOrdenes as $orden)
-                        <div class="card mb-3 border-0 shadow-sm p-3 bg-white border-start border-dark border-4 rounded-3">
-                            <div class="row align-items-center g-3">
-                                
-                                <!-- Codigo del Pedido -->
-                                <div class="col-md-3">
-                                    <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Código</span>
-                                    <span class="fw-bold text-dark">#{{ str_pad($orden->id, 5, '0', STR_PAD_LEFT) }}</span>
-                                </div>
+                    <div class="card mb-3 border-0 shadow-sm p-3 bg-white border-start border-dark border-4 rounded-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-md-2">
+                                <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Código</span>
+                                <span class="fw-bold text-dark">#{{ str_pad($orden->id, 5, '0', STR_PAD_LEFT) }}</span>
+                            </div>
 
-                                <!--Fecha de la Compra -->
-                                <div class="col-md-3">
-                                    <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Fecha</span>
-                                    <span class="text-secondary small fw-medium">
-                                        {{ $orden->created_at ? $orden->created_at->format('d/m/Y') : 'Reciente' }}
-                                    </span>
-                                </div>
+                            <div class="col-md-3">
+                                <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Fecha</span>
+                                <span class="text-secondary small fw-medium">
+                                    {{ $orden->created_at ? $orden->created_at->format('d/m/Y') : 'Reciente' }}
+                                </span>
+                            </div>
 
-                                <!-- Total de la Orden -->
-                                <div class="col-md-3">
-                                    <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Total</span>
-                                    <span class="fw-bold text-dark">$ {{ number_format($orden->total ?? 0, 2, ',', '.') }}</span>
-                                </div>
+                            <div class="col-md-2">
+                                <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Total</span>
+                                <span class="fw-bold text-dark">$ {{ number_format($orden->total ?? 0, 2, ',', '.') }}</span>
+                            </div>
 
-                                <!-- Estado del Pedido -->
-                                <!-- Estado del Pedido Inteligente con Colores Dinamicos -->
-                                <div class="col-md-3 text-md-end">
-                                    <span class="small text-muted d-block text-md-end text-start text-uppercase fw-semibold mb-1" style="font-size: 0.65rem; letter-spacing: 0.5px;">Estado</span>
-                                    
-                                    @php
-                                        // 1. Rescatamos el texto del estado de forma segura (rompiendo el objeto)
-                                        $nombreEstado = 'Pagado'; // Valor por defecto
-                                        if (isset($orden->estado) && is_object($orden->estado)) {
-                                            $nombreEstado = $orden->estado->nombre_estado_orden;
-                                        } elseif (isset($orden->estado) && is_array($orden->estado)) {
-                                            $nombreEstado = $orden->estado['nombre_estado_orden'];
-                                        } elseif (isset($orden->estado)) {
-                                            $nombreEstado = $orden->estado;
-                                        }
+                            <div class="col-md-3 text-md-end">
+                                <span class="small text-muted d-block text-md-end text-start text-uppercase fw-semibold mb-1" style="font-size: 0.65rem; letter-spacing: 0.5px;">Estado</span>
+                                @php
+                                $nombreEstado = 'Pagado';
+                                if (isset($orden->estado) && is_object($orden->estado)) {
+                                    $nombreEstado = $orden->estado->nombre_estado_orden;
+                                } elseif (isset($orden->estado) && is_array($orden->estado)) {
+                                    $nombreEstado = $orden->estado['nombre_estado_orden'];
+                                } elseif (isset($orden->estado)) {
+                                    $nombreEstado = $orden->estado;
+                                }
 
-                                        // 2. Evaluamos el texto y decidimos el color de fondo y de letra
-                                        // Limpiamos espacios o mayúsculas por las dudas con el helper Str::slug o pasándolo a minúsculas
-                                        $estadoLimpio = mb_strtolower(trim($nombreEstado));
-                                        
-                                        if ($estadoLimpio == 'pagado' || $estadoLimpio == 'aprobado') {
-                                            $bgBadge = 'background-color: #28a745; color: #ffffff;'; 
-                                        } elseif ($estadoLimpio == 'en camino' || $estadoLimpio == 'despachado') {
-                                            $bgBadge = 'background-color: #300403; color: #dfdada;'; 
-                                        } elseif ($estadoLimpio == 'entregado' || $estadoLimpio == 'finalizado') {
-                                            $bgBadge = 'background-color: #6c757d; color: #ffffff;'; 
-                                        } elseif ($estadoLimpio == 'cancelado' || $estadoLimpio == 'rechazado') {
-                                            $bgBadge = 'background-color: #dc3545; color: #ffffff;'; 
-                                        } else {
-                                            $bgBadge = 'background-color: #ffc107; color: #212529;'; // "Pendiente"
-                                        }
-                                    @endphp
+                                $estadoLimpio = mb_strtolower(trim($nombreEstado));
 
-                                    <!-- Dibujamos el Badge con el estilo dinámico calculado arriba -->
-                                    <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" style="{{ $bgBadge }} font-size: 0.75rem;">
-                                        {{ $nombreEstado }}
-                                    </span>
-                                </div>
+                                if ($estadoLimpio == 'pagado' || $estadoLimpio == 'aprobado') {
+                                    $bgBadge = 'background-color: #28a745; color: #ffffff;';
+                                } elseif ($estadoLimpio == 'en camino' || $estadoLimpio == 'despachado') {
+                                    $bgBadge = 'background-color: #300403; color: #dfdada;';
+                                } elseif ($estadoLimpio == 'entregado' || $estadoLimpio == 'finalizado') {
+                                    $bgBadge = 'background-color: #6c757d; color: #ffffff;';
+                                } elseif ($estadoLimpio == 'cancelado' || $estadoLimpio == 'rechazado') {
+                                    $bgBadge = 'background-color: #dc3545; color: #ffffff;';
+                                } else {
+                                    $bgBadge = 'background-color: #ffc107; color: #212529;';
+                                }
+                                @endphp
+                                <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" style="{{ $bgBadge }} font-size: 0.75rem;">
+                                    {{ $nombreEstado }}
+                                </span>
+                            </div>
 
+                            <div class="col-md-2 text-md-end mt-3 mt-md-0">
+                                <button class="btn btn-outline-dark btn-sm text-uppercase fw-semibold w-100" type="button" data-bs-toggle="collapse" data-bs-target="#detalle-pedido-{{ $orden->id }}" aria-expanded="false" aria-controls="detalle-pedido-{{ $orden->id }}" style="font-size: 0.70rem;">
+                                    Ver detalle
+                                </button>
                             </div>
                         </div>
-                    @empty
-                        <!--Si el usuario no tiene filas en la tabla ordenes de DBeaver, se muestra este cartel -->
-                        <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
-                            <span style="font-size: 2.5rem;">
-                                <i class="bi bi-bag"></i>
-                            </span>
-                            <h5 class="mt-3 fw-bold text-dark">¿No tenés compras guardadas?</h5>
-                            <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
-                                Tus pedidos aparecerán acá una vez que finalices tus compras en el carrito de joyas.
-                            </p>
-                            <div>
-                                <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
-                                    Explorar Joyas
-                                </a>
+
+                        <div class="collapse mt-3 border-top pt-3" id="detalle-pedido-{{ $orden->id }}">
+                            <h6 class="fw-bold text-dark mb-3 small text-uppercase" style="font-size: 0.75rem;">Joyas incluidas</h6>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-borderless align-middle mb-0">
+                                    <tbody>
+                                        @if(isset($orden->detalles) && $orden->detalles->count() > 0)
+                                            @foreach($orden->detalles as $detalle)
+                                            <tr>
+                                                <td class="text-muted small">
+                                                    <strong>x{{ $detalle->cantidad }}</strong> - {{ $detalle->producto->nombre_joya ?? 'Joya eliminada' }}
+                                                </td>
+                                                <td class="text-end text-dark fw-semibold small">
+                                                    $ {{ number_format($detalle->subtotal ?? 0, 2, ',', '.') }}
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        @else
+                                            <tr>
+                                                <td class="text-muted small">No hay detalles disponibles para este pedido.</td>
+                                            </tr>
+                                        @endif
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                    </div> @empty
+                    <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
+                        <span style="font-size: 2.5rem;">
+                            <i class="bi bi-bag"></i>
+                        </span>
+                        <h5 class="mt-3 fw-bold text-dark">¿No tenés compras guardadas?</h5>
+                        <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
+                            Tus pedidos aparecerán acá una vez que finalices tus compras en el carrito de joyas.
+                        </p>
+                        <div>
+                            <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
+                                Explorar Joyas
+                            </a>
+                        </div>
+                    </div>
                     @endforelse
                 </div>
-            </div>
         </div>
     </div>
+</div>
 </div>
 
 @endsection

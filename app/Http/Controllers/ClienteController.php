@@ -19,7 +19,10 @@ class ClienteController extends Controller
         $usuarioLogueadoId = Auth::id(); 
 
         //va a Dbeaver y busca solo las ordenes que el pertenezcan a ese cliente
-        $misOrdenes = Orden::where('usuario_id', $usuarioLogueadoId)->get();
+        $misOrdenes = Orden::where('usuario_id', Auth::id())
+                    ->with(['estado', 'detalles.producto']) // <-- Clave acá
+                    ->orderBy('created_at', 'desc')
+                    ->get();
 
         //Buscamos los favoritos del cliente en DBeaver
         // Usamos 'with' para que de paso cargue toda la informacion de la joya (nombre, precio, imagen)
