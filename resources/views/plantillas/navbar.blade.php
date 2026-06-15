@@ -49,11 +49,13 @@
             <!-- SI EL USUARIO ESTA LOGUEADO -->
             @auth
                 <!-- Icono de Mi Cuenta (Dashboard) -->
+                 @if(auth()->user()->rol_id !== 1)
                 <li class="nav-item">
                     <a class="nav-link px-3 fs-5" href="{{ route('cliente.dashboard') }}" title="Mi Cuenta">
                         <i class="bi bi-person"></i>
                     </a>
                 </li>
+                @endif
 
                 <!-- Control de Carrito / Admin con iconos -->
                 <li class="nav-item">
@@ -71,7 +73,7 @@
                 <li class="nav-item">
                     <form action="/logout" method="POST" style="display:inline;">
                         @csrf
-                        {{-- Le sacamos el 'btn btn-link' y el 'style' para que no pise los colores --}}
+                        <!-- Le sacamos el 'btn btn-link' y el 'style' para que no pise los colores -->
                         <button type="submit" class="bg-transparent border-0">
                             <a class="nav-link px-3">Salir</a>
                         </button>

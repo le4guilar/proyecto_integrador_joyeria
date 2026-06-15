@@ -291,36 +291,51 @@
                                     <span class="fw-bold text-dark">$ {{ number_format($orden->total ?? 0, 2, ',', '.') }}</span>
                                 </div>
 
-                                <!-- Estado del Pedido -->
+                                {{-- 🏷️ Estado del Pedido Inteligente con Colores Dinámicos --}}
                                 <div class="col-md-3 text-md-end">
                                     <span class="small text-muted d-block text-md-end text-start text-uppercase fw-semibold mb-1" style="font-size: 0.65rem; letter-spacing: 0.5px;">Estado</span>
                                     
-                                    <!-- Accedemos directo al campo 'nombre_estado_orden' adentro de la relacion -->
-                                    @if(isset($orden->estado) && is_object($orden->estado))
-                                        <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" 
-                                            style="background-color: #300403; color: #dfdada; font-size: 0.75rem;">
-                                            {{ $orden->estado->nombre_estado_orden }}
-                                        </span>
-                                    @elseif(isset($orden->estado) && is_array($orden->estado))
-                                        <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" 
-                                            style="background-color: #300403; color: #dfdada; font-size: 0.75rem;">
-                                            {{ $orden->estado['nombre_estado_orden'] }}
-                                        </span>
-                                    @else
-                                        {{-- Por si las dudas viene como texto común --}}
-                                        <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" 
-                                            style="background-color: #300403; color: #dfdada; font-size: 0.75rem;">
-                                            {{ $orden->estado ?? 'Pagado' }}
-                                        </span>
-                                    @endif
-                                </div>
+                                    @php
+                                        // Rescatamos el texto del estado de forma segura (rompiendo el objeto)
+                                        $nombreEstado = 'Pagado'; // Valor por defecto
+                                        if (isset($orden->estado) && is_object($orden->estado)) {
+                                            $nombreEstado = $orden->estado->nombre_estado_orden;
+                                        } elseif (isset($orden->estado) && is_array($orden->estado)) {
+                                            $nombreEstado = $orden->estado['nombre_estado_orden'];
+                                        } elseif (isset($orden->estado)) {
+                                            $nombreEstado = $orden->estado;
+                                        }
 
+                                        // Evaluamos el texto y ponemos el color de fondo y de letra
+                                        // Limpiamos espacios o mayusculas por las dudas con el helper Str::slug o pasandolo a minusculas
+                                        $estadoLimpio = mb_strtolower(trim($nombreEstado));
+                                        
+                                        if ($estadoLimpio == 'pagado' || $estadoLimpio == 'aprobado') {
+                                            $bgBadge = 'background-color: #286b38; color: #ffffff;'; 
+                                        } elseif ($estadoLimpio == 'en camino' || $estadoLimpio == 'despachado') {
+                                            $bgBadge = 'background-color: #300403; color: #dfdada;'; 
+                                        } elseif ($estadoLimpio == 'entregado' || $estadoLimpio == 'finalizado') {
+                                            $bgBadge = 'background-color: #6c757d; color: #ffffff;'; 
+                                        } elseif ($estadoLimpio == 'cancelado' || $estadoLimpio == 'rechazado') {
+                                            $bgBadge = 'background-color: #871b26; color: #ffffff;'; 
+                                        } else {
+                                            $bgBadge = 'background-color: #a78829; color: #212529;'; //"Pendiente"
+                                        }
+                                    @endphp
+
+                                    <!-- Dibujamos el Badge con el estilo dinamico calculado arriba -->
+                                    <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" style="{{ $bgBadge }} font-size: 0.75rem;">
+                                        {{ $nombreEstado }}
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     @empty
                         <!--Si el usuario no tiene filas en la tabla ordenes de DBeaver, se muestra este cartel -->
                         <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
-                            <span style="font-size: 2.5rem;">🛍️</span>
+                            <span style="font-size: 2.5rem;">
+                                <i class="bi bi-bag"></i>
+                            </span>
                             <h5 class="mt-3 fw-bold text-dark">¿No tenés compras guardadas?</h5>
                             <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
                                 Tus pedidos aparecerán acá una vez que finalices tus compras en el carrito de joyas.

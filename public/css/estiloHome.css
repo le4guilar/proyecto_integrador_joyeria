@@ -615,3 +615,22 @@ body {
     }
 
 
+    /* BOTON DE VER JOYAS (Carrito Vacio) */
+    /* Estado Inicial: Transparente con letras y borde Bordo */
+    .btn-alba-outline {
+        background-color: transparent !important;
+        border: 2px solid #300403 !important;
+        color: #300403 !important; 
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        font-size: 0.9rem !important;
+        letter-spacing: 1px !important;
+        transition: all 0.4s ease-in-out !important; 
+    }
+
+    /*  Estado Hover: Se rellena de Bordo y las letras pasan a Clarito */
+    .btn-alba-outline:hover {
+        background-color: #300403 !important;
+        color: #dfdada !important; 
+        border-color: #300403 !important;
+    }

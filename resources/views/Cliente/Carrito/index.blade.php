@@ -11,11 +11,12 @@
             </span>
         </h2>
         <a href="{{ route('catalogo1') }}" class="text-dark text-decoration-none small">
-            Continuar comprando ->
+            Continuar comprando 
+            <i class="bi bi-arrow-right-circle-fill"></i>
         </a>
     </div>
 
-{{-- ALERTAS DE ESTADO --}}
+<!-- ALERTAS DE ESTADO -->
     @if(session('status'))
     <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
         {{ session('status') }}
@@ -23,7 +24,7 @@
     </div>
     @endif
 
-    {{-- ALERTAS DE ERROR OCULTOS --}}
+    <!-- ALERTAS DE ERROR OCULTOS -->
     @if($errors->any())
     <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
         <ul class="mb-0">
@@ -35,17 +36,17 @@
     </div>
     @endif
 
-    {{--SI EL CARRITO TIENE PRODUCTOS --}}
+    <!--SI EL CARRITO TIENE PRODUCTOS -->
     @if($items->count() > 0)
     <div class="row g-5">
 
-        {{-- COLUMNA IZQUIERDA: LISTA DE PRODUCTOS --}}
+        <!-- COLUMNA IZQUIERDA: LISTA DE PRODUCTOS -->
         <div class="col-lg-8">
 
             @foreach($items as $item)
             <div class="row align-items-center mb-4 pb-4 border-bottom position-relative">
 
-                {{-- Imagen del Producto --}}
+                <!-- Imagen del Producto -->
                 <div class="col-md-2 col-3">
                     @if($item->producto && $item->producto->url_imagen)
                     <img src="{{ asset($item->producto->url_imagen) }}"
@@ -60,7 +61,7 @@
                     @endif
                 </div>
 
-                {{-- Detalles y Cantidad --}}
+                <!-- Detalles y Cantidad -->
                 <div class="col-md-7 col-9">
                     <div class="d-flex justify-content-between align-items-start mb-2">
                         <div>
@@ -90,7 +91,7 @@
                     </div>
                 </div>
 
-                {{-- Botón de Eliminar (Se corrigio: Le agregamos el texto para que aparezca en pantalla) --}}
+                <!-- Botón de Eliminar (Se corrigio: Le agregamos el texto para que aparezca en pantalla) -->
                 <div class="position-absolute top-0 end-0 mt-2 me-2" style="width: auto;">
                     <form action="{{ route('carrito.destroy', $item->id) }}" method="POST">
                         @csrf
@@ -106,7 +107,7 @@
             @endforeach
         </div>
 
-        {{-- COLUMNA DERECHA: RESUMEN DEL PEDIDO  --}}
+        <!-- COLUMNA DERECHA: RESUMEN DEL PEDIDO  -->
         <div class="col-lg-4">
             <div class="card shadow-sm border-0 bg-light position-sticky" style="top: 2rem;">
                 <div class="card-body p-4">
@@ -140,13 +141,15 @@
 
     </div>
 
-    {{--SI EL CARRITO ESTÁ VACÍO --}}
+    <!--SI EL CARRITO ESTA VACIO -->
     @else
     <div class="text-center py-5 my-5 bg-light rounded shadow-sm">
-        <span style="font-size: 5rem;">💎</span>
+        <span style="font-size: 6rem; display: inline-block; margin-bottom: 1rem;">
+            <i class="bi bi-bag-heart-fill" style="color: #300403 !important; -webkit-text-stroke: 1px #300403;"></i>
+        </span>
         <h3 class="mt-4 text-dark fw-bold">Tu carrito ALBA está vacío</h3>
         <p class="text-muted fs-5">Nuestra colección te espera para llenarlo de brillo.</p>
-        <a href="{{ route('catalogo1') }}" class="btn btn-primary btn-lg mt-3 px-5 py-3 fw-bold text-uppercase">
+        <a href="{{ route('catalogo1') }}" class="btn btn-lg mt-3 px-5 py-3 btn-alba-outline">
             Ver Joyas
         </a>
     </div>
