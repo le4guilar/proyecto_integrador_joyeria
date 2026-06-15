@@ -329,7 +329,7 @@
                                         {{ $nombreEstado }}
                                     </span>
                                 </div>
-
+                                
                             </div>
                         </div>
                     @empty
