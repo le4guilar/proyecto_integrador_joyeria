@@ -146,7 +146,7 @@
 
     <div class="col-md-4">
         <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
-            <h5 class="fw-bold text-dark mb-4">Top 5 productos vendidos</h5>
+            <h5 class="fw-bold text-dark mb-4">Las 5 joyas mas vendidas</h5>
             
             @forelse($topProductos as $item)
             <div class="d-flex justify-content-between align-items-center mb-4">
