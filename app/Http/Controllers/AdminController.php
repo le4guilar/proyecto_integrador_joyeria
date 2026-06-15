@@ -32,10 +32,26 @@ class AdminController extends Controller
         })->count();
 
         // 5. Últimos 5 pedidos para la tabla
-        $ultimosPedidos = Orden::with(['usuario', 'estado'])
+        $pedidosBase = Orden::with(['usuario', 'estado'])
             ->orderBy('created_at', 'desc')
             ->take(5)
             ->get();
+
+            //recorremos los pedidos y le asignamos la clase css segun su estado
+            $ultimosPedidos = $pedidosBase->map(function ($pedido){
+                $estadoStr = strtolower(trim($pedido->estado->nombre_estado_orden ?? ''));
+                
+                //aca se mando el match, pero con el cambio de que se devuelve el nombre de la clase CSS
+                $pedido->clase_badge = match($estadoStr){
+                    'pagado', 'aprobado' => 'badge-pagado',
+                    'preparando' => 'badge-pendiente',
+                    'en camino', 'despachado' => 'badge-camino',
+                    'entregado', 'finalizado' => 'badge-entregado',
+                    'cancelado', 'rechazado' => 'badge-cancelado',
+                    default => 'badge-pendiente'                
+                    };
+                    return $pedido;
+            });
 
         // 6. Top 5 productos más vendidos (Agrupando por cantidad en detalle_orden)
         $topProductos = DetalleOrden::select('producto_id', DB::raw('SUM(cantidad) as total_vendido'))

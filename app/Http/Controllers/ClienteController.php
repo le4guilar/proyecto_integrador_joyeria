@@ -43,17 +43,17 @@ class ClienteController extends Controller
 
             $estadoLimpio = mb_strtolower(trim($nombreEstado));
 
-            //SE LE ASIGNA LOS COLORES PORQUE EL AMIGO LEANDRO QUIERE QUE CAMBIEN DE COLOR
+            //ASIGNAMOS SOLO LAS CLASES CSS 
             if ($estadoLimpio == 'pagado' || $estadoLimpio == 'aprobado') {
-                $orden->bg_color = '#286b38'; $orden->text_color = '#ffffff';
+                $orden->clase_badge = 'badge-pagado';
             } elseif ($estadoLimpio == 'en camino' || $estadoLimpio == 'despachado') {
-                $orden->bg_color = '#300403'; $orden->text_color = '#dfdada';
+                $orden->clase_badge = 'badge-camino';
             } elseif ($estadoLimpio == 'entregado' || $estadoLimpio == 'finalizado') {
-                $orden->bg_color = '#6c757d'; $orden->text_color = '#ffffff';
+                $orden->clase_badge = 'badge-entregado';
             } elseif ($estadoLimpio == 'cancelado' || $estadoLimpio == 'rechazado') {
-                $orden->bg_color = '#871b26'; $orden->text_color = '#ffffff';
+                $orden->clase_badge = 'badge-cancelado';
             } else {
-                $orden->bg_color = '#a78829'; $orden->text_color = '#212529';
+                $orden->clase_badge = 'badge-pendiente';
             }
 
             //guardamos el nommbre limpio 

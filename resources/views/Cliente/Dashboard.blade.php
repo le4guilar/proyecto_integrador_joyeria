@@ -289,10 +289,9 @@
                             <div class="col-md-3 text-md-end">
                                 <span class="small text-muted d-block text-md-end text-start text-uppercase fw-semibold mb-1" style="font-size: 0.65rem; letter-spacing: 0.5px;">Estado</span>
                                 
-                                <!-- Estado de la compras-->
-                                {{-- Imprimimos directo las propiedades que el controlador inyectó en cada orden --}}
-                                <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" 
-                                    style="background-color: {{ $orden->bg_color }}; color: {{ $orden->text_color }}; font-size: 0.75rem;">
+                                <!-- Se cambio la etiqueta style que contenia del badge por una clase-->
+                                <span class="badge {{ $orden->clase_badge }} px-3 py-1.5 rounded-pill small fw-semibold" 
+                                    style="font-size: 0.75rem;">
                                     {{ $orden->nombre_limpio_estado }}
                                 </span>
                             </div>
