@@ -104,16 +104,16 @@ Route::get('/api/provincias/{id}/ciudades', function($id) {
 
 // Ruta para el panel o dashboard del cliente
 //se cambio la funcion vacia para que llame al metodo 'dashboard' del ClienteController
-Route::get('/cliente', [ClienteController::class, 'dashboard'])->middleware('auth')->name('cliente');
+Route::get('/cliente', [ClienteController::class, 'dashboard'])->middleware(['auth', 'rol:cliente']);
 
 
 //CARRITO
 // 1. Caminito para ver el carrito en la pantalla que creamos recién
-Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index')->middleware('auth');
+Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index')->middleware(['auth', 'rol:cliente']);
 
 // 2. Caminito que se activa cuando tocás "Agregar al carrito" en el catálogo
 // Se agrego la restriccion del logueo al querer cargar productos al carrito
-Route::post('/carrito/agregar', [CarritoController::class, 'store'])->name('carrito.store')->middleware('auth');
+Route::post('/carrito/agregar', [CarritoController::class, 'store'])->name('carrito.store')->middleware(['auth', 'rol:cliente']);
 
 // 3. Caminito para el botón de "Quitar" (el tachito de basura)
 Route::delete('/carrito/quitar/{id}', [CarritoController::class, 'destroy'])->name('carrito.destroy');
@@ -135,7 +135,7 @@ Route::get('/mi-panel' , [ClienteController::class, 'dashboard'])->name('cliente
 Route::patch('/mi-panel/cambiar-contraseña', [ClienteController::class, 'updatePassword'])->name('cliente.update-password');
 
 // RUTA para que el cliente cambio/actualice su info personal
-Route::put('/mi-panel/actualizar-perfil', [App\Http\Controllers\ClienteController::class, 'updatePerfil'])->name('cliente.update-perfil');
+Route::put('/mi-panel/ac    tualizar-perfil', [App\Http\Controllers\ClienteController::class, 'updatePerfil'])->name('cliente.update-perfil');
 
 // Tu ruta actual (asegurate de que esté completa al final del archivo)
 Route::post('/carrito/finalizar', [OrdenController::class, 'checkout'])
