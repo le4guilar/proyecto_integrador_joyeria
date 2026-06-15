@@ -239,7 +239,7 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nombre:</label>
-                        <input type="text" name="nombre" class="form-control bg-joyeria-input" placeholder="Nombre Apellido" value="{{ old('nombre') }}" required>
+                        <input type="text" name="nombre" class="form-control bg-joyeria-input" placeholder="Nombre Apellido" value="{{ Auth::check() ? Auth::user()->nombre : '' }}" required>
                         @error('nombre')
                         <small style="color: red;">{{ $message }}</small>
                         @enderror
@@ -255,7 +255,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Mail:</label>
-                        <input type="email" name="email" class="form-control bg-joyeria-input" placeholder="correo@mail.com" value="{{ old('email') }}" required>
+                        <input type="email" name="email" class="form-control bg-joyeria-input" placeholder="correo@mail.com" value="{{ Auth::check() ? Auth::user()->email : '' }}" required>
                         @error('email')
                         <small style="color: red;">{{ $message }}</small>
                         @enderror
