@@ -1,6 +1,5 @@
 @extends('Plantillas/plantilla-principal')
 @section('contenido')
-@vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
 <div class="container my-5" style="font-family: 'Montserrat', sans-serif;">
@@ -215,8 +214,11 @@
                                             <form action="{{ route('cliente.favoritos.eliminar', $favorito->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm text-danger fw-bold bg-transparent border-0" title="Eliminar de favoritos" style="font-size: 1.2rem; line-height: 1;">
-                                                    X
+                                                <button type="submit" class="btn btn-sm bg-transparent border-0" title="Eliminar de favoritos">
+                                                    <span class="text-danger fw-bold" 
+                                                        style="font-size: 1.5rem; line-height: 1; -webkit-text-stroke: 1px #32070c;">
+                                                            <i class="bi bi-x text-alba-bordo fs-4"></i>
+                                                    </span>
                                                 </button>
                                             </form>
                                         </div>
@@ -244,7 +246,9 @@
                         </div>
                     @else
                         <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
-                            <span style="font-size: 2.5rem;">💖</span>
+                            <span style="font-size: 2.5rem;">
+                                <i class="bi bi-heart-fill"></i>
+                            </span>
                             <h5 class="mt-3 fw-bold text-dark">Tu lista de deseos está vacía</h5>
                             <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
                                 Guardá las joyas que más te enamoren mientras explorás nuestro catálogo para tenerlas siempre a mano.

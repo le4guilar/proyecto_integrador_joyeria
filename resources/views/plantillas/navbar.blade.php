@@ -45,54 +45,47 @@
                 </a>
 
             </li>
-            
-            <!--
-            <li>
-                @auth
-                {{-- Solo se muestra si hay un usuario logueado --}}
-                Hola, {{ auth()->user()->name }}
-                @if(auth()->user()->rol === 'admin')
-                {{-- Solo para admin --}}
-                <a href="/admin">Panel Admin</a>
-                @else
-                {{-- Solo para clientes --}}
-                <a href="/carrito">Mi carrito</a>
-                @endif
-                @else
-                {{-- Solo se muestra si NO hay sesión --}}
-                <a href="/Backend/Usuarios/logsin">Login</a>
-                @endauth
-            </li>
-            -->
+        
+            <!-- SI EL USUARIO ESTA LOGUEADO -->
             @auth
-            {{-- Solo se muestra si hay un usuario logueado (cambios: se hizo un panel de control) --}}
-            <!--<li class="nav-item">
-                <a class="nav-link text-uppercase fw-semibold" href="{{ route('cliente.dashboard') }}"> Mi Cuenta</a>
-            </li>-->
-            <li class="nav-item">
-                @if(auth()->user()->rol_id === 1)
-                <a class="nav-link px-3" href="/admin">Panel Admin</a>
-                @else
-                    <a class="nav-link text-uppercase fw-semibold" href="{{ route('cliente.dashboard') }}"> Mi Cuenta</a>
+                <!-- Icono de Mi Cuenta (Dashboard) -->
+                <li class="nav-item">
+                    <a class="nav-link px-3 fs-5" href="{{ route('cliente.dashboard') }}" title="Mi Cuenta">
+                        <i class="bi bi-person"></i>
+                    </a>
+                </li>
 
-                @endif
-            </li>
+                <!-- Control de Carrito / Admin con iconos -->
+                <li class="nav-item">
+                    @if(auth()->user()->rol_id === 1)
+                        <a class="nav-link px-3 text-uppercase small fw-bold" href="/admin">Panel Admin</a>
+                    @else
+                        <!-- Icono de bolsa de compras fina para el cliente -->
+                        <a class="nav-link px-3 fs-5" href="/carrito" title="Mi Carrito">
+                            <i class="bi bi-bag"></i>
+                        </a>
+                    @endif
+                </li>
 
-            {{-- Tip: Te sugiero agregar el botón de logout aquí --}}
-            <li class="nav-item">
-                <form action="/logout" method="POST" style="display:inline;">
-                    @csrf
-                    <button type="submit" class="nav-link px-3 btn btn-link" style="text-decoration:none;">Salir</button>
-                </form>
-            </li>
+                <!-- Boton Salir -->
+                <li class="nav-item">
+                    <form action="/logout" method="POST" style="display:inline;">
+                        @csrf
+                        {{-- Le sacamos el 'btn btn-link' y el 'style' para que no pise los colores --}}
+                        <button type="submit" class="nav-link px-3">
+                            Salir
+                        </button>
+                    </form>
+                </li>
+
+            <!-- SI NO HAY SESION INICIADA -->
             @else
-            {{-- Solo se muestra si NO hay sesión --}}
-            <li class="nav-item">
-                <a class="nav-link px-3" href="/login">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-3" href="/registro">Registrarse</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" href="/registro">Registrarse</a>
+                </li>
             @endauth
         </ul>
     </div>
