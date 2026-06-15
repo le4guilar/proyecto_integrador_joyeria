@@ -75,8 +75,8 @@ Para clonar y ejecutar este proyecto en un entorno local, es necesario contar co
 
 👥 Desarrolladores
 
-    Aguilar, Leandro Martin
+- Aguilar, Leandro Martin
 
-    Demetri, Luciana Itati
+- Demetri, Luciana Itati
 
 Facultad de Ciencias Exactas y Naturales y Agrimensura (FaCENA) - UNNE.
