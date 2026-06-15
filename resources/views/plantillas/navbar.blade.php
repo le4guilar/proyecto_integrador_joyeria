@@ -72,8 +72,8 @@
                     <form action="/logout" method="POST" style="display:inline;">
                         @csrf
                         {{-- Le sacamos el 'btn btn-link' y el 'style' para que no pise los colores --}}
-                        <button type="submit" class="nav-link px-3">
-                            Salir
+                        <button type="submit" class="bg-transparent border-0">
+                            <a class="nav-link px-3">Salir</a>
                         </button>
                     </form>
                 </li>
