@@ -141,7 +141,7 @@
                <div class="tab-pane fade" id="info-personal" role="tabpanel" aria-labelledby="info-tab">
                     <h4 class="fw-bold text-dark mb-4">Información personal</h4>
                     
-                    {{-- Mensajes de éxito --}}
+                    <!-- Mensajes de exito -->
                     @if (session('status'))
                         <div class="alert alert-success small p-2 rounded-3 mb-4">
                             {{ session('status') }}
@@ -150,7 +150,7 @@
 
                     <div class="card border-0 bg-light p-4 rounded-3 shadow-sm" style="max-width: 500px;">
                         
-                        {{-- VISTA DE LECTURA --}}
+                        <!-- VISTA DE LECTURA -->
                         <div id="vista-perfil">
                             <div class="mb-3">
                                 <label class="form-label small fw-bold text-uppercase text-muted">Nombre Completo</label>
@@ -170,7 +170,7 @@
                             </button>
                         </div>
 
-                        {{-- VISTA DE EDICIÓN (Oculta al principio) --}}
+                        <!-- VISTA DE EDICION (Oculta al principio) -->
                         <div class="collapse" id="formulario-perfil">
                             <form action="{{ route('cliente.update-perfil') }}" method="POST">
                                 @csrf
@@ -205,33 +205,36 @@
                 <div class="tab-pane fade" id="lista-deseos" role="tabpanel" aria-labelledby="deseos-tab">
                     <h4 class="fw-bold text-dark mb-4">Mi lista de deseos</h4>
 
-                    <!-- Bucle inteligente para cuando tengamos la variable de favoritos -->
                     @if(isset($misFavoritos) && $misFavoritos->count() > 0)
                         <div class="row g-4">
                             @foreach($misFavoritos as $favorito)
                                 <div class="col-md-4">
                                     <div class="card h-100 border-0 shadow-sm position-relative rounded-3 bg-white">
                                         
-                                        <!-- Boton rapido para eliminar de favoritos -->
-                                        <form action="#" method="POST" class="position-absolute top-0 end-0 p-2">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-light rounded-circle shadow-sm text-danger" title="Eliminar">
-                                                &times;
-                                            </button>
-                                        </form>
+                                        <div class="position-absolute top-0 end-0 p-2" style="z-index: 10;">
+                                            <form action="{{ route('cliente.favoritos.eliminar', $favorito->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm text-danger fw-bold bg-transparent border-0" title="Eliminar de favoritos" style="font-size: 1.2rem; line-height: 1;">
+                                                    X
+                                                </button>
+                                            </form>
+                                        </div>
 
-                                        <!-- Imagen del producto VERIFICAR LA ROUTA--> 
-                                        <img src="{{ asset('storage/' . $favorito->producto->imagen) }}" class="card-img-top rounded-top-3" alt="{{ $favorito->producto->nombre }}" style="height: 200px; object-fit: cover;">
+                                        @if($favorito->producto && $favorito->producto->url_imagen)
+                                            <img src="{{ asset($favorito->producto->url_imagen) }}" class="card-img-top rounded-top-3" alt="{{ $favorito->producto->nombre_joya }}" style="height: 200px; object-fit: cover;">
+                                        @else
+                                            <img src="{{ asset('img/Catalogo/Pagina1/Anillo1.png') }}" class="card-img-top rounded-top-3" alt="Joyas ALBA" style="height: 200px; object-fit: cover;">
+                                        @endif
                                         
                                         <div class="card-body d-flex flex-column justify-content-between p-3">
                                             <div>
-                                                <h6 class="fw-bold text-dark mb-1">{{ $favorito->producto->nombre }}</h6>
-                                                <p class="text-muted small mb-2">$ {{ number_format($favorito->producto->precio, 2, ',', '.') }}</p>
+                                                <!-- Se corrigieron algunos nombres que estaban mal -->
+                                                <h6 class="fw-bold text-dark mb-1">{{ $favorito->producto->nombre_joya ?? 'Joya ALBA' }}</h6>
+                                                <p class="text-muted small mb-2">$ {{ number_format($favorito->producto->precio_unitario ?? 0, 2, ',', '.') }}</p>
                                             </div>
                                             
-                                            <!-- Boton para ir a comprarlo -->
-                                            <a href="#" class="btn btn-dark btn-sm text-uppercase small fw-semibold w-100 mt-2">
+                                            <a href="{{ route('catalogo.producto.show', $favorito->producto_id) }}" class="btn btn-dark btn-sm text-uppercase small fw-semibold w-100 mt-2">
                                                 Ver Joya
                                             </a>
                                         </div>
@@ -240,9 +243,8 @@
                             @endforeach
                         </div>
                     @else
-                        <!-- ESTO SE VA A VER AHORA: El cartel cuando no hay favoritos guardados -->
                         <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
-                            <span style="font-size: 2.5rem;">BUSCAR ICONO</span>
+                            <span style="font-size: 2.5rem;">💖</span>
                             <h5 class="mt-3 fw-bold text-dark">Tu lista de deseos está vacía</h5>
                             <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
                                 Guardá las joyas que más te enamoren mientras explorás nuestro catálogo para tenerlas siempre a mano.

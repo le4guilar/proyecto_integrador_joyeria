@@ -142,3 +142,9 @@ Route::post('/carrito/finalizar', [OrdenController::class, 'checkout'])
 Route::get('/carrito/gracias', function () {
     return view('Cliente.carrito.gracias'); // Esto buscará la vista en resources/views/Cliente/carrito/gracias.blade.php
 })->middleware('auth')->name('carrito.gracias');
+
+//Routa que agrega el producto que selecciono a la lista de favoritos
+Route::post('/favoritos/agregar', [App\Http\Controllers\ClienteController::class, 'agregarFavorito'])->name('cliente.favoritos.agregar');
+
+//Routa para eliminar un producto en la lista de favoritos
+Route::delete('/favoritos/eliminar/{id}', [App\Http\Controllers\ClienteController::class, 'eliminarFavorito'])->name('cliente.favoritos.eliminar');
