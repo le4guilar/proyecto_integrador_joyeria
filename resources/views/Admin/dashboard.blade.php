@@ -3,7 +3,6 @@
 @section('contenido')
 <div class="mb-4">
     <h3 class="fw-bold text-dark mb-0">Dashboard</h3>
-    <p class="text-muted small">Resumen de la actividad de tu e-commerce</p>
 </div>
 
 <div class="row g-4 mb-4">
@@ -14,9 +13,7 @@
                     <span class="text-muted small d-block mb-2">Pedidos<br>pendientes</span>
                     <h3 class="fw-bold text-dark mb-0">{{ $pedidosPendientes }}</h3>
                 </div>
-                <div class="text-danger fs-3">
-                    <i class="bi bi-box-seam"></i>
-                </div>
+                <div class="text-danger fs-3"><i class="bi bi-box-seam"></i></div>
             </div>
         </div>
     </div>
@@ -28,9 +25,7 @@
                     <span class="text-muted small d-block mb-2">Ticket medio<br>&nbsp;</span>
                     <h3 class="fw-bold text-dark mb-0">$ {{ number_format($ticketMedio, 2, ',', '.') }}</h3>
                 </div>
-                <div class="text-info fs-3">
-                    <i class="bi bi-cash-stack"></i>
-                </div>
+                <div class="text-info fs-3"><i class="bi bi-cash-stack"></i></div>
             </div>
         </div>
     </div>
@@ -42,9 +37,7 @@
                     <span class="text-muted small d-block mb-2">Usuarios<br>registrados</span>
                     <h3 class="fw-bold text-dark mb-0">{{ number_format($usuariosRegistrados, 0, ',', '.') }}</h3>
                 </div>
-                <div class="text-dark fs-3">
-                    <i class="bi bi-person-fill"></i>
-                </div>
+                <div class="text-dark fs-3"><i class="bi bi-person-fill"></i></div>
             </div>
         </div>
     </div>
@@ -56,13 +49,48 @@
                     <span class="text-muted small d-block mb-2">Pedidos<br>entregados</span>
                     <h3 class="fw-bold text-dark mb-0">{{ $pedidosEntregados }}</h3>
                 </div>
-                <div class="text-warning fs-3">
-                    <i class="bi bi-truck"></i>
-                </div>
+                <div class="text-warning fs-3"><i class="bi bi-truck"></i></div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+            <h5 class="fw-bold text-dark mb-4">Ventas por Categoría</h5>
+            <div style="height: 250px; display: flex; justify-content: center;">
+                <canvas id="categoriasChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+<div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+            <h5 class="fw-bold text-dark mb-4">Cotización de Metales</h5>
+            <p class="text-muted small mb-4">Valores de referencia</p>
+            
+            <div class="d-flex align-items-center mb-4">
+                <div class="bg-warning bg-opacity-25 text-warning rounded-circle d-flex justify-content-center align-items-center me-3 fs-4" style="width: 55px; height: 55px;">
+                    <i class="bi bi-record-circle"></i>
+                </div>
+                <div>
+                    <h6 class="mb-0 fw-bold text-dark">Oro 18k</h6>
+                    <span class="text-muted small">$ 65.000 / gramo</span>
+                </div>
+            </div>
+            
+            <div class="d-flex align-items-center">
+                <div class="bg-secondary bg-opacity-25 text-secondary rounded-circle d-flex justify-content-center align-items-center me-3 fs-4" style="width: 55px; height: 55px;">
+                    <i class="bi bi-gem"></i>
+                </div>
+                <div>
+                    <h6 class="mb-0 fw-bold text-dark">Plata 925</h6>
+                    <span class="text-muted small">$ 2.500 / gramo</span>
+                </div>
+            </div>
+        </div>
+    </div></div>
 
 <div class="row g-4">
     <div class="col-md-8">
@@ -126,18 +154,61 @@
                     <h6 class="mb-1 text-dark fw-semibold">{{ $item->producto->nombre_joya ?? 'Joya eliminada' }}</h6>
                     <span class="small text-muted">Ranking #{{ $loop->iteration }} - {{ $item->total_vendido }} vendidos</span>
                 </div>
-                <div class="text-danger fs-5">
+                <div class="fs-5">
                     @if($loop->first)
-                        <i class="bi bi-fire"></i> @else
-                        <i class="bi bi-star"></i>
-                    @endif
+                        <i class="bi bi-gem text-warning"></i> @else
+                        <i class="bi bi-gem text-secondary opacity-50"></i> @endif
                 </div>
             </div>
             @empty
             <p class="text-muted small">Aún no hay ventas registradas.</p>
             @endforelse
-
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('categoriasChart').getContext('2d');
+        const nombres = JSON.parse('{!! $nombresCategorias !!}');
+        const totales = JSON.parse('{!! $totalesCategorias !!}');
+
+        // 1. Calculamos la suma total para sacar los porcentajes
+        const sumaTotal = totales.reduce((acc, val) => acc + Number(val), 0);
+
+        // 2. Creamos nuevas etiquetas combinando el nombre y su porcentaje
+        const etiquetasConPorcentaje = nombres.map((nombre, index) => {
+            const porcentaje = sumaTotal > 0 ? ((totales[index] / sumaTotal) * 100).toFixed(1) : 0;
+            return `${nombre} (${porcentaje}%)`;
+        });
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: etiquetasConPorcentaje, 
+                datasets: [{
+                    data: totales,
+                    backgroundColor: [
+                        '#300403',
+                        '#D4AF37', 
+                        '#6c757d', 
+                        '#17a2b8',
+                        '#5555FF',  
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right' }
+                },
+                cutout: '70%'
+            }
+        });
+    });
+</script>
 @endsection

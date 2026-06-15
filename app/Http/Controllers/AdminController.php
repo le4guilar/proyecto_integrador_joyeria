@@ -45,6 +45,22 @@ class AdminController extends Controller
             ->with('producto') // Trae la info de la joya
             ->get();
 
+        $ventasPorCategoria = DetalleOrden::join('producto', 'detalle_orden.producto_id', '=', 'producto.id')
+            ->select('producto.categoria_joya_id', DB::raw('SUM(detalle_orden.cantidad) as total'))
+            ->groupBy('producto.categoria_joya_id')
+            ->get()
+            ->map(function ($item) {
+                // Mapeo basado en tu seeder
+                $nombres = [1 => 'Anillos', 2 => 'Aretes', 3 => 'Pulseras', 4 => 'Collares'];
+                return [
+                    'nombre' => $nombres[$item->categoria_joya_id] ?? 'Otros',
+                    'total' => $item->total
+                ];
+            });
+
+        $nombresCategorias = json_encode($ventasPorCategoria->pluck('nombre'));
+        $totalesCategorias = json_encode($ventasPorCategoria->pluck('total'));
+
         // Enviamos todo a la vista
         return view('Admin.dashboard', compact(
             'pedidosPendientes',
@@ -52,7 +68,9 @@ class AdminController extends Controller
             'usuariosRegistrados',
             'pedidosEntregados',
             'ultimosPedidos',
-            'topProductos'
+            'topProductos',
+            'nombresCategorias',
+            'totalesCategorias'
         ));
     }
 }
