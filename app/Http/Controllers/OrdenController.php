@@ -8,22 +8,40 @@ use App\Models\Carrito;
 use App\Models\DetalleOrden;
 use App\Models\Orden;
 use App\Models\Producto;
+use App\Models\EstadoOrden;
 
 
 
 class OrdenController extends Controller
 {
 
-public function index()
-{
-    $ordenes = Orden::with(['usuario', 'estado'])->orderBy('created_at', 'desc')->get();
-    
-    // Retorna la vista asegurando que el navegador no la almacene en caché
-    return response()
-        ->view('Admin.ordenes.index', compact('ordenes'))
-        ->header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
-        ->header('Pragma', 'no-cache');
-}
+    public function index(Request $request)
+    {
+        // Sumamos 'detalles.producto' para poder ver las joyas en el desplegable sin consultar la BD por cada fila
+        $query = Orden::with(['usuario', 'estado', 'detalles.producto']);
+
+        // Filtro para buscar por número de orden (ID)
+        if ($request->filled('buscar_id')) {
+            // Limpiamos por si el usuario escribe "#15" en vez de "15"
+            $idBuscado = str_replace('#', '', $request->buscar_id);
+            $query->where('id', (int)$idBuscado);
+        }
+
+        // Filtro por estado del pedido
+        if ($request->filled('estado_id')) {
+            $query->where('estado_orden_id', $request->estado_id);
+        }
+
+        $ordenes = $query->orderBy('created_at', 'desc')->get();
+
+        // Traemos los estados para armar el <select> en la vista
+        $estados = EstadoOrden::all();
+
+        return response()
+            ->view('Admin.ordenes.index', compact('ordenes', 'estados'))
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+            ->header('Pragma', 'no-cache');
+    }
 
 
     public function checkout(Request $request)
@@ -43,14 +61,14 @@ public function index()
             DB::transaction(function () use ($userId, $carritoItems) {
 
                 //PASO DE SEGURIDAD: validamos el stock de todo el carrito antes de tocar nada
-                foreach($carritoItems as $item){
+                foreach ($carritoItems as $item) {
                     $producto = Producto::find($item->producto_id);
 
                     //si el porducto no existe o la cantidad que se quiere supera el stock real en DBeaver
-                    if(!$producto || $item->cantidad > $producto->stock){
+                    if (!$producto || $item->cantidad > $producto->stock) {
 
-                    //lanzamos una excepcion para frenar la compra si no hay mas stock del porducto
-                    throw new \Exception("Lo sentimos, el producto '{$producto->nombre_joya}' ya no tiene suficiente stock disponible (Quedan: {$producto->stock}).");
+                        //lanzamos una excepcion para frenar la compra si no hay mas stock del porducto
+                        throw new \Exception("Lo sentimos, el producto '{$producto->nombre_joya}' ya no tiene suficiente stock disponible (Quedan: {$producto->stock}).");
                     }
                 }
 
@@ -98,18 +116,16 @@ public function index()
     }
 
     public function updateEstado(Request $request, $id)
-{
-    $request->validate([
-        'estado_orden_id' => 'required|exists:estado_orden,id'
-    ]);
+    {
+        $request->validate([
+            'estado_orden_id' => 'required|exists:estado_orden,id'
+        ]);
 
-    $orden = Orden::findOrFail($id);
-    $orden->update([
-        'estado_orden_id' => $request->estado_orden_id
-    ]);
+        $orden = Orden::findOrFail($id);
+        $orden->update([
+            'estado_orden_id' => $request->estado_orden_id
+        ]);
 
-    return redirect()->back()->with('status', 'Estado del pedido actualizado correctamente.');
-}
-
-
+        return redirect()->back()->with('status', 'Estado del pedido actualizado correctamente.');
+    }
 }

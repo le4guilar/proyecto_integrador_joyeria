@@ -63,7 +63,7 @@ class AuthController extends Controller
 
         // return redirect('/cliente'); [REDIRIGIMOS A LA VISTA CLIENTE??]
         //SOLUCION: lo mandamos directamente a su panel de cliente 
-        return redirect()->route('cliente')->with('success', 'Te registrste con ¡éxito!');
+        return redirect()->route('cliente.dashboard')->with('success', 'Te registrste con ¡éxito!');
     }
 
     public function autenticar(Request $request)
