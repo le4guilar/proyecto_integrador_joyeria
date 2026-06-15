@@ -23,6 +23,6 @@ class CheckRol
         }
 
         // Si no es admin, lo mandamos a la raíz
-        return redirect('/')->with('error', 'A donde querés ir pillo, si sos cliente no admin');
+        return redirect('/')->with('error', 'No tenés los permisos miloco!');
     }
 }
