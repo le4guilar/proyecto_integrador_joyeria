@@ -263,36 +263,74 @@
                 </div>
 
                 <!-- CONTENIDO 3: Mis pedidos -->
-                <div class="tab-pane fade" id="mis-pedidos" role="tabpanel">
-                    <h4 class="fw-bold text-dark mb-3">Mis pedidos</h4>
+                <div class="tab-pane fade" id="mis-pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
+                    <h4 class="fw-bold text-dark mb-4">Mis pedidos</h4>
 
-                    <!-- Recorremos de forma dinamica las ordenes de DBeaver-->
-                     @forelse($misOrdenes as $orden)
-                     <div class="card mb-3 border-0 shadow-sm p-3 bg-white border-start border-dark border-4">
-                        <div class="row align-items-center">
-                            <div class="col-md-3">
-                                <span class="small text-muted d-block text-uppercase" style="font-size: 0.65rem;">Código</span>
-                                <span class="fw-bold text-dark">#{{ str_pad($orden->id, 5, '0', STR_PAD_LEFT) }}</span>
-                            </div>
-                            <div class="col-md-3">
-                                <span class="small text-muted d-block text-uppercase" style="font-size: 0.65rem;">Total</span>
-                                {{ $orden->estado ?? 'Procesado' }}</span>
+                    <!-- Recorremos de forma dinamica las ordenes de DBeaver -->
+                    @forelse($misOrdenes as $orden)
+                        <div class="card mb-3 border-0 shadow-sm p-3 bg-white border-start border-dark border-4 rounded-3">
+                            <div class="row align-items-center g-3">
+                                
+                                <!-- Codigo del Pedido -->
+                                <div class="col-md-3">
+                                    <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Código</span>
+                                    <span class="fw-bold text-dark">#{{ str_pad($orden->id, 5, '0', STR_PAD_LEFT) }}</span>
+                                </div>
+
+                                <!--Fecha de la Compra -->
+                                <div class="col-md-3">
+                                    <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Fecha</span>
+                                    <span class="text-secondary small fw-medium">
+                                        {{ $orden->created_at ? $orden->created_at->format('d/m/Y') : 'Reciente' }}
+                                    </span>
+                                </div>
+
+                                <!-- Total de la Orden -->
+                                <div class="col-md-3">
+                                    <span class="small text-muted d-block text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Total</span>
+                                    <span class="fw-bold text-dark">$ {{ number_format($orden->total ?? 0, 2, ',', '.') }}</span>
+                                </div>
+
+                                <!-- Estado del Pedido -->
+                                <div class="col-md-3 text-md-end">
+                                    <span class="small text-muted d-block text-md-end text-start text-uppercase fw-semibold mb-1" style="font-size: 0.65rem; letter-spacing: 0.5px;">Estado</span>
+                                    
+                                    <!-- Accedemos directo al campo 'nombre_estado_orden' adentro de la relacion -->
+                                    @if(isset($orden->estado) && is_object($orden->estado))
+                                        <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" 
+                                            style="background-color: #300403; color: #dfdada; font-size: 0.75rem;">
+                                            {{ $orden->estado->nombre_estado_orden }}
+                                        </span>
+                                    @elseif(isset($orden->estado) && is_array($orden->estado))
+                                        <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" 
+                                            style="background-color: #300403; color: #dfdada; font-size: 0.75rem;">
+                                            {{ $orden->estado['nombre_estado_orden'] }}
+                                        </span>
+                                    @else
+                                        {{-- Por si las dudas viene como texto común --}}
+                                        <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" 
+                                            style="background-color: #300403; color: #dfdada; font-size: 0.75rem;">
+                                            {{ $orden->estado ?? 'Pagado' }}
+                                        </span>
+                                    @endif
+                                </div>
+
                             </div>
                         </div>
-                     </div>
                     @empty
-                    <!-- Si el usuario no tiene filas en la tabla ordenes de DBeaver, se muestra este cartel -->
-                     <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
-                        <span style="font-size: 2.5rem;">Pedidos</span>
-                        <h5 class="mt-3 fw-bold text-dark">¿No tenés compras guardadas?</h5>
-                        <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
-                            Tus pedidos aparecerán acá una vez que finalices tus compras en el carrito de joyas.
-                        </p>
-                        <div>
-                            <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
-                                Explorar Joyas </a>
+                        <!--Si el usuario no tiene filas en la tabla ordenes de DBeaver, se muestra este cartel -->
+                        <div class="card border-0 shadow-sm p-5 text-center bg-light rounded-3">
+                            <span style="font-size: 2.5rem;">🛍️</span>
+                            <h5 class="mt-3 fw-bold text-dark">¿No tenés compras guardadas?</h5>
+                            <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
+                                Tus pedidos aparecerán acá una vez que finalices tus compras en el carrito de joyas.
+                            </p>
+                            <div>
+                                <a href="{{ route('catalogo1') }}" class="btn btn-dark text-uppercase small fw-semibold px-4 py-2">
+                                    Explorar Joyas
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     @endforelse
                 </div>
             </div>
