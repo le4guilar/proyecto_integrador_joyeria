@@ -34,4 +34,20 @@ class ContactoController extends Controller
             'email' => $request->email
         ]);
     }
+
+    public function index()
+    {
+        // Trae las consultas junto con el usuario (si existe)
+        $consultas = Consulta::with('usuario')->orderBy('created_at', 'desc')->get();
+
+        return view('admin.consultas.index', compact('consultas'));
+    }
+
+    public function marcarLeida($id)
+    {
+        $consulta = Consulta::findOrFail($id);
+        $consulta->update(['estado' => false]); 
+
+        return redirect()->back()->with('status', 'Consulta marcada como leída.');
+    }
 }

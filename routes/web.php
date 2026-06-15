@@ -75,6 +75,7 @@ Route::middleware(['auth', 'rol:admin'])-> group(function(){
     Route::patch('pedidos/{id}/estado', [App\Http\Controllers\OrdenController::class, 'updateEstado'])->name('admin.ordenes.updateEstado');
 
     Route::get('consultas', [App\Http\Controllers\ContactoController::class, 'index'])->name('admin.consultas.index');
+    Route::patch('consultas/{id}/leida', [App\Http\Controllers\ContactoController::class, 'marcarLeida'])->name('admin.consultas.leida');
 }); // la capa intermedia con dobre verif, si estas en sesion (iniciaste sesión) y si tu usuario es admin entonces te permite tener la vista admin y ejecutar la función dashboard
 
 

@@ -18,5 +18,10 @@
         <li class="nav-item">
             <a href="usuarios" class="nav-link text-white"><i class="bi bi-people me-2"></i>Usuarios</a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('admin.consultas.index') }}" class="nav-link text-white">
+                <i class="bi bi-envelope me-2"></i>Consultas
+            </a>
+        </li>
     </ul>
 </div>
