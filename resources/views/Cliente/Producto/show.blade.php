@@ -43,14 +43,8 @@
 
                     <!--SE CAMBIO: se modico la seleccion de cantidad de productos-->
                     <div class="d-flex align-items-center" style="max-width: 150px;">
-                        <input type="number" 
-                            name="cantidad" 
-                            id="cantidad" 
-                            class="form-control text-center fw-bold bg-white" 
-                            value="1" 
-                            min="1" 
-                            max="{{ $producto->stock }}" {{-- Bloquea que el usuario escriba más del stock real --}}
-                            required>
+                        <input type="number" name="cantidad" id="cantidad" 
+                            class="form-control text-center fw-bold bg-white" value="1" min="1" max="{{ $producto->stock }}" required>
                     </div>
                     
                     <span class="text-muted small mt-1 d-block">Disponibles: {{ $producto->stock }} u.</span>

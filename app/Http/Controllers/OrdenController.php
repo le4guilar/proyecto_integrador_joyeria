@@ -20,7 +20,7 @@ class OrdenController extends Controller
         // Sumamos 'detalles.producto' para poder ver las joyas en el desplegable sin consultar la BD por cada fila
         $query = Orden::with(['usuario', 'estado', 'detalles.producto']);
 
-        // Filtro para buscar por número de orden (ID)
+        // Filtro para buscar por numero de orden (ID)
         if ($request->filled('buscar_id')) {
             // Limpiamos por si el usuario escribe "#15" en vez de "15"
             $idBuscado = str_replace('#', '', $request->buscar_id);
@@ -52,15 +52,15 @@ class OrdenController extends Controller
         $carritoItems = Carrito::where('usuario_id', $userId)->get();
 
         if ($carritoItems->isEmpty()) {
-            // En vez del JSON, lo devolvemos a la página anterior con un mensaje:
+            // En vez del JSON, lo devolvemos a la pagina anterior con un mensaje:
             return back()->withErrors(['error' => 'Tu carrito está vacío. Agregá joyas antes de finalizar la compra.']);
         }
 
         try {
-            // Iniciamos la transacción atómica
+            // Iniciamos la transaccion 
             DB::transaction(function () use ($userId, $carritoItems) {
 
-                //PASO DE SEGURIDAD: validamos el stock de todo el carrito antes de tocar nada
+                //PASO DE SEGURIDAD: validamos el stock de todo el carrito 
                 foreach ($carritoItems as $item) {
                     $producto = Producto::find($item->producto_id);
 
@@ -77,7 +77,7 @@ class OrdenController extends Controller
                     return $item->cantidad * $item->precio_unitario;
                 });
 
-                // ID del estado inicial (ej: 1 = Pagado). Ajustalo según tu tabla 'estado_orden'
+                // ID del estado inicial (ej: 1 = Pagado). 
                 $estadoInicialId = 1;
 
                 // 3. Crear la Orden
@@ -87,7 +87,7 @@ class OrdenController extends Controller
                     'estado_orden_id' => $estadoInicialId,
                 ]);
 
-                // 4. Migrar ítems a detalle_orden y actualizar stock
+                // 4. Migrar items a detalle_orden y actualizar stock
                 foreach ($carritoItems as $item) {
                     // Crear detalle
                     DetalleOrden::create([
@@ -105,7 +105,7 @@ class OrdenController extends Controller
                     }
                 }
 
-                // 5. Vaciar el carrito del usuario (Usando soft delete o delete común según tu estructura)
+                // 5. Vaciar el carrito del usuario 
                 Carrito::where('usuario_id', $userId)->delete();
             });
 

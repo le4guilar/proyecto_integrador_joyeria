@@ -136,7 +136,7 @@
                     </div>
                 </div>
 
-                <!-- CONTENIDO 1: Información Personal -->
+                <!-- CONTENIDO 2: Informacion Personal -->
                 <div class="tab-pane fade" id="info-personal" role="tabpanel" aria-labelledby="info-tab">
                     <h4 class="fw-bold text-dark mb-4">Información personal</h4>
 
@@ -200,9 +200,9 @@
                     </div>
                 </div>
 
-                <!-- CONTENIDO 2: Mi lista de deseos -->
+                <!-- CONTENIDO 3: Mi lista de deseos -->
                 <div class="tab-pane fade" id="lista-deseos" role="tabpanel" aria-labelledby="deseos-tab">
-                    <h4 class="fw-bold text-dark mb-4">Mi lista de deseos</h4>
+                    <h4 class="fw-bold text-dark mb-4">Mi lista de Favoritos</h4>
 
                     @if(isset($misFavoritos) && $misFavoritos->count() > 0)
                     <div class="row g-4">
@@ -249,7 +249,7 @@
                         <span style="font-size: 2.5rem;">
                             <i class="bi bi-heart-fill"></i>
                         </span>
-                        <h5 class="mt-3 fw-bold text-dark">Tu lista de deseos está vacía</h5>
+                        <h5 class="mt-3 fw-bold text-dark">Tu lista de favoritos está vacía</h5>
                         <p class="text-muted small mx-auto mb-4" style="max-width: 400px;">
                             Guardá las joyas que más te enamoren mientras explorás nuestro catálogo para tenerlas siempre a mano.
                         </p>
@@ -262,7 +262,7 @@
                     @endif
                 </div>
 
-                <!-- CONTENIDO 3: Mis pedidos -->
+                <!-- CONTENIDO 4: Mis pedidos -->
                 <div class="tab-pane fade" id="mis-pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
                     <h4 class="fw-bold text-dark mb-4">Mis pedidos</h4>
 
@@ -286,7 +286,17 @@
                                 <span class="fw-bold text-dark">$ {{ number_format($orden->total ?? 0, 2, ',', '.') }}</span>
                             </div>
 
-                          
+                            <div class="col-md-3 text-md-end">
+                                <span class="small text-muted d-block text-md-end text-start text-uppercase fw-semibold mb-1" style="font-size: 0.65rem; letter-spacing: 0.5px;">Estado</span>
+                                
+                                <!-- Estado de la compras-->
+                                {{-- Imprimimos directo las propiedades que el controlador inyectó en cada orden --}}
+                                <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" 
+                                    style="background-color: {{ $orden->bg_color }}; color: {{ $orden->text_color }}; font-size: 0.75rem;">
+                                    {{ $orden->nombre_limpio_estado }}
+                                </span>
+                            </div>
+
                             <div class="col-md-2 text-md-end mt-3 mt-md-0">
                                 <button class="btn btn-outline-dark btn-sm text-uppercase fw-semibold w-100" type="button" data-bs-toggle="collapse" data-bs-target="#detalle-pedido-{{ $orden->id }}" aria-expanded="false" aria-controls="detalle-pedido-{{ $orden->id }}" style="font-size: 0.70rem;">
                                     Ver detalle
@@ -336,9 +346,9 @@
                     </div>
                     @endforelse
                 </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 @endsection

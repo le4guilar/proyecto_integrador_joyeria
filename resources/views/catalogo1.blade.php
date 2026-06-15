@@ -90,7 +90,7 @@
                             </div>
                         @endif
                     @else
-                        <!-- SI ES INVITADO (No inico sesion): Le mostramos el corazon vacio -->
+                        <!-- SI ES INVITADO (No inico sesion): se le muestrs el corazon vacio -->
                         <div class="position-absolute top-0 end-0 p-3" style="z-index: 10;">
                             <form action="{{ route('cliente.favoritos.agregar') }}" method="POST">
                                 @csrf
