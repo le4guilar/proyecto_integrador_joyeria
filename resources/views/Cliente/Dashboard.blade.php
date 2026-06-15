@@ -286,37 +286,7 @@
                                 <span class="fw-bold text-dark">$ {{ number_format($orden->total ?? 0, 2, ',', '.') }}</span>
                             </div>
 
-                            <div class="col-md-3 text-md-end">
-                                <span class="small text-muted d-block text-md-end text-start text-uppercase fw-semibold mb-1" style="font-size: 0.65rem; letter-spacing: 0.5px;">Estado</span>
-                                @php
-                                $nombreEstado = 'Pagado';
-                                if (isset($orden->estado) && is_object($orden->estado)) {
-                                    $nombreEstado = $orden->estado->nombre_estado_orden;
-                                } elseif (isset($orden->estado) && is_array($orden->estado)) {
-                                    $nombreEstado = $orden->estado['nombre_estado_orden'];
-                                } elseif (isset($orden->estado)) {
-                                    $nombreEstado = $orden->estado;
-                                }
-
-                                $estadoLimpio = mb_strtolower(trim($nombreEstado));
-
-                                if ($estadoLimpio == 'pagado' || $estadoLimpio == 'aprobado') {
-                                    $bgBadge = 'background-color: #28a745; color: #ffffff;';
-                                } elseif ($estadoLimpio == 'en camino' || $estadoLimpio == 'despachado') {
-                                    $bgBadge = 'background-color: #300403; color: #dfdada;';
-                                } elseif ($estadoLimpio == 'entregado' || $estadoLimpio == 'finalizado') {
-                                    $bgBadge = 'background-color: #6c757d; color: #ffffff;';
-                                } elseif ($estadoLimpio == 'cancelado' || $estadoLimpio == 'rechazado') {
-                                    $bgBadge = 'background-color: #dc3545; color: #ffffff;';
-                                } else {
-                                    $bgBadge = 'background-color: #ffc107; color: #212529;';
-                                }
-                                @endphp
-                                <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" style="{{ $bgBadge }} font-size: 0.75rem;">
-                                    {{ $nombreEstado }}
-                                </span>
-                            </div>
-
+                          
                             <div class="col-md-2 text-md-end mt-3 mt-md-0">
                                 <button class="btn btn-outline-dark btn-sm text-uppercase fw-semibold w-100" type="button" data-bs-toggle="collapse" data-bs-target="#detalle-pedido-{{ $orden->id }}" aria-expanded="false" aria-controls="detalle-pedido-{{ $orden->id }}" style="font-size: 0.70rem;">
                                     Ver detalle
