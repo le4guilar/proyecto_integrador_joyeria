@@ -42,6 +42,18 @@ public function index()
             // Iniciamos la transacción atómica
             DB::transaction(function () use ($userId, $carritoItems) {
 
+                //PASO DE SEGURIDAD: validamos el stock de todo el carrito antes de tocar nada
+                foreach($carritoItems as $item){
+                    $producto = Producto::find($item->producto_id);
+
+                    //si el porducto no existe o la cantidad que se quiere supera el stock real en DBeaver
+                    if(!$producto || $item->cantidad > $producto->stock){
+
+                    //lanzamos una excepcion para frenar la compra si no hay mas stock del porducto
+                    throw new \Exception("Lo sentimos, el producto '{$producto->nombre_joya}' ya no tiene suficiente stock disponible (Quedan: {$producto->stock}).");
+                    }
+                }
+
                 // 2. Calcular el total del carrito
                 $total = $carritoItems->sum(function ($item) {
                     return $item->cantidad * $item->precio_unitario;
@@ -81,7 +93,7 @@ public function index()
 
             return redirect()->route('carrito.gracias');
         } catch (\Exception $e) {
-            return back()->withErrors(['error' => 'Hubo un error al procesar tu compra: ' . $e->getMessage()]);
+            return back()->withErrors(['error' => $e->getMessage()]);
         }
     }
 

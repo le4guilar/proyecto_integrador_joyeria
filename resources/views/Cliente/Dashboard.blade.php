@@ -291,12 +291,13 @@
                                     <span class="fw-bold text-dark">$ {{ number_format($orden->total ?? 0, 2, ',', '.') }}</span>
                                 </div>
 
-                                {{-- 🏷️ Estado del Pedido Inteligente con Colores Dinámicos --}}
+                                <!-- Estado del Pedido -->
+                                <!-- Estado del Pedido Inteligente con Colores Dinamicos -->
                                 <div class="col-md-3 text-md-end">
                                     <span class="small text-muted d-block text-md-end text-start text-uppercase fw-semibold mb-1" style="font-size: 0.65rem; letter-spacing: 0.5px;">Estado</span>
                                     
                                     @php
-                                        // Rescatamos el texto del estado de forma segura (rompiendo el objeto)
+                                        // 1. Rescatamos el texto del estado de forma segura (rompiendo el objeto)
                                         $nombreEstado = 'Pagado'; // Valor por defecto
                                         if (isset($orden->estado) && is_object($orden->estado)) {
                                             $nombreEstado = $orden->estado->nombre_estado_orden;
@@ -306,28 +307,29 @@
                                             $nombreEstado = $orden->estado;
                                         }
 
-                                        // Evaluamos el texto y ponemos el color de fondo y de letra
-                                        // Limpiamos espacios o mayusculas por las dudas con el helper Str::slug o pasandolo a minusculas
+                                        // 2. Evaluamos el texto y decidimos el color de fondo y de letra
+                                        // Limpiamos espacios o mayúsculas por las dudas con el helper Str::slug o pasándolo a minúsculas
                                         $estadoLimpio = mb_strtolower(trim($nombreEstado));
                                         
                                         if ($estadoLimpio == 'pagado' || $estadoLimpio == 'aprobado') {
-                                            $bgBadge = 'background-color: #286b38; color: #ffffff;'; 
+                                            $bgBadge = 'background-color: #28a745; color: #ffffff;'; 
                                         } elseif ($estadoLimpio == 'en camino' || $estadoLimpio == 'despachado') {
                                             $bgBadge = 'background-color: #300403; color: #dfdada;'; 
                                         } elseif ($estadoLimpio == 'entregado' || $estadoLimpio == 'finalizado') {
                                             $bgBadge = 'background-color: #6c757d; color: #ffffff;'; 
                                         } elseif ($estadoLimpio == 'cancelado' || $estadoLimpio == 'rechazado') {
-                                            $bgBadge = 'background-color: #871b26; color: #ffffff;'; 
+                                            $bgBadge = 'background-color: #dc3545; color: #ffffff;'; 
                                         } else {
-                                            $bgBadge = 'background-color: #a78829; color: #212529;'; //"Pendiente"
+                                            $bgBadge = 'background-color: #ffc107; color: #212529;'; // "Pendiente"
                                         }
                                     @endphp
 
-                                    <!-- Dibujamos el Badge con el estilo dinamico calculado arriba -->
+                                    <!-- Dibujamos el Badge con el estilo dinámico calculado arriba -->
                                     <span class="badge px-3 py-1.5 rounded-pill small fw-semibold" style="{{ $bgBadge }} font-size: 0.75rem;">
                                         {{ $nombreEstado }}
                                     </span>
                                 </div>
+
                             </div>
                         </div>
                     @empty

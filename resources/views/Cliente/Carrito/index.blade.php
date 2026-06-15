@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-3 mt-3">
-                        {{-- Control de Cantidad --}}
+                        <!-- Control de Cantidad -->
                         <div class="d-flex align-items-center border rounded">
                             <span class="px-3 py-1 text-muted small">Cant.</span>
                             <span class="px-3 py-1 fw-bold border-start bg-light text-dark">{{ $item->cantidad }}</span>
