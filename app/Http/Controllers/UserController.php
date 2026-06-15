@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -153,7 +154,7 @@ class UserController extends Controller
 
             // guardamos los datos del usuario
             $usuario->update($datosUsuario);
-            
+
             // metemos commit a la BD
             DB::commit();
             return redirect()->route('usuarios.index')->with('success', 'Usuario actualizado correctamente.');
@@ -166,15 +167,14 @@ class UserController extends Controller
     //vamo borrrar un usuario
     public function destroy($id)
     {
-        //como siempre primero buscamos el usuario por su id
-        $usuario = User::findOrFail($id);
+        // Comprobamos si el usuario actual intenta eliminarse a sí mismo
+        if (Auth::id() == $id) {
+            return redirect()->route('usuarios.index')->withErrors(['error' => 'No puedes eliminar tu propia cuenta de administrador.']);
+        }
 
-        //le hacemos delete (que enrealidad es un softdelete)
+        $usuario = User::findOrFail($id);
         $usuario->delete();
 
-        //volvemos a mostrar index con el mensaje
         return redirect()->route('usuarios.index')->with('success', 'Usuario dado de baja correctamente.');
     }
-
-
 }

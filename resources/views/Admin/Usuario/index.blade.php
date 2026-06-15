@@ -49,12 +49,14 @@
                                     <i class="bi bi-pencil-square"></i> Editar
                                 </a>
 
+                                @if(Auth::id() != $usuario->id)
                                 <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas dar de baja a este usuario?');">
                                     @csrf
                                     @method('DELETE') <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
                                         <i class="bi bi-trash"></i> Eliminar
                                     </button>
                                 </form>
+                                @endif
                             </td>
                         </tr>
                         @empty
