@@ -4,16 +4,30 @@
 
 <div class="container my-5" style="font-family: 'Montserrat', sans-serif;">
 
-    <div class="d-flex justify-content-between align-items-center mb-5 border-bottom pb-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-5 border-bottom pb-3 gap-3">
         <h2 class="mb-0 text-dark fw-bold" style="letter-spacing: -1px;">Mi carrito
             <span class="text-muted fw-normal fs-5">
                 ({{ $items->count() }} {{ $items->count() == 1 ? 'artículo' : 'artículos' }})
             </span>
         </h2>
-        <a href="{{ route('catalogo1') }}" class="text-dark text-decoration-none small">
-            Continuar comprando 
-            <i class="bi bi-arrow-right-circle-fill"></i>
-        </a>
+        
+        <div class="d-flex align-items-center gap-4">
+            @if($items->count() > 0)
+                {{-- Botón para vaciar el carrito completo --}}
+                <form action="{{ route('carrito.vaciar') }}" method="POST" class="m-0">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-link text-danger text-decoration-none p-0  text-uppercase fs-6" style="letter-spacing: 0.5px;" onclick="return confirm('¿Estás seguro de que deseás vaciar todo tu carrito ALBA?')">
+                        <i class="bi bi-trash3 me-1"></i> Vaciar carrito
+                    </button>
+                </form>
+            @endif
+
+            {{-- Botón vistoso para continuar comprando --}}
+            <a href="{{ route('catalogo1') }}" class="btn btn-dark fw-bold text-uppercase px-4 py-2 rounded-pill shadow-sm" style="letter-spacing: 0.5px; font-size: 0.85rem;">
+                <i class="bi bi-bag-plus me-1"></i> Seguir comprando
+            </a>
+        </div>
     </div>
 
 <!-- ALERTAS DE ESTADO -->

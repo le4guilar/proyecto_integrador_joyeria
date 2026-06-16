@@ -106,4 +106,13 @@ class CarritoController extends Controller
         //  Volvemos atras con un mensaje de exito
         return back()->with('status', 'Cantidad actualizada correctamente.');
     }
+
+    public function vaciar()
+    {
+        // Busca todos los items del carrito del usuario logueado y los elimina
+        // (Ajustá "ModeloDelCarrito" por el nombre real de tu modelo, ej: Carrito, ItemCarrito, etc.)
+        Carrito::where('usuario_id', \Illuminate\Support\Facades\Auth::id())->delete();
+
+        return redirect()->back()->with('status', 'Tu carrito ha sido vaciado correctamente.');
+    }
 }

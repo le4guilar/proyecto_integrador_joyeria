@@ -15,7 +15,7 @@
                     <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Pedidos pendientes</span>
                     <h2 class="fw-bold text-dark mt-1 mb-0" style="font-size: 1.8rem;">{{ $pedidosPendientes }}</h2>
                 </div>
-                <div class="p-2 rounded-circle bg-light" style="color: #300403;">
+                <div class="p-2 rounded-circle bg-transparent" style="color: #300403;">
                     <i class="bi bi-box-seam fs-4"></i>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Ticket medio</span>
                     <h2 class="fw-bold text-dark mt-1 mb-0" style="font-size: 1.8rem;">$ {{ number_format($ticketMedio, 2, ',', '.') }}</h2>
                 </div>
-                <div class="p-2 rounded-circle bg-light" style="color: #300403;">
+                <div class="p-2 rounded-circle bg-transparent" style="color: #300403;">
                     <i class="bi bi-cash-stack fs-4"></i>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Usuarios registrados</span>
                     <h2 class="fw-bold text-dark mt-1 mb-0" style="font-size: 1.8rem;">{{ number_format($usuariosRegistrados, 0, ',', '.') }}</h2>
                 </div>
-                <div class="p-2 rounded-circle bg-light" style="color: #300403;">
+                <div class="p-2 rounded-circle bg-transparent" style="color: #300403;">
                     <i class="bi bi-person-fill fs-4"></i>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.65rem; letter-spacing: 0.5px;">Pedidos entregados</span>
                     <h2 class="fw-bold text-dark mt-1 mb-0" style="font-size: 1.8rem;">{{ $pedidosEntregados }}</h2>
                 </div>
-                <div class="p-2 rounded-circle bg-light" style="color: #300403;">
+                <div class="p-2 rounded-circle bg-transparent" style="color: #300403;">
                     <i class="bi bi-truck fs-4"></i>
                 </div>
             </div>

@@ -115,6 +115,8 @@ Route::get('/carrito', [CarritoController::class, 'index'])->name('carrito.index
 // Se agrego la restriccion del logueo al querer cargar productos al carrito
 Route::post('/carrito/agregar', [CarritoController::class, 'store'])->name('carrito.store')->middleware(['auth', 'rol:cliente']);
 
+Route::delete('/carrito/vaciar', [App\Http\Controllers\CarritoController::class, 'vaciar'])->name('carrito.vaciar')->middleware(['auth', 'rol:cliente']);
+
 // 3. Caminito para el botón de "Quitar" (el tachito de basura)
 Route::delete('/carrito/quitar/{id}', [CarritoController::class, 'destroy'])->name('carrito.destroy');
 
