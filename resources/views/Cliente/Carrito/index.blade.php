@@ -10,17 +10,17 @@
                 ({{ $items->count() }} {{ $items->count() == 1 ? 'artículo' : 'artículos' }})
             </span>
         </h2>
-        
+
         <div class="d-flex align-items-center gap-4">
             @if($items->count() > 0)
-                {{-- Botón para vaciar el carrito completo --}}
-                <form action="{{ route('carrito.vaciar') }}" method="POST" class="m-0">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-link text-danger text-decoration-none p-0  text-uppercase fs-6" style="letter-spacing: 0.5px;" onclick="return confirm('¿Estás seguro de que deseás vaciar todo tu carrito ALBA?')">
-                        <i class="bi bi-trash3 me-1"></i> Vaciar carrito
-                    </button>
-                </form>
+            {{-- Botón para vaciar el carrito completo --}}
+            <form action="{{ route('carrito.vaciar') }}" method="POST" class="m-0">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-link text-danger text-decoration-none p-0  text-uppercase fs-6" style="letter-spacing: 0.5px;" onclick="return confirm('¿Estás seguro de que deseás vaciar todo tu carrito ALBA?')">
+                    <i class="bi bi-trash3 me-1"></i> Vaciar carrito
+                </button>
+            </form>
             @endif
 
             {{-- Botón vistoso para continuar comprando --}}
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-<!-- ALERTAS DE ESTADO -->
+    <!-- ALERTAS DE ESTADO -->
     @if(session('status'))
     <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
         {{ session('status') }}
@@ -43,7 +43,7 @@
     <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
         <ul class="mb-0">
             @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
+            <li>{{ $error }}</li>
             @endforeach
         </ul>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -99,23 +99,18 @@
                     <div class="d-flex align-items-center gap-3 mt-3">
                         <form action="{{ route('carrito.actualizar', $item->id) }}" method="POST" class="d-flex align-items-center gap-2">
                             @csrf
-                            @method('PATCH') 
-                            
-                            <div class="d-flex align-items-center border rounded bg-white">
-                                <span class="px-3 py-1 text-muted small bg-light border-end">Cant.</span>
-                                
+                            @method('PATCH')
+
+                            <div class="d-flex align-items-center border-none rounded bg-transparent">
+                                <span class="px-3 py-1 text-muted small bg-transparent border-none">Cant.</span>
+
                                 <!-- Esto permite cambiar la cantidad de unidades en el carrito de forma mas dinamica -->
-                                <input type="number" name="cantidad" class="form-control form-control-sm text-center fw-bold border-0 py-1" 
+                                <input type="number" name="cantidad" class="form-control form-control-sm text-center fw-bold border-0 py-1"
                                     value="{{ $item->cantidad }}" min="1" max="{{ $item->producto ? $item->producto->stock : 10 }}"
                                     style="width: 65px; box-shadow: none;"
+                                    onchange="this.form.submit()"
                                     required>
                             </div>
-
-                                
-                            <!-- Boton con el icono de check para confirmar y actualizar el cambio de unidades -->
-                            <button type="submit" class="btn btn-sm btn-outline-dark d-flex align-items-center justify-content-center p-2" style="height: 33px;" title="Actualizar cantidad">
-                                <i class="bi bi-check-lg" style="-webkit-text-stroke: 0.5px currentColor;"></i>
-                            </button>
                         </form>
                     </div>
                 </div>

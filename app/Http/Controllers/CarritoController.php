@@ -85,26 +85,26 @@ class CarritoController extends Controller
 
     public function actualizar(Request $request, $id)
     {
-        //  Validamos que la cantidad sea como minimo 1
+        // 1. Validamos que la cantidad sea como minimo 1
         $request->validate([
             'cantidad' => 'required|integer|min:1'
         ]);
 
-        // Buscamos el item del carrito en DBeaver
-        $itemCarrito = Carrito::findOrFail($id);
+        // 2. Buscamos el item, pero asegurándonos de que pertenezca al usuario logueado
+        $itemCarrito = Carrito::where('usuario_id', Auth::id())->findOrFail($id);
 
-        // Validamos que no intente actualizar a mas de lo que hay en stock
+        // 3. Validamos que no intente actualizar a mas de lo que hay en stock
         if ($request->cantidad > $itemCarrito->producto->stock) {
-            return back()->withErrors(['error' => "No puedes agregar más unidades. El stock disponible es de {$itemCarrito->producto->stock} unidades."]);
+            return back()->withErrors(['error' => "No podés agregar más unidades. El stock disponible es de {$itemCarrito->producto->stock} unidades."]);
         }
 
-        //  Actualizamos la cantidad en la tabla
+        // 4. Actualizamos la cantidad en la tabla
         $itemCarrito->update([
             'cantidad' => $request->cantidad
         ]);
 
-        //  Volvemos atras con un mensaje de exito
-        return back()->with('status', 'Cantidad actualizada correctamente.');
+        // 5. Volvemos atras con un mensaje de exito
+        return back();
     }
 
     public function vaciar()
