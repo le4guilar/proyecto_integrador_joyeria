@@ -7,18 +7,16 @@ use Illuminate\Http\Request;
 
 class EstadoOrdenController extends Controller
 {
-    /**
-     * Muestra el listado de estados (Para la vista de configuración del Admin)
-     */
+    // Muestra el listado de estados (Para la vista de configuración del Admin)
+     
     public function index()
     {
         $estados = EstadoOrden::all();
         return view('admin.estados.index', compact('estados'));
     }
 
-    /**
-     * Guarda un nuevo estado personalizado en la base de datos si fuera necesario
-     */
+    //Guarda un nuevo estado personalizado en la base de datos si fuera necesario
+     
     public function store(Request $request)
     {
         $request->validate([
@@ -32,9 +30,8 @@ class EstadoOrdenController extends Controller
         return redirect()->back()->with('status', 'Nuevo estado de orden creado con éxito.');
     }
 
-    /**
-     * Permite editar el nombre de un estado (Ej: De "En camino" a "Enviado")
-     */
+    //Permite editar el nombre de un estado (Ej: De "En camino" a "Enviado")
+     
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -49,9 +46,8 @@ class EstadoOrdenController extends Controller
         return redirect()->back()->with('status', 'Estado de orden actualizado correctamente.');
     }
 
-    /**
-     * Elimina un estado usando Soft Deletes (como definiste en tu Modelo)
-     */
+    // Elimina un estado usando Soft Deletes (como definiste en tu Modelo)
+     
     public function destroy($id)
     {
         $estado = EstadoOrden::findOrFail($id);

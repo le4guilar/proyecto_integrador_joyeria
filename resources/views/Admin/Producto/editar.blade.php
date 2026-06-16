@@ -9,10 +9,10 @@
         </div>
         <div class="card-body p-4">
 
-            {{-- Formulario apuntando a productos.update pasándole el ID de la joya --}}
+            <!-- Formulario apuntando a productos.update pasándole el ID de la joya -->
             <form action="{{ route('productos.update', $producto->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT') {{-- 👈 Directiva obligatoria para actualizar en Laravel --}}
+                @method('PUT') 
 
                 <div class="mb-3">
                     <label for="nombre_joya" class="form-label fw-semibold">Nombre de la Joya</label>

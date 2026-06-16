@@ -64,7 +64,7 @@
                             </td>
                         </tr>
 
-                        {{-- Fila oculta que contiene el mensaje --}}
+                        <!-- Fila oculta que contiene el mensaje -->
                         <tr class="p-0 border-0">
                             <td colspan="6" class="p-0 border-0">
                                 <div class="collapse" id="mensaje-{{ $consulta->id }}">

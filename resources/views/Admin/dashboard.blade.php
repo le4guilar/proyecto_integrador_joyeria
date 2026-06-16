@@ -138,7 +138,7 @@
                             <td class="py-3 text-dark fw-medium">{{ $pedido->usuario->nombre ?? 'N/A' }} {{ $pedido->usuario->apellido ?? '' }}</td>
                             <td class="py-3 text-dark fw-bold">$ {{ number_format($pedido->total, 2, ',', '.') }}</td>
                             <td class="py-3 text-end">
-                                {{-- Inyectamos la clase como texto limpio dentro del atributo class. ¡Adiós errores de VS Code! --}}
+                                <!-- Inyectamos la clase como texto limpio dentro del atributo class-->
                                 <span class="badge {{ $pedido->clase_badge }} px-3 py-1.5 rounded-pill small fw-semibold" 
                                     style="font-size: 0.7rem; display: inline-block;">
                                     {{ $pedido->estado->nombre_estado_orden ?? 'Pendiente' }}

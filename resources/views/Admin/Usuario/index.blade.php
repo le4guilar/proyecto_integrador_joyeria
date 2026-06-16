@@ -37,7 +37,7 @@
                             <td>{{ $usuario->nombre }} {{ $usuario->apellido }}</td>
                             <td>{{ $usuario->email }}</td>
                             <td>
-                                {{-- Evaluamos el nombre del rol para asignarle un color distintivo --}}
+                                <!-- Evaluamos el nombre del rol para asignarle un color distintivo -->
                                 @if($usuario->rol->nombre_rol === 'admin')
                                 <span class="badge bg-danger">Administrador</span>
                                 @else

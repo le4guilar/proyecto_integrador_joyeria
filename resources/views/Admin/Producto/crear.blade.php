@@ -9,7 +9,7 @@
         </div>
         <div class="card-body p-4">
 
-            {{-- Formulario apuntando a store con el enctype obligatorio para archivos --}}
+            <!-- Formulario apuntando a store con el enctype obligatorio para archivos -->
             <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 

@@ -25,7 +25,7 @@
         <div class="card-body p-0">
             <form action="{{ route('productos.index') }}" method="GET" class="bg-light p-3 border-bottom row g-2 m-0">
 
-                {{-- NUEVO: Barra de búsqueda por nombre --}}
+                <!-- NUEVO: Barra de búsqueda por nombre -->
                 <div class="col-12 mb-1">
                     <div class="input-group input-group-sm shadow-sm">
                         <span class="input-group-text bg-white text-muted"><i class="bi bi-search"></i></span>
@@ -138,7 +138,7 @@
                                             <i class="bi bi-pencil-square"></i> Editar
                                         </a>
 
-                                        {{-- Botón Eliminar protegido con formulario --}}
+                                        <!-- Botón Eliminar protegido con formulario -->
                                         <form action="{{ route('productos.destroy', $producto->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas dar de baja a este producto?');">
                                             @csrf
                                             @method('DELETE') <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">

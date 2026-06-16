@@ -12,7 +12,7 @@
 
 <div class="container my-4">
 
-    {{-- Encabezado y botón volver --}}
+    <!-- Encabezado y boton volver -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>Detalle del Pedido #{{ str_pad($orden->id, 5, '0', STR_PAD_LEFT) }}</h2>
         <a href="{{ route('admin.ordenes.index') }}" class="btn btn-outline-secondary">
@@ -20,7 +20,7 @@
                 </a>
     </div>
 
-    {{-- Tarjeta con info del cliente y orden --}}
+    <!-- Tarjeta con info del cliente y orden -->
     <div class="card mb-4 shadow-sm">
         <div class="card-body">
             <div class="row">
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    {{-- Tabla de Detalles (Joyas) --}}
+    <!-- Tabla de Detalles (Joyas) -->
     <h4 class="mb-3">Joyas en este pedido</h4>
     <div class="table-responsive shadow-sm">
         <table class="table table-bordered table-hover align-middle mb-0">

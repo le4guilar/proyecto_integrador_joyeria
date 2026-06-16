@@ -95,7 +95,7 @@
     </div>
 </div>
 
-{{--Este pedacito de código es para q busque las ciudades asociadas a esa provincia--}}
+<!--Este pedacito de código es para q busque las ciudades asociadas a esa provincia-->
 <script>
 document.getElementById('provincia_id').addEventListener('change', function() {
     var provinciaId = this.value;

@@ -10,7 +10,7 @@
         </div>
 
         <div class="card-body p-0">
-            {{-- Formulario de Búsqueda y Filtros con diseño de bloque gris claro --}}
+            <!-- Formulario de Búsqueda y Filtros con diseño de bloque gris claro -->
             <form action="{{ route('admin.ordenes.index') }}" method="GET" id="form-filtros" class="bg-light p-3 border-bottom row g-2 m-0">
                 <div class="col-md-5">
                     <div class="input-group input-group-sm shadow-sm">
@@ -95,7 +95,7 @@
                             </td>
                         </tr>
 
-                        {{-- Fila Oculta: Desplegable con los detalles del pedido --}}
+                        <!-- Fila Oculta: Desplegable con los detalles del pedido -->
                         <tr class="p-0 border-0">
                             <td colspan="6" class="p-0 border-0">
                                 <div class="collapse" id="detalle-orden-{{ $orden->id }}">
