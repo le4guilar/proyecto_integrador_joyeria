@@ -35,8 +35,8 @@ class AuthController extends Controller
             'apellido'   => 'required|string|max:225',
             'email'    => 'required|email|unique:users',
             'password' => 'required|min:4|confirmed',
-            'ciudad_id'        => 'required|integer', // Requerido para armar el domicilio
-            'detalle_domicilio' => 'required|string|max:255' // Calle, número, etc.
+            'ciudad_id'        => 'required|integer', 
+            'detalle_domicilio' => 'required|string|max:255' 
         ]);
 
         // 2. Creamos primero el Domicilio en la base de datos
@@ -49,7 +49,7 @@ class AuthController extends Controller
 
         //crea un nuevo registro en la tabla users con los datos se recibieron en el objeto(?) request
         $usuario = User::create([
-            'nombre' => $data['nombre'], //cadena obligatoria de como máximo 225 caracteres
+            'nombre' => $data['nombre'], 
             'apellido' => $data['apellido'],
             'email' => $data['email'], // correo obligatorio y único en la tabla usuarios
             'password' => Hash::make($data['password']), //clave encriptada
@@ -57,12 +57,11 @@ class AuthController extends Controller
             'domicilio_id' => $domicilio_id, // asociamos el domicilio creado
         ]);
 
-        // Auth::login($usuario); [OPCIONAL LOGUEARLO]
-        //SOLUCION: logueamos al usuario automaticamente tras registrarse
+
+
         Auth::login($usuario);
 
         // return redirect('/cliente'); [REDIRIGIMOS A LA VISTA CLIENTE??]
-        //SOLUCION: lo mandamos directamente a su panel de cliente 
         return redirect()->route('cliente.dashboard')->with('success', 'Te registrste con ¡éxito!');
     }
 
@@ -98,6 +97,6 @@ class AuthController extends Controller
         $request->session()->invalidate(); //invalida la sesion y borra los datos
         $request->session()->regenerateToken(); // Regenera el token @csrf (el del formulario de ingreso)para seguridad 
 
-        return redirect('home'); //CAMBIO (estategis de negocio): una vez que el usuario cierra sesion va a catalogo, asi por ahi le pinta comprar algun articulo
+        return redirect('home');
     }
 }
