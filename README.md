@@ -73,6 +73,15 @@ Para clonar y ejecutar este proyecto en un entorno local, es necesario contar co
     ```bash
         php artisan serve
 
+8. **Usuarios de prueba creados en el seeder**
+    ```bash
+        Administrador:
+            Correo: admin@mail.com   
+            Clave: 1234
+        Cliente:
+            Correo: cliente@mail.com
+            Clave: 1234
+
 👥 Desarrolladores
 
 - Aguilar, Leandro Martin
